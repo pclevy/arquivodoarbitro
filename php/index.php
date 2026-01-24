@@ -24,7 +24,7 @@
 	</head>
 	
 	<body bgcolor="eeeeff">
-		<div id="geral" style="position:absolute;width:997;height:650px;left:1;top:1;border:1px solid #000000">	
+		<div id="geral" style="position:absolute;width:997;height:580px;left:1;top:1;border:1px solid #000000">	
 			<div style="
 			 position:absolute;
 			 width:993;left:1px;top:1px;font-size:3px;text-align:center;border:1px solid #2266AA">
@@ -35,7 +35,7 @@
 				z-index:1;
 				visibility:visible;
 				position:absolute;
-				width:124px;height:auto;left:1px;top:45px;
+				width:124px;height:500px;left:1px;top:45px;
 				font-size:12;
 				font-family: Arial Narrow Bold, Arial Narrow, Arial, sans-serif, Liberation Sans Narrow;
 				padding-left:2px;
@@ -130,7 +130,7 @@
 					
 			<div id='DivPrincipal' name='DivPrincipal' style="
 				position:absolute;visibility:visible;
-				width:864;height:605;left:130px;top:45px;border:1px solid #2266AA">
+				width:864;height:530;left:130px;top:45px;border:1px solid #2266AA">
 				
 				<?php
 				  //$playerName = isset($_GET['pFullname']) ?$_GET['pFullname'] :"";
