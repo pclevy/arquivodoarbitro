@@ -1,0 +1,1298 @@
+             TitTorneio = TitTorneio & Chr(b)
+             SubTitTorneio = SubTitTorneio & Chr(b)
+             LeadTorneio = LeadTorneio & Chr(b)
+             Diretor = Diretor & Chr(b)
+             Organizador = Organizador & Chr(b)
+             LocalTorneio = LocalTorneio & Chr(b)
+             ArbitrosAux = ArbitrosAux & Chr(b)
+             ArqPGNentrada = ArqPGNentrada & Chr(b)
+             ArqPGNsaida = ArqPGNsaida & Chr(b)
+             TitTornPGN = TitTornPGN & Chr(b)
+             LocTornPGN = LocTornPGN & Chr(b)
+             ArquivoTUNx = ArquivoTUNx & Chr(b)
+             ParamNIdent01 = ParamNIdent01 & b & " - " & Chr(b)
+             CatIdades = CatIdades & Chr(b)
+              Ritmo = Ritmo & Chr(b)
+              ArquivoHTMLRod = ArquivoHTMLRod & Chr(b)
+              ParamNIdent02 = ParamNIdent02 & b & " - " & Chr(b)
+              ParamNIdent03 = ParamNIdent03 & b & " - " & Chr(b)
+              ParamNIdent04 = ParamNIdent04 & b & " - " & Chr(b)
+              ParamNIdent05 = ParamNIdent05 & b & " - " & Chr(b)
+             PaisSediante = PaisSediante & Chr(b)
+              ArbitroPrincipal = ArbitroPrincipal & Chr(b)
+             FedOficial = FedOficial & Chr(b)
+             EMail = EMail & Chr(b)
+             HomePage = HomePage & Chr(b)
+             Pais2 = Pais2 & Chr(b)
+
+													Ponteiro = Ponteiro + 216 ' %%%%%%%%%%%%%%%%%%%%%%%%
+         NumRodadas = b
+
+        Ponteiro = Ponteiro + 10
+        TipoTorneio = b
+        Select Case TipoTorneio
+         Case 0
+          DescrTipoTorneio = "Suiço Individual"
+         Case 1
+          DescrTipoTorneio = "Round-Robin Individual"
+         Case 2
+          DescrTipoTorneio = "Round-Robin p/Equipes"
+         Case 3
+          DescrTipoTorneio = "Suiço p/Equipes"
+         Case Else
+        End Select
+        
+								
+								
+								If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & TipoTorneio & " - " & DescrTipoTorneio & vbCrLf
+        Print #2, "<b>Tipo do Torneio</b>: "; TipoTorneio; " - "; DescrTipoTorneio; "<br>"
+         Ponteiro = Ponteiro + 1
+                
+        PonteiroValor = Ponteiro
+                
+        Ponteiro = Ponteiro + 1
+        ' ---------------------------------------------
+        ' ???? ***************************************
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=1) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=1) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+                        
+        ' Data não identificada ***************************************
+        Get 1, Ponteiro, L
+        DataNident = DateSerial(Val(Left(Trim(Str(L)), 4)), Val(Mid(Trim(Str(L)), 5, 2)), Val(Right(Trim(Str(L)), 2)))
+        If Text2_BlNaoIdent = "S" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & DataNident & vbCrLf
+        Print #2, "<b>Data não identificada</b>: " & DataNident & "<br>"
+        Ponteiro = Ponteiro + 4
+                
+        PonteiroValor = Ponteiro
+        
+        Ponteiro = Ponteiro + 2
+        ' ---------------------------------------------
+        ' Quant. de Jogadores ***************************************
+         'Ponteiro = 1688 ' UERJ      ' %%%%%%%%%%%%%%%
+         'Ponteiro = 1688 - 860 ' =828 Equipes      ' %%%%%%%%%%%%%%%
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=2) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=2) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+         
+         Get 1, Ponteiro, b2
+         QtJogadores = b2
+         ReDim PontosJogador(QtJogadores)
+         ReDim NomeJogador(QtJogadores)
+         If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & b2 & "*" & vbCrLf
+         'MsgBox ("Quantidade de Jogadores: " & QtJogadores)
+         Print #2, "<b>Quantidade de Jogadores</b>: " & QtJogadores & "<br>"
+        Ponteiro = Ponteiro + 2
+        
+        ' Avaliação de Rating ***************************************
+        Get 1, Ponteiro, b
+        AvalRating = b
+        Select Case AvalRating
+         Case 0
+          DescrTipoTorneio = "Não"
+         Case 1
+          DescrTipoTorneio = "Nacional"
+         Case 2
+          DescrTipoTorneio = "Internacional"
+         Case 3
+          DescrTipoTorneio = "Nacional/Internacional"
+         Case Else
+        End Select
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & AvalRating & " - " & DescrTipoTorneio & vbCrLf
+        Print #2, "<b>Avaliação de Rating</b>: "; AvalRating; " - "; DescrTipoTorneio; "<br>"
+        Ponteiro = Ponteiro + 1
+                
+        PonteiroValor = Ponteiro
+        
+        Ponteiro = Ponteiro + 7
+        ' ---------------------------------------------
+        ' Desempates - Critérios 1 a 5 ***************************************
+         Dim Desempate(5) As Integer
+         'Ponteiro = 1698        ' %%%%%%%%%%%%%%%
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=7) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=7) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+         
+         j = 0
+         For i = 1 To 10
+            Get 1, Ponteiro, b
+            If b > 0 Then
+                j = j + 1
+                Desempate(j) = b
+                If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & Desempate(j) & vbCrLf
+                'MsgBox ("Desempate " & j & ": " & Desempate(j) & " - " & Matriz_Desempates(Desempate(j), 1))
+                Print #2, "<b>Desempate " & j & "</b>: " & Desempate(j) & " - " & Matriz_Desempates(Desempate(j), 1) & "<br>"
+            End If
+            Ponteiro = Ponteiro + 1
+         Next i
+                         
+        PonteiroValor = Ponteiro
+        
+        Ponteiro = Ponteiro + 11
+        ' ---------------------------------------------
+        ' ???? ***************************************
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=11) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=11) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+        
+        ' Igual a todos os Tabuleiros?: ***************************************
+        Get 1, Ponteiro, b
+        TodosTab = b
+        If TodosTab = 0 Then
+         DescrTodosTab = "Não"
+        Else
+         DescrTodosTab = "Sim"
+        End If
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & TodosTab & " - " & DescrTodosTab & vbCrLf
+        Print #2, "<b>Igual a Todos os Tabuleiros</b>: "; TodosTab; " - "; DescrTodosTab; "<br>"
+        Ponteiro = Ponteiro + 1
+        
+        PonteiroValor = Ponteiro
+        
+        Ponteiro = Ponteiro + 2
+        ' ---------------------------------------------
+        ' ???? ***************************************
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=2) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=2) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+        
+        ' Cor p/Jogo em Casa ***************************************
+        Get 1, Ponteiro, b
+        CorJogoEmCasa = b
+        Select Case CorJogoEmCasa
+         Case 0
+          DescrCorJogoEmCasa = "Negras"
+         Case 1 '????
+          DescrCorJogoEmCasa = "Brancas"
+        Case Else
+        End Select
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & CorJogoEmCasa & " - " & DescrCorJogoEmCasa & vbCrLf
+        Print #2, "<b>Cor p/Jogo em Casa</b>: "; CorJogoEmCasa; " - "; DescrCorJogoEmCasa; "<br>"
+        Ponteiro = Ponteiro + 1
+             
+        PonteiroValor = Ponteiro
+        
+        Ponteiro = Ponteiro + 6
+        ' ---------------------------------------------
+        ' ???? ***************************************
+        If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=6) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=6) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+                        
+        ' Rating Mínimo ***************************************
+        Get 1, Ponteiro, b2
+        RatingMinimo = b2
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & RatingMinimo & vbCrLf
+        Print #2, "<b>Rating Mínimo</b>: " & RatingMinimo & "<br>"
+        Ponteiro = Ponteiro + 2
+        
+        PonteiroValor = Ponteiro
+                
+        Ponteiro = Ponteiro + 3
+        ' ---------------------------------------------
+        ' ???? ***************************************
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=3) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=3) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+                        
+        ' Emparceiramento como ... ***************************************
+        Get 1, Ponteiro, b
+        PtsEmparc = b
+        Select Case PtsEmparc
+         Case 0
+          DescrPtsEmparc = "Pontos do Jogo"
+         Case 1 '????
+          DescrPtsEmparc = "Emparceiramento (2,1,0)"  '????
+         Case 97
+          DescrPtsEmparc = "Pontos do Jogo (3,1,0)"
+        Case Else
+        End Select
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & PtsEmparc & " - " & DescrPtsEmparc & vbCrLf
+        Print #2, "<b>Emparceiramento como ... </b>: "; PtsEmparc; " - "; DescrPtsEmparc; "<br>"
+        Ponteiro = Ponteiro + 1
+        
+        PonteiroValor = Ponteiro
+        
+        Ponteiro = Ponteiro + 1
+        ' ---------------------------------------------
+        ' ???? ***************************************
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=1) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=1) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+                        
+        ' Pontos de Partida. Para a Equipe ***************************************
+        Get 1, Ponteiro, b
+        PtsPartEquipe = b
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & PtsPartEquipe & vbCrLf
+        Print #2, "<b>Pontos de Partida. Para a Equipe</b>: "; PtsPartEquipe; "<br>"
+        Ponteiro = Ponteiro + 1
+        
+        PonteiroValor = Ponteiro
+        
+        Ponteiro = Ponteiro + 3
+        ' ---------------------------------------------
+        ' ???? ***************************************
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=3) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=3) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+                        
+        ' Data de Início ***************************************
+        Get 1, Ponteiro, L
+        DataInicio = DateSerial(Val(Left(Trim(Str(L)), 4)), Val(Mid(Trim(Str(L)), 5, 2)), Val(Right(Trim(Str(L)), 2)))
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & DataInicio & vbCrLf
+        Print #2, "<b>Data de Início</b>: " & DataInicio & "<br>"
+        Ponteiro = Ponteiro + 4
+        'MsgBox (Ponteiro)
+        ' Data Final ***************************************
+        Get 1, Ponteiro, L
+        DataFinal = DateSerial(Val(Left(Trim(Str(L)), 4)), Val(Mid(Trim(Str(L)), 5, 2)), Val(Right(Trim(Str(L)), 2)))
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & DataFinal & vbCrLf
+        Print #2, "<b>Data Final</b>: " & DataFinal & "<br>"
+        Ponteiro = Ponteiro + 4
+        
+        PonteiroValor = Ponteiro
+                
+        Ponteiro = Ponteiro + 3
+        ' ---------------------------------------------
+        ' ???? ***************************************
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=3) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=3) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+                        
+        ' Data de Corte ***************************************
+        Get 1, Ponteiro, L
+        DataCorte = DateSerial(Val(Left(Trim(Str(L)), 4)), Val(Mid(Trim(Str(L)), 5, 2)), Val(Right(Trim(Str(L)), 2)))
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & DataCorte & vbCrLf
+        Print #2, "<b>Data de Corte</b>: " & DataCorte & "<br>"
+        Ponteiro = Ponteiro + 4
+        
+        PonteiroValor = Ponteiro
+                
+        Ponteiro = Ponteiro + 2
+        ' ---------------------------------------------
+        ' ???? ***************************************
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=1) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=1) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+                        
+        ' Pontos para o Bye ***************************************
+        Get 1, Ponteiro, b
+        PontosBye = b
+        Select Case PontosBye
+         Case 0
+          VlrPontosBye = 0
+         Case 1
+          VlrPontosBye = 0.5
+         Case 2
+          VlrPontosBye = 1
+        Case Else
+        End Select
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & PontosBye & " - " & VlrPontosBye & vbCrLf
+        Print #2, "<b>Pontos para o Jogador Bye</b>: "; PontosBye; " - "; VlrPontosBye; "<br>"
+        Ponteiro = Ponteiro + 1
+        
+        PonteiroValor = Ponteiro
+                
+        Ponteiro = Ponteiro + 3
+        ' ---------------------------------------------
+        ' ???? ***************************************
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=3) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=3) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+                        
+        ' Ordem da Classificação Inicial Automaticamente ***************************************
+        Get 1, Ponteiro, b
+        ClassAutom = b
+        If ClassAutom = 1 Then
+         DescrClassAutom = "Sim"
+        Else
+         DescrClassAutom = "Não"
+        End If
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & ClassAutom & " - " & DescrClassAutom & vbCrLf
+        Print #2, "<b>Ordem da Classificação Inicial Automaticamente</b>: "; ClassAutom; " - "; DescrClassAutom; "<br>"
+        Ponteiro = Ponteiro + 1
+        
+        PonteiroValor = Ponteiro
+        
+        ' ---------------------------------------------
+        ' Desempates - Parâmetros: ***************************************
+         Dim Corte As Byte
+         'Ponteiro = 2320        ' %%%%%%%%%%%%%%%
+         Ponteiro = Ponteiro + 558         ' %%%%%%%%%%%%%%%
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=558) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=558) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+         
+        Print #2, "<br>"
+         Print #2, "<b>Critérios de Desempate. Parâmetros:</b> "; "<br>"
+         
+         NrDesempate = 1
+         Print #2, "<b>Desempate</b> "; NrDesempate; "<br>"
+         
+        ' Corte -----------------------------------
+         Get 1, Ponteiro, b
+         Corte = b
+         If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & b & vbCrLf
+         QtPior = Corte Mod 16
+         QtMelhor = Corte \ 16
+         'MsgBox ("Desempate-Corte " & NrDesempate & ":  ->  Melhor=" & QtMelhor & " / Pior=" & QtPior)
+         'Print #2, "<b>Desempate-Corte " & 1 & "</b>: " & Corte & "<br>"
+         Print #2, "&nbsp; - <b>Corte</b> "; Corte; ":  ->  Melhor="; QtMelhor; " / Pior="; QtPior; "<br>"
+         Ponteiro = Ponteiro + 1
+         
+         Get 1, Ponteiro, b
+         PNJ_Adic = b
+         Text2.Text = Text2.Text & b & vbCrLf
+         
+         Adic = PNJ_Adic Mod 4
+         If Adic = 1 Then
+          ExpAdic = "não"
+         Else
+          ExpAdic = "sim"
+         End If
+         
+         PNJ = (PNJ_Adic - Adic) \ 4
+         Select Case (PNJ)
+          Case 0
+           ExpPNJ = "Calcular com 0,5 ponto (pontos modificados)"
+          Case 1
+           ExpPNJ = "Calcular com pontos reais"
+          Case 2
+           ExpPNJ = "Calcular como empate contra si mesmo"
+          Case 3
+           ExpPNJ = "Calcular como partida contra um jogador virtual"
+          Case Else
+           ExpPNJ = " "
+         End Select
+          
+         'MsgBox ("Partidas não jogadas (wo, bye,...): " & ExpPNJ & vbCrLf & "Adicionar pontos próprios: " & ExpAdic)
+         
+         'Print #2, "<b>Desempate-Corte " & i & "</b>: " & PNJ_Adic & "<br>"
+         Print #2, "&nbsp; - <b>Partidas não jogadas (wo, bye,...)</b>: "; PNJ_Adic; "/"; PNJ; "/"; Adic; "/"; ExpPNJ; "&nbsp; --> "; "<b>Adicionar pontos próprios</b>: "; ExpAdic; "<br>"
+         Ponteiro = Ponteiro + 1
+        '-----------------------------------
+        
+         For i = 1 To 8    '5
+            Get 1, Ponteiro, b
+            Corte = b
+            Text2.Text = Text2.Text & b & vbCrLf
+            'MsgBox ("Desempate-Corte " & i & ": " & Corte)
+            Print #2, "<b>Desempate-Corte " & i & "</b>: " & Corte & "<br>"
+            'Ponteiro = Ponteiro + 2
+            Ponteiro = Ponteiro + 1
+         Next i
+        
+        Print #2, "<br>"
+        Text2.Text = Text2.Text & vbCrLf
+
+        ' ---------------------------------------------
+        
+        PonteiroValor = Ponteiro
+                
+        ' ---------------------------------------------
+         Ponteiro = Ponteiro + 162 ' %%%%%%%%%%%%%%%%%%%%%%%%
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=162) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=162) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+        ' Revisar Ordem dos Tabuleiros... ***************************************
+         Get 1, Ponteiro, b
+         Revisar = b
+         If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & Revisar & "*" & vbCrLf
+         Print #2, "<b>Revisar Ordem dos Tabuleiros... </b>: " & Revisar & "<br>"
+         Ponteiro = Ponteiro + 1
+                         
+        PonteiroValor = Ponteiro
+                
+        Ponteiro = Ponteiro + 53
+        ' ---------------------------------------------
+        ' ???? ***************************************
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=53) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=53) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+                        
+        Print #2, "<br>"
+         
+        ' Classificar/Exibir Rating... ***************************************
+        Get 1, Ponteiro, b
+        TipoRating = b
+        Select Case TipoRating
+         Case 1
+          DescrTipoRating = "Rating Nacional"
+         Case 2
+          DescrTipoRating = "Rating Internacional"
+         Case 3
+          DescrTipoRating = "Rating Int. depois Rating Nac."
+         Case 4
+          DescrTipoRating = "Elo Máximo (Nac,Int)"
+         Case 5
+          DescrTipoRating = "Rating Nacional (somente)"
+         Case 6
+          DescrTipoRating = "Rating Internacional (somente)"
+        Case Else
+        End Select
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & TipoRating & " - " & DescrTipoRating & vbCrLf
+        Print #2, "<b>Classificar/Exibir Rating</b>...: "; TipoRating; " - "; DescrTipoRating; "<br>"
+        Ponteiro = Ponteiro + 1
+        
+        PonteiroValor = Ponteiro
+        
+        ' ==========================================================================
+            ' Horários e Datas das Rodadas ***************************************
+            Dim Ponteiro9 As Integer, bb1, bb2 As String
+            Ponteiro = Ponteiro + 5010   '%%%%%%%%%%%%%%%
+         If AlertaTudo = "S" Then MsgBox ("Saltos (Relativo=5010) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=5010) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+            
+           ' ****** VERIFICAR EVOLUÇÃO DO PONTEIRO *****
+           For j = 1 To NumRodadas  '6
+            
+                Get 1, Ponteiro, b: b2 = b * 2
+                Ponteiro = Ponteiro + 2
+                
+                bb2 = ""
+                For i = 1 To b2
+                    Get 1, Ponteiro, b
+                    If b > 0 Then
+                        bb2 = bb2 & Chr(b)
+                    End If
+                    Ponteiro = Ponteiro + 1
+                Next i
+                HoraRodada(j) = bb2
+                
+                bb1 = "": bb2 = ""
+                For i = 1 To 30
+                    Get 1, Ponteiro, b
+                    bb1 = bb1 & b
+                    If b > 0 Then
+                        bb2 = bb2 & Chr(b)
+                    End If
+                    Ponteiro = Ponteiro + 1
+                Next i
+                bb1 = bb1 & vbCrLf: bb2 = bb2 & vbCrLf
+
+                'MsgBox ("Bloco-HoraData - " & j & ": " & bb1 & vbCrLf & bb2)
+                
+                Get 1, Ponteiro, L ': Text4.Text = L & "*Z1*"
+                Ponteiro = Ponteiro + 4
+                'MsgBox ("yBloco-Teste Data: " & L)
+                DataRodada(j) = DateSerial(Val(Left(Trim(Str(L)), 4)), Val(Mid(Trim(Str(L)), 5, 2)), Val(Right(Trim(Str(L)), 2)))
+                'MsgBox ("Data da " & j & "ª Rodada: " & DataRodada(j) & vbCrLf)
+                
+                ' Número de mesas ***************************************
+                 Ponteiro = Ponteiro + 2
+                 Get 1, Ponteiro, b
+                 MesasRodada(j) = b
+                 'MsgBox ("Número de Mesas: " & j & "ª Rodada: " & b)
+                 
+                 If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & DataRodada(j) & " - " & HoraRodada(j) & " - " & MesasRodada(j) & vbCrLf
+                 Print #2, "<b>" & j & "ª Rodada</b>: " & DataRodada(j) & " - <b>Horário</b>: " & HoraRodada(j) & " - <b>Mesas</b>: " & MesasRodada(j) & "<br>"
+                 'Ponteiro = Ponteiro + 2
+                ' ---------------------------------------------
+                
+                bb1 = "": bb2 = ""
+                For i = 1 To (74 - 4)
+                    Get 1, Ponteiro, b
+                    bb1 = bb1 & b
+                    If b > 0 Then
+                        bb2 = bb2 & Chr(b)
+                    End If
+                    Ponteiro = Ponteiro + 1
+                Next i
+                bb1 = bb1 & vbCrLf: bb2 = bb2 & vbCrLf
+                'MsgBox ("Mesas-Teste - " & j & ": " & bb1 & vbCrLf & bb2)
+                
+            Next j
+           ' *******************************************
+        
+        Ponteiro = Ponteiro + 2
+        If AlertaTudo = "S" Then MsgBox ("=Data= P3: " & Ponteiro)
+        Text5.Text = Text5.Text & "=Data= P3: " & Ponteiro & vbCrLf
+        
+        'Ponteiro = 7288 ' Equipes Absoluto ++++++++++++++++++++++++++++++++++++++
+        'Ponteiro = 8266 ' UERJ ++++++++++++++++++++++++++++++++++++++
+        
+        ' ==========================================================================
+        ' Jogadores
+        Print #2, "<br><b>Dados de Jogadores</b>:<br>"
+        Print #2, "<table width='1600' border=1>"
+        Print #2, "<tr><th>Nr</th><th>Nome</th><th>TitA</th><th>Apelido</th><th>TF</th><th>IdNac</th><th>?1?</th><th>Clube</th><th>País</th><th>Cat</th><th>Grp</th><th>?2?</th><th>Font</th><th>?3?</th><th>Sex</th><th>RatFIDE</th><th>RatNac</th><th>DataNasc</th><th>NrClub</th><th>?4?</th><th>Id_FIDE</th><th>Tabul</th><th>Mesa</th><th>DM</th><th>?5?</th><th>PA</th><th>?6?</th><th>BNo</th><th>SNo</th><th>FtK</th><th>?7?</th></tr>"
+
+        z = 1
+    'MsgBox ("Ponteiro/jogadores: " & Ponteiro)
+        While z <= QtJogadores
+            ' Sobre Nome do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            'pj1 = Ponteiro
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            SobreNomeJogador = ""
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     SobreNomeJogador = SobreNomeJogador & Chr(b)
+                End If
+            Next i
+            'Print #2, Right("0" & Trim(Str(z)), 2) & " SobreNomeJogador: " & SobreNomeJogador & " - ";
+            
+            ' Pré Nome do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            PreNomeJogador = ""
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     PreNomeJogador = PreNomeJogador & Chr(b)
+                End If
+            Next i
+            'Print #2, "PreNomeJogador: " & PreNomeJogador;
+            NomeJogador(z) = PreNomeJogador & " " & SobreNomeJogador
+            
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & NomeJogador(z)
+            
+            Print #2, "<tr><td>"; z; "</td><td>"; NomeJogador(z); "</td><td>";
+            
+            ' Título Acadêmico ***************************************
+            Ponteiro = Ponteiro + 2
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            TitAcademico = ""
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     TitAcademico = TitAcademico & Chr(b)
+                End If
+            Next i
+                If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & TitAcademico & " - "  '& vbCrLf
+            Print #2, "&nbsp"; TitAcademico; "</td><td>";
+            
+            ' Nome abreviado do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            NomeCurto = ""
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     NomeCurto = NomeCurto & Chr(b)
+                End If
+            Next i
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & NomeCurto & " - "  '& vbCrLf
+            Print #2, "&nbsp"; NomeCurto; "</td><td>";
+            
+            ' Título FIDE ***************************************
+            Ponteiro = Ponteiro + 2
+            TitFIDE = ""
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     TitFIDE = TitFIDE & Chr(b)
+                End If
+            Next i
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & TitFIDE & " - "   '& vbCrLf
+            Print #2, "&nbsp"; TitFIDE; "</td><td>";
+            
+            ' ID Nacional ***************************************
+            Ponteiro = Ponteiro + 2
+            ID_Nacion = ""
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     ID_Nacion = ID_Nacion & Chr(b)
+                End If
+            Next i
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & ID_Nacion & " - "  '& vbCrLf
+            Print #2, "&nbsp"; ID_Nacion; "</td><td>";
+            
+            ' Bloco não identificado 1 ***************************************
+            Ponteiro = Ponteiro + 2
+            BlocoD1 = "?"
+            For i = 1 To 4
+                Get 1, Ponteiro, b
+                'MsgBox (b)
+                If b > 0 Then
+                 BlocoD1 = BlocoD1 & b & " - " & Chr(b)
+                End If
+                Ponteiro = Ponteiro + 1
+            Next i
+            'MsgBox ("teste1: " & bb)
+            Print #2, "&nbsp"; BlocoD1; "#1</td><td>";
+            
+            ' Clube do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            Clube = ""
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     Clube = Clube & Chr(b)
+                End If
+            Next i
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & Clube & " - "  '& vbCrLf
+            Print #2, "&nbsp"; Clube; "</td><td>";
+            
+            ' País do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            Pais = ""
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     Pais = Pais & Chr(b)
+                End If
+            Next i
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & Pais & " - "  '& vbCrLf
+            Print #2, "&nbsp"; Pais; "</td><td>";
+            
+            ' Categoria do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            Categ = ""
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     Categ = Categ & Chr(b)
+                End If
+            Next i
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & Categ & " - "  '& vbCrLf
+            Print #2, "&nbsp"; Categ; "</td><td>";
+            
+            ' Grupo do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            Grupo = ""
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     Grupo = Grupo & Chr(b)
+                End If
+            Next i
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & Grupo & " - "  '& vbCrLf
+            Print #2, "&nbsp"; Grupo; "</td><td>";
+            
+            ' Bloco não identificado 2 ***************************************
+            Ponteiro = Ponteiro + 2
+            BlocoD2 = "?"
+            For i = 1 To 6
+                Get 1, Ponteiro, b
+                'MsgBox (b)
+                If b > 0 Then
+                 BlocoD2 = BlocoD2 & b & " - " & Chr(b)
+                End If
+                Ponteiro = Ponteiro + 1
+            Next i
+            'MsgBox ("teste2: " & bb)
+            Print #2, "&nbsp"; BlocoD2; "#2</td><td>";
+            
+    'MsgBox ("2@@@ " & Ponteiro)
+            ' Fonte de Dados do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            Fonte = ""
+            Get 1, Ponteiro, b
+                b2 = b * 2: Ponteiro = Ponteiro + b2
+            For i = 1 To b2
+                Get 1, , b
+                    If b > 0 Then
+                     Fonte = Fonte & Chr(b)
+                End If
+            Next i
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & Fonte & " - "  '& vbCrLf
+            Print #2, "&nbsp"; Fonte; "</td><td>";
+            
+         PonteiroValor = Ponteiro
+            
+            ' Bloco não identificado 3 ***************************************
+            Ponteiro = Ponteiro + 1
+            BlocoD3 = "?"
+            For i = 1 To 29
+                Get 1, Ponteiro, b
+                'MsgBox (b)
+                If b > 0 Then
+                 BlocoD3 = BlocoD3 & b & " - " & Chr(b)
+                End If
+                Ponteiro = Ponteiro + 1
+            Next i
+            'MsgBox ("teste3: " & BlocoD3)
+            Print #2, "&nbsp"; BlocoD3; "#3</td><td>";
+            
+'         MsgBox ("Saltos (Relativo=30) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+
+            ' Sexo do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+    'MsgBox ("@@@ " & Ponteiro)
+            Sexo = ""
+            Get 1, Ponteiro, b
+            If b = 0 Then Sexo = "M"    'Masc
+            If b = 1 Then Sexo = "F"    'Fem
+            If b = 2 Then Sexo = "C"    'Comp
+            'Ponteiro = Ponteiro + 2
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & Sexo & " - "  '& vbCrLf
+            Print #2, "&nbsp"; Sexo; "</td><td>";
+            
+            ' Rating FIDE do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            'MsgBox (Ponteiro)
+            RatFIDE = 0
+            Get 1, Ponteiro, b2
+            Ponteiro = Ponteiro + 2
+            RatFIDE = b2
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & RatFIDE & " - "  '& vbCrLf
+            Print #2, "&nbsp"; RatFIDE; "</td><td>";
+            
+            ' Rating Nacional do Jogador ***************************************
+            Ponteiro = Ponteiro + 0
+            'MsgBox (Ponteiro)
+            RatNAC = 0
+            Get 1, Ponteiro, b2
+            'MsgBox ("!!" & b2 & "!!")
+            Ponteiro = Ponteiro + 2
+            RatNAC = b2
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & RatNAC & " - "  '& vbCrLf
+            Print #2, "&nbsp"; RatNAC; "</td><td>";
+            
+            
+'MsgBox ("Ponteiro::: " & Ponteiro)
+            
+            ' Data de Nascimento (aaaammdd) ***************************************
+            Ponteiro = Ponteiro + 2
+            Get 1, Ponteiro, L
+            DataNasc = DateSerial(Val(Left(Trim(Str(L)), 4)), Val(Mid(Trim(Str(L)), 5, 2)), Val(Right(Trim(Str(L)), 2)))
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & DataNasc & " - "  '& vbCrLf
+            Print #2, "&nbsp"; DataNasc; "</td><td>";
+            Ponteiro = Ponteiro + 4
+            
+            ' Número do Clube ***************************************
+            NrClub = ""
+            Get 1, Ponteiro, b
+            NrClub = NrClub & b
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & NrClub & " - "  '& vbCrLf
+            Print #2, "&nbsp"; NrClub; "</td><td>";
+            Ponteiro = Ponteiro + 1
+            
+         PonteiroValor = Ponteiro
+            ' Bloco não identificado 4 ***************************************
+    'MsgBox ("@@@ " & Ponteiro)
+            'Ponteiro = Ponteiro + 2
+            BlocoD4 = "?"
+            For i = 1 To 3
+                Get 1, Ponteiro, b
+                'MsgBox (i & " " & b)
+                If b > 0 Then
+                 BlocoD4 = BlocoD4 & b & " - " & Chr(b)
+                End If
+                Ponteiro = Ponteiro + 1
+            Next i
+            'MsgBox ("teste4: " & BlocoD4)
+            Print #2, "&nbsp"; BlocoD4; "#4</td><td>";
+            
+'         MsgBox ("Saltos (Relativo=4) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+            
+            ' ID FIDE ***************************************
+            Ponteiro = Ponteiro + 2     ' %%%%%%%%%%%%%%%
+            Get 1, Ponteiro, L
+            Id_FIDE = L
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & Id_FIDE & " - "  '& vbCrLf
+            Print #2, "&nbsp"; Id_FIDE; "</td><td>";
+            Ponteiro = Ponteiro + 4
+            
+    'MsgBox ("@@@ " & Ponteiro)
+            ' Tabuleiro do Jogador na Mesa da Equipe ***************************************
+            'Ponteiro = Ponteiro + 2
+            Tabul = ""
+            For i = 1 To 2
+                Get 1, Ponteiro, b
+                'MsgBox (b)
+                If b > 0 Then
+                 Tabul = Tabul & b
+                End If
+                Ponteiro = Ponteiro + 1
+            Next i
+            'MsgBox ("teste4: " & Tabul & " - " & NomeJogador)
+            Print #2, "&nbsp"; Tabul; "</td><td>";
+            
+            ' Mesa da Equipe do Jogador ***************************************
+            'Ponteiro = Ponteiro + 2
+            Mesa = ""
+            For i = 1 To 2
+                Get 1, Ponteiro, b
+                'MsgBox (b)
+                If b > 0 Then
+                 Mesa = Mesa & b
+                End If
+                Ponteiro = Ponteiro + 1
+            Next i
+            'MsgBox ("teste4: " & Mesa & " - " & NomeJogador)
+            Print #2, "&nbsp"; Mesa; "</td><td>";
+            
+            ' Desempate Manual ***************************************
+            Ponteiro = Ponteiro + 2
+            DesempMan = ""
+            For i = 1 To 2
+                Get 1, , b
+                If b > 0 Then
+                 DesempMan = DesempMan & b  'Chr(b)
+                End If
+                Ponteiro = Ponteiro + 1
+            Next i
+            
+            'DesempMan = 13
+            
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & DesempMan & " - "  '& vbCrLf
+            Print #2, "&nbsp"; DesempMan; "</td><td>";
+            
+            ' Bloco não identificado 5 ***************************************
+            Ponteiro = Ponteiro + 2
+            BlocoD5 = "?"
+            For i = 1 To 10
+                Get 1, Ponteiro, b
+                If b > 0 Then
+                 BlocoD5 = BlocoD5 & b & " - " & Chr(b)
+                End If
+                Ponteiro = Ponteiro + 1
+            Next i
+            'MsgBox ("teste5: " & bb)
+            Print #2, "&nbsp"; BlocoD5; "#5</td><td>";
+            
+            ' Pts a Adicionar p/ Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            'PtsAdd = 0
+            Get 1, Ponteiro, b2
+            PtsAdd = b2 / 2
+            Print #2, "&nbsp"; PtsAdd; "</td><td>";
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & " " & PtsAdd & " - "  '& vbCrLf
+            
+            'Ponteiro = Ponteiro + 2 '%%%%%%%%%%%
+            
+            ' Bloco não identificado 6 ***************************************
+            Ponteiro = Ponteiro + 2
+            BlocoD6 = "?"
+            Get 1, Ponteiro, b2
+            BlocoD6 = b2
+            If Text2_BlNaoIdent = "S" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & " " & BlocoD6 & "#6  - "  '& vbCrLf
+            Print #2, "&nbsp"; LTrim(RTrim(Str(BlocoD6))); "#6</td><td>";
+            
+            'Ponteiro = Ponteiro + 2
+            
+            ' BNoPair do Jogador ***************************************
+            Ponteiro = Ponteiro + 2
+            Get 1, Ponteiro, b2
+            BNoPair = b2
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & BNoPair & " - "  '& vbCrLf
+            Print #2, "&nbsp"; BNoPair; "</td><td>";
+            
+            Ponteiro = Ponteiro + 2
+            
+            ' SNo do Jogador ***************************************
+            'Ponteiro = Ponteiro + 2
+            Get 1, Ponteiro, b2
+            SNo = b2
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & " " & SNo & "##2  - "  '& vbCrLf
+            Print #2, "&nbsp"; SNo; "</td><td>";
+            Ponteiro = Ponteiro + 2
+            
+            ' Fator K do Jogador ***************************************
+            'Ponteiro = Ponteiro + 2
+            Get 1, Ponteiro, b2
+            FatorK = b2
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & FatorK & " - "  '& vbCrLf
+            Print #2, "&nbsp"; FatorK; "</td><td>";
+            Ponteiro = Ponteiro + 2
+                        
+            ' Bloco não identificado 7 ***************************************
+            'Ponteiro = Ponteiro + 2
+            Get 1, Ponteiro, b2
+            BlocoD7 = b2
+            If Text2_BlNaoIdent = "S" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & " " & BlocoD7 & "#7  - " & " FimJog" & vbCrLf
+            Print #2, "&nbsp"; LTrim(RTrim(Str(BlocoD7))); "#7</td><td>";
+            
+            Ponteiro = Ponteiro + 2
+            
+            ' Bloco não identificado 8 ***************************************
+            'Ponteiro = Ponteiro + 2
+            bb = "&nbsp"
+            For i = 1 To 2
+                Get 1, Ponteiro, b
+                bb = bb & b
+                Ponteiro = Ponteiro + 1
+            Next i
+            'MsgBox ("teste8: " & bb)
+            
+         PonteiroValor = Ponteiro
+            ' Bloco não identificado 9 ***************************************
+            Ponteiro = Ponteiro + 2
+            bb = "&nbsp"
+            For i = 1 To 42
+                Get 1, Ponteiro, b
+                bb = bb & b
+                Ponteiro = Ponteiro + 1
+            Next i
+            
+'         MsgBox ("Saltos (Relativo=42) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+            
+            'MsgBox ("teste9: " & bb)
+            
+            'MsgBox (Ponteiro) ' Ponteiro para o 2ªjogador aqui deve ser 8552
+            
+            ''For i = 1 To 234
+            ''    Get 1, Ponteiro + i, b
+            ''    If b > 0 Then
+            ''     Text2.Text = Text2.Text & Chr(b)
+            ''    End If
+            ''Next i
+            
+            ''Ponteiro = Ponteiro + 34: Get 1, Ponteiro, b2: MsgBox (Ponteiro & " - " & b2)
+            
+            'pj2 = Ponteiro
+            'MsgBox (pj1 & " - " & pj2 & " == " & NomeJogador(z))
+            
+            Print #2, "</tr>";
+            z = z + 1
+        Wend
+        Print #2, "</table><br>";
+        
+        'MsgBox ("Ponteiro/jogadores: " & Ponteiro)
+        Text5.Text = Text5.Text & "Ponteiro/jogadores: " & Ponteiro & vbCrLf
+        
+        Ponteiro = Ponteiro + 2
+
+        If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & "------------------------------------------------------------------" & vbCrLf
+        
+        PonteiroValor = Ponteiro
+         
+        ' ???Dados Restantes ***************************************
+        
+        Ponteiro = Ponteiro + 2 ' %%%%%%%%%%%%%%%
+        Get 1, Ponteiro, b2     ' 17116
+        b2 = b2 - 7 '???????
+        
+        ' Resultados ***************************************
+        Ponteiro = Ponteiro + 2 '17118  ' ****************************************    ' %%%%%%%%%%%%%%%
+        'MsgBox ("Saltos (Relativo=4) de Ponteiro: " & PonteiroValor & " - " & Ponteiro)
+         Text5.Text = Text5.Text & "Saltos (Relativo=4) de Ponteiro: " & PonteiroValor & " - " & Ponteiro & vbCrLf
+        
+        Print #2, "<b>Emparceiamentos e Resultados:</b><br>"
+        For r = 1 To NumRodadas
+            'MsgBox (r & "ª Rodada ")
+            bb = ""
+            Print #2, "<b>" & r & "ª Rodada: </b><br>"
+            Print #2, "<table border=1>"
+            Print #2, "<tr><td><b>Nome</td><td><b><center>Resultado</center></td><td><b> &nbsp; Nome</td></tr>"
+            For Ponteiro = Ponteiro To (Ponteiro + 21 * MesasRodada(r) - 1) Step 21 '7
+                
+                CodJogA = 0: CodJogB = 0
+                
+                For j = 0 To 1
+                    Get 1, Ponteiro + j, b
+                    'MsgBox (b)
+                    If b > 0 Then
+                     bb = bb & b
+                    End If
+                Next j
+                'JogA = Right("00" & bb, 3)
+                JogA = NomeJogador(bb)
+                CodJogA = bb
+                'MsgBox (JogA)
+                bb = ""
+                For j = 2 To 3
+                    Get 1, Ponteiro + j, b
+                    'MsgBox (b)
+                    If b > 0 Then
+                     bb = bb & b
+                    End If
+                Next j
+                'JogB = bb
+                'If bb = "254255" Then
+                If bb > 250000 Then
+                'MsgBox (r & " - " & bb & " - " & NomeJogador(CodJogA))
+                 JogB = "Bye"
+                Else
+                 'JogB = Right("00" & bb, 3)
+                 JogB = NomeJogador(bb)
+                 CodJogB = bb
+                End If
+                bb = ""
+                For j = 4 To 5
+                    Get 1, Ponteiro + j, b
+                    If b > 0 Then
+                     bb = bb & b
+                    End If
+                Next j
+                CodRes = Val(bb)
+        
+                Select Case CodRes
+                 Case 0
+                  '
+                 Case 1
+                  PontosJogA = 1: PontosJogB = 0
+                 Case 2
+                  PontosJogA = 0.5: PontosJogB = 0.5
+                 Case 3
+                  PontosJogA = 0: PontosJogB = 1
+                  
+                 Case 4
+                  PontosJogA = 1: PontosJogB = 0
+                 Case 5
+                  PontosJogA = 0: PontosJogB = 1
+                 Case 6
+                  PontosJogA = 0: PontosJogB = 0
+                 
+                 Case 7
+                  '
+                 Case 8
+                  '
+                 Case 9
+                  '
+                 
+                 Case 10
+                  PontosJogA = 0: PontosJogB = 0
+                 Case 11
+                  PontosJogA = 0: PontosJogB = 0.5
+                 Case 12
+                  PontosJogA = 0.5: PontosJogB = 0
+                 
+                 Case 13      ' *** Levy ***
+                  PontosJogA = 1: PontosJogB = 0
+                 Case 14      ' *** Levy ***
+                  PontosJogA = 0.5: PontosJogB = 0
+                 Case 15      ' *** Levy ***
+                  PontosJogA = 0: PontosJogB = 0
+                 
+                 Case Else
+                  '
+                End Select
+                PontosJogador(CodJogA) = PontosJogador(CodJogA) + PontosJogA
+                PontosJogador(CodJogB) = PontosJogador(CodJogB) + PontosJogB
+                
+                bb = ""
+                If JogB = "Bye" Then CodRes = CodRes + 12 ': MsgBox (JogA & " - " & CodRes & " - " & Resultados(CodRes))
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & JogA & Resultados(CodRes) & JogB & vbCrLf
+            Print #2, "<tr><td>"; JogA; "</td><td><center>"; Resultados(CodRes); "</center></td><td> &nbsp; "; JogB; "</td></tr>"
+            'Print #2, JogA & Resultados(CodRes) & JogB & "<br>"
+                'MsgBox (JogA & Resultados(CodRes) & JogB)
+                
+                'For j = 0 To 5
+                '    Get 1, Ponteiro + j, b
+                '    If b > 0 Then
+                '     bb = bb & b
+                '    End If
+                'Next j
+                'bb = bb & "*"
+                
+            Next Ponteiro
+            
+            If Text2_BlNaoIdent = "N" Or Text2_BlNaoIdent = "T" Then Text2.Text = Text2.Text & vbCrLf
+            Print #2, "</table>"
+            
+            'MsgBox ("kkkkkkkkkkkkkk")
+            'MsgBox ("Rodada " & r & ":" & bb & " - Ponteiro: " & Ponteiro)
+            
+        Next r
+        
+        For i = 1 To QtJogadores
+         List1.AddItem (PontosJogador(i))
+         List1.ItemData(List1.NewIndex) = i
+        Next i
+        
+        'List1.ListCount
+        j = 0
+        For i = List1.ListCount - 1 To 0 Step -1
+         j = j + 1
+         'MsgBox (i & " - " & List1.List(i) & " - " & List1.ItemData(i))
+         List2.AddItem (List1.List(i))
+         List2.ItemData(List2.NewIndex) = List1.ItemData(i)
+        Next i
+        
+        Print #2, "<br><b>Classificação</b>"
+        Print #2, "<table border='1'>"
+        Print #2, "<tr><td><b>Class</td><td><b>Nome</td><td><b>Pontos</td></tr>"
+        For i = 1 To QtJogadores
+         'Print #2, "<tr><td>"; NomeJogador(i); "</td><td>"; PontosJogador(i); "</td></tr>"
+         Print #2, "<tr><td>"; i; "</td><td>"; NomeJogador(List2.ItemData(i - 1)); "</td><td>"; PontosJogador(List2.ItemData(i - 1)); "</td></tr>"
+        Next i
+        Print #2, "</table>"
+        
+        'MsgBox ("Tam: " & Tam & " - " & "Último Ponteiro: " & Ponteiro)
+        Text5.Text = Text5.Text & "Tam: " & Tam & " - " & "Último Ponteiro: " & Ponteiro & vbCrLf
+        
+        'MsgBox ("------------------------------------------------------------------" & vbCrLf)
+        
+        '' ???Dados Restantes ***************************************
+        'Ponteiro = Ponteiro + 2
+        'Get 1, Ponteiro, b
+        'b2 = b * 2: Ponteiro = Ponteiro + b2
+        'For i = 1 To 234 'b2
+        '    Get 1, , b
+        '    Text1.Text = Text1.Text & b & "*"
+        '    If b > 0 Then
+        '     Text2.Text = Text2.Text & Chr(b)
+        '    End If
+        'Next i
+        
+        
+        Close All
+        MsgBox " .... Fim .... "
+        
+        'Sexo: 0 - Masculimo / 1 - Feminino / 2 - Computador
+        
+        
+        ' Resultados:
+        ' 1x0: 1 / =x=: 2 / 0x1: 3 / 1Fx0F: 4 / 0Fx1F: 5 / 0Fx0F: 6 / AGxAG: 7 / ???: 8 / ??: 8 /
+        ' 0x0:10 / 0x=:11 / =x0:12 / _x_: 0 /
+        ' 1xBye:(254)(255)(1) / =xBye:(254)(255)(2) / 0xBye:(254)(255)(3)
+        
+        ' Parâmetros Buchholz (critérios: 1-2320 / 2-2339 / 3-2358 / 4-2377 / 5-2396
+            'Corte:
+             ' (16*melhor + pior) - byte: 2320
+             ' (melhor,pior)
+             '       1,0 - 16*1 + 0 = 16 + 0 = 16
+             '       1,1 - 16*1 + 1 = 16 + 1 = 17
+             '       1,2 - 16*1 + 2 = 16 + 2 = 18
+             '       3,2 - 16*3 + 2 = 48 + 2 = 50
+             '
+            'partidas ñ jogadas , adicionar pontos próprios:
+             ' (4*opção + adicionar) - byte: 2321
+             ' (opção: de 0 a 3, adicionar: não=0 / sim=1)
+             '    Calcule com pontos reais=1 , Adicionar;não = 0
+             '       1,0 -> 4*1 + 0 = 4 + 0 = 4
+             '    Calcule com pontos reais=2 , Adicionar;sim = 1
+             '       2,1 -> 4*2 + 1 = 8 + 0 = 9
+             '
+             'Classificação
+             ' parece que o byte 2546 tem algo a ver ...
+            
+
+
+End Sub
+
+Private Sub Comparar_Click()
+        
+    Dim PathArqTUNx As String
+    Dim i, Tam2, Tam3, Ponteiro1 As Integer
+    Dim yb2 As Byte
+    Dim yb3 As Byte
+    Dim L As Long
+    Dim v1, v2, Ponteiro As Long
+
+    'PathArqTUNx2 = "": PathArqTUNx3 = ""
+    PathArqTUNx2 = "": PathArqTUNx3 = "DirTeste/"
+    'NomeArqTUNx = "irtuerj2.tunx"
+    NomeArqTUNx = "CRXpEq_Et1.TUMx"
+    'NomeArqTUNx = "Test_Team_RoundRobin.TUTx"
+    
+    Tam2 = FileLen(PathArqTUNx2 & NomeArqTUNx) ': MsgBox(Tam2)
+    Tam3 = FileLen(PathArqTUNx3 & NomeArqTUNx) ': MsgBox(Tam3)
+    Open PathArqTUNx2 & NomeArqTUNx For Binary As 2
+    Open PathArqTUNx3 & NomeArqTUNx For Binary As 3
+    
+    Text5.Text = "*"
+    
+    Ponteiro = 0        ' %%%%%%%%%%%%%%%
+    For i = 1 To Tam2
+        'Ponteiro = Ponteiro + 1
+        Get 2, i, yb2
+        Get 3, i, yb3
+        If yb2 <> yb3 Then
+         Text5.Text = Text5.Text & i & ": " & yb2 & "/"
+         If yb2 > 0 Then
+          Text5.Text = Text5.Text & Chr(yb2)
+         Else
+          Text5.Text = Text5.Text & "?"
+         End If
+         Text5.Text = Text5.Text & "   -   " & yb3 & "/"
+         If yb3 > 0 Then
+          Text5.Text = Text5.Text & Chr(yb3)
+         Else
+          Text5.Text = Text5.Text & "?"
+         End If
+         Text5.Text = Text5.Text & "*" & vbCrLf
+        End If
+    Next i
+
+    Close All
+    
+    Text5.Text = Text5.Text & " **************" & vbCrLf
+
+End Sub
+
+Private Sub Montar_Matriz_Desempates(Matriz_Desempates() As String)
+    
+    Matriz_Desempates(0, 1) = " ": Matriz_Desempates(1, 2) = "N": Matriz_Desempates(1, 3) = "N": Matriz_Desempates(1, 4) = "N": Matriz_Desempates(1, 5) = "N"
+    Matriz_Desempates(1, 1) = "Pts.  points (game-points)": Matriz_Desempates(1, 2) = "N": Matriz_Desempates(1, 3) = "N": Matriz_Desempates(1, 4) = "N": Matriz_Desempates(1, 5) = "N"
+    Matriz_Desempates(2, 1) = "Buchholz Tie-Breaks (all Results)": Matriz_Desempates(2, 2) = " ": Matriz_Desempates(2, 3) = " ": Matriz_Desempates(2, 4) = " ": Matriz_Desempates(2, 5) = " "
+    Matriz_Desempates(3, 1) = "Buchholzwertung (1 Streichresultat)": Matriz_Desempates(3, 2) = " ": Matriz_Desempates(3, 3) = " ": Matriz_Desempates(3, 4) = " ": Matriz_Desempates(3, 5) = " "
+    Matriz_Desempates(4, 1) = "Buchholz Tie-Breaks (without two results=middle Tie-Breaks)": Matriz_Desempates(4, 2) = " ": Matriz_Desempates(4, 3) = " ": Matriz_Desempates(4, 4) = " ": Matriz_Desempates(4, 5) = " "
+    Matriz_Desempates(5, 1) = "Manually input in field rankcorr. in player-dialog": Matriz_Desempates(5, 2) = "N": Matriz_Desempates(5, 3) = " ": Matriz_Desempates(5, 4) = " ": Matriz_Desempates(5, 5) = " "
+    Matriz_Desempates(6, 1) = "Manually input in field rankcorr. in team-dialog": Matriz_Desempates(6, 2) = " ": Matriz_Desempates(6, 3) = "N": Matriz_Desempates(6, 4) = "N": Matriz_Desempates(6, 5) = "N"
+    Matriz_Desempates(7, 1) = "Sonneborn-Berger-Tie-Break (with real points)": Matriz_Desempates(7, 2) = " ": Matriz_Desempates(7, 3) = "N": Matriz_Desempates(7, 4) = "N": Matriz_Desempates(7, 5) = "N"
+    Matriz_Desempates(8, 1) = "Fide Tie-Break": Matriz_Desempates(8, 2) = "N": Matriz_Desempates(8, 3) = " ": Matriz_Desempates(8, 4) = " ": Matriz_Desempates(8, 5) = " "
+    Matriz_Desempates(9, 1) = "Fide Tie-Break (fine)": Matriz_Desempates(9, 2) = "N": Matriz_Desempates(9, 3) = " ": Matriz_Desempates(9, 4) = " ": Matriz_Desempates(9, 5) = " "
+    Matriz_Desempates(10, 1) = "rating average of the opponents": Matriz_Desempates(10, 2) = " ": Matriz_Desempates(10, 3) = " ": Matriz_Desempates(10, 4) = " ": Matriz_Desempates(10, 5) = " "
+    Matriz_Desempates(11, 1) = "The results of the players in the same point group": Matriz_Desempates(11, 2) = "N": Matriz_Desempates(11, 3) = "N": Matriz_Desempates(11, 4) = " ": Matriz_Desempates(11, 5) = " "
+    Matriz_Desempates(12, 1) = "The greater number of victories": Matriz_Desempates(12, 2) = "N": Matriz_Desempates(12, 3) = "N": Matriz_Desempates(12, 4) = " ": Matriz_Desempates(12, 5) = " "
+    Matriz_Desempates(13, 1) = "Matchpoints (2 for wins, 1 for Draws, 0 for Losses)": Matriz_Desempates(13, 2) = " ": Matriz_Desempates(13, 3) = "N": Matriz_Desempates(13, 4) = "N": Matriz_Desempates(13, 5) = "N"
+    Matriz_Desempates(14, 1) = "The results of the teams in then same point group according to Matchpoints": Matriz_Desempates(14, 2) = " ": Matriz_Desempates(14, 3) = "N": Matriz_Desempates(14, 4) = "N": Matriz_Desempates(14, 5) = "N"
+    Matriz_Desempates(15, 1) = "Board Tie-Breaks of the whole tournament": Matriz_Desempates(15, 2) = " ": Matriz_Desempates(15, 3) = "N": Matriz_Desempates(15, 4) = "N": Matriz_Desempates(15, 5) = "N"
+    Matriz_Desempates(16, 1) = "Buchholz Tie-Breaks (sum of team-points of the opponents and own points)": Matriz_Desempates(16, 2) = " ": Matriz_Desempates(16, 3) = " ": Matriz_Desempates(16, 4) = " ": Matriz_Desempates(16, 5) = "N"
+    Matriz_Desempates(17, 1) = "Buchholz Tie-Breaks (with the real points)": Matriz_Desempates(17, 2) = " ": Matriz_Desempates(17, 3) = " ": Matriz_Desempates(17, 4) = " ": Matriz_Desempates(17, 5) = " "
+    Matriz_Desempates(18, 1) = "Carasaxa Tie-Breaks": Matriz_Desempates(18, 2) = " ": Matriz_Desempates(18, 3) = " ": Matriz_Desempates(18, 4) = " ": Matriz_Desempates(18, 5) = " "
+    Matriz_Desempates(19, 1) = "Sonneborn-Berger Tie-Break (with modified points, analogous to Buchholz Tie-Break)": Matriz_Desempates(19, 2) = " ": Matriz_Desempates(19, 3) = " ": Matriz_Desempates(19, 4) = " ": Matriz_Desempates(19, 5) = " "
+    Matriz_Desempates(20, 1) = "rating average of the opponents (without one result)": Matriz_Desempates(20, 2) = " ": Matriz_Desempates(20, 3) = " ": Matriz_Desempates(20, 4) = " ": Matriz_Desempates(20, 5) = " "
+    Matriz_Desempates(21, 1) = "rating performance": Matriz_Desempates(21, 2) = " ": Matriz_Desempates(21, 3) = " ": Matriz_Desempates(21, 4) = " ": Matriz_Desempates(21, 5) = " "
+    Matriz_Desempates(22, 1) = "Buchholz Tie-Breaks (sum of team-points of the opponents)": Matriz_Desempates(22, 2) = " ": Matriz_Desempates(22, 3) = " ": Matriz_Desempates(22, 4) = " ": Matriz_Desempates(22, 5) = "N"
+    Matriz_Desempates(23, 1) = "Sum of the ratings of the opponents (whithout one result)": Matriz_Desempates(23, 2) = "N": Matriz_Desempates(23, 3) = " ": Matriz_Desempates(23, 4) = " ": Matriz_Desempates(23, 5) = " "
+    Matriz_Desempates(24, 1) = "The BSV-Board-Tie-Break": Matriz_Desempates(24, 2) = " ": Matriz_Desempates(24, 3) = "N": Matriz_Desempates(24, 4) = "N": Matriz_Desempates(24, 5) = "N"
+    Matriz_Desempates(25, 1) = "Sum of Buchholz-Tie-Breaks (all Results)": Matriz_Desempates(25, 2) = "N": Matriz_Desempates(25, 3) = " ": Matriz_Desempates(25, 4) = " ": Matriz_Desempates(25, 5) = " "
+    Matriz_Desempates(26, 1) = "For imported tournaments (Tie-break 1)": Matriz_Desempates(26, 2) = " ": Matriz_Desempates(26, 3) = " ": Matriz_Desempates(26, 4) = " ": Matriz_Desempates(26, 5) = " "
+    Matriz_Desempates(27, 1) = "For imported tournaments (Tie-break 2)": Matriz_Desempates(27, 2) = " ": Matriz_Desempates(27, 3) = " ": Matriz_Desempates(27, 4) = " ": Matriz_Desempates(27, 5) = " "
+    Matriz_Desempates(28, 1) = "Buchholz-Tie-Breaks (all Results (special))": Matriz_Desempates(28, 2) = " ": Matriz_Desempates(28, 3) = " ": Matriz_Desempates(28, 4) = " ": Matriz_Desempates(28, 5) = " "
+    Matriz_Desempates(29, 1) = "Buchholz-Tie-Breaks (without two results=middle Tie-Breaks (special))": Matriz_Desempates(29, 2) = " ": Matriz_Desempates(29, 3) = " ": Matriz_Desempates(29, 4) = " ": Matriz_Desempates(29, 5) = " "
+    Matriz_Desempates(30, 1) = "Buchholz-Tie-Breaks (all Results with real points)": Matriz_Desempates(30, 2) = " ": Matriz_Desempates(30, 3) = " ": Matriz_Desempates(30, 4) = " ": Matriz_Desempates(30, 5) = " "
+    Matriz_Desempates(31, 1) = "Buchholz-Tie-Breaks (without two results with real points)": Matriz_Desempates(31, 2) = " ": Matriz_Desempates(31, 3) = " ": Matriz_Desempates(31, 4) = " ": Matriz_Desempates(31, 5) = " "
+    Matriz_Desempates(32, 1) = "For imported tournaments (Tie-break 1)": Matriz_Desempates(32, 2) = " ": Matriz_Desempates(32, 3) = " ": Matriz_Desempates(32, 4) = " ": Matriz_Desempates(32, 5) = " "
+    Matriz_Desempates(33, 1) = "Fide Tie-Break (no points for dropped players)": Matriz_Desempates(33, 2) = " ": Matriz_Desempates(33, 3) = " ": Matriz_Desempates(33, 4) = " ": Matriz_Desempates(33, 5) = " "
+    Matriz_Desempates(34, 1) = "Buchholz-Tie-Breaks (without two results=middle Tie-Breaks)": Matriz_Desempates(34, 2) = " ": Matriz_Desempates(34, 3) = " ": Matriz_Desempates(34, 4) = " ": Matriz_Desempates(34, 5) = "N"
+    Matriz_Desempates(35, 1) = "FIDE-Sonneborn-Berger-Tie-Break": Matriz_Desempates(35, 2) = " ": Matriz_Desempates(35, 3) = "N": Matriz_Desempates(35, 4) = "N": Matriz_Desempates(35, 5) = "N"
+    Matriz_Desempates(36, 1) = "rating average of the opponents (variabel with parameter)": Matriz_Desempates(36, 2) = "S": Matriz_Desempates(36, 3) = " ": Matriz_Desempates(36, 4) = " ": Matriz_Desempates(36, 5) = " "
+    Matriz_Desempates(37, 1) = "Buchholz Tie-Breaks (variabel with parameter)": Matriz_Desempates(37, 2) = "S": Matriz_Desempates(37, 3) = " ": Matriz_Desempates(37, 4) = " ": Matriz_Desempates(37, 5) = "S"
+    Matriz_Desempates(38, 1) = "Points (game-points) + 1 point for each won match.": Matriz_Desempates(38, 2) = " ": Matriz_Desempates(38, 3) = "N": Matriz_Desempates(38, 4) = "N": Matriz_Desempates(38, 5) = "N"
+    Matriz_Desempates(39, 1) = "points (3 for wins, 2 for Draws, 1 for Losses, 0 for Losses forfeit)": Matriz_Desempates(39, 2) = " ": Matriz_Desempates(39, 3) = "N": Matriz_Desempates(39, 4) = "N": Matriz_Desempates(39, 5) = " "
+    Matriz_Desempates(40, 1) = "Matchpoints (3 for wins, 1 for Draws, 0 for Losses)": Matriz_Desempates(40, 2) = " ": Matriz_Desempates(40, 3) = "N": Matriz_Desempates(40, 4) = "N": Matriz_Desempates(40, 5) = "N"
+    Matriz_Desempates(41, 1) = "The better result (½ or 1) against the rating-strongest player": Matriz_Desempates(41, 2) = " ": Matriz_Desempates(41, 3) = " ": Matriz_Desempates(41, 4) = " ": Matriz_Desempates(41, 5) = " "
+    Matriz_Desempates(42, 1) = "Points (Game-points + Qualifying-points)": Matriz_Desempates(42, 2) = "N": Matriz_Desempates(42, 3) = "N": Matriz_Desempates(42, 4) = "N": Matriz_Desempates(42, 5) = "N"
+    Matriz_Desempates(43, 1) = "Play-off Points": Matriz_Desempates(43, 2) = "N": Matriz_Desempates(43, 3) = " ": Matriz_Desempates(43, 4) = " ": Matriz_Desempates(43, 5) = " "
+    Matriz_Desempates(44, 1) = "Matchpoints (variabel)": Matriz_Desempates(44, 2) = "S": Matriz_Desempates(44, 3) = "S": Matriz_Desempates(44, 4) = "S": Matriz_Desempates(44, 5) = "S"
+    Matriz_Desempates(45, 1) = "Koya  Koya-System (Points against player with >= 50% of the points)": Matriz_Desempates(45, 2) = " ": Matriz_Desempates(45, 3) = " ": Matriz_Desempates(45, 4) = " ": Matriz_Desempates(45, 5) = " "
+    Matriz_Desempates(46, 1) = "Points (game-points) + Matchpoints (3 for wins, 1 for Draws, 0 for Losses)": Matriz_Desempates(46, 2) = " ": Matriz_Desempates(46, 3) = "N": Matriz_Desempates(46, 4) = "N": Matriz_Desempates(46, 5) = "N"
+    Matriz_Desempates(47, 1) = "Points (variabel)": Matriz_Desempates(47, 2) = " ": Matriz_Desempates(47, 3) = "S": Matriz_Desempates(47, 4) = "S": Matriz_Desempates(47, 5) = "S"
+    Matriz_Desempates(48, 1) = "Sum of Matchpoints (variabel)": Matriz_Desempates(48, 2) = " ": Matriz_Desempates(48, 3) = " ": Matriz_Desempates(48, 4) = " ": Matriz_Desempates(48, 5) = "S"
+    Matriz_Desempates(49, 1) = "Olympiad Matchpoints (2,1,0) (without lowest result)": Matriz_Desempates(49, 2) = " ": Matriz_Desempates(49, 3) = " ": Matriz_Desempates(49, 4) = " ": Matriz_Desempates(49, 5) = " "
+    Matriz_Desempates(50, 1) = "Olympiad-Sonneborn-Berger-Tie-Break": Matriz_Desempates(50, 2) = " ": Matriz_Desempates(50, 3) = " ": Matriz_Desempates(50, 4) = " ": Matriz_Desempates(50, 5) = " "
+    Matriz_Desempates(51, 1) = "For internal tests": Matriz_Desempates(51, 2) = " ": Matriz_Desempates(51, 3) = " ": Matriz_Desempates(51, 4) = " ": Matriz_Desempates(51, 5) = " "
+    Matriz_Desempates(52, 1) = "Sonneborn-Berger-Tie-Break(variabel) ": Matriz_Desempates(52, 2) = "S": Matriz_Desempates(52, 3) = " ": Matriz_Desempates(52, 4) = " ": Matriz_Desempates(52, 5) = " "
+    Matriz_Desempates(53, 1) = "Most black": Matriz_Desempates(53, 2) = "N": Matriz_Desempates(53, 3) = " ": Matriz_Desempates(53, 4) = " ": Matriz_Desempates(53, 5) = " "
+    Matriz_Desempates(54, 1) = "Recursive Ratingperformance": Matriz_Desempates(54, 2) = "S": Matriz_Desempates(54, 3) = "S": Matriz_Desempates(54, 4) = " ": Matriz_Desempates(54, 5) = " "
+    Matriz_Desempates(55, 1) = "Average Recursive Performance of Opponents": Matriz_Desempates(55, 2) = "S": Matriz_Desempates(55, 3) = "S": Matriz_Desempates(55, 4) = " ": Matriz_Desempates(55, 5) = " "
+    Matriz_Desempates(56, 1) = "Olympiad Khanty Mansysk Matchpoints (2,1,0) (without lowest result)": Matriz_Desempates(56, 2) = " ": Matriz_Desempates(56, 3) = " ": Matriz_Desempates(56, 4) = " ": Matriz_Desempates(56, 5) = "N"
+    Matriz_Desempates(57, 1) = "Olympiad Khanty Mansysk-Sonneborn-Berger-Tie-Break": Matriz_Desempates(57, 2) = " ": Matriz_Desempates(57, 3) = " ": Matriz_Desempates(57, 4) = " ": Matriz_Desempates(57, 5) = "N"
+    Matriz_Desempates(58, 1) = "Rtg Sum (without lowest rtg) or Progressive Score (especially for the Youth WCC 2011)": Matriz_Desempates(58, 2) = "N": Matriz_Desempates(58, 3) = " ": Matriz_Desempates(58, 4) = " ": Matriz_Desempates(58, 5) = " "
+    Matriz_Desempates(59, 1) = "Rating Performance without two results (EM 2011) especially for the Single-EM 2011 in France": Matriz_Desempates(59, 2) = "N": Matriz_Desempates(59, 3) = " ": Matriz_Desempates(59, 4) = " ": Matriz_Desempates(59, 5) = " "
+    Matriz_Desempates(60, 1) = "Performance (variable with parameter)": Matriz_Desempates(60, 2) = "S": Matriz_Desempates(60, 3) = "S": Matriz_Desempates(60, 4) = " ": Matriz_Desempates(60, 5) = " "
+    Matriz_Desempates(61, 1) = "Arranz System (Win:1 / Draw:0.6 black, 0.4 white / Lost:0)": Matriz_Desempates(61, 2) = "N": Matriz_Desempates(61, 3) = " ": Matriz_Desempates(61, 4) = " ": Matriz_Desempates(61, 5) = " "
+    
+    'MsgBox (Matriz_Desempates(37, 1))
+    
+End Sub
+
+Private Sub Montar_Matriz_Resultados(Resultados() As String)
+    
+        Resultados(0) = "   x   "
+        Resultados(1) = " 1 x 0 "
+        Resultados(2) = " ½ x ½ "
+        Resultados(3) = " 0 x 1 "
+        Resultados(4) = " + x - "
+        Resultados(5) = " - x + "
+        Resultados(6) = " - x - "
+        Resultados(7) = " A x A "
+        Resultados(8) = " ? x ? "
+        Resultados(9) = " ? x ? "
+        Resultados(10) = " 0 x 0 "
+        Resultados(11) = " 0 x ½ "
+        Resultados(12) = " ½ x 0 "
+        Resultados(13) = " 1   13"  ' *** Levy ***
+        Resultados(14) = " ½   14"  ' *** Levy ***
+        Resultados(15) = " 0   15"  ' *** Levy ***
+    
+End Sub

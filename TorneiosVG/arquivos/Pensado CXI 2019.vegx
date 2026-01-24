@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Tournament>
+	<Name>Torneio de Xadrez Pensado 2019</Name><HostFederation>BRA</HostFederation><Place>Itajaí</Place><Date Begin="03/08/2019" End="02/09/2019"/><Schedule>60+30$03/08/2019,60+30$12/08/2019,60+30$26/08/2019,60+30$09/09/2019,60+30$23/09/2019,60+30$07/10/2019</Schedule><Arbiters Chief="AA Gilnei Guedes Ribeiro" Deputy="AA João Alberto Gonçalves"/><PlaySystem>
+		<RateMove>60 minutes + 30 seconds per move</RateMove><PairingSystem>10</PairingSystem><RRorder></RRorder><RoundsNumber>6</RoundsNumber><ScoreSystem Win="3" Draw="1" Loss="0" PAB="0"/>
+	</PlaySystem><InitialRanking>3</InitialRanking><TieBreakers>
+		<TieBreak>  Buc1  </TieBreak><TieBreak>  BucM  </TieBreak><TieBreak>  BucT  </TieBreak><TieBreak>  Mwns  </TieBreak><TieBreak>  MBlk  </TieBreak>
+	</TieBreakers><AssignedBoards></AssignedBoards><CurrentRound>6</CurrentRound><CompletedRounds>6</CompletedRounds><ProgramVersion>Vega 8.2.0</ProgramVersion><Parameters>
+		<RegistrationClosed>TRUE</RegistrationClosed><UseAdjustedScore>TRUE</UseAdjustedScore><NoTieBreakByeDraw>FALSE</NoTieBreakByeDraw><VesusID>0</VesusID><ServerFolder></ServerFolder><StartBoard>1</StartBoard><AcceleratedRounds>
+			<AcceleratedSystem>0</AcceleratedSystem><IsSetAcceleration>FALSE</IsSetAcceleration><NumberAcceleratedRounds>0</NumberAcceleratedRounds><Baku_GA>0</Baku_GA><IdLimit High="0" Low="0"/><DecreasedAcceleration>FALSE</DecreasedAcceleration><PointsGroup Top="0" Middle="0" Bottom="0"/>
+		</AcceleratedRounds>
+	</Parameters><Players>
+		<Player>
+			<Name>Morgado Leandro Batista</Name><Federation>BRA</Federation><Origin>CXI</Origin><Info></Info><Birthday>1977</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>22753990</ID_FIDE><RatingFIDE>1888</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Dias Henrique Jose Harms</Name><Federation>BRA</Federation><Origin>CXI</Origin><Info></Info><Birthday>1967</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>22742433</ID_FIDE><RatingFIDE>1628</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>01111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Leffeck Mateus Bernal</Name><Federation>BRA</Federation><Origin>CXI</Origin><Info></Info><Birthday>2003</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>22710620</ID_FIDE><RatingFIDE>1620</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>01111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Bernardes Roberto Carlos Strutt</Name><Federation>BRA</Federation><Origin>CXI</Origin><Info></Info><Birthday>1965</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>2177609</ID_FIDE><RatingFIDE>1591</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>01111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Da Costa Michael David</Name><Federation>BRA</Federation><Origin>Penha</Origin><Info></Info><Birthday>1982</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>22762027</ID_FIDE><RatingFIDE>1588</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Sato Alberto Akio</Name><Federation>BRA</Federation><Origin>CXI</Origin><Info></Info><Birthday>1964</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>2147181</ID_FIDE><RatingFIDE>1551</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Niehues Luiz Cesar</Name><Federation>BRA</Federation><Origin>CXI</Origin><Info></Info><Birthday>1952</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>2170329</ID_FIDE><RatingFIDE>1537</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Ribeiro Gilnei Guedes</Name><Federation>BRA</Federation><Origin>CXI</Origin><Info></Info><Birthday>1962</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>2165368</ID_FIDE><RatingFIDE>1430</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Lima da Silva Christian Ghabrie</Name><Federation>BRA</Federation><Origin>CXI</Origin><Info></Info><Birthday>2003</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>22739432</ID_FIDE><RatingFIDE>1318</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Colla Luciano Leandro</Name><Federation>BRA</Federation><Origin>BC</Origin><Info></Info><Birthday>1975</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>22706976</ID_FIDE><RatingFIDE>1275</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>0</Status><StatusHistory>11100001111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Da Costa Mariana Nara Santana</Name><Federation>BRA</Federation><Origin>Penha</Origin><Info></Info><Birthday>0000</Birthday><Gender>f</Gender><Title></Title><ID_FIDE>0</ID_FIDE><RatingFIDE>0</RatingFIDE><KcoeffFIDE>0</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Dos Santos Guilherme Felipe</Name><Federation>BRA</Federation><Origin>CXC</Origin><Info></Info><Birthday>1982</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>0</ID_FIDE><RatingFIDE>0</RatingFIDE><KcoeffFIDE>0</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>0</Status><StatusHistory>11100001111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Mazzetto Henrique Albuquerque</Name><Federation>BRA</Federation><Origin>CXI</Origin><Info></Info><Birthday>2002</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>0</ID_FIDE><RatingFIDE>0</RatingFIDE><KcoeffFIDE>0</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Mrozinski Tayson Antônio Schast</Name><Federation>BRA</Federation><Origin>CXI</Origin><Info></Info><Birthday>2005</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>0</ID_FIDE><RatingFIDE>0</RatingFIDE><KcoeffFIDE>0</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Lozano Joao Pedro Damasceno</Name><Federation>BRA</Federation><Origin></Origin><Info></Info><Birthday>2004</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>0</ID_FIDE><RatingFIDE>0</RatingFIDE><KcoeffFIDE>0</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>01111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Barbosa Julia</Name><Federation>BRA</Federation><Origin></Origin><Info></Info><Birthday>2004</Birthday><Gender>f</Gender><Title></Title><ID_FIDE>22752374</ID_FIDE><RatingFIDE>1328</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>01111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Oliveira Vinicius Carvalho de</Name><Federation>BRA</Federation><Origin></Origin><Info></Info><Birthday>2004</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>0</ID_FIDE><RatingFIDE>0</RatingFIDE><KcoeffFIDE>0</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>01111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Kuriyama Kenji</Name><Federation>BRA</Federation><Origin></Origin><Info></Info><Birthday>2004</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>0</ID_FIDE><RatingFIDE>0</RatingFIDE><KcoeffFIDE>0</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>01111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Leão Artur Ferreira</Name><Federation>BRA</Federation><Origin></Origin><Info></Info><Birthday>2006</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>0</ID_FIDE><RatingFIDE>0</RatingFIDE><KcoeffFIDE>0</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>01111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Soares Gustavo Henrique</Name><Federation>BRA</Federation><Origin></Origin><Info></Info><Birthday>2004</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>22739521</ID_FIDE><RatingFIDE>1787</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>01111111111111111111111111</StatusHistory>
+		</Player>
+	</Players><Rounds>
+		<Pairing>
+			<Pair Board="1" White="1" Black="9" Result="10" Type="1"/><Pair Board="2" White="10" Black="5" Result="01" Type="1"/><Pair Board="3" White="6" Black="11" Result="10" Type="1"/><Pair Board="4" White="13" Black="7" Result="01" Type="1"/><Pair Board="5" White="8" Black="14" Result="10" Type="1"/><Pair Board="6" White="2" Black="3" Result="10" Type="1"/><Pair Board="7" White="4" Black="12" Result="10" Type="0"/><Pair Board="8" White="16" Black="17" Result="22" Type="1"/><Pair Board="9" White="15" Black="18" Result="00" Type="0"/><Pair Board="10" White="19" Black="20" Result="01" Type="1"/>
+		</Pairing><Pairing>
+			<Pair Board="1" White="7" Black="1" Result="01" Type="1"/><Pair Board="2" White="20" Black="2" Result="10" Type="1"/><Pair Board="3" White="4" Black="6" Result="10" Type="1"/><Pair Board="4" White="5" Black="8" Result="01" Type="1"/><Pair Board="5" White="3" Black="16" Result="10" Type="1"/><Pair Board="6" White="17" Black="10" Result="10" Type="0"/><Pair Board="7" White="9" Black="15" Result="10" Type="1"/><Pair Board="8" White="11" Black="18" Result="10" Type="1"/><Pair Board="9" White="12" Black="19" Result="01" Type="0"/><Pair Board="10" White="14" Black="13" Result="22" Type="1"/>
+		</Pairing><Pairing>
+			<Pair Board="1" White="1" Black="20" Result="01" Type="1"/><Pair Board="2" White="8" Black="4" Result="10" Type="1"/><Pair Board="3" White="17" Black="5" Result="01" Type="1"/><Pair Board="4" White="2" Black="7" Result="01" Type="1"/><Pair Board="5" White="9" Black="3" Result="01" Type="1"/><Pair Board="6" White="6" Black="19" Result="10" Type="1"/><Pair Board="7" White="13" Black="11" Result="10" Type="1"/><Pair Board="8" White="16" Black="14" Result="10" Type="1"/><Pair Board="9" White="15" Black="18" Result="10" Type="1"/><Pair Board="10" White="10" Black="0" Result="00" Type="4"/><Pair Board="11" White="12" Black="0" Result="00" Type="4"/>
+		</Pairing><Pairing>
+			<Pair Board="1" White="20" Black="8" Result="10" Type="1"/><Pair Board="2" White="5" Black="1" Result="22" Type="1"/><Pair Board="3" White="3" Black="6" Result="10" Type="1"/><Pair Board="4" White="7" Black="4" Result="10" Type="1"/><Pair Board="5" White="17" Black="13" Result="10" Type="1"/><Pair Board="6" White="11" Black="16" Result="10" Type="1"/><Pair Board="7" White="15" Black="2" Result="01" Type="1"/><Pair Board="8" White="19" Black="9" Result="01" Type="1"/><Pair Board="9" White="18" Black="14" Result="10" Type="1"/><Pair Board="10" White="10" Black="0" Result="00" Type="4"/><Pair Board="11" White="12" Black="0" Result="00" Type="4"/>
+		</Pairing><Pairing>
+			<Pair Board="1" White="3" Black="20" Result="01" Type="1"/><Pair Board="2" White="8" Black="7" Result="01" Type="1"/><Pair Board="3" White="1" Black="17" Result="10" Type="1"/><Pair Board="4" White="2" Black="5" Result="10" Type="1"/><Pair Board="5" White="4" Black="11" Result="10" Type="1"/><Pair Board="6" White="6" Black="9" Result="22" Type="1"/><Pair Board="7" White="13" Black="16" Result="10" Type="1"/><Pair Board="8" White="18" Black="19" Result="10" Type="1"/><Pair Board="9" White="14" Black="15" Result="01" Type="1"/><Pair Board="10" White="10" Black="0" Result="00" Type="4"/><Pair Board="11" White="12" Black="0" Result="00" Type="4"/>
+		</Pairing><Pairing>
+			<Pair Board="1" White="20" Black="7" Result="22" Type="1"/><Pair Board="2" White="4" Black="1" Result="01" Type="1"/><Pair Board="3" White="8" Black="2" Result="01" Type="1"/><Pair Board="4" White="5" Black="3" Result="01" Type="1"/><Pair Board="5" White="17" Black="6" Result="10" Type="1"/><Pair Board="6" White="9" Black="13" Result="01" Type="1"/><Pair Board="7" White="11" Black="15" Result="10" Type="0"/><Pair Board="8" White="16" Black="18" Result="10" Type="0"/><Pair Board="9" White="14" Black="19" Result="10" Type="1"/><Pair Board="10" White="10" Black="0" Result="00" Type="4"/><Pair Board="11" White="12" Black="0" Result="00" Type="4"/>
+		</Pairing>
+	</Rounds>
+</Tournament>

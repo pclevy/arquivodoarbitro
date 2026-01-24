@@ -1,0 +1,78 @@
+10° Memorial Raffaele Punzi
+ Cross Table at round 7 sorted by score
+
+Pos NAME                 Rtg   T  Fed  Pts |   1     2     3     4     5     6     7    |  BucT     S-B    APRO  
+-----------------------------------------------------------------------------------------------------------------
+  1 Laketic Gojko        2427  IM SRB  6.0 | +W42  +B24  +W6   =B13  +B2   +W4   =B7    |   33.5   28.50  2073.1 
+  2 Carnicelli Valerio   2323  FM ITA  5.5 | +W40  +B22  +W17  +B9   -W1   +B13  =W6    |   33.0   24.25  2040.0 
+  3 Gromovs Sergejs      2230  FM ITA  5.5 | +B47  +W28  +B8   =W5   -B4   +W16  +B13   |   32.0   23.75  1943.6 
+  4 Auletta Angelo       2175     ITA  5.5 | +W26  +B58  +W21  =B10  +W3   -B1   +B8    |   31.5   23.00  2013.1 
+  5 Sabia Corrado        2216     ITA  5.5 | +W44  +B11  +W18  =B3   -W13  +B21  +W15   |   30.5   23.25  1940.3 
+  6 Carnicelli Flavio    2019     ITA  5.5 | +W52  +B27  -B1   +W43  +B32  +W10  =B2    |   29.5   20.75  1911.0 
+  7 Messina Enrico       2184     ITA  5.5 | -B34  +W66  +W39  +B58  +W17  +B22  =W1    |   24.5   18.00  1768.4 
+  8 Buonanno Raffaele    1947  FM ITA  5.0 | +W48  +B30  -W3   +B29  +W11  +B9   -W4    |   31.5   20.50  1847.0 
+  9 Fezza Davide         2028     ITA  5.0 | +B35  +W37  +B36  -W2   +B14  -W8   +B24   |   29.5   19.00  1862.6 
+ 10 Stromboli Ettore     2415  FM ITA  5.0 | +B45  +W54  =B14  =W4   +B24  -B6   +W21   |   29.0   18.50  1939.6 
+ 11 Attanasio Aniello    1781     ITA  5.0 | +B63  -W5   +B46  +W36  -B8   +W41  +B23   |   26.0   15.50  1742.4 
+ 12 Riso Giuseppe        1567     ITA  5.0 | -B23  -W51  +B60  +W59  +B43  +B27  +W25   |   21.5   15.00  1593.1 
+ 13 Martorelli Antonio   2152  IM ITA  4.5 | +B46  +W43  +B32  =W1   +B5   -W2   -W3    |   32.0   18.00  1997.1 
+ 14 Paduano Claudio      1961  CM ITA  4.5 | +W31  +B38  =W10  +B16  -W9   -B15  +W40   |   29.5   18.00  1850.3 
+ 15 Molza Giuseppe       1725     ITA  4.5 | =W55  +BYE  -B16  +B33  +W37  +W14  -B5    |   27.0   15.75  1783.0 
+ 16 Vitale Michele       1898     ITA  4.5 | +W69  =B39  +W15  -W14  +B35  -B3   +W38   |   27.0   15.25  1825.3 
+ 17 Felace Luca          1933     ITA  4.5 | +B66  +W34  -B2   +W30  -B7   =W32  +B35   |   26.5   13.75  1784.9 
+ 18 Adinolfi Massimo     1879     ITA  4.5 | +B68  +W41  -B5   -W32  +B34  =W40  +B33   |   23.0   12.25  1683.4 
+ 19 Rizzo Gianluca       1999     ITA  4.5 | -B41  +W69  +B45  -W21  +B44  =W38  +B32   |   22.5   13.75  1804.2 
+ 20 De Rosa Mariagrazia  2008 WFM ITA  4.5 | =BYE  -BYE  -W33  +B55  +W53  +B52  +W22   |   22.5   11.50  1630.8 
+ 21 Lombardi Michele     1769     ITA  4.0 | +B51  +W23  -B4   +B19  +W25  -W5   -B10   |   31.0   15.00  1876.0 
+ 22 Gambardella Piero    1826     ITA  4.0 | +B60  -W2   +B34  +W26  +B23  -W7   -B20   |   29.5   13.50  1831.0 
+ 23 Puglisi Vincenzo     2031     ITA  4.0 | +W12  -B21  +W42  +B27  -W22  +B29  -W11   |   29.0   16.00  1826.6 
+ 24 Abbes Rached         1853     ITA  4.0 | +W53  -W1   +B47  +B44  -W10  +B26  -W9    |   28.5   12.50  1862.9 
+ 25 Di Leva Michele      1950     ITA  4.0 | +B56  -W32  +B40  +W38  -B21  +W42  -B12   |   25.0   12.50  1779.6 
+ 26 Maiellaro Gabriele   1575     ITA  4.0 | -B4   +W70  +B28  -B22  +W58  -W24  +B43   |   25.0   11.50  1819.7 
+ 27 Martorelli Vincenzo  1753     ITA  4.0 | +B65  -W6   +B41  -W23  +B46  -W12  +B45   |   25.0   10.50  1722.1 
+ 28 Festa Giovanni       1776     ITA  4.0 | +W67  -B3   -W26  -B31  +W50  +B46  +B42   |   23.0    9.50  1626.1 
+ 29 Paduano Gennaro      1720     ITA  4.0 | -B36  +W68  +B59  -W8   +B31  -W23  +B41   |   22.0    9.50  1587.6 
+ 30 Fucito Giovanni      1730     ITA  4.0 | +B59  -W8   +B61  -B17  -W41  +W60  +B44   |   21.5    9.00  1656.1 
+ 31 Gambardella Pierluig 1456     ITA  4.0 | -B14  -W59  +B63  +W28  -W29  +B58  +W54   |   21.0   10.50  1572.0 
+ 32 Adinolfi Enrico      1694     ITA  3.5 | +W57  +B25  -W13  +B18  -W6   =B17  -W19   |   30.0   13.25  1834.6 
+ 33 Rizzo Guido          1414     ITA  3.5 | -B37  =W35  +B20  -W15  +B47  +B39  -W18   |   27.0   13.25  1669.1 
+ 34 Santoro Emanuele     1587     ITA  3.5 | +W7   -B17  -W22  +B49  -W18  =B54  +W53   |   26.0   11.75  1736.9 
+ 35 La Greca Marco       1548     ITA  3.5 | -W9   =B33  +W55  +B57  -W16  +B37  -W17   |   26.0   10.25  1707.4 
+ 36 Cecere Juri          1334     ITA  3.5 | +W29  +B55  -W9   -B11  -W42  =B47  +W52   |   25.0   10.50  1671.0 
+ 37 Scola Enrico         1760     ITA  3.5 | +W33  -B9   =W57  +B39  -B15  -W35  +B51   |   24.5   10.75  1681.1 
+ 38 Sarno Luca           1744     ITA  3.5 | +W64  -W14  +B51  -B25  +W62  =B19  -B16   |   24.5    9.25  1642.4 
+ 39 Trotta Nicola        1680     ITA  3.5 | +B61  =W16  -B7   -W37  +B51  -W33  +W56   |   24.0    9.25  1653.3 
+ 40 Lamberti Valerio     1646     ITA  3.5 | -B2   +W60  -W25  +B66  +W48  =B18  -B14   |   24.0    7.75  1674.3 
+ 41 Ruggiero Armando     1467  NC ITA  3.0 | +W19  -B18  -W27  +W54  +B30  -B11  -W29   |   28.5   11.00  1686.7 
+ 42 Vitiello Giovanni    1676     ITA  3.0 | -B1   +W53  -B23  +W56  +B36  -B25  -W28   |   26.5    8.50  1734.0 
+ 43 Fammiano Giacomo     1774     ITA  3.0 | +W49  -B13  +W52  -B6   -W12  +B62  -W26   |   26.5    7.50  1778.1 
+ 44 Giannattasio Vincenz 1596     ITA  3.0 | -B5   +W63  +B54  -W24  -W19  +B48  -W30   |   25.0    7.00  1653.7 
+ 45 Santucci Antonio     1655     ITA  3.0 | -W10  +B50  -W19  -B48  +W49  +B59  -W27   |   23.5    7.50  1623.0 
+ 46 Gravina Pasquale     1574     ITA  3.0 | -W13  +B49  -W11  +B65  -W27  -W28  +B61   |   23.5    6.00  1652.1 
+ 47 Marino Francesco     1610     ITA  3.0 | -W3   +B67  -W24  =B53  -W33  =W36  +B60   |   21.5    5.50  1601.9 
+ 48 Mazzeo Francesco     1441     ITA  3.0 | -B8   -W61  +BYE  +W45  -B40  -W44  +W59   |   20.5    7.00  1662.8 
+ 49 Zurlo Massimiliano   1440     ITA  3.0 | -B43  -W46  +BYE  -W34  -B45  +W66  +B58   |   17.5    5.00  1573.3 
+ 50 Ricciardelli Davide  1440     ITA  3.0 | -B54  -W45  -B56  +W63  -B28  +W67  +W62   |   17.0    5.00  1393.1 
+ 51 Maresca Carmine      1421     ITA  2.5 | -W21  +B12  -W38  =B52  -W39  +B65  -W37   |   23.5    7.75  1654.6 
+ 52 Maresca Ermanno Mari 1483     ITA  2.5 | -B6   +W65  -B43  =W51  +B57  -W20  -B36   |   23.5    5.25  1638.7 
+ 53 Macrini Giovanni     1440     ITA  2.5 | -B24  -B42  +W64  =W47  -B20  +W57  -B34   |   23.0    6.00  1640.4 
+ 54 Auletta Pasquale     1793     ITA  2.5 | +W50  -B10  -W44  -B41  +B67  =W34  -B31   |   22.0    5.25  1623.1 
+ 55 Falanga Andrea       1341     ITA  2.5 | =B15  -W36  -B35  -W20  +W68  -B56  +W65   |   20.5    4.00  1473.7 
+ 56 Di Francesco Mario   1442     ITA  2.5 | -W25  -B57  +W50  -B42  =W65  +W55  -B39   |   20.0    6.25  1528.4 
+ 57 Sorgente Christian   1258     ITA  2.5 | -B32  +W56  =B37  -W35  -W52  -B53  +B66   |   19.0    5.25  1555.3 
+ 58 Santoro Antonio      1775     ITA  2.0 | +B70  -W4   +B62  -W7   -B26  -W31  -W49   |   26.5    5.00  1799.2 
+ 59 D'amore Luca         1356  NC ITA  2.0 | -W30  +B31  -W29  -B12  +W66  -W45  -B48   |   23.5    5.00  1592.0 
+ 60 Minniti Davide       1440     ITA  2.0 | -W22  -B40  -W12  +B64  +W61  -B30  -W47   |   23.5    4.00  1626.1 
+ 61 Maresca Antonia Mari 1040     ITA  2.0 | -W39  +B48  -W30  -B62  -B60  +W63  -W46   |   19.5    4.50  1464.7 
+ 62 Donadio Giacinto     1477     ITA  2.0 |  --   +B64  -W58  +W61  -B38  -W43  -B50   |   19.5    4.00  1518.3 
+ 63 Ricciardelli Marco   1440     ITA  2.0 | -W11  -B44  -W31  -B50  +W64  -B61  +B68   |   19.5    2.50  1473.4 
+ 64 Baldan Sergio        1399     ITA  2.0 | -B38  -W62  -B53  -W60  -B63  +W68  +B67   |   13.5    1.00  1263.4 
+ 65 Paduano Vincenzo     1407     ITA  1.5 | -W27  -B52  +B68  -W46  =B56  -W51  -B55   |   17.5    1.75  1420.7 
+ 66 Casola Dario         1440     ITA  1.0 | -W17  -B7   +W67  -W40  -B59  -B49  -W57   |   21.0    0.50  1549.6 
+ 67 Ricciardelli Vincenz 1440     ITA  1.0 | -B28  -W47  -B66  +BYE  -W54  -B50  -W64   |   17.0    1.50  1483.7 
+ 68 Ferraiuolo Emanuele  1440     ITA  0.0 | -W18  -B29  -W65  -BYE  -B55  -B64  -W63   |   19.0    0.00  1451.3 
+ 69 Cucciniello Nicol(W) 1440     ITA  0.0 | -B16  -B19  -BYE   --    --    --    --    |   19.0    0.00     0.0 
+ 70 Russo Raffaele   (W) 1440     ITA  0.0 | -W58  -B26  -BYE   --    --    --    --    |   16.0    0.00     0.0 
+
+Generated by Vega - www.vegachess.com
+(This copy cannot be used for tournament with more than 30 players)

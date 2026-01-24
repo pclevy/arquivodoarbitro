@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+		<div style="width:1000;border:1px solid #22FFAA">
+			<img src='Imagem_Padrao_1000x30.gif'>
+			<br>
+			<script language='javascript' type='text/javascript'>
+
+				var employees=[]
+				employees[0]={name:"George", age:32, retiredate:"March 12, 2014"}
+				employees[1]={name:"Edward", age:17, retiredate:"June 2, 2023"}
+				employees[2]={name:"Christine", age:58, retiredate:"December 20, 2036"}
+				employees[3]={name:"Sarah", age:62, retiredate:"April 30, 2020"}
+
+				person=new Array();			
+				person[1]=new Object();			
+				person[1].firstname="John";
+				person[1].lastname="Doe";
+				person[1].age=30;
+				person[1].eyecolor="blue";
+				document.write(person[1].firstname + ' ' + person[1].lastname + ', ' + person[1].age + ', ' + person[1].eyecolor + '<br><br><br>');
+
+				</script>
+
+				<script language='javascript' type='text/javascript'>
+				//alert(person.firstname + ' - ' + person.age);
+				//alert(employees[2].name + ' - ' + employees[2].age);
+				
+				document.write(employees[0].name + ' - ' + employees[0].age + ' - ' + employees[0].retiredate + '<br>');
+				document.write(employees[1].name + ' - ' + employees[1].age + ' - ' + employees[1].retiredate + '<br>');
+				document.write(employees[2].name + ' - ' + employees[2].age + ' - ' + employees[2].retiredate + '<br>');
+				document.write(employees[3].name + ' - ' + employees[3].age + ' - ' + employees[3].retiredate + '<br><br>');
+				
+				employees.sort(function(a, b)
+					{
+						return a.age-b.age
+					}
+				)
+				document.write(employees[0].name + ' - ' + employees[0].age + ' - ' + employees[0].retiredate + '<br>');
+				document.write(employees[1].name + ' - ' + employees[1].age + ' - ' + employees[1].retiredate + '<br>');
+				document.write(employees[2].name + ' - ' + employees[2].age + ' - ' + employees[2].retiredate + '<br>');
+				document.write(employees[3].name + ' - ' + employees[3].age + ' - ' + employees[3].retiredate + '<br><br>');
+				
+				employees.sort(function(a, b)
+					{
+						var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase()
+						if (nameA < nameB) //sort string ascending
+							return -1
+						if (nameA > nameB)
+							return 1
+						return 0 //default return value (no sorting)
+					}
+				)
+				document.write(employees[0].name + ' - ' + employees[0].age + ' - ' + employees[0].retiredate + '<br>');
+				document.write(employees[1].name + ' - ' + employees[1].age + ' - ' + employees[1].retiredate + '<br>');
+				document.write(employees[2].name + ' - ' + employees[2].age + ' - ' + employees[2].retiredate + '<br>');
+				document.write(employees[3].name + ' - ' + employees[3].age + ' - ' + employees[3].retiredate + '<br><br>');
+				
+				employees.sort(function(a, b)
+					{
+						var dateA=new Date(a.retiredate), dateB=new Date(b.retiredate)
+						return dateA-dateB //sort by date ascending
+					}
+				)
+				document.write(employees[0].name + ' - ' + employees[0].age + ' - ' + employees[0].retiredate + '<br>');
+				document.write(employees[1].name + ' - ' + employees[1].age + ' - ' + employees[1].retiredate + '<br>');
+				document.write(employees[2].name + ' - ' + employees[2].age + ' - ' + employees[2].retiredate + '<br>');
+				document.write(employees[3].name + ' - ' + employees[3].age + ' - ' + employees[3].retiredate + '<br><br>');
+				
+			</script>
+	</div>
+		</body>
+</html>

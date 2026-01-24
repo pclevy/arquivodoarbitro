@@ -1,0 +1,20 @@
+Buchholz Cut 1
+Buchholz Total
+Buchholz Median
+Sonneborn-Berger
+Cumulative
+Average Rat. Opp.
+Koya
+Most Wins
+Av. Perf. Rat. Opp.
+Av. Perf. Rat. Opp. Cut 1
+Most Paired
+Direct Encounter
+Arranz system
+Standard Score (0-1/2-1)
+Buchholz Cut 2
+Most Blacks
+Torino system
+User Tie-Break
+
+

@@ -1,0 +1,10 @@
+01) 2100916 Eduardo Arruda	2360 BRA 224
+02) 2106485 Vinicius Vilela	2258 BRA 9508
+03) 2124475 Daniel Rangel	2316 BRA 25926
+04) 0107727 Benjamin Mela	2339 ARG
+05) 0108634 lucas liascovich	2476 ARG
+06) 2100207 Eduardo Limp	2368 BRA 2062
+07) 0103411 Saldano	2474 ESP
+08) 2100940 Wagner Peixoto	2240 BRA 1843
+09) 2128217 Guilherme Vilela Rezende 2101 BRA 7890
+10) 3000524 Martim Crosa	2332 URU

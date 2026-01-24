@@ -1,0 +1,1190 @@
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+   1  IM Laketic Gojko       , K= 0, Rtg=2427, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   36     Vitiello Giovanni    1676  400  0.92  1.0  1.0   3.0
+ 2   B  20     Abbes Rached         1853  400  0.92  1.0  2.0   4.0
+ 3  W   11     Carnicelli Flavio    2019  400  0.92  1.0  3.0   5.5
+ 4   B   8 IM  Martorelli Antonio   2152  275  0.83  0.5  3.5   4.5
+ 5   B   3 FM  Carnicelli Valerio   2323  104  0.64  1.0  4.5   5.5
+ 6  W    7     Auletta Angelo       2175  252  0.81  1.0  5.5   5.5
+ 7   B   6     Messina Enrico       2184  243  0.80  0.5  6.0   5.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 2364,          ARO=2055,      5.84  6.0 25.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+   2  FM Stromboli Ettore    , K= 0, Rtg=2415, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  37     Santucci Antonio     1655  400  0.92  1.0  1.0   3.0
+ 2  W   22     Auletta Pasquale     1793  400  0.92  1.0  2.0   2.5
+ 3   B  14 CM  Paduano Claudio      1961  400  0.92  0.5  2.5   4.5
+ 4  W    7     Auletta Angelo       2175  240  0.80  0.5  3.0   5.5
+ 5   B  20     Abbes Rached         1853  400  0.92  1.0  4.0   4.0
+ 6   B  11     Carnicelli Flavio    2019  396  0.92  0.0  4.0   5.5
+ 7  W   27     Lombardi Michele     1769  400  0.92  1.0  5.0   4.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 2047,          ARO=1889,      6.32  5.0 21.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+   3  FM Carnicelli Valerio  , K= 0, Rtg=2323, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   38     Lamberti Valerio     1646  400  0.92  1.0  1.0   3.5
+ 2   B  21     Gambardella Piero    1826  400  0.92  1.0  2.0   4.0
+ 3  W   17     Felace Luca          1933  390  0.91  1.0  3.0   4.5
+ 4   B  10     Fezza Davide         2028  295  0.85  1.0  4.0   5.0
+ 5  W    1 IM  Laketic Gojko        2427  104  0.36  0.0  4.0   6.0
+ 6   B   8 IM  Martorelli Antonio   2152  171  0.73  1.0  5.0   4.5
+ 7  W   11     Carnicelli Flavio    2019  304  0.86  0.5  5.5   5.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 2234,          ARO=2004,      5.55  5.5 24.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+   4  FM Gromovs Sergejs     , K= 0, Rtg=2230, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  39     Marino Francesco     1610  400  0.92  1.0  1.0   3.0
+ 2  W   24     Festa Giovanni       1776  400  0.92  1.0  2.0   4.0
+ 3   B  16 FM  Buonanno Raffaele    1947  283  0.84  1.0  3.0   5.0
+ 4  W    5     Sabia Corrado        2216   14  0.52  0.5  3.5   5.5
+ 5   B   7     Auletta Angelo       2175   55  0.58  0.0  3.5   5.5
+ 6  W   18     Vitale Michele       1898  332  0.88  1.0  4.5   4.5
+ 7   B   8 IM  Martorelli Antonio   2152   78  0.61  1.0  5.5   4.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 2198,          ARO=1968,      5.27  5.5 23.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+   5   Sabia Corrado       , K= 0, Rtg=2216, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   40     Giannattasio Vincenz 1596  400  0.92  1.0  1.0   3.0
+ 2   B  23     Attanasio Aniello    1781  400  0.92  1.0  2.0   5.0
+ 3  W   19     Adinolfi Massimo     1879  337  0.88  1.0  3.0   4.5
+ 4   B   4 FM  Gromovs Sergejs      2230   14  0.48  0.5  3.5   5.5
+ 5  W    8 IM  Martorelli Antonio   2152   64  0.59  0.0  3.5   4.5
+ 6   B  27     Lombardi Michele     1769  400  0.92  1.0  4.5   4.0
+ 7  W   32     Molza Giuseppe       1725  400  0.92  1.0  5.5   4.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 2106,          ARO=1876,      5.63  5.5 23.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+   6   Messina Enrico      , K= 0, Rtg=2184, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  41     Santoro Emanuele     1587  400  0.92  0.0  0.0   3.5
+ 2  W   52     Casola Dario         1440  400  0.92  1.0  1.0   1.0
+ 3  W   35     Trotta Nicola        1680  400  0.92  1.0  2.0   3.5
+ 4   B  25     Santoro Antonio      1775  400  0.92  1.0  3.0   2.0
+ 5  W   17     Felace Luca          1933  251  0.81  1.0  4.0   4.5
+ 6   B  21     Gambardella Piero    1826  358  0.90  1.0  5.0   4.0
+ 7  W    1 IM  Laketic Gojko        2427  243  0.20  0.5  5.5   6.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 2040,          ARO=1810,      5.59  5.5 20.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+   7   Auletta Angelo      , K= 0, Rtg=2175, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   42     Maiellaro Gabriele   1575  400  0.92  1.0  1.0   4.0
+ 2   B  25     Santoro Antonio      1775  400  0.92  1.0  2.0   2.0
+ 3  W   27     Lombardi Michele     1769  400  0.92  1.0  3.0   4.0
+ 4   B   2 FM  Stromboli Ettore     2415  240  0.20  0.5  3.5   5.0
+ 5  W    4 FM  Gromovs Sergejs      2230   55  0.42  1.0  4.5   5.5
+ 6   B   1 IM  Laketic Gojko        2427  252  0.19  0.0  4.5   6.0
+ 7   B  16 FM  Buonanno Raffaele    1947  228  0.79  1.0  5.5   5.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 2250,          ARO=2020,      4.36  5.5 24.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+   8  IM Martorelli Antonio  , K= 0, Rtg=2152, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  43     Gravina Pasquale     1574  400  0.92  1.0  1.0   3.0
+ 2  W   26     Fammiano Giacomo     1774  378  0.91  1.0  2.0   3.0
+ 3   B  34     Adinolfi Enrico      1694  400  0.92  1.0  3.0   3.5
+ 4  W    1 IM  Laketic Gojko        2427  275  0.17  0.5  3.5   6.0
+ 5   B   5     Sabia Corrado        2216   64  0.41  1.0  4.5   5.5
+ 6  W    3 FM  Carnicelli Valerio   2323  171  0.27  0.0  4.5   5.5
+ 7  W    4 FM  Gromovs Sergejs      2230   78  0.39  0.0  4.5   5.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 2136,          ARO=2034,      3.99  4.5 23.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+   9   Puglisi Vincenzo    , K= 0, Rtg=2031, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   44     Riso Giuseppe        1567  400  0.92  1.0  1.0   5.0
+ 2   B  27     Lombardi Michele     1769  262  0.82  0.0  1.0   4.0
+ 3  W   36     Vitiello Giovanni    1676  355  0.89  1.0  2.0   3.0
+ 4   B  29     Martorelli Vincenzo  1753  278  0.83  1.0  3.0   4.0
+ 5  W   21     Gambardella Piero    1826  205  0.76  0.0  3.0   4.0
+ 6   B  33     Paduano Gennaro      1720  311  0.86  1.0  4.0   4.0
+ 7  W   23     Attanasio Aniello    1781  250  0.81  0.0  4.0   5.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1777,          ARO=1727,      5.89  4.0 18.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  10   Fezza Davide        , K= 0, Rtg=2028, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  45     La Greca Marco       1548  400  0.92  1.0  1.0   3.5
+ 2  W   28     Scola Enrico         1760  268  0.83  1.0  2.0   3.5
+ 3   B  68     Cecere Juri          1334  400  0.92  1.0  3.0   3.5
+ 4  W    3 FM  Carnicelli Valerio   2323  295  0.15  0.0  3.0   5.5
+ 5   B  14 CM  Paduano Claudio      1961   67  0.59  1.0  4.0   4.5
+ 6  W   16 FM  Buonanno Raffaele    1947   81  0.61  0.0  4.0   5.0
+ 7   B  20     Abbes Rached         1853  175  0.73  1.0  5.0   4.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1976,          ARO=1818,      4.75  5.0 22.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  11   Carnicelli Flavio   , K= 0, Rtg=2019, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   46     Maresca Ermanno Mari 1483  400  0.92  1.0  1.0   2.5
+ 2   B  29     Martorelli Vincenzo  1753  266  0.82  1.0  2.0   4.0
+ 3   B   1 IM  Laketic Gojko        2427  400  0.08  0.0  2.0   6.0
+ 4  W   26     Fammiano Giacomo     1774  245  0.80  1.0  3.0   3.0
+ 5   B  34     Adinolfi Enrico      1694  325  0.87  1.0  4.0   3.5
+ 6  W    2 FM  Stromboli Ettore     2415  396  0.08  1.0  5.0   5.0
+ 7   B   3 FM  Carnicelli Valerio   2323  304  0.14  0.5  5.5   5.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 2211,          ARO=1981,      3.71  5.5 22.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  12  WFM De Rosa Mariagrazia , K= 0, Rtg=2008, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  --   0     not played           65535   -     -   0.5  0.5   0.0
+ 2  --   0     not played           65535   -     -   0.0  0.5   0.0
+ 3  W   63     Rizzo Guido          1414  400  0.92  0.0  0.5   3.5
+ 4   B  67     Falanga Andrea       1341  400  0.92  1.0  1.5   2.5
+ 5  W   55     Macrini Giovanni     1440  400  0.92  1.0  2.5   2.5
+ 6   B  46     Maresca Ermanno Mari 1483  400  0.92  1.0  3.5   2.5
+ 7  W   21     Gambardella Piero    1826  182  0.74  1.0  4.5   4.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1741,          ARO=1501,      4.42  4.5 13.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  13   Rizzo Gianluca      , K= 0, Rtg=1999, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  48 NC  Ruggiero Armando     1467  400  0.92  0.0  0.0   3.0
+ 2  W   53     Cucciniello Nicola   1440  400  0.92  1.0  1.0   0.0
+ 3   B  37     Santucci Antonio     1655  344  0.88  1.0  2.0   3.0
+ 4  W   27     Lombardi Michele     1769  230  0.79  0.0  2.0   4.0
+ 5   B  40     Giannattasio Vincenz 1596  400  0.92  1.0  3.0   3.0
+ 6  W   30     Sarno Luca           1744  255  0.81  0.5  3.5   3.5
+ 7   B  34     Adinolfi Enrico      1694  305  0.86  1.0  4.5   3.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1726,          ARO=1624,      6.10  4.5 16.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  14  CM Paduano Claudio     , K= 0, Rtg=1961, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   49     Gambardella Pierluig 1456  400  0.92  1.0  1.0   4.0
+ 2   B  30     Sarno Luca           1744  217  0.78  1.0  2.0   3.5
+ 3  W    2 FM  Stromboli Ettore     2415  400  0.08  0.5  2.5   5.0
+ 4   B  18     Vitale Michele       1898   63  0.59  1.0  3.5   4.5
+ 5  W   10     Fezza Davide         2028   67  0.41  0.0  3.5   5.0
+ 6   B  32     Molza Giuseppe       1725  236  0.80  0.0  3.5   4.5
+ 7  W   38     Lamberti Valerio     1646  315  0.86  1.0  4.5   3.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1947,          ARO=1845,      4.44  4.5 20.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  15   Di Leva Michele     , K= 0, Rtg=1950, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  50     Di Francesco Mario   1442  400  0.92  1.0  1.0   2.5
+ 2  W   34     Adinolfi Enrico      1694  256  0.81  0.0  1.0   3.5
+ 3   B  38     Lamberti Valerio     1646  304  0.86  1.0  2.0   3.5
+ 4  W   30     Sarno Luca           1744  206  0.76  1.0  3.0   3.5
+ 5   B  27     Lombardi Michele     1769  181  0.74  0.0  3.0   4.0
+ 6  W   36     Vitiello Giovanni    1676  274  0.83  1.0  4.0   3.0
+ 7   B  44     Riso Giuseppe        1567  383  0.91  0.0  4.0   5.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1698,          ARO=1648,      5.83  4.0 18.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  16  FM Buonanno Raffaele   , K= 0, Rtg=1947, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   51     Mazzeo Francesco     1441  400  0.92  1.0  1.0   3.0
+ 2   B  31     Fucito Giovanni      1730  217  0.78  1.0  2.0   4.0
+ 3  W    4 FM  Gromovs Sergejs      2230  283  0.16  0.0  2.0   5.5
+ 4   B  33     Paduano Gennaro      1720  227  0.79  1.0  3.0   4.0
+ 5  W   23     Attanasio Aniello    1781  166  0.72  1.0  4.0   5.0
+ 6   B  10     Fezza Davide         2028   81  0.39  1.0  5.0   5.0
+ 7  W    7     Auletta Angelo       2175  228  0.21  0.0  5.0   5.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 2030,          ARO=1872,      3.97  5.0 22.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  17   Felace Luca         , K= 0, Rtg=1933, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  52     Casola Dario         1440  400  0.92  1.0  1.0   1.0
+ 2  W   41     Santoro Emanuele     1587  346  0.89  1.0  2.0   3.5
+ 3   B   3 FM  Carnicelli Valerio   2323  390  0.09  0.0  2.0   5.5
+ 4  W   31     Fucito Giovanni      1730  203  0.76  1.0  3.0   4.0
+ 5   B   6     Messina Enrico       2184  251  0.19  0.0  3.0   5.5
+ 6  W   34     Adinolfi Enrico      1694  239  0.80  0.5  3.5   3.5
+ 7   B  45     La Greca Marco       1548  385  0.91  1.0  4.5   3.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1889,          ARO=1787,      4.56  4.5 19.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  18   Vitale Michele      , K= 0, Rtg=1898, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   53     Cucciniello Nicola   1440  400  0.92  1.0  1.0   0.0
+ 2   B  35     Trotta Nicola        1680  218  0.78  0.5  1.5   3.5
+ 3  W   32     Molza Giuseppe       1725  173  0.73  1.0  2.5   4.5
+ 4  W   14 CM  Paduano Claudio      1961   63  0.41  0.0  2.5   4.5
+ 5   B  45     La Greca Marco       1548  350  0.89  1.0  3.5   3.5
+ 6   B   4 FM  Gromovs Sergejs      2230  332  0.12  0.0  3.5   5.5
+ 7  W   30     Sarno Luca           1744  154  0.71  1.0  4.5   3.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1863,          ARO=1761,      4.56  4.5 19.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  19   Adinolfi Massimo    , K= 0, Rtg=1879, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  54     Ferraiuolo Emanuele  1440  400  0.92  1.0  1.0   0.0
+ 2  W   48 NC  Ruggiero Armando     1467  400  0.92  1.0  2.0   3.0
+ 3   B   5     Sabia Corrado        2216  337  0.12  0.0  2.0   5.5
+ 4  W   34     Adinolfi Enrico      1694  185  0.74  0.0  2.0   3.5
+ 5   B  41     Santoro Emanuele     1587  292  0.85  1.0  3.0   3.5
+ 6  W   38     Lamberti Valerio     1646  233  0.79  0.5  3.5   3.5
+ 7   B  63     Rizzo Guido          1414  400  0.92  1.0  4.5   3.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1740,          ARO=1638,      5.26  4.5 18.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  20   Abbes Rached        , K= 0, Rtg=1853, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   55     Macrini Giovanni     1440  400  0.92  1.0  1.0   2.5
+ 2  W    1 IM  Laketic Gojko        2427  400  0.08  0.0  1.0   6.0
+ 3   B  39     Marino Francesco     1610  243  0.80  1.0  2.0   3.0
+ 4   B  40     Giannattasio Vincenz 1596  257  0.82  1.0  3.0   3.0
+ 5  W    2 FM  Stromboli Ettore     2415  400  0.08  0.0  3.0   5.0
+ 6   B  42     Maiellaro Gabriele   1575  278  0.83  1.0  4.0   4.0
+ 7  W   10     Fezza Davide         2028  175  0.27  0.0  4.0   5.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1920,          ARO=1870,      3.80  4.0 18.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  21   Gambardella Piero   , K= 0, Rtg=1826, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  56     Minniti Davide       1440  386  0.91  1.0  1.0   2.0
+ 2  W    3 FM  Carnicelli Valerio   2323  400  0.08  0.0  1.0   5.5
+ 3   B  41     Santoro Emanuele     1587  239  0.80  1.0  2.0   3.5
+ 4  W   42     Maiellaro Gabriele   1575  251  0.81  1.0  3.0   4.0
+ 5   B   9     Puglisi Vincenzo     2031  205  0.24  1.0  4.0   4.0
+ 6  W    6     Messina Enrico       2184  358  0.10  0.0  4.0   5.5
+ 7   B  12 WFM De Rosa Mariagrazia  2008  182  0.26  0.0  4.0   4.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1928,          ARO=1878,      3.20  4.0 19.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  22   Auletta Pasquale    , K= 0, Rtg=1793, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   57     Ricciardelli Davide  1440  353  0.89  1.0  1.0   3.0
+ 2   B   2 FM  Stromboli Ettore     2415  400  0.08  0.0  1.0   5.0
+ 3  W   40     Giannattasio Vincenz 1596  197  0.75  0.0  1.0   3.0
+ 4   B  48 NC  Ruggiero Armando     1467  326  0.87  0.0  1.0   3.0
+ 5   B  59     Ricciardelli Vincenz 1440  353  0.89  1.0  2.0   1.0
+ 6  W   41     Santoro Emanuele     1587  206  0.76  0.5  2.5   3.5
+ 7   B  49     Gambardella Pierluig 1456  337  0.88  0.0  2.5   4.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1527,          ARO=1629,      5.12  2.5 11.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  23   Attanasio Aniello   , K= 0, Rtg=1781, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  58     Ricciardelli Marco   1440  341  0.88  1.0  1.0   2.0
+ 2  W    5     Sabia Corrado        2216  400  0.08  0.0  1.0   5.5
+ 3   B  43     Gravina Pasquale     1574  207  0.77  1.0  2.0   3.0
+ 4  W   68     Cecere Juri          1334  400  0.92  1.0  3.0   3.5
+ 5   B  16 FM  Buonanno Raffaele    1947  166  0.28  0.0  3.0   5.0
+ 6  W   48 NC  Ruggiero Armando     1467  314  0.86  1.0  4.0   3.0
+ 7   B   9     Puglisi Vincenzo     2031  250  0.19  1.0  5.0   4.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1874,          ARO=1716,      3.98  5.0 19.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  24   Festa Giovanni      , K= 0, Rtg=1776, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   59     Ricciardelli Vincenz 1440  336  0.88  1.0  1.0   1.0
+ 2   B   4 FM  Gromovs Sergejs      2230  400  0.08  0.0  1.0   5.5
+ 3  W   42     Maiellaro Gabriele   1575  201  0.76  0.0  1.0   4.0
+ 4   B  49     Gambardella Pierluig 1456  320  0.87  0.0  1.0   4.0
+ 5  W   57     Ricciardelli Davide  1440  336  0.88  1.0  2.0   3.0
+ 6   B  43     Gravina Pasquale     1574  202  0.76  1.0  3.0   3.0
+ 7   B  36     Vitiello Giovanni    1676  100  0.64  1.0  4.0   3.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1677,          ARO=1627,      4.87  4.0 13.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  25   Santoro Antonio     , K= 0, Rtg=1775, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  60     Russo Raffaele       1440  335  0.88  1.0  1.0   0.0
+ 2  W    7     Auletta Angelo       2175  400  0.08  0.0  1.0   5.5
+ 3   B  47     Donadio Giacinto     1477  298  0.85  1.0  2.0   2.0
+ 4  W    6     Messina Enrico       2184  400  0.08  0.0  2.0   5.5
+ 5   B  42     Maiellaro Gabriele   1575  200  0.76  0.0  2.0   4.0
+ 6  W   49     Gambardella Pierluig 1456  319  0.87  0.0  2.0   4.0
+ 7  W   61     Zurlo Massimiliano   1440  335  0.88  0.0  2.0   3.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1520,          ARO=1678,      4.40  2.0 12.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  26   Fammiano Giacomo    , K= 0, Rtg=1774, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   61     Zurlo Massimiliano   1440  334  0.88  1.0  1.0   3.0
+ 2   B   8 IM  Martorelli Antonio   2152  378  0.09  0.0  1.0   4.5
+ 3  W   46     Maresca Ermanno Mari 1483  291  0.85  1.0  2.0   2.5
+ 4   B  11     Carnicelli Flavio    2019  245  0.20  0.0  2.0   5.5
+ 5  W   44     Riso Giuseppe        1567  207  0.77  0.0  2.0   5.0
+ 6   B  47     Donadio Giacinto     1477  297  0.85  1.0  3.0   2.0
+ 7  W   42     Maiellaro Gabriele   1575  199  0.76  0.0  3.0   4.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1623,          ARO=1673,      4.40  3.0 14.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  27   Lombardi Michele    , K= 0, Rtg=1769, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  62     Maresca Carmine      1421  348  0.89  1.0  1.0   2.5
+ 2  W    9     Puglisi Vincenzo     2031  262  0.18  1.0  2.0   4.0
+ 3   B   7     Auletta Angelo       2175  400  0.08  0.0  2.0   5.5
+ 4   B  13     Rizzo Gianluca       1999  230  0.21  1.0  3.0   4.5
+ 5  W   15     Di Leva Michele      1950  181  0.26  1.0  4.0   4.0
+ 6  W    5     Sabia Corrado        2216  400  0.08  0.0  4.0   5.5
+ 7   B   2 FM  Stromboli Ettore     2415  400  0.08  0.0  4.0   5.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 2080,          ARO=2030,      1.78  4.0 20.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  28   Scola Enrico        , K= 0, Rtg=1760, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   63     Rizzo Guido          1414  346  0.89  1.0  1.0   3.5
+ 2   B  10     Fezza Davide         2028  268  0.17  0.0  1.0   5.0
+ 3  W   69     Sorgente Christian   1258  400  0.92  0.5  1.5   2.5
+ 4   B  35     Trotta Nicola        1680   80  0.61  1.0  2.5   3.5
+ 5   B  32     Molza Giuseppe       1725   35  0.55  0.0  2.5   4.5
+ 6  W   45     La Greca Marco       1548  212  0.77  0.0  2.5   3.5
+ 7   B  62     Maresca Carmine      1421  339  0.88  1.0  3.5   2.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1582,          ARO=1582,      4.79  3.5 14.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  29   Martorelli Vincenzo , K= 0, Rtg=1753, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  64     Paduano Vincenzo     1407  346  0.89  1.0  1.0   1.5
+ 2  W   11     Carnicelli Flavio    2019  266  0.18  0.0  1.0   5.5
+ 3   B  48 NC  Ruggiero Armando     1467  286  0.84  1.0  2.0   3.0
+ 4  W    9     Puglisi Vincenzo     2031  278  0.17  0.0  2.0   4.0
+ 5   B  43     Gravina Pasquale     1574  179  0.73  1.0  3.0   3.0
+ 6  W   44     Riso Giuseppe        1567  186  0.74  0.0  3.0   5.0
+ 7   B  37     Santucci Antonio     1655   98  0.63  1.0  4.0   3.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1724,          ARO=1674,      4.18  4.0 16.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  30   Sarno Luca          , K= 0, Rtg=1744, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   65     Baldan Sergio        1399  345  0.89  1.0  1.0   2.0
+ 2  W   14 CM  Paduano Claudio      1961  217  0.22  0.0  1.0   4.5
+ 3   B  62     Maresca Carmine      1421  323  0.87  1.0  2.0   2.5
+ 4   B  15     Di Leva Michele      1950  206  0.24  0.0  2.0   4.0
+ 5  W   47     Donadio Giacinto     1477  267  0.82  1.0  3.0   2.0
+ 6   B  13     Rizzo Gianluca       1999  255  0.19  0.5  3.5   4.5
+ 7   B  18     Vitale Michele       1898  154  0.29  0.0  3.5   4.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1729,          ARO=1729,      3.52  3.5 16.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  31   Fucito Giovanni     , K= 0, Rtg=1730, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  66 NC  D'amore Luca         1356  374  0.90  1.0  1.0   2.0
+ 2  W   16 FM  Buonanno Raffaele    1947  217  0.22  0.0  1.0   5.0
+ 3   B  70     Maresca Antonia Mari 1040  400  0.92  1.0  2.0   2.0
+ 4   B  17     Felace Luca          1933  203  0.24  0.0  2.0   4.5
+ 5  W   48 NC  Ruggiero Armando     1467  263  0.82  0.0  2.0   3.0
+ 6  W   56     Minniti Davide       1440  290  0.84  1.0  3.0   2.0
+ 7   B  40     Giannattasio Vincenz 1596  134  0.68  1.0  4.0   3.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1590,          ARO=1540,      4.62  4.0 15.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  32   Molza Giuseppe      , K= 0, Rtg=1725, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   67     Falanga Andrea       1341  384  0.91  0.5  0.5   2.5
+ 2  --   0     not played           65535   -     -   1.0  1.5   0.0
+ 3   B  18     Vitale Michele       1898  173  0.27  0.0  1.5   4.5
+ 4   B  63     Rizzo Guido          1414  311  0.86  1.0  2.5   3.5
+ 5  W   28     Scola Enrico         1760   35  0.45  1.0  3.5   3.5
+ 6  W   14 CM  Paduano Claudio      1961  236  0.20  1.0  4.5   4.5
+ 7   B   5     Sabia Corrado        2216  400  0.08  0.0  4.5   5.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1822,          ARO=1765,      2.77  4.5 18.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  33   Paduano Gennaro     , K= 0, Rtg=1720, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  68     Cecere Juri          1334  386  0.91  0.0  0.0   3.5
+ 2  W   54     Ferraiuolo Emanuele  1440  280  0.84  1.0  1.0   0.0
+ 3   B  66 NC  D'amore Luca         1356  364  0.90  1.0  2.0   2.0
+ 4  W   16 FM  Buonanno Raffaele    1947  227  0.21  0.0  2.0   5.0
+ 5   B  49     Gambardella Pierluig 1456  264  0.82  1.0  3.0   4.0
+ 6  W    9     Puglisi Vincenzo     2031  311  0.14  0.0  3.0   4.0
+ 7   B  48 NC  Ruggiero Armando     1467  253  0.81  1.0  4.0   3.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1626,          ARO=1576,      4.63  4.0 15.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  34   Adinolfi Enrico     , K= 0, Rtg=1694, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   69     Sorgente Christian   1258  400  0.92  1.0  1.0   2.5
+ 2   B  15     Di Leva Michele      1950  256  0.19  1.0  2.0   4.0
+ 3  W    8 IM  Martorelli Antonio   2152  400  0.08  0.0  2.0   4.5
+ 4   B  19     Adinolfi Massimo     1879  185  0.26  1.0  3.0   4.5
+ 5  W   11     Carnicelli Flavio    2019  325  0.13  0.0  3.0   5.5
+ 6   B  17     Felace Luca          1933  239  0.20  0.5  3.5   4.5
+ 7  W   13     Rizzo Gianluca       1999  305  0.14  0.0  3.5   4.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1884,          ARO=1884,      1.92  3.5 18.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  35   Trotta Nicola       , K= 0, Rtg=1680, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  70     Maresca Antonia Mari 1040  400  0.92  1.0  1.0   2.0
+ 2  W   18     Vitale Michele       1898  218  0.22  0.5  1.5   4.5
+ 3   B   6     Messina Enrico       2184  400  0.08  0.0  1.5   5.5
+ 4  W   28     Scola Enrico         1760   80  0.39  0.0  1.5   3.5
+ 5   B  62     Maresca Carmine      1421  259  0.82  1.0  2.5   2.5
+ 6  W   63     Rizzo Guido          1414  266  0.82  0.0  2.5   3.5
+ 7  W   50     Di Francesco Mario   1442  238  0.80  1.0  3.5   2.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1594,          ARO=1594,      4.05  3.5 14.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  36   Vitiello Giovanni   , K= 0, Rtg=1676, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B   1 IM  Laketic Gojko        2427  400  0.08  0.0  0.0   6.0
+ 2  W   55     Macrini Giovanni     1440  236  0.80  1.0  1.0   2.5
+ 3   B   9     Puglisi Vincenzo     2031  355  0.11  0.0  1.0   4.0
+ 4  W   50     Di Francesco Mario   1442  234  0.79  1.0  2.0   2.5
+ 5   B  68     Cecere Juri          1334  342  0.88  1.0  3.0   3.5
+ 6   B  15     Di Leva Michele      1950  274  0.17  0.0  3.0   4.0
+ 7  W   24     Festa Giovanni       1776  100  0.36  0.0  3.0   4.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1721,          ARO=1771,      3.19  3.0 13.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  37   Santucci Antonio    , K= 0, Rtg=1655, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W    2 FM  Stromboli Ettore     2415  400  0.08  0.0  0.0   5.0
+ 2   B  57     Ricciardelli Davide  1440  215  0.77  1.0  1.0   3.0
+ 3  W   13     Rizzo Gianluca       1999  344  0.12  0.0  1.0   4.5
+ 4   B  51     Mazzeo Francesco     1441  214  0.77  0.0  1.0   3.0
+ 5  W   61     Zurlo Massimiliano   1440  215  0.77  1.0  2.0   3.0
+ 6   B  66 NC  D'amore Luca         1356  299  0.85  1.0  3.0   2.0
+ 7  W   29     Martorelli Vincenzo  1753   98  0.37  0.0  3.0   4.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1642,          ARO=1692,      3.73  3.0 11.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  38   Lamberti Valerio    , K= 0, Rtg=1646, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B   3 FM  Carnicelli Valerio   2323  400  0.08  0.0  0.0   5.5
+ 2  W   56     Minniti Davide       1440  206  0.76  1.0  1.0   2.0
+ 3  W   15     Di Leva Michele      1950  304  0.14  0.0  1.0   4.0
+ 4   B  52     Casola Dario         1440  206  0.76  1.0  2.0   1.0
+ 5  W   51     Mazzeo Francesco     1441  205  0.76  1.0  3.0   3.0
+ 6   B  19     Adinolfi Massimo     1879  233  0.21  0.5  3.5   4.5
+ 7   B  14 CM  Paduano Claudio      1961  315  0.14  0.0  3.5   4.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1776,          ARO=1776,      2.85  3.5 14.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  39   Marino Francesco    , K= 0, Rtg=1610, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W    4 FM  Gromovs Sergejs      2230  400  0.08  0.0  0.0   5.5
+ 2   B  59     Ricciardelli Vincenz 1440  170  0.72  1.0  1.0   1.0
+ 3  W   20     Abbes Rached         1853  243  0.20  0.0  1.0   4.0
+ 4   B  55     Macrini Giovanni     1440  170  0.72  0.5  1.5   2.5
+ 5  W   63     Rizzo Guido          1414  196  0.75  0.0  1.5   3.5
+ 6  W   68     Cecere Juri          1334  276  0.83  0.5  2.0   3.5
+ 7   B  56     Minniti Davide       1440  170  0.72  1.0  3.0   2.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1543,          ARO=1593,      4.02  3.0 10.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  40   Giannattasio Vincenz, K= 0, Rtg=1596, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B   5     Sabia Corrado        2216  400  0.08  0.0  0.0   5.5
+ 2  W   58     Ricciardelli Marco   1440  156  0.71  1.0  1.0   2.0
+ 3   B  22     Auletta Pasquale     1793  197  0.25  1.0  2.0   2.5
+ 4  W   20     Abbes Rached         1853  257  0.18  0.0  2.0   4.0
+ 5  W   13     Rizzo Gianluca       1999  400  0.08  0.0  2.0   4.5
+ 6   B  51     Mazzeo Francesco     1441  155  0.71  1.0  3.0   3.0
+ 7  W   31     Fucito Giovanni      1730  134  0.32  0.0  3.0   4.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1732,          ARO=1782,      2.33  3.0 13.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  41   Santoro Emanuele    , K= 0, Rtg=1587, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W    6     Messina Enrico       2184  400  0.08  1.0  1.0   5.5
+ 2   B  17     Felace Luca          1933  346  0.11  0.0  1.0   4.5
+ 3  W   21     Gambardella Piero    1826  239  0.20  0.0  1.0   4.0
+ 4   B  61     Zurlo Massimiliano   1440  147  0.70  1.0  2.0   3.0
+ 5  W   19     Adinolfi Massimo     1879  292  0.15  0.0  2.0   4.5
+ 6   B  22     Auletta Pasquale     1793  206  0.24  0.5  2.5   2.5
+ 7  W   55     Macrini Giovanni     1440  147  0.70  1.0  3.5   2.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1785,          ARO=1785,      2.18  3.5 13.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  42   Maiellaro Gabriele  , K= 0, Rtg=1575, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B   7     Auletta Angelo       2175  400  0.08  0.0  0.0   5.5
+ 2  W   60     Russo Raffaele       1440  135  0.68  1.0  1.0   0.0
+ 3   B  24     Festa Giovanni       1776  201  0.24  1.0  2.0   4.0
+ 4   B  21     Gambardella Piero    1826  251  0.19  0.0  2.0   4.0
+ 5  W   25     Santoro Antonio      1775  200  0.24  1.0  3.0   2.0
+ 6  W   20     Abbes Rached         1853  278  0.17  0.0  3.0   4.0
+ 7   B  26     Fammiano Giacomo     1774  199  0.24  1.0  4.0   3.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1853,          ARO=1803,      1.84  4.0 15.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  43   Gravina Pasquale    , K= 0, Rtg=1574, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W    8 IM  Martorelli Antonio   2152  400  0.08  0.0  0.0   4.5
+ 2   B  61     Zurlo Massimiliano   1440  134  0.68  1.0  1.0   3.0
+ 3  W   23     Attanasio Aniello    1781  207  0.23  0.0  1.0   5.0
+ 4   B  64     Paduano Vincenzo     1407  167  0.72  1.0  2.0   1.5
+ 5  W   29     Martorelli Vincenzo  1753  179  0.27  0.0  2.0   4.0
+ 6  W   24     Festa Giovanni       1776  202  0.24  0.0  2.0   4.0
+ 7   B  70     Maresca Antonia Mari 1040  400  0.92  1.0  3.0   2.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1571,          ARO=1621,      3.14  3.0 11.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  44   Riso Giuseppe       , K= 0, Rtg=1567, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B   9     Puglisi Vincenzo     2031  400  0.08  0.0  0.0   4.0
+ 2  W   62     Maresca Carmine      1421  146  0.70  0.0  0.0   2.5
+ 3   B  56     Minniti Davide       1440  127  0.67  1.0  1.0   2.0
+ 4  W   66 NC  D'amore Luca         1356  211  0.77  1.0  2.0   2.0
+ 5   B  26     Fammiano Giacomo     1774  207  0.23  1.0  3.0   3.0
+ 6   B  29     Martorelli Vincenzo  1753  186  0.26  1.0  4.0   4.0
+ 7  W   15     Di Leva Michele      1950  383  0.09  1.0  5.0   4.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1833,          ARO=1675,      2.80  5.0 15.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  45   La Greca Marco      , K= 0, Rtg=1548, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   10     Fezza Davide         2028  400  0.08  0.0  0.0   5.0
+ 2   B  63     Rizzo Guido          1414  134  0.68  0.5  0.5   3.5
+ 3  W   67     Falanga Andrea       1341  207  0.77  1.0  1.5   2.5
+ 4   B  69     Sorgente Christian   1258  290  0.84  1.0  2.5   2.5
+ 5  W   18     Vitale Michele       1898  350  0.11  0.0  2.5   4.5
+ 6   B  28     Scola Enrico         1760  212  0.23  1.0  3.5   3.5
+ 7  W   17     Felace Luca          1933  385  0.09  0.0  3.5   4.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1662,          ARO=1662,      2.80  3.5 14.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  46   Maresca Ermanno Mari, K= 0, Rtg=1483, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  11     Carnicelli Flavio    2019  400  0.08  0.0  0.0   5.5
+ 2  W   64     Paduano Vincenzo     1407   76  0.60  1.0  1.0   1.5
+ 3   B  26     Fammiano Giacomo     1774  291  0.15  0.0  1.0   3.0
+ 4  W   62     Maresca Carmine      1421   62  0.59  0.5  1.5   2.5
+ 5   B  69     Sorgente Christian   1258  225  0.78  1.0  2.5   2.5
+ 6  W   12 WFM De Rosa Mariagrazia  2008  400  0.08  0.0  2.5   4.5
+ 7   B  68     Cecere Juri          1334  149  0.70  0.0  2.5   3.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1501,          ARO=1603,      2.98  2.5 11.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  47   Donadio Giacinto    , K= 0, Rtg=1477, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  --   0     not played           65535   -     -   0.0  0.0   0.0
+ 2   B  65     Baldan Sergio        1399   78  0.61  1.0  1.0   2.0
+ 3  W   25     Santoro Antonio      1775  298  0.15  0.0  1.0   2.0
+ 4  W   70     Maresca Antonia Mari 1040  400  0.92  1.0  2.0   2.0
+ 5   B  30     Sarno Luca           1744  267  0.18  0.0  2.0   3.5
+ 6  W   26     Fammiano Giacomo     1774  297  0.15  0.0  2.0   3.0
+ 7   B  57     Ricciardelli Davide  1440   37  0.55  0.0  2.0   3.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1404,          ARO=1529,      2.56  2.0 10.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  48  NC Ruggiero Armando    , K=30, Rtg=1467, N=173988
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   13     Rizzo Gianluca       1999  400  0.08  1.0  1.0   4.5
+ 2   B  19     Adinolfi Massimo     1879  400  0.08  0.0  1.0   4.5
+ 3  W   29     Martorelli Vincenzo  1753  286  0.16  0.0  1.0   4.0
+ 4  W   22     Auletta Pasquale     1793  326  0.13  1.0  2.0   2.5
+ 5   B  31     Fucito Giovanni      1730  263  0.18  1.0  3.0   4.0
+ 6   B  23     Attanasio Aniello    1781  314  0.14  0.0  3.0   5.0
+ 7  W   33     Paduano Gennaro      1720  253  0.19  0.0  3.0   4.0
+--------------------------------------------------------------------
+  var= 60, PRtg= 1758,          ARO=1808,      0.96  3.0 14.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  49   Gambardella Pierluig, K= 0, Rtg=1456, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  14 CM  Paduano Claudio      1961  400  0.08  0.0  0.0   4.5
+ 2  W   66 NC  D'amore Luca         1356  100  0.64  0.0  0.0   2.0
+ 3   B  58     Ricciardelli Marco   1440   16  0.52  1.0  1.0   2.0
+ 4  W   24     Festa Giovanni       1776  320  0.13  1.0  2.0   4.0
+ 5  W   33     Paduano Gennaro      1720  264  0.18  0.0  2.0   4.0
+ 6   B  25     Santoro Antonio      1775  319  0.13  1.0  3.0   2.0
+ 7  W   22     Auletta Pasquale     1793  337  0.12  1.0  4.0   2.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1739,          ARO=1689,      1.80  4.0 12.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  50   Di Francesco Mario  , K= 0, Rtg=1442, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   15     Di Leva Michele      1950  400  0.08  0.0  0.0   4.0
+ 2   B  69     Sorgente Christian   1258  184  0.74  0.0  0.0   2.5
+ 3  W   57     Ricciardelli Davide  1440    2  0.50  1.0  1.0   3.0
+ 4   B  36     Vitiello Giovanni    1676  234  0.21  0.0  1.0   3.0
+ 5  W   64     Paduano Vincenzo     1407   35  0.55  0.5  1.5   1.5
+ 6  W   67     Falanga Andrea       1341  101  0.64  1.0  2.5   2.5
+ 7   B  35     Trotta Nicola        1680  238  0.20  0.0  2.5   3.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1434,          ARO=1536,      2.92  2.5  8.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  51   Mazzeo Francesco    , K= 0, Rtg=1441, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  16 FM  Buonanno Raffaele    1947  400  0.08  0.0  0.0   5.0
+ 2  W   70     Maresca Antonia Mari 1040  400  0.92  0.0  0.0   2.0
+ 3  --   0     not played           65535   -     -   1.0  1.0   0.0
+ 4  W   37     Santucci Antonio     1655  214  0.23  1.0  2.0   3.0
+ 5   B  38     Lamberti Valerio     1646  205  0.24  0.0  2.0   3.5
+ 6  W   40     Giannattasio Vincenz 1596  155  0.29  0.0  2.0   3.0
+ 7  W   66 NC  D'amore Luca         1356   85  0.62  1.0  3.0   2.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1415,          ARO=1540,      2.38  3.0 10.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  52   Casola Dario        , K= 0, Rtg=1440, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   17     Felace Luca          1933  400  0.08  0.0  0.0   4.5
+ 2   B   6     Messina Enrico       2184  400  0.08  0.0  0.0   5.5
+ 3  W   59     Ricciardelli Vincenz 1440    0  0.50  1.0  1.0   1.0
+ 4  W   38     Lamberti Valerio     1646  206  0.24  0.0  1.0   3.5
+ 5   B  66 NC  D'amore Luca         1356   84  0.62  0.0  1.0   2.0
+ 6   B  61     Zurlo Massimiliano   1440    0  0.50  0.0  1.0   3.0
+ 7  W   69     Sorgente Christian   1258  182  0.74  0.0  1.0   2.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1299,          ARO=1608,      2.76  1.0  5.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  53   Cucciniello Nicola  , K= 0, Rtg=1440, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  18     Vitale Michele       1898  400  0.08  0.0  0.0   4.5
+ 2   B  13     Rizzo Gianluca       1999  400  0.08  0.0  0.0   4.5
+ 3  --   0     not played           65535   -     -   0.0  0.0   0.0
+ 4  --   0     not played           65535   -     -   0.0  0.0   0.0
+ 5  --   0     not played           65535   -     -   0.0  0.0   0.0
+ 6  --   0     not played           65535   -     -   0.0  0.0   0.0
+ 7  --   0     not played           65535   -     -   0.0  0.0   0.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1149,          ARO=1949,      0.16  0.0  0.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  54   Ferraiuolo Emanuele , K= 0, Rtg=1440, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   19     Adinolfi Massimo     1879  400  0.08  0.0  0.0   4.5
+ 2   B  33     Paduano Gennaro      1720  280  0.16  0.0  0.0   4.0
+ 3  W   64     Paduano Vincenzo     1407   33  0.55  0.0  0.0   1.5
+ 4  --   0     not played           65535   -     -   0.0  0.0   0.0
+ 5   B  67     Falanga Andrea       1341   99  0.64  0.0  0.0   2.5
+ 6   B  65     Baldan Sergio        1399   41  0.56  0.0  0.0   2.0
+ 7  W   58     Ricciardelli Marco   1440    0  0.50  0.0  0.0   2.0
+--------------------------------------------------------------------
+  var=  0, PRtg=  731,          ARO=1531,      2.49  0.0  0.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  55   Macrini Giovanni    , K= 0, Rtg=1440, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  20     Abbes Rached         1853  400  0.08  0.0  0.0   4.0
+ 2   B  36     Vitiello Giovanni    1676  236  0.20  0.0  0.0   3.0
+ 3  W   65     Baldan Sergio        1399   41  0.56  1.0  1.0   2.0
+ 4  W   39     Marino Francesco     1610  170  0.28  0.5  1.5   3.0
+ 5   B  12 WFM De Rosa Mariagrazia  2008  400  0.08  0.0  1.5   4.5
+ 6  W   69     Sorgente Christian   1258  182  0.74  1.0  2.5   2.5
+ 7   B  41     Santoro Emanuele     1587  147  0.30  0.0  2.5   3.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1525,          ARO=1627,      2.24  2.5  9.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  56   Minniti Davide      , K= 0, Rtg=1440, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   21     Gambardella Piero    1826  386  0.09  0.0  0.0   4.0
+ 2   B  38     Lamberti Valerio     1646  206  0.24  0.0  0.0   3.5
+ 3  W   44     Riso Giuseppe        1567  127  0.33  0.0  0.0   5.0
+ 4   B  65     Baldan Sergio        1399   41  0.56  1.0  1.0   2.0
+ 5  W   70     Maresca Antonia Mari 1040  400  0.92  1.0  2.0   2.0
+ 6   B  31     Fucito Giovanni      1730  290  0.16  0.0  2.0   4.0
+ 7  W   39     Marino Francesco     1610  170  0.28  0.0  2.0   3.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1387,          ARO=1545,      2.58  2.0  7.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  57   Ricciardelli Davide , K= 0, Rtg=1440, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  22     Auletta Pasquale     1793  353  0.11  0.0  0.0   2.5
+ 2  W   37     Santucci Antonio     1655  215  0.23  0.0  0.0   3.0
+ 3   B  50     Di Francesco Mario   1442    2  0.50  0.0  0.0   2.5
+ 4  W   58     Ricciardelli Marco   1440    0  0.50  1.0  1.0   2.0
+ 5   B  24     Festa Giovanni       1776  336  0.12  0.0  1.0   4.0
+ 6  W   59     Ricciardelli Vincenz 1440    0  0.50  1.0  2.0   1.0
+ 7  W   47     Donadio Giacinto     1477   37  0.45  1.0  3.0   2.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1525,          ARO=1575,      2.41  3.0  7.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  58   Ricciardelli Marco  , K= 0, Rtg=1440, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   23     Attanasio Aniello    1781  341  0.12  0.0  0.0   5.0
+ 2   B  40     Giannattasio Vincenz 1596  156  0.29  0.0  0.0   3.0
+ 3  W   49     Gambardella Pierluig 1456   16  0.48  0.0  0.0   4.0
+ 4   B  57     Ricciardelli Davide  1440    0  0.50  0.0  0.0   3.0
+ 5  W   65     Baldan Sergio        1399   41  0.56  1.0  1.0   2.0
+ 6   B  70     Maresca Antonia Mari 1040  400  0.92  0.0  1.0   2.0
+ 7   B  54     Ferraiuolo Emanuele  1440    0  0.50  1.0  2.0   0.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1292,          ARO=1450,      3.37  2.0  4.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  59   Ricciardelli Vincenz, K= 0, Rtg=1440, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  24     Festa Giovanni       1776  336  0.12  0.0  0.0   4.0
+ 2  W   39     Marino Francesco     1610  170  0.28  0.0  0.0   3.0
+ 3   B  52     Casola Dario         1440    0  0.50  0.0  0.0   1.0
+ 4  --   0     not played           65535   -     -   1.0  1.0   0.0
+ 5  W   22     Auletta Pasquale     1793  353  0.11  0.0  1.0   2.5
+ 6   B  57     Ricciardelli Davide  1440    0  0.50  0.0  1.0   3.0
+ 7  W   65     Baldan Sergio        1399   41  0.56  0.0  1.0   2.0
+--------------------------------------------------------------------
+  var=  0, PRtg=  776,          ARO=1576,      2.07  1.0  4.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  60   Russo Raffaele      , K= 0, Rtg=1440, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   25     Santoro Antonio      1775  335  0.12  0.0  0.0   2.0
+ 2   B  42     Maiellaro Gabriele   1575  135  0.32  0.0  0.0   4.0
+ 3  --   0     not played           65535   -     -   0.0  0.0   0.0
+ 4  --   0     not played           65535   -     -   0.0  0.0   0.0
+ 5  --   0     not played           65535   -     -   0.0  0.0   0.0
+ 6  --   0     not played           65535   -     -   0.0  0.0   0.0
+ 7  --   0     not played           65535   -     -   0.0  0.0   0.0
+--------------------------------------------------------------------
+  var=  0, PRtg=  875,          ARO=1675,      0.44  0.0  0.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  61   Zurlo Massimiliano  , K= 0, Rtg=1440, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  26     Fammiano Giacomo     1774  334  0.12  0.0  0.0   3.0
+ 2  W   43     Gravina Pasquale     1574  134  0.32  0.0  0.0   3.0
+ 3  --   0     not played           65535   -     -   1.0  1.0   0.0
+ 4  W   41     Santoro Emanuele     1587  147  0.30  0.0  1.0   3.5
+ 5   B  37     Santucci Antonio     1655  215  0.23  0.0  1.0   3.0
+ 6  W   52     Casola Dario         1440    0  0.50  1.0  2.0   1.0
+ 7   B  25     Santoro Antonio      1775  335  0.12  1.0  3.0   2.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1509,          ARO=1634,      1.59  3.0  8.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  62   Maresca Carmine     , K= 0, Rtg=1421, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   27     Lombardi Michele     1769  348  0.11  0.0  0.0   4.0
+ 2   B  44     Riso Giuseppe        1567  146  0.30  1.0  1.0   5.0
+ 3  W   30     Sarno Luca           1744  323  0.13  0.0  1.0   3.5
+ 4   B  46     Maresca Ermanno Mari 1483   62  0.41  0.5  1.5   2.5
+ 5  W   35     Trotta Nicola        1680  259  0.18  0.0  1.5   3.5
+ 6   B  64     Paduano Vincenzo     1407   14  0.52  1.0  2.5   1.5
+ 7  W   28     Scola Enrico         1760  339  0.12  0.0  2.5   3.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1528,          ARO=1630,      1.77  2.5 10.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  63   Rizzo Guido         , K= 0, Rtg=1414, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  28     Scola Enrico         1760  346  0.11  0.0  0.0   3.5
+ 2  W   45     La Greca Marco       1548  134  0.32  0.5  0.5   3.5
+ 3   B  12 WFM De Rosa Mariagrazia  2008  400  0.08  1.0  1.5   4.5
+ 4  W   32     Molza Giuseppe       1725  311  0.14  0.0  1.5   4.5
+ 5   B  39     Marino Francesco     1610  196  0.25  1.0  2.5   3.0
+ 6   B  35     Trotta Nicola        1680  266  0.18  1.0  3.5   3.5
+ 7  W   19     Adinolfi Massimo     1879  400  0.08  0.0  3.5   4.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1744,          ARO=1744,      1.16  3.5 13.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  64   Paduano Vincenzo    , K= 0, Rtg=1407, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   29     Martorelli Vincenzo  1753  346  0.11  0.0  0.0   4.0
+ 2   B  46     Maresca Ermanno Mari 1483   76  0.40  0.0  0.0   2.5
+ 3   B  54     Ferraiuolo Emanuele  1440   33  0.45  1.0  1.0   0.0
+ 4  W   43     Gravina Pasquale     1574  167  0.28  0.0  1.0   3.0
+ 5   B  50     Di Francesco Mario   1442   35  0.45  0.5  1.5   2.5
+ 6  W   62     Maresca Carmine      1421   14  0.48  0.0  1.5   2.5
+ 7   B  67     Falanga Andrea       1341   66  0.59  0.0  1.5   2.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1263,          ARO=1493,      2.76  1.5  6.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  65   Baldan Sergio       , K= 0, Rtg=1399, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  30     Sarno Luca           1744  345  0.11  0.0  0.0   3.5
+ 2  W   47     Donadio Giacinto     1477   78  0.39  0.0  0.0   2.0
+ 3   B  55     Macrini Giovanni     1440   41  0.44  0.0  0.0   2.5
+ 4  W   56     Minniti Davide       1440   41  0.44  0.0  0.0   2.0
+ 5   B  58     Ricciardelli Marco   1440   41  0.44  0.0  0.0   2.0
+ 6  W   54     Ferraiuolo Emanuele  1440   41  0.44  1.0  1.0   0.0
+ 7   B  59     Ricciardelli Vincenz 1440   41  0.44  1.0  2.0   1.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1331,          ARO=1489,      2.70  2.0  3.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  66  NC D'amore Luca        , K=30, Rtg=1356, N=171391
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   31     Fucito Giovanni      1730  374  0.10  0.0  0.0   4.0
+ 2   B  49     Gambardella Pierluig 1456  100  0.36  1.0  1.0   4.0
+ 3  W   33     Paduano Gennaro      1720  364  0.10  0.0  1.0   4.0
+ 4   B  44     Riso Giuseppe        1567  211  0.23  0.0  1.0   5.0
+ 5  W   52     Casola Dario         1440   84  0.38  1.0  2.0   1.0
+ 6  W   37     Santucci Antonio     1655  299  0.15  0.0  2.0   3.0
+ 7   B  51     Mazzeo Francesco     1441   85  0.38  0.0  2.0   3.0
+--------------------------------------------------------------------
+  var=  9, PRtg= 1415,          ARO=1573,      1.70  2.0  9.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  67   Falanga Andrea      , K= 0, Rtg=1341, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  32     Molza Giuseppe       1725  384  0.09  0.5  0.5   4.5
+ 2  W   68     Cecere Juri          1334    7  0.51  0.0  0.5   3.5
+ 3   B  45     La Greca Marco       1548  207  0.23  0.0  0.5   3.5
+ 4  W   12 WFM De Rosa Mariagrazia  2008  400  0.08  0.0  0.5   4.5
+ 5  W   54     Ferraiuolo Emanuele  1440   99  0.36  1.0  1.5   0.0
+ 6   B  50     Di Francesco Mario   1442  101  0.36  0.0  1.5   2.5
+ 7  W   64     Paduano Vincenzo     1407   66  0.41  1.0  2.5   1.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1456,          ARO=1558,      2.04  2.5  7.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  68   Cecere Juri         , K= 0, Rtg=1334, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   33     Paduano Gennaro      1720  386  0.09  1.0  1.0   4.0
+ 2   B  67     Falanga Andrea       1341    7  0.49  1.0  2.0   2.5
+ 3  W   10     Fezza Davide         2028  400  0.08  0.0  2.0   5.0
+ 4   B  23     Attanasio Aniello    1781  400  0.08  0.0  2.0   5.0
+ 5  W   36     Vitiello Giovanni    1676  342  0.12  0.0  2.0   3.0
+ 6   B  39     Marino Francesco     1610  276  0.17  0.5  2.5   3.0
+ 7  W   46     Maresca Ermanno Mari 1483  149  0.30  1.0  3.5   2.5
+--------------------------------------------------------------------
+  var=  0, PRtg= 1663,          ARO=1663,      1.33  3.5 15.0
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  69   Sorgente Christian  , K= 0, Rtg=1258, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1   B  34     Adinolfi Enrico      1694  400  0.08  0.0  0.0   3.5
+ 2  W   50     Di Francesco Mario   1442  184  0.26  1.0  1.0   2.5
+ 3   B  28     Scola Enrico         1760  400  0.08  0.5  1.5   3.5
+ 4  W   45     La Greca Marco       1548  290  0.16  0.0  1.5   3.5
+ 5  W   46     Maresca Ermanno Mari 1483  225  0.22  0.0  1.5   2.5
+ 6   B  55     Macrini Giovanni     1440  182  0.26  0.0  1.5   2.5
+ 7   B  52     Casola Dario         1440  182  0.26  1.0  2.5   1.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1442,          ARO=1544,      1.32  2.5  9.5
+
+
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA), 24/03/2019, 24/03/2019
+  70   Maresca Antonia Mari, K= 0, Rtg=1040, N=0
+-------------------------------------------------------------------
+ R  Col  N Cat Opponent             Rtg  diff  exp.  res  Cum   Pts
+-------------------------------------------------------------------
+ 1  W   35     Trotta Nicola        1680  400  0.08  0.0  0.0   3.5
+ 2   B  51     Mazzeo Francesco     1441  400  0.08  1.0  1.0   3.0
+ 3  W   31     Fucito Giovanni      1730  400  0.08  0.0  1.0   4.0
+ 4   B  47     Donadio Giacinto     1477  400  0.08  0.0  1.0   2.0
+ 5   B  56     Minniti Davide       1440  400  0.08  0.0  1.0   2.0
+ 6  W   58     Ricciardelli Marco   1440  400  0.08  1.0  2.0   2.0
+ 7  W   43     Gravina Pasquale     1574  400  0.08  0.0  2.0   3.0
+--------------------------------------------------------------------
+  var=  0, PRtg= 1382,          ARO=1540,      0.56  2.0  8.0

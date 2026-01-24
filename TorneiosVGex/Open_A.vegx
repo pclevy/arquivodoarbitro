@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Tournament>
+	<Name>13° Festival Naviglio Martesana - Open A</Name><HostFederation>ITA</HostFederation><Place>Gorgonzola (MI)</Place><Date Begin="01/11/2019" End="03/11/2019"/><Schedule>9:30$01/11/2019,15:30$01/11/2019,9:30$02/11/2019,15:30$02/11/2019,9:30$03/11/2019,15:00$03/11/2019</Schedule><Arbiters Chief="AI Francesco De Sio" Deputy=""/><PlaySystem>
+		<RateMove>90’ x 40 mosse + 15' + 30” dalla prima</RateMove><PairingSystem>10</PairingSystem><RRorder></RRorder><RoundsNumber>6</RoundsNumber><ScoreSystem Win="1" Draw="0.5" Loss="0" PAB="0"/>
+	</PlaySystem><InitialRanking>1</InitialRanking><TieBreakers>
+		<TieBreak>  Buc1  </TieBreak><TieBreak>   S-B  </TieBreak><TieBreak>  ARO.  </TieBreak>
+	</TieBreakers><AssignedBoards></AssignedBoards><CurrentRound>6</CurrentRound><CompletedRounds>6</CompletedRounds><ProgramVersion>Vega 8.2.0</ProgramVersion><Parameters>
+		<RegistrationClosed>TRUE</RegistrationClosed><UseAdjustedScore>TRUE</UseAdjustedScore><NoTieBreakByeDraw>FALSE</NoTieBreakByeDraw><VesusID>10613</VesusID><ServerFolder></ServerFolder><StartBoard>1</StartBoard><AcceleratedRounds>
+			<AcceleratedSystem>0</AcceleratedSystem><IsSetAcceleration>FALSE</IsSetAcceleration><NumberAcceleratedRounds>0</NumberAcceleratedRounds><Baku_GA>0</Baku_GA><IdLimit High="0" Low="0"/><DecreasedAcceleration>FALSE</DecreasedAcceleration><PointsGroup Top="0" Middle="0" Bottom="0"/>
+		</AcceleratedRounds>
+	</Parameters><Players>
+		<Player>
+			<Name>Salvador Roland</Name><Federation>PHI</Federation><Origin></Origin><Info></Info><Birthday>1982</Birthday><Gender>m</Gender><Title>GM</Title><ID_FIDE>5201047</ID_FIDE><RatingFIDE>2423</RatingFIDE><KcoeffFIDE>10</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Damia Angelo</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>1985</Birthday><Gender>m</Gender><Title>IM</Title><ID_FIDE>812668</ID_FIDE><RatingFIDE>2272</RatingFIDE><KcoeffFIDE>10</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Andreoni Giuseppe</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>1988</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>820644</ID_FIDE><RatingFIDE>2223</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>10111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Tscharotschkin Michael</Name><Federation>GER</Federation><Origin></Origin><Info></Info><Birthday>1964</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>4619510</ID_FIDE><RatingFIDE>2187</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Bonade Massimo</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>1980</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>814695</ID_FIDE><RatingFIDE>2173</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Lapiccirella Daniele</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>1986</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>810185</ID_FIDE><RatingFIDE>2172</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Tencati Giuseppe</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>1974</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>805742</ID_FIDE><RatingFIDE>2110</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Regondi Lorenzo</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>2000</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>2840745</ID_FIDE><RatingFIDE>2010</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Tramalloni Luca</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>1972</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>809748</ID_FIDE><RatingFIDE>1984</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Cagnotto Marco</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>2002</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>883859</ID_FIDE><RatingFIDE>1978</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>0</Status><StatusHistory>11110101111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Castigliola Diego</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>2006</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>2844163</ID_FIDE><RatingFIDE>1930</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Ferrari Claudio</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>1964</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>839175</ID_FIDE><RatingFIDE>1904</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Borgni Cristiano</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>1968</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>816159</ID_FIDE><RatingFIDE>1795</RatingFIDE><KcoeffFIDE>40</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>11111111111111111111111111</StatusHistory>
+		</Player><Player>
+			<Name>Moreschi Mauro</Name><Federation>ITA</Federation><Origin></Origin><Info></Info><Birthday>1958</Birthday><Gender>m</Gender><Title></Title><ID_FIDE>827967</ID_FIDE><RatingFIDE>1769</RatingFIDE><KcoeffFIDE>20</KcoeffFIDE><ID_Nat>0</ID_Nat><RatingNat>0</RatingNat><KcoeffNat>0</KcoeffNat><Status>1</Status><StatusHistory>10111111111111111111111111</StatusHistory>
+		</Player>
+	</Players><Rounds>
+		<Pairing>
+			<Pair Board="1" White="8" Black="1" Result="01" Type="1"/><Pair Board="2" White="2" Black="9" Result="22" Type="1"/><Pair Board="3" White="10" Black="4" Result="10" Type="1"/><Pair Board="4" White="5" Black="11" Result="10" Type="1"/><Pair Board="5" White="12" Black="6" Result="01" Type="1"/><Pair Board="6" White="7" Black="13" Result="10" Type="1"/><Pair Board="7" White="3" Black="0" Result="00" Type="4"/><Pair Board="8" White="14" Black="0" Result="00" Type="4"/>
+		</Pairing><Pairing>
+			<Pair Board="1" White="1" Black="7" Result="10" Type="1"/><Pair Board="2" White="6" Black="5" Result="22" Type="1"/><Pair Board="3" White="9" Black="10" Result="10" Type="1"/><Pair Board="4" White="3" Black="2" Result="22" Type="1"/><Pair Board="5" White="4" Black="12" Result="10" Type="1"/><Pair Board="6" White="13" Black="8" Result="01" Type="1"/><Pair Board="7" White="11" Black="14" Result="10" Type="1"/>
+		</Pairing><Pairing>
+			<Pair Board="1" White="5" Black="1" Result="22" Type="1"/><Pair Board="2" White="9" Black="6" Result="22" Type="1"/><Pair Board="3" White="2" Black="10" Result="22" Type="1"/><Pair Board="4" White="8" Black="4" Result="10" Type="1"/><Pair Board="5" White="7" Black="11" Result="10" Type="1"/><Pair Board="6" White="12" Black="3" Result="22" Type="1"/><Pair Board="7" White="14" Black="13" Result="22" Type="1"/>
+		</Pairing><Pairing>
+			<Pair Board="1" White="1" Black="9" Result="10" Type="1"/><Pair Board="2" White="7" Black="5" Result="22" Type="1"/><Pair Board="3" White="6" Black="8" Result="22" Type="1"/><Pair Board="4" White="4" Black="2" Result="01" Type="1"/><Pair Board="5" White="11" Black="3" Result="22" Type="1"/><Pair Board="6" White="13" Black="12" Result="22" Type="1"/><Pair Board="7" White="14" Black="0" Result="10" Type="3"/><Pair Board="8" White="10" Black="0" Result="00" Type="4"/>
+		</Pairing><Pairing>
+			<Pair Board="1" White="2" Black="1" Result="22" Type="1"/><Pair Board="2" White="5" Black="8" Result="10" Type="1"/><Pair Board="3" White="6" Black="7" Result="22" Type="1"/><Pair Board="4" White="9" Black="11" Result="10" Type="1"/><Pair Board="5" White="3" Black="14" Result="10" Type="1"/><Pair Board="6" White="10" Black="12" Result="10" Type="1"/><Pair Board="7" White="13" Black="4" Result="01" Type="1"/>
+		</Pairing><Pairing>
+			<Pair Board="1" White="1" Black="6" Result="10" Type="1"/><Pair Board="2" White="5" Black="9" Result="22" Type="1"/><Pair Board="3" White="7" Black="2" Result="22" Type="1"/><Pair Board="4" White="8" Black="3" Result="10" Type="1"/><Pair Board="5" White="4" Black="14" Result="10" Type="1"/><Pair Board="6" White="11" Black="13" Result="10" Type="1"/><Pair Board="7" White="12" Black="0" Result="10" Type="3"/><Pair Board="8" White="10" Black="0" Result="00" Type="4"/>
+		</Pairing>
+	</Rounds>
+</Tournament>

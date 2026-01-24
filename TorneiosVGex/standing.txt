@@ -1,0 +1,85 @@
+10° Memorial Raffaele Punzi
+Cava de'Tirreni (SA) - 24/03/2019, 24/03/2019
+
+Standings at round 7 (last round)
+
+Pos   N     NAME                      | Rtg  PRtg Fed |  Pts    BucT     S-B    APRO  
+---------------------------------------------------------------------------------------
+  1   1  IM Laketic Gojko             | 2427 2364 SRB |  6.0    33.5 
+  2   3  FM Carnicelli Valerio        | 2323 2234 ITA |  5.5    33.0 
+  3   4  FM Gromovs Sergejs           | 2230 2198 ITA |  5.5    32.0 
+  4   7     Auletta Angelo            | 2175 2250 ITA |  5.5    31.5 
+  5   5     Sabia Corrado             | 2216 2106 ITA |  5.5    30.5 
+  6  11     Carnicelli Flavio         | 2019 2211 ITA |  5.5    29.5 
+  7   6     Messina Enrico            | 2184 2040 ITA |  5.5    24.5 
+  8  16  FM Buonanno Raffaele         | 1947 2030 ITA |  5.0    31.5 
+  9  10     Fezza Davide              | 2028 1976 ITA |  5.0    29.5 
+ 10   2  FM Stromboli Ettore          | 2415 2047 ITA |  5.0    29.0 
+ 11  23     Attanasio Aniello         | 1781 1874 ITA |  5.0    26.0 
+ 12  44     Riso Giuseppe             | 1567 1833 ITA |  5.0    21.5 
+ 13   8  IM Martorelli Antonio        | 2152 2136 ITA |  4.5    32.0 
+ 14  14  CM Paduano Claudio           | 1961 1947 ITA |  4.5    29.5 
+ 15  32     Molza Giuseppe            | 1725 1822 ITA |  4.5    27.0   15.75 
+ 16  18     Vitale Michele            | 1898 1863 ITA |  4.5    27.0   15.25 
+ 17  17     Felace Luca               | 1933 1889 ITA |  4.5    26.5 
+ 18  19     Adinolfi Massimo          | 1879 1740 ITA |  4.5    23.0 
+ 19  13     Rizzo Gianluca            | 1999 1726 ITA |  4.5    22.5   13.75 
+ 20  12 WFM De Rosa Mariagrazia       | 2008 1741 ITA |  4.5    22.5   11.50 
+ 21  27     Lombardi Michele          | 1769 2080 ITA |  4.0    31.0 
+ 22  21     Gambardella Piero         | 1826 1928 ITA |  4.0    29.5 
+ 23   9     Puglisi Vincenzo          | 2031 1777 ITA |  4.0    29.0 
+ 24  20     Abbes Rached              | 1853 1920 ITA |  4.0    28.5 
+ 25  15     Di Leva Michele           | 1950 1698 ITA |  4.0    25.0   12.50 
+ 26  42     Maiellaro Gabriele        | 1575 1853 ITA |  4.0    25.0   11.50 
+ 27  29     Martorelli Vincenzo       | 1753 1724 ITA |  4.0    25.0   10.50 
+ 28  24     Festa Giovanni            | 1776 1677 ITA |  4.0    23.0 
+ 29  33     Paduano Gennaro           | 1720 1626 ITA |  4.0    22.0 
+ 30  31     Fucito Giovanni           | 1730 1590 ITA |  4.0    21.5 
+ 31  49     Gambardella Pierluigi     | 1456 1739 ITA |  4.0    21.0 
+ 32  34     Adinolfi Enrico           | 1694 1884 ITA |  3.5    30.0 
+ 33  63     Rizzo Guido               | 1414 1744 ITA |  3.5    27.0 
+ 34  41     Santoro Emanuele          | 1587 1785 ITA |  3.5    26.0   11.75 
+ 35  45     La Greca Marco            | 1548 1662 ITA |  3.5    26.0   10.25 
+ 36  68     Cecere Juri               | 1334 1663 ITA |  3.5    25.0 
+ 37  28     Scola Enrico              | 1760 1582 ITA |  3.5    24.5   10.75 
+ 38  30     Sarno Luca                | 1744 1729 ITA |  3.5    24.5    9.25 
+ 39  35     Trotta Nicola             | 1680 1594 ITA |  3.5    24.0    9.25 
+ 40  38     Lamberti Valerio          | 1646 1776 ITA |  3.5    24.0    7.75 
+ 41  48  NC Ruggiero Armando          | 1467 1758 ITA |  3.0    28.5 
+ 42  36     Vitiello Giovanni         | 1676 1721 ITA |  3.0    26.5    8.50 
+ 43  26     Fammiano Giacomo          | 1774 1623 ITA |  3.0    26.5    7.50 
+ 44  40     Giannattasio Vincenzo     | 1596 1732 ITA |  3.0    25.0 
+ 45  37     Santucci Antonio          | 1655 1642 ITA |  3.0    23.5    7.50 
+ 46  43     Gravina Pasquale          | 1574 1571 ITA |  3.0    23.5    6.00 
+ 47  39     Marino Francesco          | 1610 1543 ITA |  3.0    21.5 
+ 48  51     Mazzeo Francesco          | 1441 1415 ITA |  3.0    20.5 
+ 49  61     Zurlo Massimiliano        | 1440 1509 ITA |  3.0    17.5 
+ 50  57     Ricciardelli Davide       | 1440 1525 ITA |  3.0    17.0 
+ 51  62     Maresca Carmine           | 1421 1528 ITA |  2.5    23.5    7.75 
+ 52  46     Maresca Ermanno Maria     | 1483 1501 ITA |  2.5    23.5    5.25 
+ 53  55     Macrini Giovanni          | 1440 1525 ITA |  2.5    23.0 
+ 54  22     Auletta Pasquale          | 1793 1527 ITA |  2.5    22.0 
+ 55  67     Falanga Andrea            | 1341 1456 ITA |  2.5    20.5 
+ 56  50     Di Francesco Mario        | 1442 1434 ITA |  2.5    20.0 
+ 57  69     Sorgente Christian        | 1258 1442 ITA |  2.5    19.0 
+ 58  25     Santoro Antonio           | 1775 1520 ITA |  2.0    26.5 
+ 59  66  NC D'amore Luca              | 1356 1415 ITA |  2.0    23.5    5.00 
+ 60  56     Minniti Davide            | 1440 1387 ITA |  2.0    23.5    4.00 
+ 61  70     Maresca Antonia Maria     | 1040 1382 ITA |  2.0    19.5    4.50 
+ 62  47     Donadio Giacinto          | 1477 1404 ITA |  2.0    19.5    4.00 
+ 63  58     Ricciardelli Marco        | 1440 1292 ITA |  2.0    19.5    2.50 
+ 64  65     Baldan Sergio             | 1399 1331 ITA |  2.0    13.5 
+ 65  64     Paduano Vincenzo          | 1407 1263 ITA |  1.5    17.5 
+ 66  52     Casola Dario              | 1440 1299 ITA |  1.0    21.0 
+ 67  59     Ricciardelli Vincenzo     | 1440  776 ITA |  1.0    17.0 
+ 68  54     Ferraiuolo Emanuele       | 1440  731 ITA |  0.0    19.0    0.00  1451.3 
+ 69  53     Cucciniello Nicola    (W) | 1440    0 ITA |  0.0    19.0    0.00     0.0 
+ 70  60     Russo Raffaele        (W) | 1440    0 ITA |  0.0    16.0 
+
+Tie Break legend:
+  BucT   :  Buchholz Total 
+   S-B   :  Sonneborn-Berger 
+  APRO   :  Average Performance Rating Opponents 
+
+Generated by Vega - www.vegachess.com
+(This copy cannot be used for tournament with more than 30 players)

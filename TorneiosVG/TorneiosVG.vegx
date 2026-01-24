@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Tournament>
+	<Name>myTournament</Name><HostFederation>BRA</HostFederation><Place>myTown</Place><Date Begin="15/11/2019" End="15/11/2019"/><Schedule></Schedule><Arbiters Chief="myArbiter" Deputy=""/><PlaySystem>
+		<RateMove>90 minutes + 30 seconds per move</RateMove><PairingSystem>15</PairingSystem><RRorder></RRorder><RoundsNumber>5</RoundsNumber><ScoreSystem Win="1" Draw="0.5" Loss="0" PAB="0"/>
+	</PlaySystem><InitialRanking>3</InitialRanking><TieBreakers>
+		<TieBreak>   S-B  </TieBreak><TieBreak>  Koya  </TieBreak>
+	</TieBreakers><AssignedBoards></AssignedBoards><CurrentRound>0</CurrentRound><CompletedRounds>0</CompletedRounds><ProgramVersion>Vega 8.2.0</ProgramVersion><Parameters>
+		<RegistrationClosed>FALSE</RegistrationClosed><UseAdjustedScore>TRUE</UseAdjustedScore><NoTieBreakByeDraw>FALSE</NoTieBreakByeDraw><VesusID>0</VesusID><ServerFolder></ServerFolder><StartBoard>1</StartBoard><AcceleratedRounds>
+			<AcceleratedSystem>0</AcceleratedSystem><IsSetAcceleration>FALSE</IsSetAcceleration><NumberAcceleratedRounds>0</NumberAcceleratedRounds><Baku_GA>0</Baku_GA><IdLimit High="0" Low="0"/><DecreasedAcceleration>FALSE</DecreasedAcceleration><PointsGroup Top="0" Middle="0" Bottom="0"/>
+		</AcceleratedRounds>
+	</Parameters><Players></Players><Rounds></Rounds>
+</Tournament>
