@@ -5,7 +5,7 @@ services:
     image: nginx:latest
     container_name: arquivodoarbitro_web
     ports:
-      - "5181:5181"
+      - "80:5181"
     volumes:
       - ./:/var/www/html
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
