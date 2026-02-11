@@ -220,7 +220,10 @@ for ($i = 0; $i < $total; $i++) {
     $reg   = $row['reg'];
     $nome  = trim($row['nome']) . " " . trim($row['sobrenome']);
     $clb   = trim($row['clube']);
-    $tit   = trim($row['titulo'] & "z");
+    
+    //$tit   = trim($row['titulo']);
+    $tit   = trim((string) $row['titulo']);
+    
     $rat   = intval($row['rating']);
 
     $regFoto = substr("000$reg", -4);
