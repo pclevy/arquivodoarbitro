@@ -191,7 +191,7 @@ function setResumoHtml(html) {
 // monta o gráfico
 function muda_res(param, ritmoTitulo) {
     const html =
-      "<b>Gráfico do Rating YY</b>: " + ritmoTitulo +
+      "<b>Gráfico do Rating YZ</b>: " + ritmoTitulo +
       "<br><img src='GerarGrafico.php?" + param +
       "' style='border:1px solid #999;margin-top:6px;' />";
     document.getElementById("resumot1").innerHTML += "<br>" + html;
@@ -290,3 +290,4 @@ pg_close($conexao);
 ?>
 </body>
 </html>
+
