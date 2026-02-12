@@ -1,0 +1,162 @@
+<html>
+ <head>
+  <title>AF Paulo Levy</title>
+  <style type="text/css">
+   <!--
+    h1 {
+	   font-family: arial, verdana, sans-serif;
+       font-size: 10px;
+      }
+    div.transbox90
+     {
+      /* for IE */
+       filter:alpha(opacity=90);
+		    /*  ???   */
+       -moz-opacity:.90;
+      /* CSS3 standard */
+       opacity:0.90;
+     }
+   //-->
+  </style>
+				<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script>
+		$(document).ready(function(){
+			//alert('dsa');
+		})
+		
+		
+		function abreEnviar()
+		{
+			//document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"php/af_receberarquivo_SM.php\" frameBorder=\"0\"></iframe>";
+			//$('#DivPrincipal').html('<iframe width=100% height=100% src=\"php/af_receberarquivo_SM.php\" frameBorder=\"0\"></iframe>');
+			
+			$.post('php/af_receberarquivo_SM.php', function(data) {
+				$('#DivPrincipal').html(data);
+			});
+		}
+		</script>
+ </head>
+ <body bgcolor="eeeeff">
+		<div id="geral" style="position:absolute;width: 997;height:588px;left:1;top:1;border:1px solid #000000">	
+			<div style="
+				position:absolute;
+			 width: 993;left:1px;top:1px;font-size:3px;text-align:center;border:1px solid #2266AA">
+				<!center>
+					<font size="6"><b>Arquivo do Árbitro</b><br></font><br>
+			</div>
+			<div class="transbox90" id="blocomovel_5" style="
+				z-index:1;
+				visibility:visible;
+				/*z-index:2;*/ /*visibility:hidden;*/
+				position:absolute;
+				width:134px;height:auto;left:1px;top:45px;
+				font-size:14px;
+				font-family:Arial Narrow;
+				font-weight:bold;
+				padding:2px;
+				/*background-color: #EEFFEE;*/
+				border:1px solid #2266AA">
+				<a href='index.html'>Apresentação</a><br>
+				<span style="font-size:6;"><br></span>
+				Torneios SM:<br>
+				<!-- &nbsp; &nbsp; - <a href='#'><span onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"php/torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'>Consultar</span></a> <img src="imagens/novo_blink.gif"><br> -->
+					<!-- echo "<meta http-equiv='refresh' content='0;URL=LerArquivoSM.php?arq=$ArqTorneio'>"; //src=\"php/torneios_pesq_Sel.php\" -->
+				&nbsp; &nbsp; - <a href='#'><span onclick='document.getElementById("DivPrincipal").innerHTML = "<html><head><meta http-equiv=\"refresh\" content=\"0;URL=php/torneios_pesq_Sel.php\"></head></html>";'>Consultar</span></a> <img src="imagens/novo_blink.gif"><br>
+<!--				&nbsp; &nbsp; - <a href='#'><span onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"php/af_receberarquivo_SM.php\" frameBorder=\"0\"></iframe>";'>Enviar</span></a> <img src="imagens/novo_blink.gif"><br>  -->
+				&nbsp; &nbsp; - <a href='#'><span onclick='abreEnviar();'>Enviar</span></a> <img src="imagens/novo_blink.gif"><br>
+	<!--			&nbsp; &nbsp; - <a href='#'><span onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"php/af_receberarquivo_SM.php\" frameBorder=\"0\"></iframe>";'>Enviar</span></a> <img src="imagens/novo_blink.gif"><br>-->
+				<span style="font-size:6;"><br></span>
+				Torneios SP:<br>
+				<!--
+				&nbsp; &nbsp; - <a href='#'><span onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"php/torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'>Consultar</span></a> <img src="imagens/novo_blink.gif"><br>
+				&nbsp; &nbsp; - <a href='#'><span onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"php/af_receberarquivo_SM.php\" frameBorder=\"0\"></iframe>";'>Enviar</span></a> <img src="imagens/novo_blink.gif"><br>
+				-->
+				&nbsp; &nbsp; - Consultar<br>
+				&nbsp; &nbsp; - Enviar<br>
+				<br>
+				ISC-2013:<br>
+				&nbsp;<a href='../ISC_2013_Resultados.html'><b>Resultados Preliminares</b></a></font><br>
+
+				<span style="font-size:6;"><br></span>
+				<a href='#'><span onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"links_arbitragem.html\" frameBorder=\"0\"></iframe>";'>Links</span></a><br>
+			</div>
+			
+			<center>
+			<div id='DivPrincipal' name='DivPrincipal' style="
+				position:absolute;
+			 width:854;height:539;left:140px;top:45px;border:1px solid #2266AA">
+				<center>
+					<font size="4"><b><u>Apresentação</u></b></font><br>
+					<font size="1"><br></font>
+					<div style="width:800;height:360;text-align:justify;text-align:justify;">
+					Este Portal tem como objetivo fundamental a informação de qualidade técnica para 
+					os árbitros de Xadrez, tendo como foco principal aqueles que atuam no Estado do Rio de Janeiro.<br>
+					Tentaremos fomentar o diálogo, a troca de informações e a realização de eventos, contribuindo, democraticamente, para 
+					a ampliação da qualidade técnica da Arbitragem de Xadrez, através de Reuniões, Palestras, Cursos, Seminários e quaisquer 
+					outros instrumentos de discussão e aprimoramento técnico.
+					Visando o engrandecimento de nosso esporte, devemos também proporcionar os instrumentos acima citados, aos enxadristas 
+					interessados em conhecer melhor as Regras de Competição que regem o Xadrez como Esporte.<br>
+					A responsabilidade por idealização, construção e execução das propostas acima, será regida no mais alto grau dos seguintes critérios:<br>
+					<center>"<b><u>Legalidade</u>, <u>Transparência</u>, <u>Respeito</u>, <u>Desenvolvimento</u> e <u>Modernidade</u></b>".<br></center>
+					</div>
+					<!br>
+					<!br>
+					<div>
+						<!table width='100%'>
+						<table width='800'>
+							<tr>
+								<!td valign='top' align='left' width='40%'>
+								<td valign='top' align='left'>
+									<b>Documentos e modelos</b>:<br>
+									&nbsp; - <a href="pdf/fexerj_estatuto.pdf">Fexerj - Estatuto Vigente</a><br>
+									&nbsp; - <a href="pdf/Regimento_CA.pdf">Conselho de Árbitros-Regimento</a><br>
+									&nbsp; - <a href="pdf/ata_age_2007_03_03.pdf">Ata da AGE de 03/03/2007</a><br>
+									&nbsp; - <a href="pdf/ata_ago_2008_04_11.pdf">Ata da AGO de 11/04/2008</a><br>
+									&nbsp; - <a href="pdf/edital_ago_2012_02_10.jpg">Edital AGO/2011 em 10/02/2012</a><br>
+								</td>
+								<td width='49'>
+								<!td>
+									&nbsp;
+								</td>
+								<!td valign='top' width='22%'>
+								<td valign='top'>
+									<b>Departamento de Árbitros</b>:<br>
+									&nbsp; - <a href="pdf/ca.pdf">Conselho de Árbitros</a><br>
+									&nbsp; - <a href="pdf/al.pdf">Árbitros Locais</a><br>
+									&nbsp; - <a href="pdf/qa.pdf">Quadro de Árbitros</a><br>
+									<!br>
+								</td>
+								<td width='49'>
+								<!td>
+									&nbsp;
+								</td>
+								<!td valign='top' width='32%'>
+								<td valign='top'>
+									<!center>
+									<font size="4"><b>Enxadristas e ratings</b>:</font><br>
+									&nbsp; - <font size="4"><b><a href="reg_rat_pesq_Sel.php">Pesquisar:</a></b> </font><img src="imagens/novo_blink.gif"><font size=1>15/01/2013</font><br>
+									<font size="1"><br></font>
+									<font size="4"><b><u>Contato</u>:</b></font>
+									<font size="1"><br></font>
+									<font size="3">
+									<!--
+										- Horário:<!br>
+										<span style="font-family:arial,helvetica,sans-serif;font-size:12px;">
+											2ªf ##h##-##h##; 3ªf ##h##-##h##<br>
+										&nbsp; &nbsp;&nbsp; 4ªf ##h##-##h##; 5ªf ##h##-##h##<br>
+										&nbsp; &nbsp;&nbsp; 6ªf ##h##-##h##; sáb ##h##-##h##<br>
+										</span>
+										- Local: sala ##### – bloco #<br>
+										-->
+										- Correio Eletrônico:<br>
+										&nbsp; &nbsp; <a href="mailto:pclevybr@yahoo.com.br">pclevybr@yahoo.com.br</a><br>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</center>
+			</div>
+	 </div>
+	</center>
+ </body>
+</html>
