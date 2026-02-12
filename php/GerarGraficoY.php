@@ -219,7 +219,7 @@
 	$imagem = imagerotate($imagem, 90, 0);
 	
 	//ImageString($imagem, 2, 5, 3+$i*20+2, $mesano[$i], $preto); 
-	//ImageString($imagem, 2, 5, 3+1*20+2, $rating[2], $preto);;
+	//ImageString($imagem, 2, 5, 3+1*20+2, $rating[2], $preto); 
 	
 	for($i=0;$i<$qtr;$i++)
 	{
