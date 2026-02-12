@@ -1,3 +1,5 @@
+/* Alterado em 2026/02/12, 18:50 */
+
 <?php
 	header('Content-type: image/png');
 	

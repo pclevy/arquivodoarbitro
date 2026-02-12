@@ -1,3 +1,5 @@
+/* Alterado em 2026/02/12, 18:50 */
+
 <?php
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
@@ -191,7 +193,7 @@ function setResumoHtml(html) {
 // monta o gráfico
 function muda_res(param, ritmoTitulo) {
     const html =
-      "<b>Gráfico do Rating YZ</b>: " + ritmoTitulo +
+      "<b>Gráfico do Rating ZZ</b>: " + ritmoTitulo +
       "<br><img src='GerarGrafico.php?" + param +
       "' style='border:1px solid #999;margin-top:6px;' />";
     document.getElementById("resumot1").innerHTML += "<br>" + html;
