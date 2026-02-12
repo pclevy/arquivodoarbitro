@@ -1,5 +1,7 @@
 <?php
-	ini_set('display_errors', 0);
+/* Alterado em 2026/02/12, 19:43 */
+
+ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);
 ?>
@@ -137,7 +139,7 @@
 		Título: <input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'>
 		<font size="3"><b>Xadrez UERJ</b></font><br>
 		<font size="6">Arquivo do Árbitro</font><br>
-		<font size="3"><b>Pesquisa de Enxadristas - por nome</b></font> <font size='2' color='red'>(Dados baseados na Lista de Rating de fevereiro/2016!!</font><br>
+		<font size="3"><b>Pesquisa de Enxadristas - por nome</b></font> <font size='2' color='red'>(Dados baseados na Lista de Rating de fevereiro/2022!!</font><br>
 		<font size='2' color='red'> <!-- <b>Em construção</b>: os dados aqui apresentados ainda são experimentais, podendo haver imprecisões!!</font> --> <br>
 		<br>
 		<input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'>
