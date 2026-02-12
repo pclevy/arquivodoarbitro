@@ -2,45 +2,12 @@ version: '3.8'
 
 services:
   web:
-    image: nginx:latest
-    container_name: arquivodoarbitro_web
-    ports:
-      - "80:5181"
-    volumes:
-      - ./:/var/www/html
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    depends_on:
-      - php
-    # networks:
-    #   - arquivodoarbitro_network
-
-  php:
     build: .
-    container_name: arquivodoarbitro_php
+    container_name: arquivodoarbitro
+    ports:
+      - "80:80"
     volumes:
       - ./:/var/www/html
-    # depends_on:
-    #   - db
-    # networks:
-    #   - arquivodoarbitro_network
-
-  # db:
-  #   image: postgres:15
-  #   container_name: arquivodoarbitro_db
-  #   environment:
-  #     POSTGRES_DB: pclevy_dbxadrez
-  #     POSTGRES_USER: pclevy
-  #     POSTGRES_PASSWORD: scly1411
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - db_data:/var/lib/postgresql/data
-  #   networks:
-  #     - arquivodoarbitro_network
-
-# networks:
-#   arquivodoarbitro_network:
-#     driver: bridge
-
-# volumes:
-#   db_data:
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
