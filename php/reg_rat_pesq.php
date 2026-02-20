@@ -1,10 +1,10 @@
 <?php
 /* Alterado em 2026/02/12, 18:50 */
-
+/*
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 error_reporting(E_ALL);
-
+*/
 
 /*
   Pesquisa de Enxadristas + parâmetros para GerarGrafico.php
@@ -292,4 +292,3 @@ pg_close($conexao);
 ?>
 </body>
 </html>
-
