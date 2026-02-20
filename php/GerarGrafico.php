@@ -1,5 +1,5 @@
 <?php
-/* Alterado em 2026/02/12, 18:50 */
+/* Alterado em 2026/02/20, 18:23 */
 
 header('Content-type: image/png');
 
