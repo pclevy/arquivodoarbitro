@@ -4,14 +4,35 @@ FROM php:8.3-apache
 # Set working directory
 WORKDIR /var/www/html
 
-# Install system dependencies and PHP extensions
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     libpq-dev \
-    && docker-php-ext-install \
-        pdo \
-        pdo_pgsql \
-        pgsql \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    libwebp-dev \
+    libxpm-dev \
+    libavif-dev \
+    libzip-dev \
+    zlib1g-dev \
+    libonig-dev \
     && rm -rf /var/lib/apt/lists/*
+
+# Configure GD with full support
+RUN docker-php-ext-configure gd \
+    --with-freetype \
+    --with-jpeg \
+    --with-webp \
+    --with-xpm \
+    --with-avif
+
+# Install PHP extensions
+RUN docker-php-ext-install \
+    pdo \
+    pdo_pgsql \
+    pgsql \
+    gd \
+    zip
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
@@ -29,7 +50,7 @@ COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
-# Allow .htaccess overrides (important for frameworks)
+# Allow .htaccess overrides
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
 # Expose port 80
