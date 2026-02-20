@@ -193,8 +193,8 @@ function setResumoHtml(html) {
 // monta o gráfico
 function muda_res(param, ritmoTitulo) {
     const html =
-      "<b>Gráfico do Rating Z3</b>: " + ritmoTitulo +
-      "<br><img src='GerarGrafico.php?" + param +
+      "<b>Gráfico do Rating Z4</b>: " + ritmoTitulo +
+      "<br>YYY<br><img src='GerarGrafico.php?" + param +
       "' style='border:1px solid #999;margin-top:6px;' />";
     document.getElementById("resumot1").innerHTML += "<br>" + html;
 }
