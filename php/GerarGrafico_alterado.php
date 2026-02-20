@@ -1,4 +1,6 @@
 <?php
+
+
 header('Content-type: image/png');
 
 // ----------------------------------------
@@ -166,4 +168,5 @@ $imagem = imagerotate($imagem, 90, 0);
 // ----------------------------------------
 imagepng($imagem);
 imagedestroy($imagem);
+
 ?>
