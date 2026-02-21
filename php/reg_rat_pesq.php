@@ -193,7 +193,7 @@ function setResumoHtml(html) {
 // monta o gráfico
 function muda_res(param, ritmoTitulo) {
     const html =
-      "<b>Gráfico do Rating Z4</b>: " + ritmoTitulo +
+      "<b>Gráfico do Rating Z5</b>: " + ritmoTitulo +
       "<br>Y" + param +Y<br><img src='GerarGrafico.php?" + param +
       "' style='border:1px solid #999;margin-top:6px;' />";
     document.getElementById("resumot1").innerHTML += "<br>" + html;
@@ -227,7 +227,7 @@ for ($i = 0; $i < $total; $i++) {
     $reg   = $row['reg'];
     $nome  = trim($row['nome']) . " " . trim($row['sobrenome']);
     $clb   = trim($row['clube']);
-    $tit   = trim($row['titulo']);
+    $tit   = trim($row['titulo'] . " ");
     $rat   = intval($row['rating']);
 
     $regFoto = substr("000$reg", -4);
