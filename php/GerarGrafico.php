@@ -153,7 +153,7 @@ header("Content-Type: image/png");
 	
 	//$imagem = imagecreate($alt_img,$larg_img);
 	//$imagem = imagecreatetruecolor($alt_img,$larg_img) or die('Cannot Initialize new GD image stream');
-	$imagem = imagecreatetruecolor($larg_img,$alt_img) or die('Cannot Initialize new GD image stream');
+	$imagem = imagecreatetruecolor($larg_img,$alt_img) or die('Cannot Initialize new GD image stream'); // **********************************88
 	
 	$fundo = imagecolorallocate($imagem, 255, 255, 180);
 	$branco = imagecolorallocate($imagem, 255, 255, 255);
@@ -241,7 +241,7 @@ header("Content-Type: image/png");
 		
 	}
 	
-	$imagem = imagerotate($imagem, 90, 0);
+	//$imagem = imagerotate($imagem, 90, 0); ****************************************************
 	
 	//ImageString($imagem, 2, 5, 3+$i*20+2, $mesano[$i], $preto); 
 	//ImageString($imagem, 2, 5, 3+1*20+2, $rating[2], $preto); 
