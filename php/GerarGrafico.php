@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 ob_clean();
 ob_start();
 
-header("Content-Type: image/png"); ******************************************
+//header("Content-Type: image/png"); ******************************************
 
 	//header('Content-type: image/png');
 	
