@@ -9,8 +9,9 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 ob_clean();
+ob_start();
 
-//header("Content-Type: image/png"); ******************************************
+header("Content-Type: image/png"); ******************************************
 
 	//header('Content-type: image/png');
 	
@@ -269,6 +270,10 @@ ob_clean();
 		}
 	}
 	
-	imagepng($imagem);
-	imagedestroy($imagem);
+	ob_end_clean();
+header("Content-Type: image/png");
+imagepng($imagem);
+
+	//imagepng($imagem);
+	//imagedestroy($imagem);
 ?>
