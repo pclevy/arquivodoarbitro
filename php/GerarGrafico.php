@@ -206,7 +206,8 @@ header("Content-Type: image/png");
 			//ImageFilledRectangle($imagem, $i*20+2, $alt_img-10, $i*20+20, $alt_img-$alt_rat, $cor_bar);
 			imagefilledrectangle($imagem, 4, $i*$larg_bar+2, 40, $i*$larg_bar+$larg_bar, $fundo);
 			
-			imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 
+			//imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 			// ******* 2026/02/27 *******
+			imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 			// ******* 2026/02/27 *******
 		}
 		else
 		{
@@ -245,7 +246,9 @@ header("Content-Type: image/png");
 		else
 		{
 			$alt_rat = ($rating[$i]-$min) * $coef + $alt_min;
-			imagestring($imagem, 1, 3+$i*$larg_bar+0, $alt_img-$alt_rat-9, $rating[$i], $preto*(-1)); 
+			
+			//imagestring($imagem, 1, 3+$i*$larg_bar+0, $alt_img-$alt_rat-9, $rating[$i], $preto*(-1)); // ******* 2026/02/27 *******
+			imagestring($imagem, 1, 3+$i*$larg_bar+0, $alt_img-$alt_rat-9, $rating[$i], $preto*(-1)); // ******* 2026/02/27 *******
 		}
 	}
 	
