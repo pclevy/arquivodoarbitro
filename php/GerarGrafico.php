@@ -1,6 +1,8 @@
 <?php
-ob_clean();
-	header('Content-type: image/png');
+	ob_clean();
+	header("Content-Type: image/png");
+	
+	//header('Content-type: image/png');
 	
 	//verm=000,077,170,200,255
 	//verd=000,077,100,170,200,255
