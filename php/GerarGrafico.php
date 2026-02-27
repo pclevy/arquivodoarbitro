@@ -152,7 +152,8 @@ header("Content-Type: image/png");
 	
 	
 	//$imagem = imagecreate($alt_img,$larg_img);
-	$imagem = imagecreatetruecolor($alt_img,$larg_img) or die('Cannot Initialize new GD image stream');
+	//$imagem = imagecreatetruecolor($alt_img,$larg_img) or die('Cannot Initialize new GD image stream');
+	$imagem = imagecreatetruecolor($larg_img,$alt_img) or die('Cannot Initialize new GD image stream');
 	
 	$fundo = imagecolorallocate($imagem, 255, 255, 180);
 	$branco = imagecolorallocate($imagem, 255, 255, 255);
