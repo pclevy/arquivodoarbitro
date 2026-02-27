@@ -241,7 +241,10 @@ header("Content-Type: image/png");
 		
 	}
 	
-	//$imagem = imagerotate($imagem, 90, 0); ****************************************************
+	$imagem = imagerotate($imagem, 90, 0); ****************************************************
+	if (!$imagem) {
+    die("Rotate failed");
+}
 	
 	//ImageString($imagem, 2, 5, 3+$i*20+2, $mesano[$i], $preto); 
 	//ImageString($imagem, 2, 5, 3+1*20+2, $rating[2], $preto); 
