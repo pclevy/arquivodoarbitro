@@ -277,7 +277,11 @@ error_reporting(E_ALL);
 		}
 	}
 	
-	//imagepng($imagem);
+	if (headers_sent($file, $line)) {
+    die("Headers already sent in $file on line $line");
+}
+	
+	imagepng($imagem);
 	imagedestroy($imagem);
 	
 	echo "FIM";
