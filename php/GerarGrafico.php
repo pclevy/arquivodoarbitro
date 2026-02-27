@@ -283,6 +283,3 @@ error_reporting(E_ALL);
 	
 	imagepng($imagem);
 	imagedestroy($imagem);
-	
-	echo "FIM";
-?>
