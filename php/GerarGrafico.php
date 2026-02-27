@@ -6,7 +6,11 @@ ini_set('log_errors', 1);
 error_reporting(E_ALL);
 */
 
-header("Content-Type: image/png");
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ob_clean();
+
+//header("Content-Type: image/png"); ******************************************
 
 	//header('Content-type: image/png');
 	
