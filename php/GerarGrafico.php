@@ -254,9 +254,9 @@ error_reporting(E_ALL);
 	}
 	
 	//$imagem = imagerotate($imagem, 90, 0); ****************************************************
-	//if (!$imagem) {
-    //die("Rotate failed");
-}
+	// if (!$imagem) {
+    //   die("Rotate failed");
+    // }
 	
 	//ImageString($imagem, 2, 5, 3+$i*20+2, $mesano[$i], $preto); 
 	//ImageString($imagem, 2, 5, 3+1*20+2, $rating[2], $preto); 
@@ -283,8 +283,8 @@ error_reporting(E_ALL);
 	
 	//imagepng($imagem);
 	//imagedestroy($imagem);
-	
+
 	header("Content-Type: image/png");
-imagepng($imagem);
-imagedestroy($imagem);
-exit;
+	imagepng($imagem);
+	imagedestroy($imagem);
+	exit;
