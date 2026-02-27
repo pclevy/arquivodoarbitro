@@ -6,10 +6,17 @@ ini_set('log_errors', 1);
 error_reporting(E_ALL);
 */
 
+/*
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 ob_clean();
 ob_start();
+*/
+
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', 'C:/php/logs/teste.log');
+error_reporting(E_ALL);
 
 //header("Content-Type: image/png"); ******************************************
 
@@ -270,10 +277,8 @@ ob_start();
 		}
 	}
 	
-	ob_end_clean();
-header("Content-Type: image/png");
-imagepng($imagem);
-
 	//imagepng($imagem);
-	//imagedestroy($imagem);
+	imagedestroy($imagem);
+	
+	echo "FIM";
 ?>
