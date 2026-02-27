@@ -1,10 +1,12 @@
 <?php
 	
+	// ***** - Versão sem 'Warnings', é preciso procurar as causas dos 'Warnings'
 	ini_set('display_errors', 0);
 	error_reporting(0);
 	ob_clean();
+	// *****
+
 	header("Content-Type: image/png");
-	//header('Content-type: image/png');
 	
 	//for($i_seq_bar=0;$i_seq_bar<1;$i_seq_bar++)
 	//{	
