@@ -1,7 +1,10 @@
 <?php
-	ob_clean();
-	header("Content-Type: image/png");
-	
+
+ini_set('display_errors', 0);
+error_reporting(0);
+ob_clean();
+header("Content-Type: image/png");
+
 	//header('Content-type: image/png');
 	
 	//verm=000,077,170,200,255
