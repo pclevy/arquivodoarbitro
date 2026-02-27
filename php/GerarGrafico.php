@@ -212,7 +212,7 @@ header("Content-Type: image/png");
 			imagefilledrectangle($imagem, 4, $i*$larg_bar+2, 40, $i*$larg_bar+$larg_bar, $fundo);
 			
 			//imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 			// ******* 2026/02/27 *******
-			imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 			// ******* 2026/02/27 *******
+			imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto); 					// ******* 2026/02/27 *******
 		}
 		else
 		{
@@ -228,7 +228,10 @@ header("Content-Type: image/png");
 			//$imagemH = imagerotate($imagem, -90, 0);
 			//$branco = ImageColorAllocate($imagem, 255, 255, 255);
 			//$preto = ImageColorAllocate($imagem, 000, 000, 000);
-			imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 
+			
+			//imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 			// ******* 2026/02/27 *******
+			imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto); 					// ******* 2026/02/27 *******
+			
 			//$imagem = imagerotate($imagemH, 90, 0);
 			//ImageDestroy($imagemH);
 		}
@@ -246,14 +249,15 @@ header("Content-Type: image/png");
 	{
 		if($rating[$i]<1)
 		{
-			imagestring($imagem, 1, 3+$i*$larg_bar+0, 150, " ND", $preto*(-1)); 
+			//imagestring($imagem, 1, 3+$i*$larg_bar+0, 150, " ND", $preto*(-1)); 			// ******* 2026/02/27 *******
+			imagestring($imagem, 1, 3+$i*$larg_bar+0, 150, " ND", $preto); 				// ******* 2026/02/27 *******
 		}
 		else
 		{
 			$alt_rat = ($rating[$i]-$min) * $coef + $alt_min;
 			
-			//imagestring($imagem, 1, 3+$i*$larg_bar+0, $alt_img-$alt_rat-9, $rating[$i], $preto*(-1)); // ******* 2026/02/27 *******
-			imagestring($imagem, 1, 3+$i*$larg_bar+0, $alt_img-$alt_rat-9, $rating[$i], $preto*(-1)); // ******* 2026/02/27 *******
+			//imagestring($imagem, 1, 3+$i*$larg_bar+0, $alt_img-$alt_rat-9, $rating[$i], $preto*(-1)); 		// ******* 2026/02/27 *******
+			imagestring($imagem, 1, 3+$i*$larg_bar+0, $alt_img-$alt_rat-9, $rating[$i], $preto); 				// ******* 2026/02/27 *******
 		}
 	}
 	
