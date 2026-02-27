@@ -281,5 +281,10 @@ error_reporting(E_ALL);
     die("Headers already sent in $file on line $line");
 }
 	
-	imagepng($imagem);
-	imagedestroy($imagem);
+	//imagepng($imagem);
+	//imagedestroy($imagem);
+	
+	header("Content-Type: image/png");
+imagepng($imagem);
+imagedestroy($imagem);
+exit;
