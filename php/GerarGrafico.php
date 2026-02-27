@@ -1,8 +1,9 @@
 <?php
 
 ini_set('display_errors', 0);
-error_reporting(0);
-ob_clean();
+ini_set('log_errors', 1);
+error_reporting(E_ALL);
+
 header("Content-Type: image/png");
 
 	//header('Content-type: image/png');
