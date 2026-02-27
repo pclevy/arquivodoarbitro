@@ -1,24 +1,10 @@
 <?php
 
-/*
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 error_reporting(E_ALL);
-*/
 
-/*
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-ob_clean();
-ob_start();
-*/
-
-ini_set('display_errors', 1);
-ini_set('log_errors', 1);
-ini_set('error_log', 'C:/php/logs/teste.log');
-error_reporting(E_ALL);
-
-//header("Content-Type: image/png"); ******************************************
+header("Content-Type: image/png");
 
 	//header('Content-type: image/png');
 	
@@ -89,11 +75,6 @@ error_reporting(E_ALL);
 	
 	//$list_par = split("&", $parametros);
 	$list_par = explode('&', $parametros);
-	
-	$fim_par = count($list_par);
-	$rating = [];
-	$mesano = [];
-	
 	$qt = count($list_par);
 	for($i=0;$i<$qt;$i++)
 	{
@@ -119,10 +100,6 @@ error_reporting(E_ALL);
 	//echo "<br><br>$v2 - ";echo "$alt_max - ";echo "$coef <br><br>";exit;
 	
 	//$min=$list_par[2];$max=$list_par[$qt-2];
-	
-	$rating = [];				// ******* 2026/02/27 *******
-	$mesano = [];			// ******* 2026/02/27 *******
-	
 	$min=3000;$max=0;
 	$j=0;
 	for($i=2;$i<$qt;$i=$i+2)
@@ -164,8 +141,7 @@ error_reporting(E_ALL);
 	
 	
 	//$imagem = imagecreate($alt_img,$larg_img);
-	//$imagem = imagecreatetruecolor($alt_img,$larg_img) or die('Cannot Initialize new GD image stream');
-	$imagem = imagecreatetruecolor($larg_img,$alt_img) or die('Cannot Initialize new GD image stream'); // **********************************88
+	$imagem = imagecreatetruecolor($alt_img,$larg_img) or die('Cannot Initialize new GD image stream');
 	
 	$fundo = imagecolorallocate($imagem, 255, 255, 180);
 	$branco = imagecolorallocate($imagem, 255, 255, 255);
@@ -224,8 +200,7 @@ error_reporting(E_ALL);
 			//ImageFilledRectangle($imagem, $i*20+2, $alt_img-10, $i*20+20, $alt_img-$alt_rat, $cor_bar);
 			imagefilledrectangle($imagem, 4, $i*$larg_bar+2, 40, $i*$larg_bar+$larg_bar, $fundo);
 			
-			//imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 			// ******* 2026/02/27 *******
-			imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto); 					// ******* 2026/02/27 *******
+			imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 
 		}
 		else
 		{
@@ -241,10 +216,7 @@ error_reporting(E_ALL);
 			//$imagemH = imagerotate($imagem, -90, 0);
 			//$branco = ImageColorAllocate($imagem, 255, 255, 255);
 			//$preto = ImageColorAllocate($imagem, 000, 000, 000);
-			
-			//imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 			// ******* 2026/02/27 *******
-			imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto); 					// ******* 2026/02/27 *******
-			
+			imagestring($imagem, 2, 5, 3+$i*$larg_bar+2, $mesano[$i], $preto*(-1)); 
 			//$imagem = imagerotate($imagemH, 90, 0);
 			//ImageDestroy($imagemH);
 		}
@@ -253,10 +225,7 @@ error_reporting(E_ALL);
 		
 	}
 	
-	//$imagem = imagerotate($imagem, 90, 0); ****************************************************
-	// if (!$imagem) {
-    //   die("Rotate failed");
-    // }
+	$imagem = imagerotate($imagem, 90, 0);
 	
 	//ImageString($imagem, 2, 5, 3+$i*20+2, $mesano[$i], $preto); 
 	//ImageString($imagem, 2, 5, 3+1*20+2, $rating[2], $preto); 
@@ -265,26 +234,15 @@ error_reporting(E_ALL);
 	{
 		if($rating[$i]<1)
 		{
-			//imagestring($imagem, 1, 3+$i*$larg_bar+0, 150, " ND", $preto*(-1)); 			// ******* 2026/02/27 *******
-			imagestring($imagem, 1, 3+$i*$larg_bar+0, 150, " ND", $preto); 				// ******* 2026/02/27 *******
+			imagestring($imagem, 1, 3+$i*$larg_bar+0, 150, " ND", $preto*(-1)); 
 		}
 		else
 		{
 			$alt_rat = ($rating[$i]-$min) * $coef + $alt_min;
-			
-			//imagestring($imagem, 1, 3+$i*$larg_bar+0, $alt_img-$alt_rat-9, $rating[$i], $preto*(-1)); 		// ******* 2026/02/27 *******
-			imagestring($imagem, 1, 3+$i*$larg_bar+0, $alt_img-$alt_rat-9, $rating[$i], $preto); 				// ******* 2026/02/27 *******
+			imagestring($imagem, 1, 3+$i*$larg_bar+0, $alt_img-$alt_rat-9, $rating[$i], $preto*(-1)); 
 		}
 	}
 	
-	if (headers_sent($file, $line)) {
-    die("Headers already sent in $file on line $line");
-}
-	
-	//imagepng($imagem);
-	//imagedestroy($imagem);
-
-	header("Content-Type: image/png");
 	imagepng($imagem);
 	imagedestroy($imagem);
-	exit;
+?>
