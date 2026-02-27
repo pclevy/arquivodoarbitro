@@ -102,6 +102,10 @@ header("Content-Type: image/png");
 	//echo "<br><br>$v2 - ";echo "$alt_max - ";echo "$coef <br><br>";exit;
 	
 	//$min=$list_par[2];$max=$list_par[$qt-2];
+	
+	$rating = [];				// ******* 2026/02/27 *******
+	$mesano = [];			// ******* 2026/02/27 *******
+	
 	$min=3000;$max=0;
 	$j=0;
 	for($i=2;$i<$qt;$i=$i+2)
