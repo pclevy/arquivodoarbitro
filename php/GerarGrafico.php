@@ -1,8 +1,10 @@
 <?php
 
+/*
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 error_reporting(E_ALL);
+*/
 
 header("Content-Type: image/png");
 
@@ -83,6 +85,8 @@ header("Content-Type: image/png");
 		$list_par[$i] = substr($list_par[$i],$pos+1);
 		if($list_par[$i]==9999) {$fim_par=$i;}		
 	}
+	
+	$fim_par = $qt;			// ******* 2026/02/27 *******
 	
 	for($j=$qt;$j>$fim_par;$j--){$removed_element=array_pop($list_par);};
 	$qt = count($list_par);
