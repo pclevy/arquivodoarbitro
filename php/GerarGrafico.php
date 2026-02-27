@@ -77,6 +77,11 @@ header("Content-Type: image/png");
 	
 	//$list_par = split("&", $parametros);
 	$list_par = explode('&', $parametros);
+	
+	$fim_par = count($list_par);
+	$rating = [];
+	$mesano = [];
+	
 	$qt = count($list_par);
 	for($i=0;$i<$qt;$i++)
 	{
