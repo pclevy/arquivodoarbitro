@@ -136,13 +136,13 @@ ini_set('display_errors', 0);
 	</head>
 	
 	<body bgcolor="eeeeff">
-		Título: <input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'>
+		<!-- Título: <input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'> -->
 		<font size="3"><b>Xadrez UERJ</b></font><br>
 		<font size="6">Arquivo do Árbitro</font><br>
-		<font size="3"><b>Pesquisa de Enxadristas - por nome</b></font> <font size='2' color='red'>(Dados baseados na Lista de Rating de fevereiro/2022!!</font><br>
+		<font size="3"><b>Pesquisa de Enxadristas - por nome</b></font> <font size='2' color='red'>(Dados baseados na Lista de Rating de janeiro/2026!!</font><br>
 		<font size='2' color='red'> <!-- <b>Em construção</b>: os dados aqui apresentados ainda são experimentais, podendo haver imprecisões!!</font> --> <br>
-		<br>
-		<input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'>
+		
+		<!-- <input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'> -->
 		<form name='reg_rat_pesq' action='reg_rat_pesq.php' method='post' autocomplete='off'>
 			<div style="width:460;background-color:#EDFAD6;line-height:30px;padding:1;border:1px solid #2266AA;">
 				<table width='100%'>
@@ -179,7 +179,7 @@ ini_set('display_errors', 0);
 							<input name='enxadrista' id='enxadrista' type='text' value='' size='49' maxlenght='60' onkeyup='TamNomPesq=trim(this.value).length;pesq_nome(this.value);' />
 							<input name='enxadrista_reg' id='enxadrista_reg' type='hidden' value='' size='6' />
 							<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onclick='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'><br>
-								<option style="font-weight:bold" value="">Digite acima parte do nome ou Selecione aqui .........</option>
+								<option style="font-weight:bold" value="">Digite acima parte do nome ou Selecione aqui ...</option>
 							</select>
 						</td>
 					</tr>
