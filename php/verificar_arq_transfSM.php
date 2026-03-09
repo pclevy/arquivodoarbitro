@@ -36,8 +36,10 @@ echo "<br><br>$list_par[0]<br><br>";
 	// Lendo Título ...
 	$filetorneio = $dir_orig . $nomedoarquivo;
 	$filetorneio2 = $dir_dest . $nomedoarquivo;
-	//echo "<br><br>***$filetorneio<br>$filetorneio2***<br><br>";exit;
-	$fht = fopen($filetorneio, 'rb');  
+	
+	echo "<br><br>***$filetorneio<br>$filetorneio2***<br><br>";//exit;
+	
+	$fht = fopen($filetorneio, 'rb');
 	$blocoNaoIdent = fread($fht, 108);
 	$TituloTorneio = LerCampoStr($fht);
 	//$TituloTorneio = htmlspecialchars($TituloTorneio, ENT_QUOTES);
