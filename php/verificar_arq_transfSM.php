@@ -30,7 +30,8 @@ echo "<br><br>$list_par[0]<br><br>";
  
  echo "	$nomedoarquivo"; //exit;
  
-	$sobrescrever = $_POST['sobrescrever'];
+	//$sobrescrever = $_POST['sobrescrever'];
+	$sobrescrever = filter_input(INPUT_POST, 'sobrescrever') ?? 0;			// ***** 2026/03/09, 18:25 *****
 	if($gravar!='I') { $gravar = $sobrescrever; }
 	// Lendo Título ...
 	$filetorneio = $dir_orig . $nomedoarquivo;
