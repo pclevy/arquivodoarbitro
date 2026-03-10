@@ -45,7 +45,7 @@ RUN echo "file_uploads = On" > /usr/local/etc/php/conf.d/uploads.ini \
     && echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/uploads.ini
 
 # Configure PHP error logging
-RUN echo "log_errors = On" > /usr/local/etc/php/conf.d/php-error-log.ini \
+RUN echo "log_errors = Off" > /usr/local/etc/php/conf.d/php-error-log.ini \
     && echo "error_log = /var/log/php-error.log" >> /usr/local/etc/php/conf.d/php-error-log.ini
 
 # Copy application files
