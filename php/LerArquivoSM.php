@@ -94,6 +94,7 @@
 	*/			// ***** 2026/03/10 *****
 	
 	
+	
 	if($ArqTorneio=='')
 	{
 		$ArqTorneio = trim($_POST['arquivo']);
