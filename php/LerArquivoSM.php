@@ -58,33 +58,41 @@
 	//echo "$strconexao<br><br>";exit;
 	//Conectando com o DB
 	$conexao=pg_connect($strconexao) or die("erro na conexão");
-	//Selecionando registros de 'ratdiff'
-	$sqlexp="SELECT * FROM ratdiff ORDER BY p";
-	$sqlres=pg_query($conexao,$sqlexp) or die("Sem Resultados!");
-	$resultado=pg_num_rows($sqlres);
-	$i=0;
-	while ($i<$resultado)
-	{
-		$dp[$i] = pg_result($sqlres,$i,'dp');
-		$i++;
-	}
-	//Selecionando registros de 'expectancia'
-	$sqlexp="SELECT dif_min,dif_max,perc_sup FROM expectancia ORDER BY dif_min";
-	$sqlres=pg_query($conexao,$sqlexp) or die("Sem Resultados!");
-	$resultado=pg_num_rows($sqlres);
-	$i=0;
-	while ($i<$resultado)
-	{
-		$dif_min  = pg_result($sqlres,$i,'dif_min');
-		$dif_max  = pg_result($sqlres,$i,'dif_max');
-		$perc_sup = pg_result($sqlres,$i,'perc_sup');
-		if($dif_max>735){$dif_max=800;}
-		for($j=$dif_min;$j<=$dif_max;$j++)
-		{
-			$expectancia[$j]=$perc_sup;
-		}
-		$i++;
-	}
+	
+	
+	/*			// ***** 2026/03/10 *****
+			
+			//Selecionando registros de 'ratdiff'
+			$sqlexp="SELECT * FROM ratdiff ORDER BY p";
+			$sqlres=pg_query($conexao,$sqlexp) or die("Sem Resultados!");
+			$resultado=pg_num_rows($sqlres);
+			$i=0;
+			while ($i<$resultado)
+			{
+				$dp[$i] = pg_result($sqlres,$i,'dp');
+				$i++;
+			}
+			//Selecionando registros de 'expectancia'
+			$sqlexp="SELECT dif_min,dif_max,perc_sup FROM expectancia ORDER BY dif_min";
+			$sqlres=pg_query($conexao,$sqlexp) or die("Sem Resultados!");
+			$resultado=pg_num_rows($sqlres);
+			
+			$i=0;
+			while ($i<$resultado)
+			{
+				$dif_min  = pg_result($sqlres,$i,'dif_min');
+				$dif_max  = pg_result($sqlres,$i,'dif_max');
+				$perc_sup = pg_result($sqlres,$i,'perc_sup');
+				if($dif_max>735){$dif_max=800;}
+				for($j=$dif_min;$j<=$dif_max;$j++)
+				{
+					$expectancia[$j]=$perc_sup;
+				}
+				$i++;
+			}
+			
+	*/			// ***** 2026/03/10 *****
+	
 	
 	if($ArqTorneio=='')
 	{
