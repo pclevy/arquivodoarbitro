@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zlib1g-dev \
     libonig-dev \
+    vim \ 
     && rm -rf /var/lib/apt/lists/*
 
 # Configure GD with full support
@@ -42,6 +43,10 @@ RUN echo "file_uploads = On" > /usr/local/etc/php/conf.d/uploads.ini \
     && echo "upload_max_filesize = 100M" >> /usr/local/etc/php/conf.d/uploads.ini \
     && echo "post_max_size = 100M" >> /usr/local/etc/php/conf.d/uploads.ini \
     && echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/uploads.ini
+
+# Configure PHP error logging
+RUN echo "log_errors = On" > /usr/local/etc/php/conf.d/php-error-log.ini \
+    && echo "error_log = /var/log/php-error.log" >> /usr/local/etc/php/conf.d/php-error-log.ini
 
 # Copy application files
 COPY . /var/www/html/
