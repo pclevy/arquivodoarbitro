@@ -50,7 +50,7 @@ ini_set('display_errors', 0);
 	";
 ?>
 
-<html>
+<html lang="pt-BR">
 	<head>
 		<title>Consultar Registro e Rating!</title>
 		<script LANGUAGE="JavaScript" SRC="../js/jstrim.js"></script>
@@ -131,7 +131,7 @@ ini_set('display_errors', 0);
 					document.getElementById('SubmitButton').click();
 				}
 			}
-		}			
+		}
 		</script>
 	</head>
 	
@@ -160,10 +160,9 @@ ini_set('display_errors', 0);
 					</tr>
 					
 					<tr>
-						<td valign='top' colspan='4'>Faixa de Rating. &nbsp; De: 
-							<input name='rat_min' id='rat_min' type='text' value='0' size='4' maxlenght='8'> 
-							&nbsp; A &nbsp; 
-							<input name='rat_max' id='rat_max' type='text' value='3000' size='4' maxlenght='8'>
+						<td valign='top' colspan='4'>Faixa de Rating.&nbsp;De: 
+							<input name='rat_min' id='rat_min' type='text' value='0' size='2' maxlenght='4'>&nbsp;A&nbsp;
+							<input name='rat_max' id='rat_max' type='text' value='3000' size='2' maxlenght='4'>
 							&nbsp; &nbsp; &nbsp; 
 							Ritmo: 
 							<select name='ritmo' id='ritmo'>
