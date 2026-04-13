@@ -1,0 +1,1 @@
+ALTER SEQUENCE torneios_reg_seq RESTART WITH 1;
