@@ -26,8 +26,8 @@
 	
 	$inicio=0; // *** teste *** 2026/04/14, 14:50 ***
 	echo "Qt. Tabelas: $resultabs <br><br>";//exit;
-	$inicio=1;$resultabs=3; // *** teste *** 2026/04/14, 14:50 *** // *** teste *** 13:25 ***
-	echo "Qt. Tabelas: $resultabs <br><br>";//exit;
+	$inicio=3;$resultabs=5; // *** teste *** 2026/04/14, 14:50 *** // *** teste *** 13:25 ***
+	echo "TabelaInicial: $inicio  -  TabelaFinal: $resultabs <br><br>";//exit;
 	
 	for($i=$inicio;$i<$resultabs;$i++)
 	{
