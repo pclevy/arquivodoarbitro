@@ -25,8 +25,9 @@
 	$resultabs=pg_num_rows($sqltabs);
 	
 	echo "Qt. Tabelas: $resultabs <br><br>";exit;
-	
 	$resultabs=1; // *** teste *** 13:25 ***
+	echo "Qt. Tabelas: $resultabs <br><br>";exit;	
+	
 	for($i=0;$i<$resultabs;$i++)
 	{
 		$data_base[$i] = substr(pg_fetch_result($sqltabs,$i,'nome_tab'),1,8);
