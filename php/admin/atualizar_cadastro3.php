@@ -28,7 +28,7 @@
 	
 	for($i=0;$i<$resultabs;$i++)
 	{
-		$data_base[$i] = substr(pg_result($sqltabs,$i,'nome_tab'),1,8);
+		$data_base[$i] = substr(pg_fetch_result($sqltabs,$i,'nome_tab'),1,8);
 		
 		echo "$i - $data_base[$i] <br>";
 	}
@@ -71,12 +71,12 @@
 			$i=0;
 			while ($i<$resultado)
 			{
-				$reg = pg_result($sqlR,$i,'reg')*1;
+				$reg = pg_fetch_result($sqlR,$i,'reg')*1;
 				echo "reg: $reg<br>";
-				$rating = pg_result($sqlR,$i,'rating');
-				if(pg_result($sqlR,$i,'rpd')>0) {$rpd = pg_result($sqlR,$i,'rpd');} else {$rpd = 0;}
-				if(pg_result($sqlR,$i,'blz')>0) {$blz = pg_result($sqlR,$i,'blz');} else {$blz = 0;}
-				$clube = pg_result($sqlR,$i,'clube');
+				$rating = pg_fetch_result($sqlR,$i,'rating');
+				if(pg_fetch_result($sqlR,$i,'rpd')>0) {$rpd = pg_fetch_result($sqlR,$i,'rpd');} else {$rpd = 0;}
+				if(pg_fetch_result($sqlR,$i,'blz')>0) {$blz = pg_fetch_result($sqlR,$i,'blz');} else {$blz = 0;}
+				$clube = pg_fetch_result($sqlR,$i,'clube');
 				//*2015/09/30* $status="A";
 				$i++;
 				
@@ -84,12 +84,13 @@
 				
 				$sqlexprC = "UPDATE cadastro SET rating='$rating',clube='$clube',rapido='$rpd',blitz='$blz' WHERE reg='" . $reg . "'";	//*2015/09/30*
 				
-				//echo "$conexaoL - $sqlexprC - " . pg_result($sqlR,$i,'rpd') . "<br>";
+				//echo "$conexaoL - $sqlexprC - " . pg_fetch_result($sqlR,$i,'rpd') . "<br>";
 				
 				$sqlC=pg_query($conexaoL,$sqlexprC) or die("Sem Cadastros!");
 				$resultadoC=pg_affected_rows($sqlC);
 				//echo "$resultadoC <br>";
 			}
+			
 		}
 	}
 ?>
