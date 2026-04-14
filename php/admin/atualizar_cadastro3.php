@@ -26,6 +26,7 @@
 	
 	echo "Qt. Tabelas: $resultabs <br><br>";exit;
 	
+	$resultabs=1; // *** teste ***
 	for($i=0;$i<$resultabs;$i++)
 	{
 		$data_base[$i] = substr(pg_fetch_result($sqltabs,$i,'nome_tab'),1,8);
