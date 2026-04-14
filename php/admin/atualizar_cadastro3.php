@@ -30,7 +30,7 @@
 	
 	$inicio=0; // *** teste *** 2026/04/14, 14:50 ***
 	echo "Qt. Tabelas: $resultabs <br><br>";//exit;
-	$inicio=40;$resultabs=50; // *** teste *** 2026/04/14, 14:50 *** // *** teste *** 13:25 ***
+	$inicio=50;$resultabs=53; // *** teste *** 2026/04/14, 14:50 *** // *** teste *** 13:25 ***
 	echo "TabelaInicial: $inicio  -  TabelaFinal: $resultabs <br><br>";//exit;
 	
 	for($i=$inicio;$i<$resultabs;$i++)
@@ -53,7 +53,13 @@
 	$Erro=pg_last_error($conexao);
 	if($Erro!="")
 		{echo "<br> ... Erro: $Erro ...<br><br>";} 
+	
+	$horaFinal = date('H:i:s');
+	echo "Final: $horaFinal<br><br>";
+
+	echo '</html>';
 	exit;
+	
 	// --------------------------------------------------------------------------------		
 	function atualizar_cadastro($conexaoL,$data_baseL)
 	{
@@ -100,10 +106,5 @@
 			
 		}
 	}
-	
-	echo '</html>';
-	$horaFinal = date('H:i:s');
-	echo "Final: $horaFinal<br><br>";
-	exit;
 	
 ?>
