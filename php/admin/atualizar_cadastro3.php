@@ -24,7 +24,7 @@
 	$sqltabs=pg_query($conexao,"SELECT nome_tab FROM tabelas_rating ORDER BY nome_tab") or die("Sem Tabelas!");
 	$resultabs=pg_num_rows($sqltabs);
 	
-	echo "Qt. Tabelas: $resultabs <br><br>"; //exit;
+	echo "Qt. Tabelas: $resultabs <br><br>";exit;
 	
 	for($i=0;$i<$resultabs;$i++)
 	{
