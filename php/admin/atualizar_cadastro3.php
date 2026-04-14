@@ -3,6 +3,9 @@
 	// *** 2015/09/30 *** 2013/11/26 ***
 	// *** atualiza Ratings no Cadastro ***
 	
+	echo '<html lang="pt-BR">';
+	echo "$now<br><br>";//exit;
+	
 	echo "Início<br><br>";//exit;
 	
 	// Lendo String de conexão
@@ -26,7 +29,7 @@
 	
 	$inicio=0; // *** teste *** 2026/04/14, 14:50 ***
 	echo "Qt. Tabelas: $resultabs <br><br>";//exit;
-	$inicio=10;$resultabs=20; // *** teste *** 2026/04/14, 14:50 *** // *** teste *** 13:25 ***
+	$inicio=20;$resultabs=30; // *** teste *** 2026/04/14, 14:50 *** // *** teste *** 13:25 ***
 	echo "TabelaInicial: $inicio  -  TabelaFinal: $resultabs <br><br>";//exit;
 	
 	for($i=$inicio;$i<$resultabs;$i++)
@@ -96,4 +99,8 @@
 			
 		}
 	}
+	
+	echo '</html>';
+	echo "$now<br>";//exit;
+	
 ?>
