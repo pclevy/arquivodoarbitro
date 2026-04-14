@@ -38,7 +38,7 @@
 
 		//echo "<br><br>$i - "."r"."$data_base[0] <br>";
 
-	$tabini=0;$tabfim=$resultabs-1;
+	$tabini=$inicio;$tabfim=$resultabs-1;
 	for($i=$tabini;$i<=$tabfim;$i++)
 	{
 		atualizar_cadastro($conexao,$data_base[$i]);
