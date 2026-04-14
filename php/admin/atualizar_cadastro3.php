@@ -18,7 +18,7 @@
 	//Conectando com o DB
 	$conexao=pg_connect($strconexao); //or die("erro na conexão");
 	
-	echo "Passo 3: OK<br><br>";exit;
+	echo "Passo 3: OK<br><br>";//exit;
 	
   //Listando tabelas de Rating
 	$sqltabs=pg_query($conexao,"SELECT nome_tab FROM tabelas_rating ORDER BY nome_tab") or die("Sem Tabelas!");
