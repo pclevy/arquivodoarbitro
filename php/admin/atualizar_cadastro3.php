@@ -4,7 +4,8 @@
 	// *** atualiza Ratings no Cadastro ***
 	
 	echo '<html lang="pt-BR">';
-	echo "$now<br><br>";//exit;
+	$horaInicial = date('H:i:s');
+	echo "Início: $horaInicial<br><br>";//exit;
 	
 	echo "Início<br><br>";//exit;
 	
@@ -29,7 +30,7 @@
 	
 	$inicio=0; // *** teste *** 2026/04/14, 14:50 ***
 	echo "Qt. Tabelas: $resultabs <br><br>";//exit;
-	$inicio=30;$resultabs=40; // *** teste *** 2026/04/14, 14:50 *** // *** teste *** 13:25 ***
+	$inicio=40;$resultabs=50; // *** teste *** 2026/04/14, 14:50 *** // *** teste *** 13:25 ***
 	echo "TabelaInicial: $inicio  -  TabelaFinal: $resultabs <br><br>";//exit;
 	
 	for($i=$inicio;$i<$resultabs;$i++)
@@ -101,6 +102,8 @@
 	}
 	
 	echo '</html>';
-	echo "$now<br>";//exit;
+	$horaFinal = date('H:i:s');
+	echo "Final: $horaFinal<br><br>";
+	exit;
 	
 ?>
