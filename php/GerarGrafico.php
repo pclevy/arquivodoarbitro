@@ -8,8 +8,6 @@
 
 	header("Content-Type: image/png");
 	
-	//for($i_seq_bar=0;$i_seq_bar<1;$i_seq_bar++)
-	//{	
 		$i_cor= 0;$verm[$i_cor]=255;$verd[$i_cor]=  0;$azul[$i_cor]=  0;
 		$i_cor= 1;$verm[$i_cor]=255;$verd[$i_cor]=165;$azul[$i_cor]=  0;
 		$i_cor= 2;$verm[$i_cor]=255;$verd[$i_cor]=255;$azul[$i_cor]=  0;
@@ -34,7 +32,6 @@
 		$i_cor=21;$verm[$i_cor]=255;$verd[$i_cor]=127;$azul[$i_cor]= 80;
 		
 		$i_cor_max = $i_cor;
-	//}
 	
 	$parametros = $_SERVER['QUERY_STRING'];
 	
