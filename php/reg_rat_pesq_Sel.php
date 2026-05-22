@@ -22,11 +22,11 @@ ini_set('display_errors', 0);
 	echo "<script language='JavaScript' type='text/javascript'>";
 	echo "var listaJogadores = [];";
 	while ($i<$resultado) {
-		$reg = trim(pg_result($sql,$i,'reg'));
-		$prenome = trim(pg_result($sql,$i,'nome'));
-		$sobrenome = trim(pg_result($sql,$i,'sobrenome'));
+		$reg = trim(pg_fetch_result($sql,$i,'reg'));
+		$prenome = trim(pg_fetch_result($sql,$i,'nome'));
+		$sobrenome = trim(pg_fetch_result($sql,$i,'sobrenome'));
 		$nome=trim($prenome . ' ' . $sobrenome);
-		$clube = trim(pg_result($sql,$i,'clube'));
+		$clube = trim(" ".pg_fetch_result($sql,$i,'clube'));
 
 		echo "listaJogadores.push({reg:" . json_encode($reg) . ", nome:" . json_encode($nome) . ", clube:" . json_encode($clube) . "});";
 		$i++;
