@@ -244,16 +244,62 @@
 		
 		if($codificacao != "utf8")
 		{
-			$TituloTorneio = utf8_encode($TituloTorneio);
-			$SubTituloTorneio = utf8_encode($SubTituloTorneio);
-			$LeadTorneio = utf8_encode($LeadTorneio);
-			$Diretor = utf8_encode($Diretor);
-			$Organizador = utf8_encode($Organizador);
-			$ArbitrosAux = utf8_encode($ArbitrosAux);
-			$ArbitroPrincipal = utf8_encode($ArbitroPrincipal);
+			//$TituloTorneio = utf8_encode($TituloTorneio);
+			$TituloTorneio = mb_convert_encoding(
+				$TituloTorneio,
+				'UTF-8',
+				mb_detect_encoding($TituloTorneio, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+			);
+
+			//$SubTituloTorneio = utf8_encode($SubTituloTorneio);
+			$SubTituloTorneio = mb_convert_encoding(
+				$TituloTorneio,
+				'UTF-8',
+				mb_detect_encoding($SubTituloTorneio, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+			);
 			
-			$LocalTorneio = utf8_encode($LocalTorneio);
+			//$LeadTorneio = utf8_encode($LeadTorneio);
+			$LeadTorneio = mb_convert_encoding(
+				$LeadTorneio,
+				'UTF-8',
+				mb_detect_encoding($LeadTorneio, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+			);
 			
+			//$Diretor = utf8_encode($Diretor);
+			$Diretor = mb_convert_encoding(
+				$Diretor,
+				'UTF-8',
+				mb_detect_encoding($Diretor, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+			);
+			
+			//$Organizador = utf8_encode($Organizador);
+			$Organizador = mb_convert_encoding(
+				$Organizador,
+				'UTF-8',
+				mb_detect_encoding($Organizador, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+			);
+			
+			//$ArbitrosAux = utf8_encode($ArbitrosAux);
+			$ArbitrosAux = mb_convert_encoding(
+				$ArbitrosAux,
+				'UTF-8',
+				mb_detect_encoding($ArbitrosAux, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+			);
+			
+			//$ArbitroPrincipal = utf8_encode($ArbitroPrincipal);
+			$ArbitroPrincipal = mb_convert_encoding(
+				$ArbitroPrincipal,
+				'UTF-8',
+				mb_detect_encoding($ArbitroPrincipal, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+			);
+						
+			//$LocalTorneio = utf8_encode($LocalTorneio);
+			$LocalTorneio = mb_convert_encoding(
+				$LocalTorneio,
+				'UTF-8',
+				mb_detect_encoding($LocalTorneio, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+			);
+						
 		}
 	    
 		//$posPonteiro1 = ftell($fh);		
@@ -265,7 +311,13 @@
 		//echo "Teste: $NuloN0z2 !<br>";
 		//$Arbitro = "teste 99"; //LerCampoStr($fh);
 		$Arbitro = LerCampoStr($fh);
-		$Arbitro = utf8_encode($Arbitro);
+		//$Arbitro = utf8_encode($Arbitro);
+		$Arbitro = mb_convert_encoding(
+			$Arbitro,
+			'UTF-8',
+			mb_detect_encoding($Arbitro, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+		);
+
 		//$posPonteiro2 = ftell($fh);		
 		//echo "árbitro adjunto: $Arbitro <br>";
 		
@@ -891,8 +943,21 @@
 
         		if($codificacao != "utf8")
         		{
-        			$PreNomeJogador[$z] = utf8_encode($PreNomeJogador[$z]);
-        			$SobreNomeJogador[$z] = utf8_encode($SobreNomeJogador[$z]);
+        			//$PreNomeJogador[$z] = utf8_encode($PreNomeJogador[$z]);
+					$PreNomeJogador[$z] = mb_convert_encoding(
+						$PreNomeJogador[$z],
+						'UTF-8',
+						mb_detect_encoding($PreNomeJogador[$z], ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+					);
+
+					//$SobreNomeJogador[$z] = utf8_encode($SobreNomeJogador[$z]);
+					$SobreNomeJogador[$z] = mb_convert_encoding(
+						$SobreNomeJogador[$z],
+						'UTF-8',
+						mb_detect_encoding($SobreNomeJogador[$z], ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+					);
+
+
         		}
 				
 				//*y*//if($_COOKIE["OrdNomeSobreNome"]=='NS')
@@ -933,10 +998,15 @@
 				$BlocoD1[$z] = '?' . TestarSeqAsc($fh,6) . '?';
 				//echo '<br>' . TestarSeqAsc($fh, 6) . '<br>';
 				
-				//$Clube[$z] = LerCampoStr($fh) . '&nbsp;';
-				$Clube[$z] = utf8_encode(trim(LerCampoStr($fh)));
-				$Clube[$z] = htmlspecialchars($Clube[$z], ENT_QUOTES); // Clube/Cidade com aspa ********************
-				
+				$Clube[$z] = LerCampoStr($fh) . '&nbsp;';
+				//Clube[$z] = utf8_encode(trim(LerCampoStr($fh)));
+				$Clube[$z] = mb_convert_encoding(
+					$Clube[$z],
+					'UTF-8',
+					mb_detect_encoding($Clube[$z], ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
+				);
+				$Clube[$z] = htmlspecialchars($Clube[$z], ENT_QUOTES); // Clube/Cidade com aspa ********************				
+
 				$PaisJogador[$z] = trim(LerCampoStr($fh));
 				$Federacao=RetirarNulo($PaisJogador[$z]);
 				if(isset($Federacoes[$Federacao])) {$Federacoes[$Federacao]=+1;} else {$Federacoes[$Federacao]=1;}
