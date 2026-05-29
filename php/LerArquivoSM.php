@@ -60,7 +60,8 @@
 	$conexao=pg_connect($strconexao) or die("erro na conexão");
 	
 	
-	/*			// ***** 2026/03/10 *****
+				// ***** 2026/03/10 *****
+				// ***** 2026/05/29 *****
 			
 			//Selecionando registros de 'ratdiff'
 			$sqlexp="SELECT * FROM ratdiff ORDER BY p";
@@ -91,7 +92,8 @@
 				$i++;
 			}
 			
-	*/			// ***** 2026/03/10 *****
+				// ***** 2026/03/10 *****
+				// ***** 2026/05/29 *****
 	
 	
 	
@@ -1454,7 +1456,7 @@
 													if($diffrat>400){$diffrat=400;}elseif($diffrat<-400){$diffrat=-400;};
 													
 													echo "$diffrat";exit;
-													
+
 													$ratvar[$CodJogA][$r] = $diffrat > 0 ? -(($expectancia[abs($diffrat)])*$FatorK[$CodJogA])/100:-((100-$expectancia[abs($diffrat)])*$FatorK[$CodJogA])/100;
 													$ratvar[$CodJogB][$r] = $diffrat < 0 ? ((100-$expectancia[abs($diffrat)])*$FatorK[$CodJogB])/100:(($expectancia[abs($diffrat)])*$FatorK[$CodJogB])/100;
 													$ratvart[$CodJogA] = $ratvart[$CodJogA] + $ratvar[$CodJogA][$r];
