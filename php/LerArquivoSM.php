@@ -1,7 +1,10 @@
 <?php
 	/* ***** Arquivo do Árbitro - Leitura de Arquivo SM ***** */
-  /* *** 2026/05/28 * 24/10/2014 * 02/02/2013 * 31/01/2013 *** */
-	
+  /* *** 2026/05/29 * 24/10/2014 * 02/02/2013 * 31/01/2013 *** */
+  
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+		
 	echo '<html dir="ltr" lang="pt-BR">';
 	echo '<head>';
 	echo '<meta charset="windows-1252" />';
