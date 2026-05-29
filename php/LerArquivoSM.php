@@ -1452,6 +1452,9 @@
 													
 													$diffrat = ($RatFIDE[$CodJogA]-$RatFIDE[$CodJogB]);
 													if($diffrat>400){$diffrat=400;}elseif($diffrat<-400){$diffrat=-400;};
+													
+													echo "$diffrat";exit;
+													
 													$ratvar[$CodJogA][$r] = $diffrat > 0 ? -(($expectancia[abs($diffrat)])*$FatorK[$CodJogA])/100:-((100-$expectancia[abs($diffrat)])*$FatorK[$CodJogA])/100;
 													$ratvar[$CodJogB][$r] = $diffrat < 0 ? ((100-$expectancia[abs($diffrat)])*$FatorK[$CodJogB])/100:(($expectancia[abs($diffrat)])*$FatorK[$CodJogB])/100;
 													$ratvart[$CodJogA] = $ratvart[$CodJogA] + $ratvar[$CodJogA][$r];
