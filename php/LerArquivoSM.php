@@ -1,6 +1,6 @@
 <?php
 	/* ***** Arquivo do Árbitro - Leitura de Arquivo SM ***** */
-  /* *** 24/10/2014 * 02/02/2013 * 31/01/2013 *** */
+  /* *** 2026/05/28 * 24/10/2014 * 02/02/2013 * 31/01/2013 *** */
 	
 	echo '<html dir="ltr" lang="pt-BR">';
 	echo '<head>';
