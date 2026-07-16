@@ -6,7 +6,7 @@
 					os árbitros de Xadrez, tendo como foco principal aqueles que atuam no Estado do Rio de Janeiro.<br>
 					Tentaremos fomentar o diálogo, a troca de informações e a realização de eventos, contribuindo, democraticamente, para 
 					a ampliação da qualidade técnica da Arbitragem de Xadrez, através de Reuniões, Palestras, Cursos, Seminários e quaisquer 
-					outros instrumentos de discussão e aprimoramento técnico.
+					outros instrumentos de discussão e aprimoramento técnico!
 					Visando o engrandecimento de nosso esporte, devemos também proporcionar os instrumentos acima citados, aos enxadristas 
 					interessados em conhecer melhor as Regras de Competição que regem o Xadrez como Esporte.<br>
 					A responsabilidade por idealização, construção e execução das propostas acima, será regida no mais alto grau dos seguintes critérios:<br>
