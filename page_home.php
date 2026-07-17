@@ -19,15 +19,17 @@
 			<div class="transbox90" id="PesquisarRating" style="
 				z-index:1;
 				visibility:visible;
-				position:relative;width:230px;
+				position:relative;
+				width: fit-content;
 				height:auto;left:5px;top:10px;
-				float:left;
+				float:center;
+				//float:left;
 				font-size:14px;
 				font-family:Arial Narrow,Liberation Sans Narrow;
 				font-weight:bold;
 				padding:2px;
 				background-color: #EEFFEE;
-				border:1px solid #2266AA">					
+				border:1px solid #2266AA">
 				<font size="4"><b>Enxadristas e ratings</b>:</font><br>
 				<!-- <font size="3"><a href="../Ratings/Rating_NOV_2013_STD.pdf">Clássico</a> - <a href="../Ratings/Rating_NOV_2013_RPD.pdf">Rápido</a> - <a href="../Ratings/Rating_NOV_2013_BLZ.pdf">Relâmpago</a></font><br><br> -->
 				&nbsp; - <font size="4"><b><a href="reg_rat_pesq_Sel.php">Pesquisar:</a></b> </font><!img src="../imagens/novo_blink.gif"><font size=1>10/02/2016</font><br>
