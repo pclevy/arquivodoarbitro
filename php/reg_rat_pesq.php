@@ -1,5 +1,8 @@
+// php/reg_rat_pesq.php
+/* Alterado em 2026/02/17, 17:26 */
+
 <?php
-/* Alterado em ................ 2026/07/16, 16:16 */
+/* Alterado em ................ 2026/07/17, 17:26 */
 
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
@@ -162,8 +165,14 @@ $total = pg_num_rows($res);
 /* ---------------------------------------------------------------------- */
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
+
+<html dir="ltr" lang="pt-BR">
+	<head>
+		<!meta charset="windows-1252">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
+		<link rel="icon" type="image/png" href="../images/arquivo_do_arbitro.png" />
 
         <!-- Google AdSense - Início-->
             <script
@@ -190,11 +199,6 @@ $total = pg_num_rows($res);
             </script>
         <!-- Google tag (gtag.js) -- Fim -->
 
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- <meta http-equiv="Pragma" content="no-cache, no-store" /> -->
-        <meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
-        <link rel="SHORTCUT ICON" href="images/esfinge_ico.png" type="image/x-png" />
         <title>Pesquisa de Enxadristas</title>
 
         <style>

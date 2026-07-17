@@ -1,9 +1,15 @@
+// php/index.php
+/* Alterado em 2026/02/17, 17:16 */
+
 <?php header('Access-Control-Allow-Origin: *'); ?>
- <!-- // *** caminhando para MySQL *** -->
+
 <html dir="ltr" lang="pt-BR">
 	<head>
 		<!meta charset="windows-1252">
-      rel="SHORTCUT ICON" href="../imagens/arquivo_do_arbitro.png" type="image/x-png" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
+		<link rel="icon" type="image/png" href="../images/arquivo_do_arbitro.png" />
 		
 		<title>AI Paulo Levy</title>
 		<style type="text/css">

@@ -1,5 +1,8 @@
+// php/reg_rat_pesq_Sel.php
+/* Alterado em 2026/02/17, 17:27 */
+
 <?php
-/* Alterado em 2026/02/12, 19:43 */
+/* Alterado em 2026/02/17, 17:16 */
 
 ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
@@ -50,8 +53,15 @@ ini_set('display_errors', 0);
 	";
 ?>
 
-<html lang="pt-BR">
+
+<html dir="ltr" lang="pt-BR">
 	<head>
+		<!meta charset="windows-1252">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
+		<link rel="icon" type="image/png" href="../images/arquivo_do_arbitro.png" />
+
 		<title>Consultar Registro e Rating!</title>
 		<script LANGUAGE="JavaScript" SRC="../js/jstrim.js"></script>
 		
