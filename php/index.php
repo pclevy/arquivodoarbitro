@@ -3,6 +3,8 @@
 <html dir="ltr" lang="pt-BR">
 	<head>
 		<!meta charset="windows-1252">
+      rel="SHORTCUT ICON" href="../imagens/arquivo_do_arbitro.png" type="image/x-png" />
+		
 		<title>AI Paulo Levy</title>
 		<style type="text/css">
 			<!--
