@@ -36,7 +36,8 @@
 			<div class="transbox90" id="ConsultarTorneios" style="
 				z-index:1;
 				visibility:visible;
-				position:relative;width:280px;
+				position:relative;
+				width:auto;
 				height:auto;left:280px;top:10px;
 				//float:left;
 				font-size:14px;
@@ -48,7 +49,14 @@
 				<font size="4"><b>Pesquisar Torneios</b>:</font><br>
 				&nbsp; - <font size="4"><b>
 				<!-- <a href='#'><span style="font-size:18;" onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"php/torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'><b>Pesquisar Torneios</b></span></a><img src="imagens/novo_blink.gif"> -->
-				<a href='#'><span style="font-size:18;" onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'><b>Pesquisar Torneios</b></span></a><!img src="../imagens/novo_blink.gif">
+				<a href='#'>
+					<span
+						style="font-size:18;"
+						onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'>
+						<b>Pesquisar Torneios</b>
+					</span>
+				</a>
+				<!img src="../imagens/novo_blink.gif">
 				</font>
 				<font size="5"><br></font>
 			</div>
