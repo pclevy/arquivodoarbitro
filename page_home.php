@@ -37,7 +37,7 @@
 				z-index:1;
 				visibility:visible;
 				position:relative;
-				width:auto;
+				//width:auto;
 				height:auto;left:280px;top:10px;
 				//float:left;
 				font-size:14px;
