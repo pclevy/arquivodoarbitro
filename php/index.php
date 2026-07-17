@@ -1,9 +1,6 @@
-// php/index.php
-/* Alterado em 2026/02/17, 17:16 */
-
-<?php header('Access-Control-Allow-Origin: *'); ?>
-
 <html dir="ltr" lang="pt-BR">
+<!-- php/index.php /* Alterado em 2026/02/17, 17:55 -->
+
 	<head>
 		<!meta charset="windows-1252">
         <meta charset="UTF-8" />

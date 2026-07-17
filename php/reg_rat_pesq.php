@@ -1,8 +1,5 @@
-// php/reg_rat_pesq.php
-/* Alterado em 2026/02/17, 17:26 */
-
 <?php
-/* Alterado em ................ 2026/07/17, 17:26 */
+/* php/reg_rat_pesq.php /* Alterado em 2026/02/17, 17:58 */
 
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);

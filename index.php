@@ -1,8 +1,7 @@
-// index.php
-/* Alterado em 2026/02/17, 17:24 */
-
 <!DOCTYPE html>
 <html dir="ltr" lang="pt-BR">
+<!-- index.html /* Alterado em 2026/02/17, 17:50 -->
+
 	<head>
 		<!meta charset="windows-1252">
         <meta charset="UTF-8" />
