@@ -22,8 +22,7 @@
 				position:relative;
 				width: fit-content;
 				height:auto;left:5px;top:10px;
-				float:center;
-				//float:left;
+				float:left;
 				font-size:14px;
 				font-family:Arial Narrow,Liberation Sans Narrow;
 				font-weight:bold;
@@ -40,8 +39,9 @@
 				visibility:visible;
 				position:relative;
 				width: fit-content;
-				height:auto;left:280px;top:10px;
-				//float:left;
+				height:auto;	//left:280px;
+				top:10px;
+				float:right;
 				font-size:14px;
 				font-family:Arial Narrow,Liberation Sans Narrow;
 				font-weight:bold;
