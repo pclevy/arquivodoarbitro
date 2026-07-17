@@ -18,6 +18,7 @@
 		<div style="visibility:visible;width:100%;height:80px;">	
 			<div class="transbox90" id="PesquisarRating" style="
 				z-index:1;
+				margin_left: 2px;
 				visibility:visible;
 				position:relative;
 				width: fit-content;
@@ -31,15 +32,16 @@
 				border:1px solid #2266AA">
 				<font size="4"><b>Enxadristas e ratings</b>:</font><br>
 				<!-- <font size="3"><a href="../Ratings/Rating_NOV_2013_STD.pdf">Clássico</a> - <a href="../Ratings/Rating_NOV_2013_RPD.pdf">Rápido</a> - <a href="../Ratings/Rating_NOV_2013_BLZ.pdf">Relâmpago</a></font><br><br> -->
-				&nbsp; - <font size="4"><b><a href="reg_rat_pesq_Sel.php">Pesquisar:</a></b> </font><!img src="../imagens/novo_blink.gif"><font size=1>10/02/2016</font><br>
+				&nbsp; - <font size="4"><b><a href="reg_rat_pesq_Sel.php">Pesquisar:</a></b> </font><br>
 				<font size="1"><br></font>
 			</div>
 			<div class="transbox90" id="ConsultarTorneios" style="
 				z-index:1;
+				margin_right: 2px;
 				visibility:visible;
 				position:relative;
 				width: fit-content;
-				height:auto;	//left:280px;
+				height:auto;
 				top:10px;
 				float:right;
 				font-size:14px;
@@ -55,7 +57,7 @@
 					<span
 						style="font-size:18;"
 						onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'>
-						<b>Pesquisar Torneios</b>
+						<b>Pesquisar</b>
 					</span>
 				</a>
 				<!img src="../imagens/novo_blink.gif">
