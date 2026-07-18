@@ -16,7 +16,7 @@
 			<span style="float:right;font-size:18px;"><b><u>AI Paulo C. Levy</u></b></span>
 		</div>
 
-		<font size="1"><br><br></font>
+		<font size="1"><hr /></font>
 		<div style="visibility:visible;width:100%;height:80px;">	
 			<div class="transbox90" id="PesquisarRating" style="
 				z-index:1;
