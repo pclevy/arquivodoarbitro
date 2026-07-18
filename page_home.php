@@ -14,9 +14,10 @@
 			<center>"<b><u>Legalidade</u> - <u>Transparência</u> - <u>Inclusão</u> - <u>Respeito</u> - <u>Desenvolvimento</u> - <u>Modernidade</u></b>".</center>
 			<font size="1"><br></font>
 			<span style="float:right;font-size:18px;"><b><u>AI Paulo C. Levy</u></b></span>
+			<hr />
 		</div>
 
-		<font size="1"><hr /></font>
+		<font size="1"><br /></font>
 		<div style="visibility:visible;width:100%;height:80px;">	
 			<div class="transbox90" id="PesquisarRating" style="
 				z-index:1;
