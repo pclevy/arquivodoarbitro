@@ -13,6 +13,7 @@
 			A responsabilidade por idealização, construção e execução das propostas acima, será regida no mais alto grau dos seguintes critérios:<br>
 			<center>"<b><u>Legalidade</u> - <u>Transparência</u> - <u>Inclusão</u> - <u>Respeito</u> - <u>Desenvolvimento</u> - <u>Modernidade</u></b>".<br></center>
 			<font size="1"><br></font>
+			<span style="float:rightfont-size:14px;">AI Paulo C. Levy</span>
 		</div>
 
 		<div style="visibility:visible;width:100%;height:80px;">	
@@ -42,22 +43,6 @@
 				</a>
 				</font>
 				<font size="1"><br></font>
-
-				<font size="4"><b>Base de Torneios</b>:</font><br>
-				<!-- <a href='#'><span style="font-size:18;" onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"php/torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'><b>Pesquisar Torneios</b></span></a><img src="imagens/novo_blink.gif"> -->
-				<font size="4"><b>
-				<a href='#'>
-					<span
-						style="font-size:18;"
-						onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'>
-						<b>Pesquisar</b>
-					</span>
-				</a>
-				</font>
-				<font size="1"><br></font>
-
-
-
 
 			</div>
 			<div class="transbox90" id="ConsultarTorneios" style="
