@@ -90,7 +90,10 @@
 				
 				<span style="font-size:6px;"><br></span>
 				&nbsp;- <a href='https://fbxdv.org.br/Calend%C3%A1rio%202026.pdf'>Calendário CBXDV</a><br>
-				
+								
+				<span style="font-size:6px;"><br></span>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><br>
+
 				<!--
 				<span style="font-size:6px;"><br></span>
 				&nbsp;- <a href='https://www.fexerj.org.br/torneio/a-realizar/2019-2/estadual-juvenil-absoluto-2019/folder/'>Campeonato Estadual Juvenil - RJ</a><br>
