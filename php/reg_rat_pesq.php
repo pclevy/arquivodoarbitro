@@ -169,7 +169,7 @@ $total = pg_num_rows($res);
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
-		<link rel="icon" type="image/png" href="../images/arquivo_do_arbitro.png" />
+		<link rel="icon" type="image/png" href="../imagens/arquivo_do_arbitro.png" />
 
         <!-- Google AdSense - Início-->
             <script
