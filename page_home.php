@@ -1,4 +1,4 @@
-<!-- page_home.php /* Alterado em 2026/02/17, 18:19 */ -->
+<!-- page_home.php /* Alterado em 2026/02/18, 03:20 */ -->
 <center>
 	<font size="4"><b><u>Apresentação</u></b></font><br>
 	<font size="1"><br></font>
@@ -86,11 +86,12 @@
 			<div id="EventosProximos" name="EventosProximos" style="position:absolute;bottom:50px;width:auto;left:5%;max-height:300;overflow-y:auto;text-align:left;outline-style:inset;font-size:14px;font-family:Arial Narrow Bold,Arial Narrow,Arial,sans-serif,Liberation Sans Narrow;font-weight:600;padding:6px;padding-left:30px;padding-right:30px;background-color:#ffffff;border:1px solid #2266AA">
 				<span style="font-size:22px;">Eventos próximos:</span><!br>
 				<span style="font-size:6px;"><br></span>
-				&nbsp;- <a href='https://www.fexerj.org.br/torneio/a-realizar/2019-2/campeonato-popular-2019/folder'>Campeonato Estadual Popular - RJ"</a><br>
+				&nbsp;- <a href='https://www.fexerj.org.br/blog/circuito-de-regionais-fexerj-etapa-nova-frinurgo'>Regional de Nova Friburgo - RJ</a><br>
+				
 				<span style="font-size:6px;"><br></span>
-				&nbsp;- <a href='https://www.duchampinrio.com/'>Festival Internacional Duchamp in Rio 3 - RJ</a><br>
-				<span style="font-size:6px;"><br></span>
-				&nbsp;- <a href='https://www.fbxdv.org.br/content/informe-0052019-finais-copa-brasil-%E2%80%93-2019'>Copa Brasil de Xadrez para Deficientes Visuais - DF</a><br>
+				&nbsp;- <a href='https://fbxdv.org.br/Calend%C3%A1rio%202026.pdf'>Calendário CBXDV</a><br>
+				
+				<!--
 				<span style="font-size:6px;"><br></span>
 				&nbsp;- <a href='https://www.fexerj.org.br/torneio/a-realizar/2019-2/estadual-juvenil-absoluto-2019/folder/'>Campeonato Estadual Juvenil - RJ</a><br>
 				<span style="font-size:6px;"><br></span>
@@ -98,6 +99,7 @@
 				<span style="font-size:6px;"><br></span>
 				&nbsp;- <a href='http://www.fcx.org.br/anexos/639/45324/floripa-chess-open-2020-pdf'>VI Floripa Chess Open - SC</a><br>
 				<span style="font-size:6px;"><br></span>
+				-->
 				
 			</div>
 			
