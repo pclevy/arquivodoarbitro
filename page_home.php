@@ -18,7 +18,7 @@
 		<div style="visibility:visible;width:100%;height:80px;">	
 			<div class="transbox90" id="PesquisarRating" style="
 				z-index:1;
-				margin_left: 9px;
+				margin_left: 3px;
 				visibility:visible;
 				position:relative;
 				width: fit-content;
@@ -37,11 +37,12 @@
 			</div>
 			<div class="transbox90" id="ConsultarTorneios" style="
 				z-index:1;
-				margin_right: 2px;
+				margin_right: 3px;
 				visibility:visible;
 				position:relative;
 				width: fit-content;
 				height:auto;
+				right:5px;
 				top:10px;
 				float:right;
 				font-size:14px;
@@ -50,7 +51,7 @@
 				padding:2px;
 				background-color: #EEFFEE;
 				border:1px solid #2266AA">					
-							
+
 				<font size="4"><b>Base de Torneios</b>:</font><br>
 				<!-- <a href='#'><span style="font-size:18;" onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"php/torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'><b>Pesquisar Torneios</b></span></a><img src="imagens/novo_blink.gif"> -->
 				<font size="4"><b>
@@ -61,9 +62,8 @@
 						<b>Pesquisar</b>
 					</span>
 				</a>
-				<!img src="../imagens/novo_blink.gif">
 				</font>
-				<font size="5"><br></font>
+				<font size="1"><br></font>
 
 			</div>
 		</div>
