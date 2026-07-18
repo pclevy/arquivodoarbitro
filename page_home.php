@@ -13,7 +13,6 @@
 			A responsabilidade por idealização, construção e execução das propostas acima, será regida no mais alto grau dos seguintes critérios:<br>
 			<center>"<b><u>Legalidade</u> - <u>Transparência</u> - <u>Inclusão</u> - <u>Respeito</u> - <u>Desenvolvimento</u> - <u>Modernidade</u></b>".<br></center>
 			<font size="1"><br></font>
-			<span style="float:right;font-size:18px;"><b>AI Paulo C. Levy</b></span>
 		</div>
 		<br>
 		<div style="visibility:visible;width:100%;height:80px;">	
