@@ -15,7 +15,7 @@
 			<font size="1"><br></font>
 			<span style="float:right;font-size:18px;"><b>AI Paulo C. Levy</b></span>
 		</div>
-
+		<br>
 		<div style="visibility:visible;width:100%;height:80px;">	
 			<div class="transbox90" id="PesquisarRating" style="
 				z-index:1;
@@ -78,7 +78,7 @@
 			</div>
 		</div>
 	
-		<div style="position:absolute;bottom:20px;width:100%;height:auto;">
+		<div style="position:absolute;bottom:10px;width:100%;height:auto;">
 			<div id="EventosProximos" name="EventosProximos" style="position:absolute;bottom:50px;width:auto;left:5%;max-height:300;overflow-y:auto;text-align:left;outline-style:inset;font-size:14px;font-family:Arial Narrow Bold,Arial Narrow,Arial,sans-serif,Liberation Sans Narrow;font-weight:600;padding:6px;padding-left:30px;padding-right:30px;background-color:#ffffff;border:1px solid #2266AA">
 				<span style="font-size:22px;">Eventos próximos:</span><!br>
 				<span style="font-size:6px;"><br></span>
