@@ -1,10 +1,10 @@
-<html dir="ltr" lang="pt-BR">
-<!-- php/index.php /* Alterado em 2026/02/18, 01:20 -->
+ <html dir="ltr" lang="pt-BR">
+	<!-- php/index.php /* Alterado em 2026/02/18, 01:20 -->
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
-		<link rel="icon" type="image/png" href="../imagens/arquivo_do_arbitro.png" />
+		 <link rel="icon" type="image/png" href="../imagens/arquivo_do_arbitro.png" />
 		
 		<title>AI Paulo Levy</title>
 		<style type="text/css">
@@ -83,9 +83,9 @@
 				<a href='index.php?page=RatingFexerj'>Rating Fexerj</a><!br>
 				<hr>
 				
-				<span style="font-size:16;">Eventos próximos: EM MANUTENÇÃO</span><!br>
+				<span style="font-size:16;">Eventos próximos:</span><!br>
 				<span style="font-size:6;"><br></span>
-				<a href='https://www.fexerj.org.br/torneio/a-realizar/2019-2/campeonato-popular-2019/folder'>Campeonato Estadual Popular - RJ</a><br>
+				<a href='https://www.fexerj.org.br/blog/circuito-de-regionais-fexerj-etapa-nova-frinurgo'>Regional de Nova Friburgo - RJ</a><br>
 				<span style="font-size:6;"><br></span>
 				<hr>
 				
