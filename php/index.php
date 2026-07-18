@@ -52,8 +52,11 @@
 				
 				<span style="font-size:6;"><br></span>
 				
-	 <!-- <a href='#'><span style="font-size:14;" onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'><b>Pesquisar Torneios</b></span></a><!img src="../imagens/novo_blink.gif"><br> -->
-				<a href='index.php?page=PesquisarTorneios'>Pesquisar Torneios</a><!img src="../imagens/novo_blink.gif"><br>
+	<!-- <a href='#'><span style="font-size:14;" onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'><b>Pesquisar Torneios</b></span></a><!img src="../imagens/novo_blink.gif"><br> -->
+	<!-- 	<a href='index.php?page=PesquisarTorneios'>Pesquisar Torneios</a><!img src="../imagens/novo_blink.gif"><br>	 -->
+				<span title="Pesquisar Torneios" style="color:#999; cursor:not-allowed;">
+    				Pesquisar Torneios
+				</span><br>
 				
 				<span style="font-size:6;"><br></span>
 				
