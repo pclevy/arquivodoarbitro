@@ -1,11 +1,16 @@
+<?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 <html dir="ltr" lang="pt-BR">
 <!-- php/index.php /* Alterado em 2026/02/17, 17:55 -->
 
 	<head>
-		<!meta charset="windows-1252">
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
 		<link rel="icon" type="image/png" href="../imagens/arquivo_do_arbitro.png" />
 		
 		<title>AI Paulo Levy</title>
@@ -60,13 +65,22 @@
 				<span style="font-size:6;"><br></span>
 				
 	 <!-- <a href='#'><span onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"af_receberarquivo_SM.php\" frameBorder=\"0\"></iframe>";'>Enviar Torneios SM</span></a><!../img src="imagens/novo_blink.gif"><br> -->
-				<a href='index.php?page=EnviarTorneioSM' title='Torneios Swiss Manager'>Enviar Torneios SM</a><!img src="../imagens/novo_blink.gif"><br>
+	 <!--		<a href='index.php?page=EnviarTorneioSM' title='Torneios Swiss Manager'>Enviar Torneios SM</a><!img src="../imagens/novo_blink.gif"><br> -->
+				<span title="Torneios Swiss Manager" style="color:#999; cursor:not-allowed;">
+    				Enviar Torneios SM
+				</span><br>
 				
 	 <!-- <a href='#'><span onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"af_receberarquivo_SP.php\" frameBorder=\"0\"></iframe>";'>Enviar Torneios SP</span></a><!../img src="imagens/novo_blink.gif"><br> -->
-				<a href='index.php?page=EnviarTorneioSP' title='Torneios Swiss Perfect'>Enviar Torneios SP</a><!img src="../imagens/novo_blink.gif"><br>
+	 <!--		<a href='index.php?page=EnviarTorneioSP' title='Torneios Swiss Perfect'>Enviar Torneios SP</a><!img src="../imagens/novo_blink.gif"><br> -->
+				<span title="Torneios Swiss Perfect" style="color:#999; cursor:not-allowed;">
+    				Enviar Torneios SP
+				</span><br>
 				
 	 <!-- <a href='#'><span onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"af_receberarquivo_VG.php\" frameBorder=\"0\"></iframe>";'>Enviar Torneios VG</span></a><!../img src="imagens/novo_blink.gif"><br> -->
-				<a href='index.php?page=EnviarTorneioVG' title='Torneios Vega'>Enviar Torneios VG</a><!img src="../imagens/novo_blink.gif"><br>
+	 <!--		<a href='index.php?page=EnviarTorneioVG' title='Torneios Vega'>Enviar Torneios VG</a><!img src="../imagens/novo_blink.gif"><br> -->
+				<span title="Torneios Vega" style="color:#999; cursor:not-allowed;">
+    				Enviar Torneios VG
+				</span><br>
 				
 				<span style="font-size:6;"><br></span><!br>
 	 <!-- <a href='reg_rat_pesq_Sel.php'>Rating Fexerj</a><!br> -->

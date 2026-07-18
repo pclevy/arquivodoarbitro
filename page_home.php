@@ -25,7 +25,9 @@
 				visibility:visible;
 				position:relative;
 				width: fit-content;
-				height:auto;left:5px;top:10px;
+				height:auto;
+				left:5px;
+				top:10px;
 				float:left;
 				font-size:14px;
 				font-family:Arial Narrow,Liberation Sans Narrow;
@@ -40,7 +42,7 @@
 					<span
 						style="font-size:18;"
 						onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'>
-					<b>Pesquisar:</b>
+						<b>Pesquisar:</b>
 					</span>
 				</a>
 				</font>
