@@ -1,12 +1,5 @@
-<?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 <html dir="ltr" lang="pt-BR">
-<!-- php/index.php /* Alterado em 2026/02/17, 17:55 -->
-
+<!-- php/index.php /* Alterado em 2026/02/18, 01:20 -->
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
