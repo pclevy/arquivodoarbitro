@@ -144,5 +144,35 @@
 				</td>
 			</tr>
 		</table>
+		
+        <!--  Rodapé fixo -->
+        <div
+          style={{
+            //borderTop: "1px solid black",
+            border: "1px solid blue",
+            marginTop: "4px",
+            paddingTop: "4px",
+            textAlign: "left",
+            fontSize: "15px",
+            color: "#333",
+          }}
+        >
+          <a
+            href="https://www.esfinge.org"
+            target="_self"
+            style={{ marginLeft: "50px", fontWeight: "bold" }}
+          >
+            "Projeto Esfinge"
+          </a>
+		  &nbsp; &nbsp; &nbsp; &nbsp; 
+          <a
+            href="https://xadrez.esfinge.org"
+            target="_self"
+            style={{ marginLeft: "50px", fontWeight: "bold" }}
+          >
+            "Xadrez de Olho no Futuro"
+          </a>
+        </div>
 	</div>
+		</div>
 </center>
