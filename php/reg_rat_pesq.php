@@ -202,12 +202,17 @@ $total = pg_num_rows($res);
         body { font-family: Arial; font-size: 14px; }
         #resumot1 {
         /*position:absolute; top:80px; left:380px;*/
-            position:absolute; top:80px; left:490px;
-            
-            /*width:610px; height:449px;*/
-            max-width:50%; /*height:449px;*/
+        
+		
+		/*position:absolute; top:80px; left:490px;*/
+			margin-top:80px;
+        /*max-width:50%; height:449px;*/
+        max-width:98%; height:auto;
+		width:auto;
+
 
             margin-right: 6px;
+			
             overflow:auto; padding:1px;
             background:#F9FFF9; border:3px solid #2266AA;
         }
@@ -264,12 +269,12 @@ $total = pg_num_rows($res);
 /* Cabeçalho                                                              */
 /* ---------------------------------------------------------------------- */
 
-echo "<div><b>Xadrez UERJ</b><br>";
+echo "<div style='max-width:\'100px\';'><b>Xadrez UERJ</b><br>";
 echo "<font size='5'>Arquivo do Árbitro</font><br>";
 echo "Encontrado(s) <b>$total</b> enxadrista(s)</div>";
 
 /*echo "<div id='resumot1'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";*/
-echo "<div id='resumot1' style='width:\'300px\'; overflow: auto; border:1px solid #2266AA;'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";
+echo "<div id='resumot1' style='position:absolute;left:\'30px\'; overflow: auto; border:1px solid #2266AA;'><br><b><font color='blue'>Clique em Y um enxadrista</font></b></div>";
 
 /*echo "<div style='position:absolute; width:480px; top:80px; height:449px; overflow:auto; border:1px solid #2266AA;'>";*/
 echo "<div  id='atletas' style='position:absolute; top:80px; height:449px; overflow: auto; border:1px solid #00ff00;'>";

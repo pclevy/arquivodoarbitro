@@ -1,4 +1,4 @@
-<!-- page_home.php /* Alterado em 2026/02/18, 03:20 */ -->
+<!-- page_home.php /* Alterado em 2026/02/19, 14:50 */ -->
 <center>
 	<font size="4"><b><u>Apresentação</u></b></font><br>
 	<font size="1"><br></font>
@@ -174,5 +174,6 @@
           </a>
         </div>
 	</div>
-		</div>
+			
+	</div>
 </center>
