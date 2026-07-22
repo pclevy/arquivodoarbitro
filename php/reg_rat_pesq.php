@@ -1,5 +1,5 @@
 <?php
-/* php/reg_rat_pesq.php /* Alterado em 2026/02/17, 17:58 */
+/* php/reg_rat_pesq.php /* Alterado em 2026/02/21, 22:48 */
 
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
@@ -201,25 +201,31 @@ $total = pg_num_rows($res);
         <style>
         body { font-family: Arial; font-size: 14px; }
         #resumot1 {
-        /*position:absolute; top:80px; left:380px;*/
-        
-		
-		/*position:absolute; top:80px; left:490px;*/
-			margin-top:80px;
-        /*max-width:50%; height:449px;*/
-        max-width:98%; height:auto;
-		width:auto;
-
-
-            margin-right: 6px;
+			position: absolute;
+			/*margin-top:2px;*/
 			
+			
+			margin-right: 2px;
+			max-width:98%; height:auto;
+			/*width:94%;*/
             overflow:auto; padding:1px;
             background:#F9FFF9; border:3px solid #2266AA;
         }
+		
+#atletas {
+    /*position: absolute;*/
+	height:auto;
+    top: 80px;
+    width: 94%;
+	z-index: -1;
+}
+			
         .enxrow {
             /*width:380px;*/
+			/*height: auto;*/
             background:#EEFFCC;
-            padding:2px; margin-bottom:6px;
+            padding:2px;
+			/*margin-bottom:6px;*/
             cursor:pointer;
         }
         .enxrow:hover { background:#BBFFBB; }
@@ -274,10 +280,11 @@ echo "<font size='5'>Arquivo do Árbitro</font><br>";
 echo "Encontrado(s) <b>$total</b> enxadrista(s)</div>";
 
 /*echo "<div id='resumot1'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";*/
-echo "<div id='resumot1' style='position:absolute;left:\'30px\'; overflow: auto; border:1px solid #2266AA;'><br><b><font color='blue'>Clique em Y um enxadrista</font></b></div>";
+echo "<div id='resumot1' style='float:left; width=200px; height=auto; position:absolute;left:\'30px\'; overflow: auto; border:1px solid #2266AA;'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";
 
 /*echo "<div style='position:absolute; width:480px; top:80px; height:449px; overflow:auto; border:1px solid #2266AA;'>";*/
-echo "<div  id='atletas' style='position:absolute; top:80px; height:449px; overflow: auto; border:1px solid #00ff00;'>";
+/*echo "<div  id='atletas' style='float:left; display:flex; top:80px; height:449px; overflow: auto; border:1px solid #00ff00;'>";*/
+echo "<div  id='atletas' style='position:absolute; top:120px; width:auto;height:auto; overflow: auto; border:1px solid #00ff00;'>";
 
 /* ---------------------------------------------------------------------- */
 /* Montagem dos blocos de enxadristas                                    */
@@ -338,11 +345,11 @@ for ($i = 0; $i < $total; $i++) {
     /* resumo */
     $Resumo = "";
     if ($foto)
-        $Resumo .= "<img src='$foto' width='144' align='left' style='border:1px solid #999;margin-right:6px;'>";
 
-    $Resumo .= "<b><font size='+1'>$nome</font></b><br><b>Histórico:</b> (mais recente primeiro)<font size='-1' face='Arial Narrow'>";
 
     $Resumo .= "<div id='historico' style='overflow: auto; border:1px solid #00ffff;'>";
+    $Resumo .= "<img src='$foto' width=158px align='left' style='border:1px solid #999;margin-right:6px;'>";
+    $Resumo .= "<b><font size='+1'>$nome</font></b><br><b>Histórico:</b> (mais recente primeiro)<font size='-1' face='Arial Narrow'>";
 	
     /*foreach ($mesref as $k => $m)
         $Resumo .= "$m:<b>{$vals[$k]}</b>; ";
