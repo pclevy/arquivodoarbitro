@@ -1,5 +1,5 @@
 <?php
-/* php/reg_rat_pesq.php /* Alterado em 2026/02/21, 22:48 */
+/* php/reg_rat_pesq.php /* Alterado em 2026/02/21, 23:49 */
 
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
@@ -206,19 +206,21 @@ $total = pg_num_rows($res);
 			
 			
 			margin-right: 2px;
-			max-width:98%; height:auto;
+			max-width:96%; height:auto;
 			/*width:94%;*/
             overflow:auto; padding:1px;
-            background:#F9FFF9; border:3px solid #2266AA;
+            background:#F9FFF9; 
+			border:1px solid #2266AA;
         }
 		
 #atletas {
     /*position: absolute;*/
 	height:auto;
     top: 80px;
-    width: 94%;
+    /*width: 94%;*/
 	z-index: -1;
-}
+	border:1px solid #2266AA;
+	}
 			
         .enxrow {
             /*width:380px;*/
@@ -280,11 +282,11 @@ echo "<font size='5'>Arquivo do Árbitro</font><br>";
 echo "Encontrado(s) <b>$total</b> enxadrista(s)</div>";
 
 /*echo "<div id='resumot1'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";*/
-echo "<div id='resumot1' style='float:left; width=200px; height=auto; position:absolute;left:\'30px\'; overflow: auto; border:1px solid #2266AA;'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";
+echo "<div id='resumot1' style='float:left; width=200px; height=auto; position:absolute; overflow: auto;'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";
 
 /*echo "<div style='position:absolute; width:480px; top:80px; height:449px; overflow:auto; border:1px solid #2266AA;'>";*/
 /*echo "<div  id='atletas' style='float:left; display:flex; top:80px; height:449px; overflow: auto; border:1px solid #00ff00;'>";*/
-echo "<div  id='atletas' style='position:absolute; top:120px; width:auto;height:auto; overflow: auto; border:1px solid #00ff00;'>";
+echo "<div  id='atletas' style='position:absolute; top:120px; width:auto;height:auto; overflow: auto;'>";
 
 /* ---------------------------------------------------------------------- */
 /* Montagem dos blocos de enxadristas                                    */
