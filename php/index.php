@@ -1,5 +1,5 @@
  <html dir="ltr" lang="pt-BR">
-	<!-- php/index.php /* Alterado em 2026/02/18, 01:20 -->
+	<!-- php/index.php /* Alterado em 2026/02/23, 16:45 -->
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -107,7 +107,8 @@
 			</div>
 						
 			<div style="position:absolute;bottom:2px;float:left;padding-left:2px;font-size:10px;font-family: Arial Narrow Bold, Arial Narrow, Arial, sans-serif, Liberation Sans Narrow;width:124px;left:1;border:1px solid #2266AA">
-				Otimizado para Firefox.
+				Otimizado para Navegadores:<br />
+				Android, Windows, Linux.
 			</div>
 			
 			<center>
