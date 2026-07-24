@@ -31,7 +31,7 @@ ini_set('display_errors', 0);
 		echo "listaJogadores.push({reg:" . json_encode($reg) . ", nome:" . json_encode($nome) . ", clube:" . json_encode($clube) . "});";
 		$i++;
 	}
-	echo "console.log('lista jogadores', listaJogadores);";
+	//echo "console.log('lista jogadores', listaJogadores);";
 	echo "</script>";
 
 	echo "
