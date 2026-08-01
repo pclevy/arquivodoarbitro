@@ -37,11 +37,25 @@
 		
 	$list_par = explode('&', $parametros);
 	$qt = count($list_par);
+	
+	
+	
+	
+	
+	
+	
 	for($i=0;$i<$qt;$i++)
 	{
+		
+		
+		
 		$tam = strlen($list_par[$i]);
 		$pos = stripos($list_par[$i], "=");
 		$list_par[$i] = substr($list_par[$i],$pos+1);
+		
+		
+		
+		
 		if($list_par[$i]==9999) {$fim_par=$i;}		
 	}
 	

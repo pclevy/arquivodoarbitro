@@ -1,12 +1,10 @@
 <?php
-/* php/reg_rat_pesq_Sel.php /* Alterado em 2026/02/17, 17:59 */
+/* php/reg_rat_pesq_Sel.php /* Alterado em 2026/02/24, 00:13 */
 
-ini_set('display_errors', 0);
+	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);
-?>
-
-<?php
+	
 	$file = "../config/conexao_ca.cfg";
 	$fh = fopen($file, 'r');
 	$conteudo = explode("*", fread($fh, filesize($file)));
@@ -22,9 +20,9 @@ ini_set('display_errors', 0);
 	echo "<script language='JavaScript' type='text/javascript'>";
 	echo "var listaJogadores = [];";
 	while ($i<$resultado) {
-		$reg = trim(pg_fetch_result($sql,$i,'reg'));
-		$prenome = trim(pg_fetch_result($sql,$i,'nome'));
-		$sobrenome = trim(pg_fetch_result($sql,$i,'sobrenome'));
+		$reg = trim(" ".pg_fetch_result($sql,$i,'reg'));
+		$prenome = trim(" ".pg_fetch_result($sql,$i,'nome'));
+		$sobrenome = trim(" ".pg_fetch_result($sql,$i,'sobrenome'));
 		$nome=trim($prenome . ' ' . $sobrenome);
 		$clube = trim(" ".pg_fetch_result($sql,$i,'clube'));
 
@@ -49,7 +47,6 @@ ini_set('display_errors', 0);
 	</script>
 	";
 ?>
-
 
 <html dir="ltr" lang="pt-BR">
 	<head>

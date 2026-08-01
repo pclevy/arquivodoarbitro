@@ -209,7 +209,7 @@ $total = pg_num_rows($res);
 			max-width:96%; height:auto;
 			/*width:94%;*/
             overflow:auto; padding:1px;
-            background:#F9FFF9; 
+            background:#F9FFF9;
 			border:1px solid #2266AA;
         }
 		
@@ -295,7 +295,7 @@ echo "<div  id='atletas' style='position:absolute; top:120px; width:auto;height:
 for ($i = 0; $i < $total; $i++) {
 
     $row = pg_fetch_assoc($res);
-    if (!$row) continue;
+    if (!$row) {continue;}
 
     $reg   = $row['reg'];
     $nome  = trim($row['nome']) . " " . trim($row['sobrenome']);
@@ -316,12 +316,27 @@ for ($i = 0; $i < $total; $i++) {
     while ($t = pg_fetch_assoc($sqltabs)) {
         $tab = $t["nome_tab"];
         $data_base = substr($tab, 1, 8); // YYYYMMDD
+		
+		//echo $data_base . " ";
 
         $mesref[] = substr($data_base,0,4)."/".substr($data_base,4,2);
         $ret = pesq_rating($conexao, $data_base, $reg);
         $parts = explode("/", $ret);
-        $vals[] = $parts[1] ?? "0";
+		
+        //$vals[] = $parts[1] ?? "0";
+		if (isset($parts[1])) {
+				if($parts[1] > 0) {
+					$vals[] = $parts[1];
+				} else {
+				}
+		} else {
+			//$vals[] = "0";
+		}
+		
+		//echo $parts[1] . " - ";
+		//echo $vals[0] . " - " . $vals[1]. " - " . $vals[2] ;
     }
+		//echo count($vals) . ": " . $vals[0] . " - " . $vals[1] . " - " . $vals[2]  . " - " . $vals[3] . " - " . $vals[4] . " - " . $vals[5] . " - " . $vals[6] . " - " . $vals[7] . " - " . $vals[8]  . " - " . $vals[9]. " - " . $vals[10] . " - " . $vals[11] . " - " . $vals[12] ;
 
 	$qttabelas = count($vals);
 	//echo "Qt. Tabelas: $qttabelas";
@@ -337,7 +352,11 @@ for ($i = 0; $i < $total; $i++) {
 	$v1=$qttabelas*21;
     $param = "v1=$v1&v2=227";
 
-    for ($z = count($vals)-1; $z >= 0; $z--) {
+    for ($z = $qttabelas-1; $z >= 0; $z--) {
+		
+		//echo $param;
+        if($vals[$z]<1) {continue;}				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
+		
         $param .= "&r1=" . substr("0000".$vals[$z], -4);
         //$param .= "&m1=" . urlencode($mesref[$z]);
         $param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
@@ -357,7 +376,10 @@ for ($i = 0; $i < $total; $i++) {
         $Resumo .= "$m:<b>{$vals[$k]}</b>; ";
 	*/
 	foreach (array_reverse($mesref, true) as $k => $m) {
-		$Resumo .= "$m:<b>{$vals[$k]}</b>; ";
+		if($vals[$k]>0) {
+			$Resumo .= "$m:<b>{$vals[$k]}</b>; ";
+			//echo $vals[$k];
+		}		// ****** 2026/07/31 *****
 	}		
     
 	$Resumo .= "</div>";
@@ -365,6 +387,9 @@ for ($i = 0; $i < $total; $i++) {
 
     $Resumo = addslashes($Resumo);
     $paramJS = addslashes($param);
+	
+	//echo $Resumo;exit;
+	//echo $param;exit;
 
     echo "<div class='enxrow' 
             onclick=\"setResumoHtml('$Resumo'); muda_res('$paramJS','Clássico');\">

@@ -171,8 +171,9 @@
 						//$torneio_reg = $_GET['torneio_reg'];
 						//$janela = $_GET['janela'];
 						//$page = isset($_GET['page']) ?$_GET['page'] :'';
-						$torneio_reg = isset($_GET['torneio_reg']) ?$_GET['torneio_reg'] :'';
-						$janela = isset($_GET['janela']) ?$_GET['janela'] :'';
+						
+						// *** 2026/07/24 *** $torneio_reg = isset($_GET['torneio_reg']) ?$_GET['torneio_reg'] :'';
+						// *** 2026/07/24 *** $janela = isset($_GET['janela']) ?$_GET['janela'] :'';
 						
 					}
 					else
