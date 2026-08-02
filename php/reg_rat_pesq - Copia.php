@@ -328,7 +328,6 @@ for ($i = 0; $i < $total; $i++) {
 				if($parts[1] > 0) {
 					$vals[] = $parts[1];
 				} else {
-					$vals[] = $parts[1];	// **************************
 				}
 		} else {
 			//$vals[] = "0";
@@ -340,7 +339,7 @@ for ($i = 0; $i < $total; $i++) {
 		//echo count($vals) . ": " . $vals[0] . " - " . $vals[1] . " - " . $vals[2]  . " - " . $vals[3] . " - " . $vals[4] . " - " . $vals[5] . " - " . $vals[6] . " - " . $vals[7] . " - " . $vals[8]  . " - " . $vals[9]. " - " . $vals[10] . " - " . $vals[11] . " - " . $vals[12] ;
 
 	$qttabelas = count($vals);
-	//echo "Qt. Tabelas: $qttabelas  ///     ";
+	//echo "Qt. Tabelas: $qttabelas";
 	
     /* Se rating vazio, usa ultimo */
     if ($rat < 1) {
@@ -353,29 +352,16 @@ for ($i = 0; $i < $total; $i++) {
 	$v1=$qttabelas*21;
     $param = "v1=$v1&v2=227";
 
-		$mesval=$qttabelas;
-		//echo $qttabelas . " ---  ";
-
     for ($z = $qttabelas-1; $z >= 0; $z--) {
 		
 		//echo $param;
-        if($vals[$z]<1)
-			{continue;}				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
-		else {
-			$mesval--;
-		}
-        
-		$param .= "&r1=" . substr("0000".$vals[$z], -4);
-        //$param .= "&m1=" . urlencode($mesref[$z]);
-        
-//		$param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
-		//echo $mesval . " - z= ". $z; // . " - vals[$z]= ".  vals[$z] . " - ". $mesref[$z] . " - " . $mesref[$mesval] . "<br />";
-		$param .= "&m1=" . $mesref[$mesval];		// ***** 2026/02/06, 16:13 *****
+        if($vals[$z]<1) {continue;}				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
 		
+        $param .= "&r1=" . substr("0000".$vals[$z], -4);
+        //$param .= "&m1=" . urlencode($mesref[$z]);
+        $param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
     }
     $param .= "&r1=9999";
-	
-	//exit;
 	
     /* resumo */
     $Resumo = "";
@@ -389,16 +375,13 @@ for ($i = 0; $i < $total; $i++) {
     /*foreach ($mesref as $k => $m)
         $Resumo .= "$m:<b>{$vals[$k]}</b>; ";
 	*/
-	
-	//echo $Resumo . "<br />";
 	foreach (array_reverse($mesref, true) as $k => $m) {
 		if($vals[$k]>0) {
 			$Resumo .= "$m:<b>{$vals[$k]}</b>; ";
-			//echo "Mes: " . $m . " - rating: " . $vals[$k]."<br />";
+			//echo $vals[$k];
 		}		// ****** 2026/07/31 *****
 	}		
-    //exit;
-	
+    
 	$Resumo .= "</div>";
     $Resumo .= "<div id='grafico' style='overflow: auto; border:1px solid #ff0000;'></div>";
 
