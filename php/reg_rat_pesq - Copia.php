@@ -200,10 +200,11 @@ $total = pg_num_rows($res);
 
         <style>
         body { font-family: Arial; font-size: 14px; }
-
         #resumot1 {
 			position: absolute;
 			/*margin-top:2px;*/
+			
+			
 			margin-right: 2px;
 			max-width:96%; height:auto;
 			/*width:94%;*/
@@ -276,26 +277,12 @@ $total = pg_num_rows($res);
 /* Cabeçalho                                                              */
 /* ---------------------------------------------------------------------- */
 
-//echo "<div  style='display:flex';>";
-echo "<div id='titulo' style='display:flex; flex-direction:column; align-items:center; border:1px solid #00ff00;'>";
-//echo "<b>Xadrez UERJ</b>";
-echo "<b>IA Levy, Paulo Cesar</b>";
-echo "<span style='font-size:2rem;'>Arquivo do Árbitro</span>";
-//echo "Encontrado(s)<b> $total </b>enxadrista(s)<br />";
-//echo "Encontrado(s) <b>";
-//echo $total;
-//echo "</b> enxadrista(s)<br />";
-
-if($total<2)
-	{$encontrados="Encontrado";$enxadristas="enxadrista";}
-else
-	{$encontrados="Encontrados";$enxadristas="enxadristas";}
-echo "<div>$encontrados <b>$total</b> $enxadristas</div>";
-
-echo "</div>";
+echo "<div style='max-width:\'100px\';'><b>Xadrez UERJ</b><br>";
+echo "<font size='5'>Arquivo do Árbitro</font><br>";
+echo "Encontrado(s) <b>$total</b> enxadrista(s)</div>";
 
 /*echo "<div id='resumot1'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";*/
-echo "<div id='resumot1' style='float:left; width:auto; height:auto; position:absolute; overflow:auto;'<b><font color='blue'>Clique em um enxadrista</font></b></div>";
+echo "<div id='resumot1' style='float:left; width=200px; height=auto; position:absolute; overflow: auto;'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";
 
 /*echo "<div style='position:absolute; width:480px; top:80px; height:449px; overflow:auto; border:1px solid #2266AA;'>";*/
 /*echo "<div  id='atletas' style='float:left; display:flex; top:80px; height:449px; overflow: auto; border:1px solid #00ff00;'>";*/
