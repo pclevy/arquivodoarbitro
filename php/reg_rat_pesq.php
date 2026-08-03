@@ -340,7 +340,7 @@ for ($i = 0; $i < $total; $i++) {
 		//echo count($vals) . ": " . $vals[0] . " - " . $vals[1] . " - " . $vals[2]  . " - " . $vals[3] . " - " . $vals[4] . " - " . $vals[5] . " - " . $vals[6] . " - " . $vals[7] . " - " . $vals[8]  . " - " . $vals[9]. " - " . $vals[10] . " - " . $vals[11] . " - " . $vals[12] ;
 
 	$qttabelas = count($vals);
-	//echo "Qt. Tabelas: $qttabelas  ///     ";
+	//echo "Qt. Tabelas: $qttabelas";
 	
     /* Se rating vazio, usa ultimo */
     if ($rat < 1) {
@@ -350,29 +350,41 @@ for ($i = 0; $i < $total; $i++) {
     /* monta param */
     /*$param = "v1=654&v2=227"; */
 	
-	$v1=$qttabelas*21;
-    $param = "v1=$v1&v2=227";
+	//$v1=$qttabelas*21;
+	$v1=11*21;
+    
+	$param = "v1=$v1&v2=227";
 
 		$mesval=$qttabelas;
 		//echo $qttabelas . " ---  ";
 
+	$qtab_real=0;
     for ($z = $qttabelas-1; $z >= 0; $z--) {
 		
 		//echo $param;
         if($vals[$z]<1)
 			{continue;}				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
 		else {
+			
+			$qtab_real++;
+			//echo $qtab_real;
 			$mesval--;
 		}
         
-		$param .= "&r1=" . substr("0000".$vals[$z], -4);
+		$v1=$qtab_real*21;
+		$param1 = "v1=$v1&v2=227";
+		//echo $param1;
+		
+		$param2 .= "&r1=" . substr("0000".$vals[$z], -4);
         //$param .= "&m1=" . urlencode($mesref[$z]);
         
 //		$param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
 		//echo $mesval . " - z= ". $z; // . " - vals[$z]= ".  vals[$z] . " - ". $mesref[$z] . " - " . $mesref[$mesval] . "<br />";
-		$param .= "&m1=" . $mesref[$mesval];		// ***** 2026/02/06, 16:13 *****
+		$param2 .= "&m1=" . $mesref[$mesval];		// ***** 2026/02/06, 16:13 *****
 		
     }
+	
+    $param = $param1 . $param2;
     $param .= "&r1=9999";
 	
 	//exit;
