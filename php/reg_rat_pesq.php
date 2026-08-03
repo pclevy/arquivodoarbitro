@@ -306,7 +306,7 @@ for ($i = 0; $i < $total; $i++) {
     $regFoto = substr("000$reg", -4);
     $foto = PesqFoto($regFoto)
         ? "../fotos/reg$regFoto.jpg"
-        : "";
+        : "../fotos/FotoNaoAutorizada.jpg";			// ***** 2026/08/03 *****
 
     /* Busca histórico */
     $sqltabs = pg_query($conexao, "SELECT nome_tab FROM tabelas_rating ORDER BY nome_tab");
