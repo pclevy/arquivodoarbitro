@@ -124,7 +124,7 @@
 				}
 			});
 		}
-		
+		/*
 		function Select_Click(elemento,typeClick) {
 			indice=elemento.options[elemento.selectedIndex].value;
 			if(indice!='') {
@@ -136,6 +136,25 @@
 				}
 			}
 		}
+		*/
+		
+		function Select_Click(elemento, typeClick) {
+			const indice = elemento.options[elemento.selectedIndex].value;
+
+			if (indice != '') {
+				const jogador = listaJogadoresMostrada[indice];
+
+				document.getElementById('enxadrista_reg').value = jogador.reg;
+				document.getElementById('enxadrista').value = jogador.nome;
+
+				const isTouch = navigator.maxTouchPoints > 0;
+
+				if (typeClick == 'dbl' || isTouch) {
+					document.getElementById('SubmitButton').click();
+				}
+			}
+		}
+
 		</script>
 	</head>
 	
@@ -181,7 +200,7 @@
 						<td colspan='4'>
 							<input name='enxadrista' id='enxadrista' type='text' value='' size='49' maxlenght='60' onkeyup='TamNomPesq=trim(this.value).length;pesq_nome(this.value);' />
 							<input name='enxadrista_reg' id='enxadrista_reg' type='hidden' value='' size='6' />
-							<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onclick='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'><br>
+							<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onclick='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'>
 								<option style="font-weight:bold" value="">Digite acima parte do nome ou Selecione aqui ...</option>
 							</select>
 						</td>
