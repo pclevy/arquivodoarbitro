@@ -200,7 +200,10 @@
 						<td colspan='4'>
 							<input name='enxadrista' id='enxadrista' type='text' value='' size='49' maxlenght='60' onkeyup='TamNomPesq=trim(this.value).length;pesq_nome(this.value);' />
 							<input name='enxadrista_reg' id='enxadrista_reg' type='hidden' value='' size='6' />
-							<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onclick='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'>
+							/*<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onclick='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'>
+							
+							<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onchange='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'>
+							
 								<option style="font-weight:bold" value="">Digite acima parte do nome ou Selecione aqui .....z</option>
 							</select>
 						</td>
