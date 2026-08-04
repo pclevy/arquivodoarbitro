@@ -204,7 +204,7 @@
 							
 							<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onchange='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'>
 							
-								<option style="font-weight:bold" value="">Digite acima parte do nome ou Selecione aqui .....z</option>
+								<option style="font-weight:bold" value="">Digite acima parte do nome ou Selecione aqui 1...</option>
 							</select>
 						</td>
 					</tr>
