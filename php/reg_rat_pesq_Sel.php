@@ -1,5 +1,5 @@
 <?php
-/* php/reg_rat_pesq_Sel.php /* Alterado em 2026/02/24, 00:13 */
+/* Versão: 2026.8.4 php/reg_rat_pesq_Sel.php /* Alterado em 2026/08/04, 13:32 */
 
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
@@ -203,7 +203,7 @@
 							
 							<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onchange='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'>
 							
-								<option style="font-weight:bold" value="">Digite acima parte do nome ou Selecione aqui 1...</option>
+								<option style="font-weight:bold" value="">Digite parte do nome ou Selecione abaixo ...</option>
 							</select>
 						</td>
 					</tr>
