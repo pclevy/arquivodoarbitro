@@ -50,7 +50,7 @@
 			"reg"        => trim($row["reg"]),
 			"nome"       => trim($row["nome"] . " " . $row["sobrenome"]),
 			"clube"      => trim($row["clube"]),
-			"municipio"  => trim($row["municipio"]),
+			"municipio"  => trim(" ".$row["municipio"]),
 			"rating"  => trim($row["rating"])
 		];
 	}
