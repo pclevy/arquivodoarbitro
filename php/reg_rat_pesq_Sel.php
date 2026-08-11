@@ -13,7 +13,26 @@
 	fclose($fh);
 
 	$conexao = pg_connect($strconexao) or die("erro na conexão");
-	$sql = pg_query($conexao,"SELECT reg, sobrenome, nome, municipio AS clube FROM cadastro ORDER BY nome"); 
+	//$sql = pg_query($conexao,"SELECT reg, sobrenome, nome, municipio AS clube, sexo AS genero, dt_nasc FROM cadastro ORDER BY nome"); 
+	$sql = pg_query($conexao,"SELECT
+			reg,
+			nome,
+			sobrenome,
+			trim(nome) || ' ' || trim(sobrenome) AS nomecompleto,
+			CASE
+				WHEN clube IS NULL OR trim(clube) = ''
+				THEN trim(municipio)
+				ELSE trim(clube)
+			END AS clube,
+			sexo AS genero,
+			dt_nasc,
+			right(trim(dt_nasc), 4) AS ano_nasc
+		FROM cadastro
+		
+		ORDER BY nome;");
+		
+	  // WHERE (nome ILIKE '%Levy%') OR (sobrenome ILIKE '%Levy%')
+	  
 	$resultado = pg_num_rows($sql);
 	$i=0;
 	
@@ -21,12 +40,20 @@
 	echo "var listaJogadores = [];";
 	while ($i<$resultado) {
 		$reg = trim(" ".pg_fetch_result($sql,$i,'reg'));
-		$prenome = trim(" ".pg_fetch_result($sql,$i,'nome'));
-		$sobrenome = trim(" ".pg_fetch_result($sql,$i,'sobrenome'));
-		$nome=trim($prenome . ' ' . $sobrenome);
-		$clube = trim(" ".pg_fetch_result($sql,$i,'clube'));
+		//$prenome = trim(" ".pg_fetch_result($sql,$i,'nome'));
+		//$sobrenome = trim(" ".pg_fetch_result($sql,$i,'sobrenome'));
+		//$nome=trim($prenome . ' ' . $sobrenome);
+		$nome = pg_fetch_result($sql,$i,'nomecompleto');
+		//$clube = trim(" ".pg_fetch_result($sql,$i,'clube'));
+		$clube = pg_fetch_result($sql,$i,'clube');
 
 		echo "listaJogadores.push({reg:" . json_encode($reg) . ", nome:" . json_encode($nome) . ", clube:" . json_encode($clube) . "});";
+		
+		
+		//echo "$reg";
+		echo "console.log('$reg - $nome - $clube');";
+		
+		
 		$i++;
 	}
 	//echo "console.log('lista jogadores', listaJogadores);";

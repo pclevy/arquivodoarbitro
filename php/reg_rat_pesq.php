@@ -211,6 +211,16 @@ $total = pg_num_rows($res);
             background:#F9FFF9;
 			border:1px solid #2266AA;
         }
+        #resumot2 {
+			position: absolute;
+			/*margin-top:2px;*/
+			margin-right: 2px;
+			max-width:96%; height:auto;
+			/*width:94%;*/
+            overflow:auto; padding:1px;
+            background:#F9FFF9;
+			border:1px solid #2266AA;
+        }
 		
 #atletas {
     /*position: absolute;*/
@@ -256,7 +266,8 @@ $total = pg_num_rows($res);
         <script>
             // recebe HTML e insere no quadro
             function setResumoHtml(html) {
-                document.getElementById("resumot1").innerHTML = html;
+                document.getElementById("resumot2").innerHTML = html + document.getElementById("voltapagina").innerHTML;
+				document.getElementById('resumot2').style.visibility = 'visible';				
             }
 
             // monta o gráfico
@@ -295,7 +306,15 @@ echo "<div>$encontrados <b>$total</b> $enxadristas</div>";
 echo "</div>";
 
 /*echo "<div id='resumot1'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";*/
-echo "<div id='resumot1' style='float:left; width:auto; height:auto; position:absolute; overflow:auto;'<b><font color='blue'>Clique em um enxadrista</font></b></div>";
+echo "<div id='resumot1' style='float:left;   width:auto; height:auto; position:absolute; overflow:auto; border:1px solid #2266AA;'><b><font color='blue'>Clique em um enxadrista</font></b></div>";
+echo "<div id='resumot2' style='float:right;left:10px;width:auto; height:auto; position:absolute; overflow:auto; border:1px solid #0000ff;visibility:hidden;'><b><font color='blue'>Clique em um enxadrista</font></b>";
+echo "</div>";
+echo "	<div id='voltapagina' style='position:fixed;left:10px;visibility:hidden;'>
+				<span onclick=\"document.getElementById('resumot2').style.visibility = 'hidden';\">
+					<img src='../imagens/retarrow.gif' alt='Volta para Lista'>
+					Volta para a Lista
+				</span>
+			</div>";
 
 /*echo "<div style='position:absolute; width:480px; top:80px; height:449px; overflow:auto; border:1px solid #2266AA;'>";*/
 /*echo "<div  id='atletas' style='float:left; display:flex; top:80px; height:449px; overflow: auto; border:1px solid #00ff00;'>";*/
@@ -436,7 +455,7 @@ for ($i = 0; $i < $total; $i++) {
     echo "<div class='enxrow' 
             onclick=\"setResumoHtml('$Resumo'); muda_res('$paramJS','Clássico');\">
             <table width='100%'>
-            <tr><td>Reg: $reg</td><td>Clube: $clb</td><td>Título: $tit</td><td>Rat: $rat</td></tr>
+            <tr><td>Reg: $reg</td><td>Clubey: $clb</td><td>Título: $tit</td><td>Rat: $rat</td></tr>
             <tr><td colspan='4'>Nome: $nome</td></tr>
             </table>
           </div>";
@@ -448,5 +467,6 @@ echo "</div>";
 pg_free_result($res);
 pg_close($conexao);
 ?>
+
 </body>
 </html>
