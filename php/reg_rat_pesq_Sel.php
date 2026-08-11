@@ -4,7 +4,7 @@
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);
-	
+
 	$file = "../config/conexao_ca.cfg";
 	$fh = fopen($file, 'r');
 	$conteudo = explode("*", fread($fh, filesize($file)));
@@ -13,47 +13,47 @@
 	fclose($fh);
 
 	$conexao = pg_connect($strconexao) or die("erro na conexão");
-	//$sql = pg_query($conexao,"SELECT reg, sobrenome, nome, municipio AS clube, sexo AS genero, dt_nasc FROM cadastro ORDER BY nome"); 
-	$sql = pg_query($conexao,"SELECT
-			reg,
-			nome,
-			sobrenome,
-			trim(nome) || ' ' || trim(sobrenome) AS nomecompleto,
-			CASE
-				WHEN clube IS NULL OR trim(clube) = ''
-				THEN trim(municipio)
-				ELSE trim(clube)
-			END AS clube,
-			sexo AS genero,
-			dt_nasc,
-			right(trim(dt_nasc), 4) AS ano_nasc
-		FROM cadastro
-		
-		ORDER BY nome;");
-		
-	  // WHERE (nome ILIKE '%Levy%') OR (sobrenome ILIKE '%Levy%')
-	  
+	$sql = pg_query($conexao,"SELECT reg, sobrenome, nome, municipio AS clube FROM cadastro ORDER BY nome"); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	$resultado = pg_num_rows($sql);
 	$i=0;
-	
+
 	echo "<script language='JavaScript' type='text/javascript'>";
 	echo "var listaJogadores = [];";
 	while ($i<$resultado) {
 		$reg = trim(" ".pg_fetch_result($sql,$i,'reg'));
-		//$prenome = trim(" ".pg_fetch_result($sql,$i,'nome'));
-		//$sobrenome = trim(" ".pg_fetch_result($sql,$i,'sobrenome'));
-		//$nome=trim($prenome . ' ' . $sobrenome);
-		$nome = pg_fetch_result($sql,$i,'nomecompleto');
-		//$clube = trim(" ".pg_fetch_result($sql,$i,'clube'));
-		$clube = pg_fetch_result($sql,$i,'clube');
+		$prenome = trim(" ".pg_fetch_result($sql,$i,'nome'));
+		$sobrenome = trim(" ".pg_fetch_result($sql,$i,'sobrenome'));
+		$nome=trim($prenome . ' ' . $sobrenome);
+		$clube = trim(" ".pg_fetch_result($sql,$i,'clube'));
+
+
 
 		echo "listaJogadores.push({reg:" . json_encode($reg) . ", nome:" . json_encode($nome) . ", clube:" . json_encode($clube) . "});";
-		
-		
-		//echo "$reg";
-		echo "console.log('$reg - $nome - $clube');";
-		
-		
+
+
+
+
+
+
 		$i++;
 	}
 	//echo "console.log('lista jogadores', listaJogadores);";
@@ -85,10 +85,10 @@
 
 		<title>Consultar Registro e Rating!</title>
 		<script LANGUAGE="JavaScript" SRC="../js/jstrim.js"></script>
-		
+
 		<script language="JavaScript" type="text/javascript">
 		var listaJogadoresMostrada = [];
-			
+
 		var specialChars =
 			[
 				{val:"a",let:"áàãâä"},
@@ -105,14 +105,14 @@
 				{val:"C",let:"Ç"},
 				{val:"",let:"?!()"}
 			];
-			
+
 			function replaceSpecialChars(str) {
 				var regex;
 				var returnString = str;
 
 				return returnString;
 			};		
-			
+
 			function criar_opcoes(id_select9) {
 				for (i=0;i<listaJogadoresMostrada.length;i++) {
 					try {
@@ -122,12 +122,12 @@
 					}
 				}
 			}
-			
+
 			function pesq_nome(strDigitada)
 			{
 				strPesq=replaceSpecialChars(trim(strDigitada)).toUpperCase();
 				document.getElementById("enxadrista_reg").value='';
-			
+
 			if(strPesq === "") {
 				listaJogadoresMostrada = listaJogadores;
 			} else {
@@ -135,14 +135,14 @@
 					return replaceSpecialChars(jogador.nome).toUpperCase().indexOf(strPesq) >= 0;
 				});
 			}
-			
+
 			var lista_loc = document.getElementById("enxadrista_list");
 			tamlista = lista_loc.length;
 
 			for(i=0; i<tamlista; i++){
 				lista_loc.remove(0);
 			}
-			
+
 			listaJogadoresMostrada.forEach(function(jogador, index) {
 				try {
 					lista_loc.add(new Option(jogador.nome, index), null);
@@ -164,7 +164,7 @@
 			}
 		}
 		*/
-		
+
 		function Select_Click(elemento, typeClick) {
 			const indice = elemento.options[elemento.selectedIndex].value;
 
@@ -184,14 +184,14 @@
 
 		</script>
 	</head>
-	
+
 	<body bgcolor="eeeeff">
 		<!-- Título: <input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'> -->
 		<font size="3"><b>Xadrez UERJ</b></font><br>
 		<font size="6">Arquivo do Árbitro</font><br>
 		<font size="3"><b>Pesquisa de Enxadristas - por nome</b></font> <font size='2' color='red'>(Lista de Rating de julho/2026!)</font><br>
 		<font size='2' color='red'> <!-- <b>Em construção</b>: os dados aqui apresentados ainda são experimentais, podendo haver imprecisões!!</font> --> <br>
-		
+
 		<!-- <input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'> -->
 		<form name='reg_rat_pesq' action='reg_rat_pesq.php' method='post' autocomplete='off'>
 			<div style="width:460;background-color:#EDFAD6;line-height:30px;padding:1;border:1px solid #2266AA;">
@@ -208,7 +208,7 @@
 							</select>
 						</td>
 					</tr>
-					
+
 					<tr>
 						<td valign='top' colspan='4'>Faixa de Rating.&nbsp;De: 
 							<input name='rat_min' id='rat_min' type='text' value='0' size='2' maxlenght='4'>&nbsp;A&nbsp;
@@ -227,9 +227,9 @@
 						<td colspan='4'>
 							<input name='enxadrista' id='enxadrista' type='text' value='' size='49' maxlenght='60' onkeyup='TamNomPesq=trim(this.value).length;pesq_nome(this.value);' />
 							<input name='enxadrista_reg' id='enxadrista_reg' type='hidden' value='' size='6' />
-							
+
 							<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onchange='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'>
-							
+
 								<option style="font-weight:bold" value="">Digite parte do nome ou Selecione abaixo ...</option>
 							</select>
 						</td>
