@@ -4,7 +4,7 @@
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);
-
+	
 	$file = "../config/conexao_ca.cfg";
 	$fh = fopen($file, 'r');
 	$conteudo = explode("*", fread($fh, filesize($file)));
@@ -13,26 +13,25 @@
 	fclose($fh);
 
 	$conexao = pg_connect($strconexao) or die("erro na conexão");
-	$sql = pg_query($conexao,"SELECT reg, sobrenome, nome, municipio AS clube FROM cadastro ORDER BY nome"); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	$conexao = pg_connect($strconexao) or die("erro na conexão");
+	//$sql = pg_query($conexao,"SELECT reg, sobrenome, nome, municipio AS clube, sexo AS genero, dt_nasc FROM cadastro ORDER BY nome"); 
+	$sql = pg_query($conexao,"SELECT
+			reg,
+			nome,
+			sobrenome,
+			trim(nome) || ' ' || trim(sobrenome) AS nomecompleto,
+			CASE
+				WHEN clube IS NULL OR trim(clube) = ''
+				THEN trim(municipio)
+				ELSE trim(clube)
+			END AS clube,
+			sexo AS genero,
+			dt_nasc,
+			right(trim(dt_nasc), 4) AS ano_nasc
+		FROM cadastro
+		
+		ORDER BY nome;");
+	  
 	$resultado = pg_num_rows($sql);
 	$i=0;
 
