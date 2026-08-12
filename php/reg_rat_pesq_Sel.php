@@ -4,7 +4,7 @@
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
 	error_reporting(E_ALL);
-	
+
 	$file = "../config/conexao_ca.cfg";
 	$fh = fopen($file, 'r');
 	$conteudo = explode("*", fread($fh, filesize($file)));
@@ -14,7 +14,8 @@
 
 	$conexao = pg_connect($strconexao) or die("erro na conexão");
 	//$sql = pg_query($conexao,"SELECT reg, sobrenome, nome, municipio AS clube, sexo AS genero, dt_nasc FROM cadastro ORDER BY nome"); 
-	$sql = pg_query($conexao,"SELECT
+	$sql = pg_query($conexao,"
+		SELECT
 			reg,
 			nome,
 			sobrenome,
@@ -48,7 +49,8 @@
 		echo "listaJogadores.push({reg:" . json_encode($reg) . ", nome:" . json_encode($nome) . ", clube:" . json_encode($clube) . "});";
 		
 		//echo "$reg";
-		echo "console.log('$reg - $nome - $clube');";
+		//echo "console.log('$reg - $nome - $clube');";
+		echo "console.log(" . json_encode("$reg - $nome - $clube") . ");";		
 		
 		$i++;
 	}
