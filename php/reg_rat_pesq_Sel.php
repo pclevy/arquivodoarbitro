@@ -1,5 +1,5 @@
 <?php
-/* Versão: 2026.8.4 php/reg_rat_pesq_Sel.php /* Alterado em 2026/08/04, 13:32 */
+/* php/reg_rat_pesq_Sel.php - Versão: 2026.8.11 - Alterado em 2026/08/11, 22:50 */
 
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
