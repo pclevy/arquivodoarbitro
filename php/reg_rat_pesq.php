@@ -313,7 +313,8 @@ for ($i = 0; $i < $total; $i++) {
     $mesref = [];
     $vals = [];
 
-    while ($t = pg_fetch_assoc($sqltabs)) {
+    $qtBarras=0;
+	while ($t = pg_fetch_assoc($sqltabs)) {
         $tab = $t["nome_tab"];
         $data_base = substr($tab, 1, 8); // YYYYMMDD
 
@@ -322,20 +323,17 @@ for ($i = 0; $i < $total; $i++) {
         $mesref[] = substr($data_base,0,4)."/".substr($data_base,4,2);
         $ret = pesq_rating($conexao, $data_base, $reg);
 		
+		//echo $ret . " ";
+		
         $parts = explode("/", $ret);		
 		//echo $parts[1] . " ";
 
         //$vals[] = $parts[1] ?? "0";
 		if (isset($parts[1])) {
 			$vals[] = $parts[1];
-			/*
 				if($parts[1] > 0) {
-				$vals[] = $parts[1];
-				} else {
+				$qtBarras++;
 				}
-				} else {
-				//$vals[] = "0";
-			*/
 		}
 
 		//echo $parts[1] . " - ";
@@ -354,7 +352,8 @@ for ($i = 0; $i < $total; $i++) {
     /* monta param */
     /*$param = "v1=654&v2=227"; */
 
-	$v1=$qttabelas*21;
+	//$v1=$qttabelas*21;
+	$v1=($qtBarras-1)*21;
     $param = "v1=$v1&v2=227";
 
     for ($z = $qttabelas-1; $z >= 0; $z--) {
