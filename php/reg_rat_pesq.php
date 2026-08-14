@@ -1,5 +1,5 @@
 <?php
-/* php/reg_rat_pesq.php - Versão: 2026.8.11 - Alterado em 2026/08/11, 22:50 */
+/* php/reg_rat_pesq.php /* Alterado em 2026/02/21, 23:49 */
 
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
@@ -191,7 +191,7 @@ $total = pg_num_rows($res);
                     dataLayer.push(arguments);
                 }
                 gtag("js", new Date());
-                
+
                 gtag("config", "G-SWZJG4W36F");
             </script>
         <!-- Google tag (gtag.js) -- Fim -->
@@ -200,10 +200,11 @@ $total = pg_num_rows($res);
 
         <style>
         body { font-family: Arial; font-size: 14px; }
-
         #resumot1 {
 			position: absolute;
 			/*margin-top:2px;*/
+
+
 			margin-right: 2px;
 			max-width:96%; height:auto;
 			/*width:94%;*/
@@ -211,17 +212,7 @@ $total = pg_num_rows($res);
             background:#F9FFF9;
 			border:1px solid #2266AA;
         }
-        #resumot2 {
-			position: absolute;
-			/*margin-top:2px;*/
-			margin-right: 2px;
-			max-width:96%; height:auto;
-			/*width:94%;*/
-            overflow:auto; padding:1px;
-            background:#F9FFF9;
-			border:1px solid #2266AA;
-        }
-		
+
 #atletas {
     /*position: absolute;*/
 	height:auto;
@@ -230,7 +221,7 @@ $total = pg_num_rows($res);
 	z-index: -1;
 	border:1px solid #2266AA;
 	}
-			
+
         .enxrow {
             /*width:380px;*/
 			/*height: auto;*/
@@ -266,8 +257,7 @@ $total = pg_num_rows($res);
         <script>
             // recebe HTML e insere no quadro
             function setResumoHtml(html) {
-                document.getElementById("resumot2").innerHTML = html + document.getElementById("voltapagina").innerHTML;
-				document.getElementById('resumot2').style.visibility = 'visible';				
+                document.getElementById("resumot1").innerHTML = html;
             }
 
             // monta o gráfico
@@ -287,34 +277,12 @@ $total = pg_num_rows($res);
 /* Cabeçalho                                                              */
 /* ---------------------------------------------------------------------- */
 
-//echo "<div  style='display:flex';>";
-echo "<div id='titulo' style='display:flex; flex-direction:column; align-items:center; border:1px solid #00ff00;'>";
-//echo "<b>Xadrez UERJ</b>";
-echo "<b>IA Levy, Paulo Cesar</b>";
-echo "<span style='font-size:2rem;'>Arquivo do Árbitro</span>";
-//echo "Encontrado(s)<b> $total </b>enxadrista(s)<br />";
-//echo "Encontrado(s) <b>";
-//echo $total;
-//echo "</b> enxadrista(s)<br />";
-
-if($total<2)
-	{$encontrados="Encontrado";$enxadristas="enxadrista";}
-else
-	{$encontrados="Encontrados";$enxadristas="enxadristas";}
-echo "<div>$encontrados <b>$total</b> $enxadristas</div>";
-
-echo "</div>";
+echo "<div style='max-width:\'100px\';'><b>Xadrez UERJ</b><br>";
+echo "<font size='5'>Arquivo do Árbitro</font><br>";
+echo "Encontrado(s) <b>$total</b> enxadrista(s)</div>";
 
 /*echo "<div id='resumot1'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";*/
-echo "<div id='resumot1' style='float:left;   width:auto; height:auto; position:absolute; overflow:auto; border:1px solid #2266AA;'><b><font color='blue'>Clique em um enxadrista</font></b></div>";
-echo "<div id='resumot2' style='float:right;left:10px;width:auto; height:auto; position:absolute; overflow:auto; border:1px solid #0000ff;visibility:hidden;'><b><font color='blue'>Clique em um enxadrista</font></b>";
-echo "</div>";
-echo "	<div id='voltapagina' style='position:fixed;left:10px;visibility:hidden;'>
-				<span onclick=\"document.getElementById('resumot2').style.visibility = 'hidden';\">
-					<img src='../imagens/retarrow.gif' alt='Voltar para a Lista'>
-					Voltar para a Lista
-				</span>
-			</div>";
+echo "<div id='resumot1' style='float:left; width=200px; height=auto; position:absolute; overflow: auto;'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";
 
 /*echo "<div style='position:absolute; width:480px; top:80px; height:449px; overflow:auto; border:1px solid #2266AA;'>";*/
 /*echo "<div  id='atletas' style='float:left; display:flex; top:80px; height:449px; overflow: auto; border:1px solid #00ff00;'>";*/
@@ -338,7 +306,7 @@ for ($i = 0; $i < $total; $i++) {
     $regFoto = substr("000$reg", -4);
     $foto = PesqFoto($regFoto)
         ? "../fotos/reg$regFoto.jpg"
-        : "../fotos/FotoNaoAutorizada.jpg";			// ***** 2026/08/03 *****
+        : "";
 
     /* Busca histórico */
     $sqltabs = pg_query($conexao, "SELECT nome_tab FROM tabelas_rating ORDER BY nome_tab");
@@ -348,24 +316,28 @@ for ($i = 0; $i < $total; $i++) {
     while ($t = pg_fetch_assoc($sqltabs)) {
         $tab = $t["nome_tab"];
         $data_base = substr($tab, 1, 8); // YYYYMMDD
-		
+
 		//echo $data_base . " ";
 
         $mesref[] = substr($data_base,0,4)."/".substr($data_base,4,2);
         $ret = pesq_rating($conexao, $data_base, $reg);
-        $parts = explode("/", $ret);
 		
+        $parts = explode("/", $ret);		
+		//echo $parts[1] . " ";
+
         //$vals[] = $parts[1] ?? "0";
 		if (isset($parts[1])) {
+			$vals[] = $parts[1];
+			/*
 				if($parts[1] > 0) {
-					$vals[] = $parts[1];
+				$vals[] = $parts[1];
 				} else {
-					$vals[] = $parts[1];	// **************************
 				}
-		} else {
-			//$vals[] = "0";
+				} else {
+				//$vals[] = "0";
+			*/
 		}
-		
+
 		//echo $parts[1] . " - ";
 		//echo $vals[0] . " - " . $vals[1]. " - " . $vals[2] ;
     }
@@ -373,7 +345,7 @@ for ($i = 0; $i < $total; $i++) {
 
 	$qttabelas = count($vals);
 	//echo "Qt. Tabelas: $qttabelas";
-	
+
     /* Se rating vazio, usa ultimo */
     if ($rat < 1) {
         $rat = intval(end($vals));
@@ -381,46 +353,22 @@ for ($i = 0; $i < $total; $i++) {
 
     /* monta param */
     /*$param = "v1=654&v2=227"; */
-	
-	//$v1=$qttabelas*21;
-	$v1=11*21;
-    
-	$param = "v1=$v1&v2=227";
 
-		$mesval=$qttabelas;
-		//echo $qttabelas . " ---  ";
+	$v1=$qttabelas*21;
+    $param = "v1=$v1&v2=227";
 
-	$qtab_real=0;
     for ($z = $qttabelas-1; $z >= 0; $z--) {
-		
+
 		//echo $param;
-        if($vals[$z]<1)
-			{continue;}				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
-		else {
-			
-			$qtab_real++;
-			//echo $qtab_real;
-			$mesval--;
+        // ***** 2026/08/13 *** if($vals[$z]<1) {continue;}				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
+        if($vals[$z]>0) {				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
+			$param .= "&r1=" . substr("0000".$vals[$z], -4);
+			//$param .= "&m1=" . urlencode($mesref[$z]);
+			$param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
 		}
-        
-		$v1=$qtab_real*21;
-		$param1 = "v1=$v1&v2=227";
-		//echo $param1;
-		
-		$param2 .= "&r1=" . substr("0000".$vals[$z], -4);
-        //$param .= "&m1=" . urlencode($mesref[$z]);
-        
-//		$param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
-		//echo $mesval . " - z= ". $z; // . " - vals[$z]= ".  vals[$z] . " - ". $mesref[$z] . " - " . $mesref[$mesval] . "<br />";
-		$param2 .= "&m1=" . $mesref[$mesval];		// ***** 2026/02/06, 16:13 *****
-		
     }
-	
-    $param = $param1 . $param2;
     $param .= "&r1=9999";
-	
-	//exit;
-	
+
     /* resumo */
     $Resumo = "";
     if ($foto)
@@ -428,28 +376,26 @@ for ($i = 0; $i < $total; $i++) {
 
     $Resumo .= "<div id='historico' style='overflow: auto; border:1px solid #00ffff;'>";
     $Resumo .= "<img src='$foto' width=158px align='left' style='border:1px solid #999;margin-right:6px;'>";
-    $Resumo .= "<b><font size='+1'>$nome</font></b><br><b>Histórico:</b> (mais recente primeiro)<font size='-1' face='Arial Narrow'><br>" ;
-	
+    $Resumo .= "<b><font size='+1'>$nome</font></b><br><b>Histórico:</b> (mais recente primeiro)<font size='-1' face='Arial Narrow'>";
+
     /*foreach ($mesref as $k => $m)
         $Resumo .= "$m:<b>{$vals[$k]}</b>; ";
 	*/
-	
-	//echo $Resumo . "<br />";
 	foreach (array_reverse($mesref, true) as $k => $m) {
 		if($vals[$k]>0) {
 			$Resumo .= "$m:<b>{$vals[$k]}</b>; ";
-			//echo "Mes: " . $m . " - rating: " . $vals[$k]."<br />";
+			//echo $vals[$k];
 		}		// ****** 2026/07/31 *****
 	}		
-    //exit;
-	
+
 	$Resumo .= "</div>";
     $Resumo .= "<div id='grafico' style='overflow: auto; border:1px solid #ff0000;'></div>";
 
     $Resumo = addslashes($Resumo);
     $paramJS = addslashes($param);
-	
+
 	//echo $Resumo;exit;
+	//echo $paramJS;exit;
 	//echo $param;exit;
 
     echo "<div class='enxrow' 
@@ -467,6 +413,5 @@ echo "</div>";
 pg_free_result($res);
 pg_close($conexao);
 ?>
-
 </body>
 </html>
