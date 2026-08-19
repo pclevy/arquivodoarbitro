@@ -191,7 +191,7 @@ $total = pg_num_rows($res);
                     dataLayer.push(arguments);
                 }
                 gtag("js", new Date());
-                
+
                 gtag("config", "G-SWZJG4W36F");
             </script>
         <!-- Google tag (gtag.js) -- Fim -->
@@ -203,8 +203,8 @@ $total = pg_num_rows($res);
         #resumot1 {
 			position: absolute;
 			/*margin-top:2px;*/
-			
-			
+
+
 			margin-right: 2px;
 			max-width:96%; height:auto;
 			/*width:94%;*/
@@ -212,7 +212,7 @@ $total = pg_num_rows($res);
             background:#F9FFF9;
 			border:1px solid #2266AA;
         }
-		
+
 #atletas {
     /*position: absolute;*/
 	height:auto;
@@ -221,7 +221,7 @@ $total = pg_num_rows($res);
 	z-index: -1;
 	border:1px solid #2266AA;
 	}
-			
+
         .enxrow {
             /*width:380px;*/
 			/*height: auto;*/
@@ -306,34 +306,36 @@ for ($i = 0; $i < $total; $i++) {
     $regFoto = substr("000$reg", -4);
     $foto = PesqFoto($regFoto)
         ? "../fotos/reg$regFoto.jpg"
-        : "../fotos/FotoNaoAutorizada.jpg";			// ***** 2026/08/03 *****
+        : "";
 
     /* Busca histórico */
     $sqltabs = pg_query($conexao, "SELECT nome_tab FROM tabelas_rating ORDER BY nome_tab");
     $mesref = [];
     $vals = [];
 
-    while ($t = pg_fetch_assoc($sqltabs)) {
+    $qtBarras=0;
+	while ($t = pg_fetch_assoc($sqltabs)) {
         $tab = $t["nome_tab"];
         $data_base = substr($tab, 1, 8); // YYYYMMDD
-		
+
 		//echo $data_base . " ";
 
         $mesref[] = substr($data_base,0,4)."/".substr($data_base,4,2);
         $ret = pesq_rating($conexao, $data_base, $reg);
-        $parts = explode("/", $ret);
 		
+		//echo $ret . " ";
+		
+        $parts = explode("/", $ret);		
+		//echo $parts[1] . " ";
+
         //$vals[] = $parts[1] ?? "0";
 		if (isset($parts[1])) {
+			$vals[] = $parts[1];
 				if($parts[1] > 0) {
-					$vals[] = $parts[1];
-				} else {
-					$vals[] = $parts[1];	// **************************
+				$qtBarras++;
 				}
-		} else {
-			//$vals[] = "0";
 		}
-		
+
 		//echo $parts[1] . " - ";
 		//echo $vals[0] . " - " . $vals[1]. " - " . $vals[2] ;
     }
@@ -341,7 +343,7 @@ for ($i = 0; $i < $total; $i++) {
 
 	$qttabelas = count($vals);
 	//echo "Qt. Tabelas: $qttabelas";
-	
+
     /* Se rating vazio, usa ultimo */
     if ($rat < 1) {
         $rat = intval(end($vals));
@@ -349,46 +351,23 @@ for ($i = 0; $i < $total; $i++) {
 
     /* monta param */
     /*$param = "v1=654&v2=227"; */
-	
+
 	//$v1=$qttabelas*21;
-	$v1=11*21;
-    
-	$param = "v1=$v1&v2=227";
+	$v1=($qtBarras-1)*21;
+    $param = "v1=$v1&v2=227";
 
-		$mesval=$qttabelas;
-		//echo $qttabelas . " ---  ";
-
-	$qtab_real=0;
     for ($z = $qttabelas-1; $z >= 0; $z--) {
-		
+
 		//echo $param;
-        if($vals[$z]<1)
-			{continue;}				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
-		else {
-			
-			$qtab_real++;
-			//echo $qtab_real;
-			$mesval--;
+        // ***** 2026/08/13 *** if($vals[$z]<1) {continue;}				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
+        if($vals[$z]>0) {				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
+			$param .= "&r1=" . substr("0000".$vals[$z], -4);
+			//$param .= "&m1=" . urlencode($mesref[$z]);
+			$param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
 		}
-        
-		$v1=$qtab_real*21;
-		$param1 = "v1=$v1&v2=227";
-		//echo $param1;
-		
-		$param2 .= "&r1=" . substr("0000".$vals[$z], -4);
-        //$param .= "&m1=" . urlencode($mesref[$z]);
-        
-//		$param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
-		//echo $mesval . " - z= ". $z; // . " - vals[$z]= ".  vals[$z] . " - ". $mesref[$z] . " - " . $mesref[$mesval] . "<br />";
-		$param2 .= "&m1=" . $mesref[$mesval];		// ***** 2026/02/06, 16:13 *****
-		
     }
-	
-    $param = $param1 . $param2;
     $param .= "&r1=9999";
-	
-	//exit;
-	
+
     /* resumo */
     $Resumo = "";
     if ($foto)
@@ -396,28 +375,26 @@ for ($i = 0; $i < $total; $i++) {
 
     $Resumo .= "<div id='historico' style='overflow: auto; border:1px solid #00ffff;'>";
     $Resumo .= "<img src='$foto' width=158px align='left' style='border:1px solid #999;margin-right:6px;'>";
-    $Resumo .= "<b><font size='+1'>$nome</font></b><br><b>Histórico:</b> (mais recente primeiro)<font size='-1' face='Arial Narrow'><br>" ;
-	
+    $Resumo .= "<b><font size='+1'>$nome</font></b><br><b>Histórico:</b> (mais recente primeiro)<font size='-1' face='Arial Narrow'>";
+
     /*foreach ($mesref as $k => $m)
         $Resumo .= "$m:<b>{$vals[$k]}</b>; ";
 	*/
-	
-	//echo $Resumo . "<br />";
 	foreach (array_reverse($mesref, true) as $k => $m) {
 		if($vals[$k]>0) {
 			$Resumo .= "$m:<b>{$vals[$k]}</b>; ";
-			//echo "Mes: " . $m . " - rating: " . $vals[$k]."<br />";
+			//echo $vals[$k];
 		}		// ****** 2026/07/31 *****
 	}		
-    //exit;
-	
+
 	$Resumo .= "</div>";
     $Resumo .= "<div id='grafico' style='overflow: auto; border:1px solid #ff0000;'></div>";
 
     $Resumo = addslashes($Resumo);
     $paramJS = addslashes($param);
-	
+
 	//echo $Resumo;exit;
+	//echo $paramJS;exit;
 	//echo $param;exit;
 
     echo "<div class='enxrow' 
