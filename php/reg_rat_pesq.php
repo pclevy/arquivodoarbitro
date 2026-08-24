@@ -1,7 +1,6 @@
 <?php
 /*
- * php/reg_rat_pesq.php
- * Alterado em 2026/08/19
+ * php/reg_rat_pesq.php - Alterado em 2026/08/19
  *
  * Pesquisa de Enxadristas + parâmetros para GerarGrafico.php
  *
@@ -21,7 +20,7 @@ error_reporting(E_ALL);
 
 
 /* ---------------------------------------------------------------------- */
-/* Funções auxiliares                                                     */
+/* Funções auxiliares                                                       */
 /* ---------------------------------------------------------------------- */
 
 function in($name, $default = '')
@@ -96,8 +95,7 @@ function PesqFoto($foto_reg)
 /**
  * Pesquisa rating histórico.
  *
- * Retorna:
- * clube/rating/rpd/blz
+ * Retorna: * clube/rating/rpd/blz
  */
 function pesq_rating($conexaoL, $data_baseL, $reg)
 {
@@ -108,11 +106,13 @@ function pesq_rating($conexaoL, $data_baseL, $reg)
      * do usuário.
      */
 
-    $tabela = 'r' . preg_replace('/[^0-9]/', '', $data_baseL);
+    //$tabela = 'r' . preg_replace('/[^0-9]/', '', $data_baseL);
+	//                'r' . pg_escape_string($conexaoL, $data_baseL)
+    //    FROM { $tabela }
 
     $sqlhist = "
         SELECT clube, rating, rpd, blz
-        FROM {$tabela}
+        FROM r" . pg_escape_string($conexaoL, $data_baseL) . "
         WHERE reg = " . pg_escape_literal($conexaoL, $reg);
 
     $rs = @pg_query($conexaoL, $sqlhist);
@@ -139,7 +139,7 @@ function pesq_rating($conexaoL, $data_baseL, $reg)
 
 
 /* ---------------------------------------------------------------------- */
-/* Captura Inputs                                                         */
+/* Captura Inputs                                                        		*/
 /* ---------------------------------------------------------------------- */
 
 $clube               = strtoupper(in('clube'));
@@ -160,7 +160,7 @@ $chave3 = in('chave3');
 
 
 /* ---------------------------------------------------------------------- */
-/* Carrega string de conexão                                              */
+/* Carrega string de conexão                                          */
 /* ---------------------------------------------------------------------- */
 
 $cfg_file = __DIR__ . "/../config/conexao_ca.cfg";
@@ -190,7 +190,7 @@ if (!$conexao) {
 
 
 /* ---------------------------------------------------------------------- */
-/* Montagem da Query                                                      */
+/* Montagem da Query                                                    */
 /* ---------------------------------------------------------------------- */
 
 $sqlexp1 = "
