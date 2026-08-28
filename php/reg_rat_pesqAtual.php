@@ -83,7 +83,7 @@
 	/* ---------------------------------------------------------------------- */
 	/* Captura Inputs                                                             */
 	/* ---------------------------------------------------------------------- */
-	
+
 	$clube               = strtoupper(in('clube'));
 	$titulo              = strtoupper(in('titulo'));
 	$incluir_desfiliados = in('status', 'S');
@@ -367,7 +367,7 @@
 		$mesref = [];
 		$vals = [];
 		
-		$qtBarras=0;
+		
 		while ($t = pg_fetch_assoc($sqltabs)) {
 			$tab = $t["nome_tab"];
 			$data_base = substr($tab, 1, 8); // YYYYMMDD
@@ -385,15 +385,14 @@
 			//$vals[] = $parts[1] ?? "0";
 			if (isset($parts[1])) {
 				
-				$vals[] = $parts[1];
 					if($parts[1] > 0) {
-						
-						
-					$qtBarras++;
+						$vals[] = $parts[1];
+					} else {
+						$vals[] = $parts[1];	// **************************
 					}
-					
-					
-					
+			} else {
+				//$vals[] = "0";
+				
 			}
 			
 			//echo $parts[1] . " - ";
@@ -413,27 +412,40 @@
 		/*$param = "v1=654&v2=227"; */
 		
 		//$v1=$qttabelas*21;
-		$v1=($qtBarras-1)*21;
+		$v1=11*21;
 		
 		$param = "v1=$v1&v2=227";
-		
-		
-		
-		
 
+			$mesval=$qttabelas;
+			//echo $qttabelas . " ---  ";
+
+		$qtab_real=0;
 		for ($z = $qttabelas-1; $z >= 0; $z--) {
 			
 			//echo $param;
-			
-			// ***** 2026/08/13 *** if($vals[$z]<1) {continue;}				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
-			if($vals[$z]>0) {				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
-				$param .= "&r1=" . substr("0000".$vals[$z], -4);
-				//$param .= "&m1=" . urlencode($mesref[$z]);
-				$param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
+			if($vals[$z]<1)
+				{continue;}				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
+			else {
+				
+				$qtab_real++;
+				//echo $qtab_real;
+				$mesval--;
 			}
+			
+			$v1=$qtab_real*21;
+			$param1 = "v1=$v1&v2=227";
+			//echo $param1;
+			
+			$param2 .= "&r1=" . substr("0000".$vals[$z], -4);
+			//$param .= "&m1=" . urlencode($mesref[$z]);
+			
+	//		$param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
+			//echo $mesval . " - z= ". $z; // . " - vals[$z]= ".  vals[$z] . " - ". $mesref[$z] . " - " . $mesref[$mesval] . "<br />";
+			$param2 .= "&m1=" . $mesref[$mesval];		// ***** 2026/02/06, 16:13 *****
 			
 		}
 		
+		$param = $param1 . $param2;
 		$param .= "&r1=9999";
 		
 		//exit;
@@ -444,7 +456,7 @@
 		
 		$Resumo .= "<div id='historico' style='overflow: auto; border:1px solid #00ffff;'>";
 		$Resumo .= "<img src='$foto' width=158px align='left' style='border:1px solid #999;margin-right:6px;'>";
-		$Resumo .= "<b><font size='+1'>$nome</font></b><br><b>Histórico:</b> (mais recente primeiro)<font size='-1' face='Arial Narrow'>";
+		$Resumo .= "<b><font size='+1'>$nome</font></b><br><b>Histórico:</b> (mais recente primeiro)<font size='-1' face='Arial Narrow'>" ;
 		
 		/*foreach ($mesref as $k => $m)
 			$Resumo .= "$m:<b>{$vals[$k]}</b>; ";
@@ -454,7 +466,7 @@
 		foreach (array_reverse($mesref, true) as $k => $m) {
 			if($vals[$k]>0) {
 				$Resumo .= "$m:<b>{$vals[$k]}</b>; ";
-				//echo $vals[$k];
+				//echo "Mes: " . $m . " - rating: " . $vals[$k]."<br />";
 			}		// ****** 2026/07/31 *****
 		}
 		//exit;
