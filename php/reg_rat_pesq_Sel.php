@@ -12,7 +12,7 @@
 	$codificacao = trim($conteudo[1]);
 	fclose($fh);
 	
-	echo "<br>$strconexao <br>";exit;
+	//echo "<br>$strconexao <br>";exit;
 	
 	$conexao = pg_connect($strconexao) or die("erro na conexão");
 	//$sql = pg_query($conexao,"SELECT reg, sobrenome, nome, municipio AS clube, sexo AS genero, dt_nasc FROM cadastro ORDER BY nome"); 
