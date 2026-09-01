@@ -8,7 +8,7 @@
 		
 		<title>AI Paulo Levy</title>
 		
-		<?php include "google_analytics.php"; ?>
+		<?php include __DIR__ . "/google_analytics.php"; ?>
 		
 		<style type="text/css">
 			<!--

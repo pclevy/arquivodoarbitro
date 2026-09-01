@@ -1,9 +1,6 @@
 <!-- Google Analytics 4 -->
 
-<script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-SWZJG4W36F">
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SWZJG4W36F"></script>
 
 <script>
     window.dataLayer = window.dataLayer || [];
