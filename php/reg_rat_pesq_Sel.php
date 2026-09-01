@@ -195,8 +195,9 @@
 		<font size="3"><b>Xadrez UERJ</b></font><br>
 		<font size="6">Arquivo do Árbitro</font><br>
 		-->
+		<!-- <font size="1"><br /></font> -->
 		<center>
-			<font size="5"><b>Projeto Esfinge</b></font><br>
+			<font size="5"><b>Projeto &nbsp; &nbsp; &nbsp; &nbsp; Esfinge</b></font><br>
 			<font size="6"><b>Xadrez de Olho no Futuro</b></font><br>
 			<font size="2">(Antigo<b> Xadrez UERJ</b>)</font><br>
 			<font size="6">Arquivo do Árbitro</font><br>
