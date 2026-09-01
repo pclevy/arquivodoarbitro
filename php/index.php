@@ -1,5 +1,5 @@
  <html dir="ltr" lang="pt-BR">
-	<!-- php/index.php /* Alterado em 2026/02/23, 16:45 -->
+	<!-- php/index.php /* Alterado em 2026/09/01, 03:52 -->
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,7 @@
 		 <link rel="icon" type="image/png" href="../imagens/arquivo_do_arbitro.png" />
 		
 		<title>AI Paulo Levy</title>
+		<?php include "google_analytics.php"; ?>
 		<style type="text/css">
 			<!--
 				h1 {
@@ -80,7 +81,7 @@
 				</span><br>
 				
 				<span style="font-size:6;"><br></span><!br>
-	 <!-- <a href='reg_rat_pesq_Sel.php'>Rating Fexerj</a><!br> -->
+				<!-- <a href='reg_rat_pesq_Sel.php'>Rating Fexerj</a><!br> -->
 				<a href='index.php?page=RatingFexerj'>Rating Fexerj</a><!br>
 				<hr>
 				
