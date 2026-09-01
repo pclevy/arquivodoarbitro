@@ -12,8 +12,8 @@
 	</head>
 	<body>
       <?php
-        //echo "teste";
-        //phpinfo();
+        echo "teste";
+        phpinfo();
       ?>
 	</body>
 </html>
