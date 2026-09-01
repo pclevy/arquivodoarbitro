@@ -7,7 +7,9 @@
 		 <link rel="icon" type="image/png" href="../imagens/arquivo_do_arbitro.png" />
 		
 		<title>AI Paulo Levy</title>
+		
 		<?php include "google_analytics.php"; ?>
+		
 		<style type="text/css">
 			<!--
 				h1 {
