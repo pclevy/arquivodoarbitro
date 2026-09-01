@@ -29,10 +29,11 @@
 	<body bgcolor="eeeeff">
 		<div id="geral" style="position:absolute;width:997;height:580px;left:1;top:1;border:1px solid #000000">	
 			<div style="
-			 position:absolute;
-			 width:993;left:1px;top:1px;font-size:3px;text-align:center;border:1px solid #2266AA">
+				 position:absolute;
+				 width:993;left:1px;top:1px;font-size:3px;text-align:center;border:1px solid #2266AA"
+			>
 				<!center>
-					<font size="6"><b>Arquivo do Árbitro</b><br></font><br>
+				<font size="6"><b>Arquivo do Árbitro</b><br></font><br>
 			</div>
 			<div class="transbox90" id="blocomovel_5" style="
 				z-index:1;

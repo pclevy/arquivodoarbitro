@@ -198,8 +198,11 @@
             crossorigin="anonymous"
             ></script>
         <!-- Google AdSense - Fim -->
+		
+		
+		
 
-        <!-- Google tag (gtag.js) -- Inicio -->
+        <!-- Google tag (gtag.js) -- Inicio
             <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-SWZJG4W36F"
@@ -213,7 +216,12 @@
                 gtag("js", new Date());
 				gtag("config", "G-SWZJG4W36F");
             </script>
-        <!-- Google tag (gtag.js) -- Fim -->
+         Google tag (gtag.js) -- Fim -->
+
+
+
+
+<?php include "google_analytics.php"; ?>
 
         <title>Pesquisa de Enxadristas</title>
 

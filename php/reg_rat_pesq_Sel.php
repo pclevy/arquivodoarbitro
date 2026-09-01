@@ -87,6 +87,9 @@
 		<link rel="icon" type="image/png" href="../imagens/arquivo_do_arbitro.png" />
 
 		<title>Consultar Registro e Rating!</title>
+		
+		<?php include "google_analytics.php"; ?>
+		
 		<script LANGUAGE="JavaScript" SRC="../js/jstrim.js"></script>
 
 		<script language="JavaScript" type="text/javascript">
