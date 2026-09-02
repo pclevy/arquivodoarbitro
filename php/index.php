@@ -1,4 +1,3 @@
-```php
 <!DOCTYPE html>
 <html dir="ltr" lang="pt-BR">
 	<!-- php/index.php - Versão: 2026/09/01 -->
