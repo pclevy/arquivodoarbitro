@@ -1,19 +1,53 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="pt-BR">
 <!-- index.html /* Alterado em 2026/02/17, 17:50 -->
-
+<html dir="ltr" lang="pt-BR">
 	<head>
 		<!meta charset="windows-1252">
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
-		<link rel="icon" type="image/png" href="/imagens/arquivo_do_arbitro.png" />
-		<META http-equiv="refresh" content="0;URL=./php/index.php">
-	</head>
+	<meta charset="UTF-8" />	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
+	<link rel="icon" type="image/png" href="/imagens/arquivo_do_arbitro.png" />
+<!-- =====================================================
+	 Redirecionamento para o Arquivo do Árbitro
+	 ===================================================== -->
+<meta http-equiv="refresh" content="0;URL=php/index.php"/>
+<!-- =====================================================
+	 Google AdSense
+	 ===================================================== -->
+<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7174891341008290"
+  crossorigin="anonymous"
+></script>
+
+    <!-- =====================================================
+         Google Analytics 4
+         ===================================================== -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SWZJG4W36F"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      gtag("config", "G-SWZJG4W36F");
+    </script>
+
+    <title>Arquivo do Árbitro</title>
+  </head>
+
 	<body>
+	<!--
       <?php
-        echo "teste";
-        phpinfo();
+        //echo "teste";
+        //phpinfo();
       ?>
+	  -->
 	</body>
 </html>
