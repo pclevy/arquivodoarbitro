@@ -1,0 +1,259 @@
+<?php
+/* php/reg_rat_pesq_Sel.php - Versão: 2026.09.01 - Alterado em 2026/09/01, 02:03 */
+
+	ini_set('display_errors', 0);
+	ini_set('display_startup_errors', 0);
+	error_reporting(E_ALL);
+
+	$file = "../config/conexao_ca.cfg";
+	$fh = fopen($file, 'r');
+	$conteudo = explode("*", fread($fh, filesize($file)));
+	$strconexao = trim($conteudo[0]);
+	$codificacao = trim($conteudo[1]);
+	fclose($fh);
+	
+	//echo "<br>$strconexao <br>";exit;
+	
+	$conexao = pg_connect($strconexao) or die("erro na conexão");
+	//$sql = pg_query($conexao,"SELECT reg, sobrenome, nome, municipio AS clube, sexo AS genero, dt_nasc FROM cadastro ORDER BY nome"); 
+	$sql = pg_query($conexao,"
+		SELECT
+			reg,
+			nome,
+			sobrenome,
+			trim(nome) || ' ' || trim(sobrenome) AS nomecompleto,
+			CASE
+				WHEN clube IS NULL OR trim(clube) = ''
+				THEN trim(municipio)
+				ELSE trim(clube)
+			END AS clube,
+			sexo AS genero,
+			dt_nasc,
+			right(trim(dt_nasc), 4) AS ano_nasc
+		FROM cadastro
+		ORDER BY nome;");
+	  
+	$resultado = pg_num_rows($sql);
+	$i=0;
+	
+	echo "<script language='JavaScript' type='text/javascript'>";
+	echo "var listaJogadores = [];";
+	while ($i<$resultado) {
+		
+		$reg = trim(" ".pg_fetch_result($sql,$i,'reg'));
+		
+		//$prenome = trim(" ".pg_fetch_result($sql,$i,'nome'));
+		//$sobrenome = trim(" ".pg_fetch_result($sql,$i,'sobrenome'));
+		//$nome=trim($prenome . ' ' . $sobrenome);
+		$nome = pg_fetch_result($sql,$i,'nomecompleto');
+		
+		//$clube = trim(" ".pg_fetch_result($sql,$i,'clube'));
+		$clube = pg_fetch_result($sql,$i,'clube');
+
+		echo "listaJogadores.push({reg:" . json_encode($reg) . ", nome:" . json_encode($nome) . ", clube:" . json_encode($clube) . "});";
+		
+		//echo "$reg";
+		//echo "console.log('$reg - $nome - $clube');";
+		
+		//echo "console.log(" . json_encode("$reg - $nome - $clube") . ");";		
+		
+		$i++;
+	}
+	//echo "console.log('lista jogadores', listaJogadores);";
+	echo "</script>";
+
+	echo "
+	<script language='JavaScript' type='text/javascript'>
+		window.addEventListener('load', function() {
+			listaJogadoresMostrada = listaJogadores;
+			var selectElement = document.getElementById('enxadrista_list');
+			listaJogadoresMostrada.forEach(function(jogador, index) {
+				var option = document.createElement('option');
+				option.value = index;
+				option.text = jogador.nome;
+				selectElement.appendChild(option);
+			});
+		});
+	</script>
+	";
+?>
+
+<html dir="ltr" lang="pt-BR">
+	<head>
+		<!meta charset="windows-1252">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
+		<link rel="icon" type="image/png" href="../imagens/arquivo_do_arbitro.png" />
+
+		<title>Consultar Registro e Rating!</title>
+		
+		<?php include "google_analytics.php"; ?>
+		
+		<script LANGUAGE="JavaScript" SRC="../js/jstrim.js"></script>
+
+		<script language="JavaScript" type="text/javascript">
+		var listaJogadoresMostrada = [];
+		
+		var specialChars =
+			[
+				{val:"a",let:"áàãâä"},
+				{val:"e",let:"éèêë"},
+				{val:"i",let:"íìîï"},
+				{val:"o",let:"óòõôö"},
+				{val:"u",let:"úùûü"},
+				{val:"c",let:"ç"},
+				{val:"A",let:"ÁÀÃÂÄ"},
+				{val:"E",let:"ÉÈÊË"},
+				{val:"I",let:"ÍÌÎÏ"},
+				{val:"O",let:"ÓÒÕÔÖ"},
+				{val:"U",let:"ÚÙÛÜ"},
+				{val:"C",let:"Ç"},
+				{val:"",let:"?!()"}
+			];
+			
+			function replaceSpecialChars(str) {
+				var regex;
+				var returnString = str;
+
+				return returnString;
+			};
+			
+			function criar_opcoes(id_select9) {
+				for (i=0;i<listaJogadoresMostrada.length;i++) {
+					try {
+						id_select9.add(new Option(listaJogadoresMostrada[i].nome, i), id_select9.options[0]);
+					} catch(e) {
+						id_select9.add(new Option(listaJogadoresMostrada[i].nome, i), 0);
+					}
+				}
+			}
+			
+			function pesq_nome(strDigitada)
+			{
+				strPesq=replaceSpecialChars(trim(strDigitada)).toUpperCase();
+				document.getElementById("enxadrista_reg").value='';
+				
+			if(strPesq === "") {
+				listaJogadoresMostrada = listaJogadores;
+			} else {
+				listaJogadoresMostrada = listaJogadores.filter(function(jogador) {
+					return replaceSpecialChars(jogador.nome).toUpperCase().indexOf(strPesq) >= 0;
+				});
+			}
+			
+			var lista_loc = document.getElementById("enxadrista_list");
+			tamlista = lista_loc.length;
+
+			for(i=0; i<tamlista; i++){
+				lista_loc.remove(0);
+			}
+			
+			listaJogadoresMostrada.forEach(function(jogador, index) {
+				try {
+					lista_loc.add(new Option(jogador.nome, index), null);
+				} catch(e) {
+					lista_loc.add(new Option(jogador.nome, index));
+				}
+			});
+		}
+		/*
+		function Select_Click(elemento,typeClick) {
+			indice=elemento.options[elemento.selectedIndex].value;
+			if(indice!='') {
+				var jogador = listaJogadoresMostrada[indice];
+				document.getElementById('enxadrista_reg').value=jogador.reg;
+				document.getElementById('enxadrista').value=jogador.nome;
+				if(typeClick=='dbl') {
+					document.getElementById('SubmitButton').click();
+				}
+			}
+		}
+		*/
+		
+		function Select_Click(elemento, typeClick) {
+			const indice = elemento.options[elemento.selectedIndex].value;
+
+			if (indice != '') {
+				const jogador = listaJogadoresMostrada[indice];
+
+				document.getElementById('enxadrista_reg').value = jogador.reg;
+				document.getElementById('enxadrista').value = jogador.nome;
+
+				const isTouch = navigator.maxTouchPoints > 0;
+
+				if (typeClick == 'dbl' || isTouch) {
+					document.getElementById('SubmitButton').click();
+				}
+			}
+		}
+
+		</script>
+	</head>
+	
+	<body bgcolor="eeeeff">
+		<!-- Título: <input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'> -->
+		
+		<!--
+		<font size="3"><b>Xadrez UERJ</b></font><br>
+		<font size="6">Arquivo do Árbitro</font><br>
+		-->
+		<!-- <font size="1"><br /></font> -->
+		<center>
+			<font size="5"><b>Projeto &nbsp; &nbsp; &nbsp; &nbsp; Esfinge</b></font><br>
+			<font size="6"><b>Xadrez de Olho no Futuro</b></font><br>
+			<font size="2">(Antigo<b> Xadrez UERJ</b>)</font><br>
+			<font size="6">Arquivo do Árbitro</font><br>
+			
+			<font size="3"><b>Pesquisa de Enxadristas - por nome</b></font> <font size='2' color='red'>(Lista de Rating de julho/2026!)</font><br>
+			<font size='2' color='red'> <!-- <b>Em construção</b>: os dados aqui apresentados ainda são experimentais, podendo haver imprecisões!!</font> --> <br>
+			
+			<div style="max-width:460px;background-color:#EDFAD6;line-height:30px; border:1px solid #2266AA;">
+				<!-- <input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'> -->
+				<form name='reg_rat_pesq' action='reg_rat_pesq.php' method='post' autocomplete='off'>
+					<table width='100%'>
+						<tr>
+							<td valign='top' colspan='4'>
+								Clube: <input name='clube' id='clube' type='text' value='' size='10' maxlenght='10'>
+								&nbsp; &nbsp; 
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+								Status: 
+								<select name='status' id='status'>
+									<option value='N'>Filiados</option>
+									<option value='S' selected='true'>Todos</option>
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td valign='top' colspan='4'>Faixa de Rating.&nbsp;De: 
+								<input name='rat_min' id='rat_min' type='text' value='0' size='2' maxlenght='4'>&nbsp;A&nbsp;
+								<input name='rat_max' id='rat_max' type='text' value='3000' size='2' maxlenght='4'>
+								&nbsp; &nbsp; &nbsp; 
+								Ritmo: 
+								<select name='ritmo' id='ritmo'>
+									<option value='S' selected='true'>Clássico</option>
+									<option value='Q'>Rápido</option>
+									<option value='B'>Relâmpago</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td valign='top'>Nome:</td>
+							<td colspan='4'>
+								<input name='enxadrista' id='enxadrista' type='text' value='' size='49' maxlenght='60' onkeyup='TamNomPesq=trim(this.value).length;pesq_nome(this.value);' />
+								<input name='enxadrista_reg' id='enxadrista_reg' type='hidden' value='' size='6' />
+								
+								<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onchange='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'>
+								
+									<option style="font-weight:bold" value="">Digite parte do nome ou Selecione abaixo ...</option>
+								</select>
+							</td>
+						</tr>
+						<tr><td>&nbsp;</td><td><input id='SubmitButton' type='submit' onClick="if(enxadrista_reg.value<1 && clube.value=='' && titulo.value=='' && rat_min.value=='' && rat_max.value==''){alert('Clique em um nome da Lista e/ou escolha um outro critério!!');enxadrista_list.focus(); return false;}" name='Enviar' value='Enviar'></td></tr>
+					</table>
+				</form>
+			</div>
+		</center>
+	</body>
+</html>

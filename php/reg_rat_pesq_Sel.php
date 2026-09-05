@@ -66,11 +66,19 @@
 	<script language='JavaScript' type='text/javascript'>
 		window.addEventListener('load', function() {
 			listaJogadoresMostrada = listaJogadores;
+			
+			/*
+				listaJogadoresMostrada.sort((a, b) => a.reg - b.reg);
+			*/
+			
 			var selectElement = document.getElementById('enxadrista_list');
 			listaJogadoresMostrada.forEach(function(jogador, index) {
 				var option = document.createElement('option');
 				option.value = index;
-				option.text = jogador.nome;
+				
+				/*option.text = jogador.nome; */
+				option.text = ('000' + jogador.reg).substr(-4) + ' - ' + jogador.nome;
+				
 				selectElement.appendChild(option);
 			});
 		});
@@ -151,7 +159,8 @@
 			
 			listaJogadoresMostrada.forEach(function(jogador, index) {
 				try {
-					lista_loc.add(new Option(jogador.nome, index), null);
+					/*	lista_loc.add(new Option(jogador.reg + jogador.nome, index), null); */
+					lista_loc.add(new Option(('000' + jogador.reg).substr(-4) + ' - ' + jogador.nome, index), null);
 				} catch(e) {
 					lista_loc.add(new Option(jogador.nome, index));
 				}
@@ -163,7 +172,7 @@
 			if(indice!='') {
 				var jogador = listaJogadoresMostrada[indice];
 				document.getElementById('enxadrista_reg').value=jogador.reg;
-				document.getElementById('enxadrista').value=jogador.nome;
+				document.getElementById('enxadrista').value=jogador.nome;('000' + jogador.reg).substr(-4) + ' - ' + 
 				if(typeClick=='dbl') {
 					document.getElementById('SubmitButton').click();
 				}
@@ -250,7 +259,11 @@
 								</select>
 							</td>
 						</tr>
-						<tr><td>&nbsp;</td><td><input id='SubmitButton' type='submit' onClick="if(enxadrista_reg.value<1 && clube.value=='' && titulo.value=='' && rat_min.value=='' && rat_max.value==''){alert('Clique em um nome da Lista e/ou escolha um outro critério!!');enxadrista_list.focus(); return false;}" name='Enviar' value='Enviar'></td></tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td><input id='SubmitButton' type='submit' onClick="if(enxadrista_reg.value<1 && clube.value=='' && titulo.value=='' && rat_min.value=='' && rat_max.value==''){alert('Clique em um nome da Lista e/ou escolha um outro critério!!');enxadrista_list.focus(); return false;}" name='Enviar' value='Enviar'></td>
+							<!-- <td>Ordenar por:	teste1	teste2</td> -->
+						</tr>
 					</table>
 				</form>
 			</div>
