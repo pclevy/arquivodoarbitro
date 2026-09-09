@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="pt-BR">
-	<!-- php/index.php - Versão: 2026/09/01 -->
+	<!-- php/index.php - Versão: 2026/09/09, 15:13 -->
+
+	<?php require_once "../config/ambiente.php"; ?>
 
 	<head>
 		<meta charset="UTF-8" />
@@ -22,8 +24,7 @@
 		<!-- =========================================================
 		     Google Analytics 4
 		     ========================================================= -->
-		<?php include __DIR__ . "/google_analytics.php"; ?>
-
+		<?php include __DIR__ . "/google_analytics.php"; ?> 	
 		<!-- =========================================================
 		     Google AdSense
 		     ========================================================= -->
