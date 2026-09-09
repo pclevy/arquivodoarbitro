@@ -68,7 +68,6 @@ echo "</script>";
 
 <head>
 
-```
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,6 +93,55 @@ echo "</script>";
 </script>
 
 
+<style>
+
+/* ============================================================
+   BOTÕES DE ORDENAÇÃO
+   ============================================================ */
+
+.botao-ordenacao {
+    padding: 3px 10px;
+    margin-left: 4px;
+
+    border: 1px solid #888;
+    border-radius: 4px;
+
+    background-color: #eeeeee;
+    color: #000000;
+
+    cursor: pointer;
+
+    font-weight: normal;
+}
+
+
+/* Botão quando o mouse passa sobre ele */
+
+.botao-ordenacao:hover {
+    background-color: #dddddd;
+}
+
+
+/* Botão quando recebe foco pelo teclado */
+
+.botao-ordenacao:focus {
+    outline: 2px solid #2266AA;
+    outline-offset: 2px;
+}
+
+
+/* Botão da ordenação atualmente selecionada */
+
+.botao-ordenacao.ativo {
+    background-color: #555555;
+    color: #ffffff;
+
+    font-weight: bold;
+}
+
+</style>
+
+
 <script type="text/javascript">
 
     var listaJogadoresMostrada = [];
@@ -107,6 +155,15 @@ echo "</script>";
         listaJogadoresMostrada = listaJogadores.slice();
 
         atualizarListaJogadores();
+
+        /*
+         * A ordenação inicial é por Nome.
+         */
+        document.getElementById("btnNome")
+            .classList.add("ativo");
+
+        document.getElementById("btnReg")
+            .classList.remove("ativo");
     }
 
 
@@ -184,6 +241,16 @@ echo "</script>";
         );
 
         atualizarListaJogadores();
+
+
+        /*
+         * Nome fica ativo.
+         */
+        document.getElementById("btnNome")
+            .classList.add("ativo");
+
+        document.getElementById("btnReg")
+            .classList.remove("ativo");
     }
 
 
@@ -200,6 +267,16 @@ echo "</script>";
         );
 
         atualizarListaJogadores();
+
+
+        /*
+         * Registro fica ativo.
+         */
+        document.getElementById("btnReg")
+            .classList.add("ativo");
+
+        document.getElementById("btnNome")
+            .classList.remove("ativo");
     }
 
 
@@ -298,7 +375,6 @@ echo "</script>";
     );
 
 </script>
-```
 
 </head>
 
@@ -306,7 +382,6 @@ echo "</script>";
 
 <center>
 
-```
 <font size="5">
     <b>Projeto &nbsp; &nbsp; &nbsp; &nbsp; Esfinge</b>
 </font>
@@ -562,6 +637,8 @@ echo "</script>";
 
                     <button
                         type="button"
+                        id="btnNome"
+                        class="botao-ordenacao ativo"
                         onclick="ordenarPorNome();"
                     >
                         Nome
@@ -569,6 +646,8 @@ echo "</script>";
 
                     <button
                         type="button"
+                        id="btnReg"
+                        class="botao-ordenacao"
                         onclick="ordenarPorReg();"
                     >
                         Registro
@@ -583,7 +662,6 @@ echo "</script>";
     </form>
 
 </div>
-```
 
 </center>
 
