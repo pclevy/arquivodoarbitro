@@ -103,14 +103,13 @@ echo "</script>";
     padding: 3px 10px;
     margin-left: 4px;
 
-    border: 1px solid #888;
+    border: 2px outset #cccccc;
     border-radius: 4px;
 
     background-color: #eeeeee;
     color: #000000;
 
     cursor: pointer;
-
     font-weight: normal;
 }
 
@@ -133,11 +132,21 @@ echo "</script>";
 /* Botão da ordenação atualmente selecionada */
 
 .botao-ordenacao.ativo {
-    background-color: #555555;
-    color: #ffffff;
-
+    background-color: #cccccc;
+    color: #000000;
     font-weight: bold;
-}
+
+    border: 2px inset #888888;
+
+    box-shadow:
+        inset 2px 2px 3px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(1px);
+
+
+
+
+
 
 </style>
 
