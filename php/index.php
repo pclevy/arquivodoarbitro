@@ -119,7 +119,6 @@
 
 
 				<!-- Pesquisar Torneios -->
-
 				<span
 					title="Pesquisar Torneios"
 					style="color:#999; cursor:not-allowed;"
@@ -127,11 +126,9 @@
 					Pesquisar Torneios
 				</span><br>
 
-				<span style="font-size:6px;"><br></span>
-
+				<span style="font-size:6px;">yyyyy<br></span>
 
 				<!-- Enviar Torneios SM -->
-
 				<span
 					title="Torneios Swiss Manager"
 					style="color:#999; cursor:not-allowed;"
@@ -139,9 +136,7 @@
 					Enviar Torneios SM
 				</span><br>
 
-
 				<!-- Enviar Torneios SP -->
-
 				<span
 					title="Torneios Swiss Perfect"
 					style="color:#999; cursor:not-allowed;"
@@ -149,9 +144,7 @@
 					Enviar Torneios SP
 				</span><br>
 
-
 				<!-- Enviar Torneios VG -->
-
 				<span
 					title="Torneios Vega"
 					style="color:#999; cursor:not-allowed;"
@@ -159,23 +152,17 @@
 					Enviar Torneios VG
 				</span><br>
 
-
 				<span style="font-size:6px;"><br></span>
-
-
 				<!-- Rating -->
-
 				<a href="index.php?page=RatingFexerj">
 					Rating Fexerj
 				</a>
 
 				<hr>
 
-
 				<!-- =================================================
 				     EVENTOS PRÓXIMOS
 				     ================================================= -->
-
 				<span style="font-size:16px;">
 					Eventos próximos:
 				</span>

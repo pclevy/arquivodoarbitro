@@ -43,11 +43,5 @@
   </head>
 
 	<body>
-	<!--
-      <?php
-        //echo "teste";
-        //phpinfo();
-      ?>
-	  -->
 	</body>
 </html>

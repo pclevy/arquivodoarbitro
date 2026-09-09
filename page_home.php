@@ -39,9 +39,7 @@
 				<font size="4"><b>Enxadristas e ratings</b>:</font><br>
 				<!-- <font size="3"><a href="../Ratings/Rating_NOV_2013_STD.pdf">Clássico</a> - <a href="../Ratings/Rating_NOV_2013_RPD.pdf">Rápido</a> - <a href="../Ratings/Rating_NOV_2013_BLZ.pdf">Relâmpago</a></font><br><br> -->
 				<font size="4"><a href="reg_rat_pesq_Sel.php">
-					<span
-						style="font-size:18;"
-						onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'>
+					<span style="font-size:18;">
 						<b>Pesquisar:</b>
 					</span>
 				</a>
