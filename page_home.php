@@ -141,7 +141,7 @@
 			<table width='800' border='0'>
 				<tr>
 					<td valign='top'>
-						-Contato: <a href="mailto:pclevybr@yahoo.com.br">pclevybr@gmail.com</a>
+						- Contato: <a href="mailto:pclevybr@yahoo.com.br">pclevybr@gmail.com</a>
 					</td>
 					<td>
 						<!--  Rodapé fixo -->
@@ -161,7 +161,7 @@
 						target="_self"
 						style={{ marginLeft: "50px", fontWeight: "bold" }}
 						>
-						"Projeto Esfinge"
+						"Projeto Esfinge."
 						</a>
 						&nbsp; &nbsp; &nbsp; &nbsp; 
 						<a
