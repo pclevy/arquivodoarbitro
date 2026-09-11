@@ -156,21 +156,21 @@
 						color: "#333",
 						}}
 						>
-						<a
+						"<a
 						href="https://www.esfinge.org"
 						target="_self"
 						style={{ marginLeft: "50px", fontWeight: "bold" }}
 						>
-						"Projeto Esfinge."
-						</a>
+						Projeto Esfinge
+						</a>"
 						&nbsp; &nbsp; &nbsp; &nbsp; 
-						<a
+						"<a
 						href="https://xadrez.esfinge.org"
 						target="_self"
 						style={{ marginLeft: "50px", fontWeight: "bold" }}
 						>
-						"Xadrez de Olho no Futuro"
-						</a>
+						Xadrez de Olho no Futuro
+						</a>"
 						</div>
 					</td>
 				</tr>
