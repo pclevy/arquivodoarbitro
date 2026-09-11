@@ -1,8 +1,7 @@
 <!-- page_home.php /* Alterado em 2026/02/19, 14:50 */ -->
 <center>
 	<font size="4"><b><u>Apresentação</u></b></font><br>
-	<font size="1"><br></font>
-		<div style="width:800;height:auto;text-align:justify;/*border:1px solid #2266AA*/">
+		<div style="width:800;height:auto;text-align:justify;padding:0 4px 0 4px;/*border:1px solid #2266AA*/">
 			Este Portal tem como objetivo fundamental a informação de qualidade técnica para 
 			os árbitros de Xadrez, tendo como foco principal aqueles que atuam no Estado do Rio de Janeiro.<br>
 			Tentaremos fomentar o diálogo, a troca de informações e a realização de eventos, contribuindo, democraticamente, para 
@@ -12,9 +11,9 @@
 			interessados em conhecer melhor as Regras de Competição que regem o Xadrez como Esporte.<br>
 			A responsabilidade por idealização, construção e execução das propostas acima, será regida no mais alto grau dos seguintes critérios:<br>
 			<br />
-			<center>"<b><u>Legalidade</u> - <u>Transparência</u> - <u>Inclusão</u> - <u>Respeito</u> - <u>Desenvolvimento</u> - <u>Modernidade</u></b>".</center>
-			<font size="1"><br></font>
-			<span style="float:right;font-size:18px;"><b><u>AI Paulo C. Levy</u></b></span><br>
+			<center>"<b><u>Legalidade</u> - <u>Transparência</u> - <u>Inclusão</u> - <u>Respeito</u> - <u>Desenvolvimento</u> - <u>Modernidade</u></b>"</center>
+
+			<span style="float:right;font-size:18px;"><b><u>AI Paulo C. Levy</u></b>&nbsp;</span><br>
 			<hr />
 		</div>
 
@@ -81,17 +80,44 @@
 			</div>
 		</div>
 	
-		<div style="position:absolute;bottom:10px;width:100%;height:auto;">
-			<div id="EventosProximos" name="EventosProximos" style="position:absolute;bottom:50px;width:auto;left:5%;max-height:300;overflow-y:auto;text-align:left;outline-style:inset;font-size:14px;font-family:Arial Narrow Bold,Arial Narrow,Arial,sans-serif,Liberation Sans Narrow;font-weight:600;padding:6px;padding-left:30px;padding-right:30px;background-color:#ffffff;border:1px solid #2266AA">
+		<div style="position:absolute;bottom:0px;width:100%;height:auto;border:0px solid #2266AA">
+			<div id="EventosProximos" name="EventosProximos" style="position:absolute;top:-285px;width:auto;left:5%;right:5%;max-width:350px;max-height:260px;overflow-y:scroll;text-align:left;outline-style:inset;font-size:14px;font-family:Arial Narrow Bold,Arial Narrow,Arial,sans-serif,Liberation Sans Narrow;font-weight:600;padding:6px;padding-left:10px;padding-right:10px;background-color:#ffffff;border:1px solid #2266AA">
 				<span style="font-size:22px;">Eventos próximos:</span><!br>
-				<span style="font-size:6px;"><br></span>
-				&nbsp;- <a href='https://www.fexerj.org.br/blog/circuito-de-regionais-fexerj-etapa-nova-frinurgo'>Regional de Nova Friburgo - RJ</a><br>
 				
-				<span style="font-size:6px;"><br></span>
-				&nbsp;- <a href='https://fbxdv.org.br/Calend%C3%A1rio%202026.pdf'>Calendário CBXDV</a><br>
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='https://www.fexerj.org.br/blog/circuito-de-regionais-fexerj-etapa-nova-frinurgo'>Regional de Macaé - RJ</a><!br>
+				
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='https://www.fexerj.org.br/blog/circuito-de-regionais-fexerj-etapa-nova-frinurgo'>Campeonato do Interior - RJ</a><!br>
 								
-				<span style="font-size:6px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><br>
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+								
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+								
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+								
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+				
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+				
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+				
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+				
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+				
+				<span style="font-size:22px;"><br></span>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+								
+				<span style="font-size:22px;"><br></span>
 
 				<!--
 				<span style="font-size:6px;"><br></span>
@@ -111,67 +137,46 @@
 				//document.getElementById('PesquisarRating').style.visibility='visible';
 				//document.getElementById('ConsultarTorneios').style.visibility='visible';
 			</script>
-		<table width='800' border='0'>
-			<tr>
-			<!--
-				<td valign='top' align='left'>
-					<b>Documentos e modelos</b>:<br>
-					*** em manutenção ***
-					&nbsp; - <a href="../pdf/fexerj_estatuto.pdf">Fexerj - Estatuto Vigente</a><br>
-					&nbsp; - <a href="../pdf/Regimento_CA.pdf">Conselho de Árbitros-Regimento</a><br>
-					&nbsp; - <a href="../pdf/ata_age_2007_03_03.pdf">Ata da AGE de 03/03/2007</a><br>
-					&nbsp; - <a href="../pdf/ata_ago_2008_04_11.pdf">Ata da AGO de 11/04/2008</a><br>
-					&nbsp; - <a href="../pdf/edital_ago_2012_02_10.jpg">Edital AGO/2011 em 10/02/2012</a><br>
-				</td>
-				<td width='49'>
-					&nbsp;
-				</td>
-				<td valign='top'>
-					<b>Departamento de Árbitros</b>:<br>
-					*** em manutenção ***
-					&nbsp; - <a href="../pdf/ca.pdf">Conselho de Árbitros</a><br>
-					&nbsp; - <a href="../pdf/al.pdf">Árbitros Locais</a><br>
-					&nbsp; - <a href="../pdf/qa.pdf">Quadro de Árbitros</a><br>
-				</td>
-				<td width='49'>
-					&nbsp;
-				</td>
-			-->
-				<td valign='top'>
-						- Contato:<br>
-						&nbsp; &nbsp; <a href="mailto:pclevybr@yahoo.com.br">pclevybr@gmail.com</a><br>
-				</td>
-			</tr>
-		</table>
+			
+			<table width='800' border='0'>
+				<tr>
+					<td valign='top'>
+						- Contato: <a href="mailto:pclevybr@yahoo.com.br">pclevybr@gmail.com</a>
+					</td>
+					<td>
+						<!--  Rodapé fixo -->
+						<div
+						style={{
+						//borderTop: "1px solid black",
+						border: "1px solid blue",
+						marginTop: "4px",
+						paddingTop: "4px",
+						textAlign: "left",
+						fontSize: "15px",
+						color: "#333",
+						}}
+						>
+						<a
+						href="https://www.esfinge.org"
+						target="_self"
+						style={{ marginLeft: "50px", fontWeight: "bold" }}
+						>
+						"Projeto Esfinge"
+						</a>
+						&nbsp; &nbsp; &nbsp; &nbsp; 
+						<a
+						href="https://xadrez.esfinge.org"
+						target="_self"
+						style={{ marginLeft: "50px", fontWeight: "bold" }}
+						>
+						"Xadrez de Olho no Futuro"
+						</a>
+						</div>
+					</td>
+				</tr>
+			</table>
 		
-        <!--  Rodapé fixo -->
-        <div
-          style={{
-            //borderTop: "1px solid black",
-            border: "1px solid blue",
-            marginTop: "4px",
-            paddingTop: "4px",
-            textAlign: "left",
-            fontSize: "15px",
-            color: "#333",
-          }}
-        >
-          <a
-            href="https://www.esfinge.org"
-            target="_self"
-            style={{ marginLeft: "50px", fontWeight: "bold" }}
-          >
-            "Projeto Esfinge"
-          </a>
-		  &nbsp; &nbsp; &nbsp; &nbsp; 
-          <a
-            href="https://xadrez.esfinge.org"
-            target="_self"
-            style={{ marginLeft: "50px", fontWeight: "bold" }}
-          >
-            "Xadrez de Olho no Futuro"
-          </a>
-        </div>
+		
 	</div>
 			
 	</div>
