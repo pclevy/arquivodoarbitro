@@ -91,7 +91,7 @@
 				&nbsp;- <a href='https://www.fexerj.org.br/blog/circuito-de-regionais-fexerj-etapa-nova-frinurgo'>Campeonato do Interior - RJ</a><!br>
 								
 				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>Interclubes</a><!br>
 								
 				<span style="font-size:22px;"><br></span>
 				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
