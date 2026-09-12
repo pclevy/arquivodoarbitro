@@ -4084,7 +4084,7 @@ echo "</script>";
 		
 		//divListaJogadores tab_jogadores divMostrarListaJogadores
 		echo '<div id="divListaJogadores" name="divListaJogadores" style="position:absolute;width:99%;overflow:hidden;visibility:hidden;height:0px;border:1px solid #2266AA;">';
-    echo ' <b>Dados dos Jogadores</b>: (Ordenação: ';
+    echo ' <b>yDados dos Jogadores</b>: (Ordenação: ';
     echo '  Clique nos Títulos das colunas ou em <b><a href="#"><span onclick="divOrdenar();">Ordenação Composta</span></a></b>)<br>';
 		echo " <div id='tab_jogadores' name='tab_jogadores' style='width:800px;position:relative;overflow:hidden;visibility:hidden;height:0px;'>";
 		echo "  Tabela de Jogadores";
@@ -6036,10 +6036,11 @@ echo "</script>";
 																										//{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 0.5 / 2;}
 																										{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 1 / 2;}
 																									break;
-																								case "-":
-																									//if($Status[$adver]=='0' && $Status[$adver1]=='0')
-																									//	//{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 0.5 / 2;}
-																									//	{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 0 / 2;}
+																								case "+":
+																									if($Status[$adver]=='0' && $Status[$adver1]=='0')
+																										//{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 0.5 / 2;}
+																										{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 0 / 2;}
+																									
 																									break;
 																								case "0":														
 																									break;
