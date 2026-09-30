@@ -428,7 +428,7 @@ echo "</script>";
 
 <div
     style="
-        max-width:460px;
+        max-width:430px;
         background-color:#EDFAD6;
         line-height:30px;
         border:1px solid #2266AA;
