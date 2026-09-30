@@ -416,7 +416,7 @@ echo "</script>";
 </font>
 
 <font size="2" color="red">
-    (Lista de Rating de julho/2026!)
+    (Lista de Rating de julho/2026! V. 1.7)
 </font>
 
 <br>
@@ -489,9 +489,9 @@ echo "</script>";
 
             <tr>
 
-                <td valign="top" colspan="4">
+                <td valign="top" colspan="2">
 
-                    Faixa de Rating.&nbsp;De:
+                    Ratings&nbsp;de:
 
                     <input
                         name="rat_min"
@@ -502,7 +502,7 @@ echo "</script>";
                         maxlength="4"
                     >
 
-                    &nbsp;A&nbsp;
+                     a 
 
                     <input
                         name="rat_max"
@@ -513,7 +513,7 @@ echo "</script>";
                         maxlength="4"
                     >
 
-                    &nbsp; &nbsp; &nbsp;
+                    &nbsp;
 
                     Ritmo:
 
@@ -543,12 +543,15 @@ echo "</script>";
 
             </tr>
 
+        </table>
+		<table width="100%">
 
             <tr>
 
-                <td valign="top">
+                <!--td valign="top" max-width:200px> -->
+				<th  valign="top" align="left" style="width:10px">
                     Nome:
-                </td>
+                </th>
 
                 <td colspan="4">
 
@@ -557,7 +560,7 @@ echo "</script>";
                         id="enxadrista"
                         type="text"
                         value=""
-                        size="49"
+                        size="38"
                         maxlength="60"
                         onkeyup="
                             pesq_nome(this.value);
@@ -576,7 +579,7 @@ echo "</script>";
                         name="enxadrista_list"
                         id="enxadrista_list"
                         size="15"
-                        style="width:340px"
+                        style="max-width:300px"
                         onchange="
                             Select_Click(this,'clk');
                         "
