@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
  * Versão: 2026.09.08
- * Alterado em 2026/09/20
+ * Alterado em 2026/09/30
  */
 
 ini_set('display_errors', 0);
