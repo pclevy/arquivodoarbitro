@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
  * Versão: 2026.09.08
- * Alterado em 2026/09/30
+ * Alterado em 2026/09/08
  */
 
 ini_set('display_errors', 0);
@@ -392,7 +392,7 @@ echo "</script>";
 <center>
 
 <font size="5">
-    <b>Projeto &nbsp; &nbsp; &nbsp; &nbsp; Esfinge</b>
+    <b>Projeto &nbsp; Esfinge</b>
 </font>
 <br>
 
@@ -414,7 +414,7 @@ echo "</script>";
 <font size="3">
     <b>Pesquisa de Enxadristas - por nome</b>
 </font>
-
+<br />
 <font size="2" color="red">
     (Lista de Rating de julho/2026! V. 1.7)
 </font>
@@ -428,7 +428,7 @@ echo "</script>";
 
 <div
     style="
-        max-width:430px;
+        max-width:400px;
         background-color:#EDFAD6;
         line-height:30px;
         border:1px solid #2266AA;
