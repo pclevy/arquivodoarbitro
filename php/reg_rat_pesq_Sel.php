@@ -555,8 +555,8 @@ echo "</script>";
                         id="enxadrista"
                         type="text"
                         value=""
-                        size="44"
-                        maxlength="50"
+                        size="44%"
+                        maxlength="90%"
                         onkeyup="
                             pesq_nome(this.value);
                         "
@@ -583,7 +583,7 @@ echo "</script>";
                         name="enxadrista_list"
                         id="enxadrista_list"
                         size="15"
-                        style="max-width:94%"
+                        style="max-width:96%"
                         onchange="
                             Select_Click(this,'clk');
                         "
