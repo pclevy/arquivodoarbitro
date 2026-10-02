@@ -510,7 +510,7 @@ echo "</script>";
 
                     &nbsp;
 
-                    Ritmo:
+                    Ritmo1:
 
                     <select
                         name="ritmo"
