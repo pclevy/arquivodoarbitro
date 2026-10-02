@@ -555,7 +555,7 @@ echo "</script>";
                         id="enxadrista"
                         type="text"
                         value=""
-                        size="44%"
+                        size="40%"
                         maxlength="44%"
                         onkeyup="
                             pesq_nome(this.value);
