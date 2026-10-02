@@ -222,8 +222,11 @@ echo "</script>";
 
                 option.text =
                     String(jogador.reg).padStart(4, "0")
-                    + " - "
-                    + jogador.nome;
+                    + "-"
+                    + jogador.nome.substring(0, 49)
+                    + " ("
+                    + jogador.clube
+                    + ")";
 
                 lista_loc.appendChild(option);
             }
