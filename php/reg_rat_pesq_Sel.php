@@ -546,7 +546,7 @@ echo "</script>";
 
                 <!--td valign="top" max-width:200px> -->
 				<td valign="top" align="left" style="width:9px">
-                    Nome:
+                    Nome1:
                 </td>
 
                 <td>
@@ -584,7 +584,7 @@ echo "</script>";
 						name="enxadrista_list"
 						id="enxadrista_list"
 						size="40%"
-						style="max-width: 97%; max-height: 50%;"
+						style="max-width: 97%; max-height: 40%;"
                        onchange="
                             Select_Click(this,'clk');
                         "
