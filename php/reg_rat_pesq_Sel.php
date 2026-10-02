@@ -399,7 +399,7 @@ echo "</script>";
 </span>
 
 <span style="font-size: 1.5em; line-height: 1.0;">
-    <b>Xadrez de Olho no Futuro</b><br>
+    <b>Xadrez de Olho no Futuro 1</b><br>
 </span>
 
 <span style="font-size: 0.6em; line-height: 0.4;">
