@@ -424,6 +424,7 @@ echo "</script>";
 <div
     style="
         max-width:400px;
+        max-height:/"98%/";
         background-color:#DCE9C8;
         line-height:30px;
         border:3px solid #2266AA;
@@ -579,12 +580,12 @@ echo "</script>";
             <tr>
                 <td colspan="5">
 
-                    <select
-                        name="enxadrista_list"
-                        id="enxadrista_list"
-                        size="15"
-                        style="max-width:96%"
-                        onchange="
+ 					<select
+						name="enxadrista_list"
+						id="enxadrista_list"
+						size="40%"
+						style="max-width: 97%; max-height: 80%;"
+                       onchange="
                             Select_Click(this,'clk');
                         "
                         ondblclick="
