@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.09.08
- * Alterado em 2026/09/08
+ * Versão: 2026.10.02
+ * Alterado em 2026/10/02
  */
 
 ini_set('display_errors', 0);
@@ -391,45 +391,37 @@ echo "</script>";
 
 <center>
 
-<font size="5">
-    <b>Projeto &nbsp; Esfinge</b>
-</font>
-<br>
+<span style="font-size: 1.3em; line-height: 0.7;">
+    <b>Projeto &nbsp; Esfinge</b><br>
+</span>
 
-<font size="6">
-    <b>Xadrez de Olho no Futuro</b>
-</font>
-<br>
+<span style="font-size: 1.5em; line-height: 1.0;">
+    <b>Xadrez de Olho no Futuro</b><br>
+</span>
 
-<font size="2">
+<span style="font-size: 0.6em; line-height: 0.4;">
     (Antigo<b> Xadrez UERJ</b>)
-</font>
+</span>
 <br>
 
-<font size="6">
+<font size="4">
     Arquivo do Árbitro
 </font>
 <br>
 
-<font size="3">
+<font size="2">
     <b>Pesquisa de Enxadristas - por nome</b>
 </font>
 <br />
 <font size="2" color="red">
     (Lista de Rating de julho/2026! V. 1.7)
 </font>
-
 <br>
-
-<font size="2" color="red">
-    <br>
-</font>
-
 
 <div
     style="
         max-width:400px;
-        background-color:#EDFAD6;
+        background-color:#DCE9C8;
         line-height:30px;
         border:1px solid #2266AA;
     "
