@@ -510,7 +510,7 @@ echo "</script>";
 
                     &nbsp;
 
-                    Ritmo2:
+                    Ritmo3:
 
                     <select
                         name="ritmo"
@@ -556,7 +556,7 @@ echo "</script>";
                         type="text"
                         value=""
                         size="44%"
-                        maxlength="50%"
+                        maxlength="40%"
                         onkeyup="
                             pesq_nome(this.value);
                         "
