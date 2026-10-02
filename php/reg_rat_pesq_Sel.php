@@ -437,7 +437,7 @@ echo "</script>";
         autocomplete="off"
     >
 
-        <table width="100%">
+        <table>
 
             <tr>
 
@@ -539,7 +539,7 @@ echo "</script>";
             </tr>
 
         </table>
-		<table width="100%">
+		<table>
 
             <tr>
 
@@ -574,7 +574,7 @@ echo "</script>";
             </tr>
 
         </table>
-		<table width="100%">
+		<table>
 
             <tr>
                 <td colspan="5">
