@@ -546,7 +546,7 @@ echo "</script>";
 
                 <!--td valign="top" max-width:200px> -->
 				<td valign="top" align="left" style="width:9px">
-                    Nome1:
+                    Nome2:
                 </td>
 
                 <td>
