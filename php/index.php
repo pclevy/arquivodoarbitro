@@ -56,8 +56,10 @@
 			id="geral"
 			style="
 				position:absolute;
-				width:997px;
-				height:580px;
+				max-width: 99%;
+				width:1360px;
+				max-height:99%;
+				height: 98%;
 				left:1px;
 				top:1px;
 				border:1px solid #000000;
@@ -71,7 +73,7 @@
 			<div
 				style="
 					position:absolute;
-					width:993px;
+					width:99%;
 					left:1px;
 					top:1px;
 					font-size:3px;
@@ -101,7 +103,8 @@
 					visibility:visible;
 					position:absolute;
 					width:124px;
-					height:500px;
+					/* height:500px; */
+					height:auto;
 					left:1px;
 					top:45px;
 					font-size:12px;
@@ -269,6 +272,45 @@
 			</div>
 
 
+			<center>
+			<!--
+					<div class="transbox90" id="OutubroRosa" style="
+						z-index:1;
+						visibility:visible;
+						position:absolute;width:210;
+						height:auto;left:750px;top:8px;
+						font-size:16px;
+						font-family:Arial Narrow,Liberation Sans Narrow;
+						font-weight:bold;
+						padding:2px;
+						background-color: #EEFFEE;
+						border:1px solid #2266AA">					
+						<a href="../pdf/Festival_de_Xadrez_2CRE_2013.pdf"><!font size="4"><b>Festival de Xadrez da 2ª CRE<br> Resultados </b><!/font></a><br>
+					</div>
+			-->
+			
+			
+					<div class="transbox90" id="OutubroRosa" style="
+						z-index:1;
+						visibility:visible;
+						position:absolute;width:auto;
+						height:auto;left:1px;top:0px;
+						font-size:16px;
+						font-family:Arial Narrow,Liberation Sans Narrow;
+						font-weight:bold;
+						padding:2px;
+						//background-color: #EEFFEE;
+						border:0px solid #2266AA">
+						
+						<img src="../imagens/outubroRosa.png" height=39><br>
+	
+					</div>
+			
+			<!-- O mês de outubro é conhecido mundialmente como o mês da conscientização do câncer de mama – o Outubro Rosa. -->
+					
+
+
+
 			<!-- =====================================================
 			     ÁREA PRINCIPAL
 			     ===================================================== -->
@@ -283,7 +325,7 @@
 					height:530px;
 					left:130px;
 					top:45px;
-					border:1px solid #2266AA;
+					border:5px solid #2266AA;
 				"
 			>
 
