@@ -424,7 +424,7 @@ echo "</script>";
 <div
     style="
         max-width:400px;
-        max-height:/"98%/";
+        max-height:90%;
         background-color:#DCE9C8;
         line-height:30px;
         border:3px solid #2266AA;
@@ -583,7 +583,7 @@ echo "</script>";
  					<select
 						name="enxadrista_list"
 						id="enxadrista_list"
-						size="36%"
+						size="30%"
 						style="max-width: 97%; max-height: 30%;"
                        onchange="
                             Select_Click(this,'clk');
