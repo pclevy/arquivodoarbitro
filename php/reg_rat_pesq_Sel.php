@@ -584,7 +584,7 @@ echo "</script>";
 						name="enxadrista_list"
 						id="enxadrista_list"
 						size="40%"
-						style="max-width: 97%; max-height: 60%;"
+						style="max-width: 97%; max-height: 50%;"
                        onchange="
                             Select_Click(this,'clk');
                         "
