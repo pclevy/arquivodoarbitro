@@ -83,7 +83,7 @@ echo "</script>";
     href="../imagens/arquivo_do_arbitro.png"
 >
 
-<title>Consultar Registro e Rating!</title>
+<title>Consultar Registro e Rating Fexerj!</title>
 
 <?php include "google_analytics.php"; ?>
 
@@ -423,7 +423,7 @@ echo "</script>";
         max-width:400px;
         background-color:#DCE9C8;
         line-height:30px;
-        border:1px solid #2266AA;
+        border:3px solid #2266AA;
     "
 >
 
@@ -545,15 +545,15 @@ echo "</script>";
                     Nome:
                 </th>
 
-                <td colspan="4">
+                <td colspan="5">
 
                     <input
                         name="enxadrista"
                         id="enxadrista"
                         type="text"
                         value=""
-                        size="38"
-                        maxlength="60"
+                        size="44"
+                        maxlength="50"
                         onkeyup="
                             pesq_nome(this.value);
                         "
@@ -566,12 +566,21 @@ echo "</script>";
                         value=""
                     >
 
+                </td>
+
+            </tr>
+
+        </table>
+		<table width="100%">
+
+            <tr>
+                <td colspan="5">
 
                     <select
                         name="enxadrista_list"
                         id="enxadrista_list"
                         size="15"
-                        style="max-width:300px"
+                        style="max-width:94%"
                         onchange="
                             Select_Click(this,'clk');
                         "
