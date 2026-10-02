@@ -556,7 +556,7 @@ echo "</script>";
                         type="text"
                         value=""
                         size="44%"
-                        maxlength="90%"
+                        maxlength="60%"
                         onkeyup="
                             pesq_nome(this.value);
                         "
