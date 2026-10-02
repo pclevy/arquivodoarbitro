@@ -510,7 +510,7 @@ echo "</script>";
 
                     &nbsp;
 
-                    Ritmo3:
+                    Ritmo4:
 
                     <select
                         name="ritmo"
@@ -544,11 +544,11 @@ echo "</script>";
             <tr>
 
                 <!--td valign="top" max-width:200px> -->
-				<th  valign="top" align="left" style="width:10px">
+				<td valign="top" align="left" style="width:9px">
                     Nome:
-                </th>
+                </td>
 
-                <td colspan="5">
+                <td>
 
                     <input
                         name="enxadrista"
@@ -556,7 +556,7 @@ echo "</script>";
                         type="text"
                         value=""
                         size="44%"
-                        maxlength="40%"
+                        maxlength="44%"
                         onkeyup="
                             pesq_nome(this.value);
                         "
