@@ -325,7 +325,7 @@
 					height:530px;
 					left:130px;
 					top:45px;
-					border:5px solid #2266AA;
+					border:2px solid #2266AA;
 				"
 			>
 
