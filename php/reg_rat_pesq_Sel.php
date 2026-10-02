@@ -399,7 +399,7 @@ echo "</script>";
 </span>
 
 <span style="font-size: 1.5em; line-height: 1.0;">
-    <b>Xadrez de Olho no Futuro 1</b><br>
+    <b>Xadrez de Olho no Futuro</b><br>
 </span>
 
 <span style="font-size: 0.6em; line-height: 0.4;">
@@ -540,17 +540,13 @@ echo "</script>";
             </tr>
 
         </table>
+		
 		<table>
-
             <tr>
-
-                <!--td valign="top" max-width:200px> -->
 				<td valign="top" align="left" style="width:9px">
-                    Nome3:
+                    Nome:
                 </td>
-
                 <td>
-
                     <input
                         name="enxadrista"
                         id="enxadrista"
@@ -558,61 +554,41 @@ echo "</script>";
                         value=""
                         size="37%"
                         maxlength="44%"
-                        onkeyup="
-                            pesq_nome(this.value);
-                        "
-                    >
-
+                        onkeyup="pesq_nome(this.value);"
+					>
                     <input
                         name="enxadrista_reg"
                         id="enxadrista_reg"
                         type="hidden"
                         value=""
                     >
-
                 </td>
-
             </tr>
-
         </table>
+		
 		<table>
-
             <tr>
                 <td colspan="5">
-
  					<select
 						name="enxadrista_list"
 						id="enxadrista_list"
 						size="30%"
 						style="max-width: 97%; max-height: 30%;"
-                       onchange="
-                            Select_Click(this,'clk');
-                        "
-                        ondblclick="
-                            Select_Click(this,'dbl');
-                        "
+						onchange="Select_Click(this,'clk');"
+                        ondblclick="Select_Click(this,'dbl');"
                     >
-
                         <option
                             style="font-weight:bold"
                             value=""
                         >
                             Carregando lista...
                         </option>
-
                     </select>
-
                 </td>
-
             </tr>
-
-
             <tr>
-
                 <td>&nbsp;</td>
-
                 <td>
-
                     <input
                         id="SubmitButton"
                         type="submit"
@@ -629,29 +605,20 @@ echo "</script>";
                                 alert(
                                     'Clique em um nome da Lista e/ou escolha um outro critério!!'
                                 );
-
                                 enxadrista_list.focus();
-
                                 return false;
                             }
                         "
                         name="Enviar"
                         value="Enviar"
                     >
-
                 </td>
-
             </tr>
-
-
+			
             <!-- Ordenação -->
-
             <tr>
-
                 <td colspan="4">
-
                     Ordenar por:
-
                     <button
                         type="button"
                         id="btnNome"
@@ -660,7 +627,6 @@ echo "</script>";
                     >
                         Nome
                     </button>
-
                     <button
                         type="button"
                         id="btnReg"
@@ -669,19 +635,11 @@ echo "</script>";
                     >
                         Registro
                     </button>
-
                 </td>
-
             </tr>
-
         </table>
-
     </form>
-
 </div>
-
 </center>
-
 </body>
-
 </html>
