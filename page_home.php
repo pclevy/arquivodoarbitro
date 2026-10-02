@@ -1,4 +1,4 @@
-<!-- page_home.php /* Alterado em 2026/02/19, 14:50 */ -->
+<!-- page_home.php /* Alterado em 2026/10/02, 14:50 */ -->
 <center>
 	<font size="4"><b><u>Apresentação</u></b></font><br>
 		<div style="width:800;height:auto;text-align:justify;padding:0 4px 0 4px;/*border:1px solid #2266AA*/">
@@ -70,7 +70,7 @@
 				<a href='#'>
 					<span
 						style="font-size:18;"
-						onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"torneios_pesq_Sel.php\" frameBorder=\"0\"></iframe>";'>
+						onclick='document.getElementById("DivPrincipal").innerHTML = "<iframe width=100% height=100% src=\"torneios_pesq_Sel.php\" frameBorder=0></iframe>";'>
 						<b>Pesquisar</b>
 					</span>
 				</a>
@@ -138,6 +138,24 @@
 				//document.getElementById('ConsultarTorneios').style.visibility='visible';
 			</script>
 			
+		<style type="text/css">
+			outubro
+				h1 {
+					font-family: arial, verdana, sans-serif;
+					font-size: 10px;
+				}
+				div.transbox90
+				{
+					/* for IE */
+					filter:alpha(opacity=90);
+					/*  ???   */
+					-moz-opacity:.90;
+					/* CSS3 standard */
+					opacity:0.90;
+				}
+			//-->
+		</style>
+		
 			<table width='800' border='0'>
 				<tr>
 					<td valign='top'>
@@ -177,5 +195,7 @@
 			</table>
 		
 		
+	</div>
+	
 	</div>
 </center>
