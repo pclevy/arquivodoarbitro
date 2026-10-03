@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="pt-BR">
-	<!-- php/index.php - Versão: 2026/09/09, 15:13 -->
+	<!-- php/index.php - Versão: 2026/10/02, 23:14 -->
 
 	<?php require_once "../config/ambiente.php"; ?>
 
@@ -48,6 +48,44 @@
 			}
 
 		</style>
+		
+<script>
+    let divCampanha;
+
+    function overCampanha(x) {
+        divCampanha = document.createElement("div");
+		
+		document.body.appendChild(divCampanha);
+ 
+        divCampanha.textContent = "Outubro Rosa é uma campanha de conscientização que tem como objetivo principal alertar as mulheres e a sociedade sobre a importância da prevenção e do diagnóstico precoce do câncer de mama e mais recentemente sobre o câncer de colo do útero.";
+
+        const rect = x.getBoundingClientRect();
+
+        divCampanha.style.position = "fixed";
+        divCampanha.style.left = (rect.right + 5) + "px";
+        divCampanha.style.top = rect.top + "px";
+		
+		divCampanha.style.fontFamily = "Arial Narrow";
+		divCampanha.style.color = "#006600";
+		divCampanha.style.fontSize = "11px";
+		//divCampanha.style.fontWeight = "bold";
+		divCampanha.style.padding = "5px";
+		divCampanha.style.backgroundColor = "#fffafa";
+		divCampanha.style.border = "1px solid #ff1493";
+       
+        divCampanha.style.width = (rect.width + 450) + "px";
+
+
+    }
+
+    function outCampanha() {
+        if (divCampanha) {
+ 			divCampanha.remove();
+			divCampanha = null;			
+        }
+    }
+</script>
+		
 	</head>
 
 	<body bgcolor="eeeeff">
@@ -302,7 +340,12 @@
 						//background-color: #EEFFEE;
 						border:0px solid #2266AA">
 						
-						<img src="../imagens/outubroRosa.png" height=39><br>
+						<img
+							onmouseover="overCampanha(this)"
+							onmouseout="outCampanha()"
+							src="../imagens/outubroRosa.png"
+							height=39
+						><br>
 	
 					</div>
 			
