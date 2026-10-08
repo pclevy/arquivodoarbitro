@@ -8,7 +8,7 @@ ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 error_reporting(E_ALL);
 
-echo "Passou aqui 01.<br>1.09<br>";
+echo "Passou aqui 01.<br>1.10<br>";
 
 $file = "../../config/conexao_ca.cfg";
 
@@ -37,7 +37,7 @@ $sql = pg_query($conexao, "
         dt_nasc,
         right(trim(dt_nasc), 4) AS ano_nasc
     FROM cadastro
-	WHERE sobrenome LIKE '%Levy%'
+	WHERE nome LIKE '%Levy%' OR sobrenome LIKE '%Levy%'
     ORDER BY nome;
 ");
 
@@ -54,8 +54,9 @@ echo "Linhas: $resultado";
 
 for($i=0;$i<$resultado;$i++)
 	{
-		echo "<br>Nome: <br>";
-		echo pg_result($sql, $i, 'nome'completo);
+		echo "<br>Nome: ";
+		echo pg_result($sql, $i, 'nomecompleto');
+		echo "<br>";
 	}
 
 pg_close($conexao);
