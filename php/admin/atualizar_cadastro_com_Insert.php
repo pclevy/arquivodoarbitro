@@ -18,7 +18,7 @@ $strconexao = trim($conteudo[0]);
 $codificacao = trim($conteudo[1]);
 fclose($fh);
 
-echo "string de conexão: $strconexao <br>"; 
+echo "String de conex&atilde;o: $strconexao <br>"; 
 
 $conexao = pg_connect($strconexao) or die("erro na conexão");
 
