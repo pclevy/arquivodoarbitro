@@ -8,7 +8,7 @@ ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 error_reporting(E_ALL);
 
-echo "Passou aqui 01.<br>1.1<br>";
+echo "Passou aqui 01.<br>1.2<br>";
 
 $file = "../../config/conexao_ca.cfg";
 
