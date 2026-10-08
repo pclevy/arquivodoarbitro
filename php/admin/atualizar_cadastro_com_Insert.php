@@ -54,7 +54,7 @@ echo "Linhas: $resultado";
 
 for($i=0;$i<$resultado;$i++)
 	{
-		echo "pg_result($sql,$i,'nome');
+		echo "pg_result($sql,$i,'nome')";
 	}
 
 pg_close($conexao);
