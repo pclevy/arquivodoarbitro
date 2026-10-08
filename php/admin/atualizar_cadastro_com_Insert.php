@@ -46,6 +46,9 @@ if (!$sql) {
 }
 
 $resultado = pg_num_rows($sql);
+
+echo "<br>passou aqui 02.<br><br>";
+
 echo "Linhas: $resultado";
 
 pg_close($conexao);
