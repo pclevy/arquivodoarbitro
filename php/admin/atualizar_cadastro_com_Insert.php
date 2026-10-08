@@ -46,7 +46,7 @@ if (!$sql) {
 }
 
 $resultado = pg_num_rows($sql);
-echo $resultado;
+echo "Linhas: $resultado";
 
 pg_close($conexao);
 
