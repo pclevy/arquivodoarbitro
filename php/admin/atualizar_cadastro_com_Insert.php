@@ -37,6 +37,7 @@ $sql = pg_query($conexao, "
         dt_nasc,
         right(trim(dt_nasc), 4) AS ano_nasc
     FROM cadastro
+	WHERE sobrenome LIKE '%Levy%'
     ORDER BY nome;
 ");
 
