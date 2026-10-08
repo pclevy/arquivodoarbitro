@@ -8,7 +8,7 @@ ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 error_reporting(E_ALL);
 
-echo "passou aqui 1";
+echo "passou aqui 01.<br><br>";
 
 $file = "../../config/conexao_ca.cfg";
 
@@ -18,7 +18,7 @@ $strconexao = trim($conteudo[0]);
 $codificacao = trim($conteudo[1]);
 fclose($fh);
 
-echo "string de conexão: $strconexao"; exit;
+echo "string de conexão: $strconexao <br>"; exit;
 
 $conexao = pg_connect($strconexao) or die("erro na conexão");
 
