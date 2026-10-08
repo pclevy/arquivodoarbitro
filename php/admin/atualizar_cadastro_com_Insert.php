@@ -8,7 +8,7 @@ ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 error_reporting(E_ALL);
 
-echo "Passou aqui 01.<br>1.5<br>";
+echo "Passou aqui 01.<br>1.6<br>";
 
 $file = "../../config/conexao_ca.cfg";
 
@@ -54,7 +54,7 @@ echo "Linhas: $resultado";
 
 for($i=0;$i<$resultado;$i++)
 	{
-		echo "Nome: <br>";
+		echo "<br>Nome: <br>";
 		echo "pg_result($sql,$i,'reg')";
 	}
 
