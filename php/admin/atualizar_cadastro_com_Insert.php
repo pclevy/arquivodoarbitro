@@ -45,6 +45,9 @@ if (!$sql) {
 }
 
 $resultado = pg_num_rows($sql);
+echo $resultado;
+
+pg_close($conexao);
 
 exit;
 ?>
