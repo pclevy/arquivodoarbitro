@@ -1,4 +1,4 @@
-<!-- page_home.php /* Alterado em 2026/10/02, 14:50 */ -->
+<!-- page_home.php /* Alterado em 2026/10/03, 03:32 */ -->
 <center>
 	<font size="4"><b><u>Apresentação</u></b></font><br>
 		<div style="width:800;height:auto;text-align:justify;padding:0 4px 0 4px;/*border:1px solid #2266AA*/">
@@ -85,38 +85,11 @@
 				<span style="font-size:22px;">Eventos próximos:</span><!br>
 				
 				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='https://www.fexerj.org.br/blog/circuito-de-regionais-fexerj-etapa-nova-frinurgo'>Regional de Macaé - RJ</a><!br>
+				&nbsp;- <a href='https://fexerj.org.br/blog/estadual-interior-absoluto-fexerk-2026'>Campeonato Estadual do Interior Absoluto FEXERJ 2026</a><!br>
 				
 				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='https://www.fexerj.org.br/blog/circuito-de-regionais-fexerj-etapa-nova-frinurgo'>Campeonato do Interior - RJ</a><!br>
-								
-				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>Interclubes</a><!br>
-								
-				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
-								
-				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
-								
-				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
+				&nbsp;- Campeonato Estadual Interclubes 2026 - UERJ - 21,22/11<!br>
 				
-				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
-				
-				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
-				
-				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
-				
-				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
-				
-				<span style="font-size:22px;"><br></span>
-				&nbsp;- <a href='../VIII_Aberto_FIDE_PUC-Rio_Xadrez/Regulamento_VIII_Aberto_FIDE_PUC_Rio.pdf'>VIII Aberto FIDE PUC-Rio Xadrez</a><!br>
-								
 				<span style="font-size:22px;"><br></span>
 
 				<!--

@@ -42,7 +42,7 @@ if (!$sql) {
     die("Erro na consulta ao banco de dados.");
 }
 
-$resultado = pg_num_rows($sql);
+$resultado = pg_affected_rows($sql);
 
 echo "<br>passou aqui 02.<br><br>";
 

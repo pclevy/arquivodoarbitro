@@ -413,18 +413,18 @@ echo "</script>";
 <br>
 
 <font size="2">
-    <b>Pesquisa de Enxadristas - por nome</b>
+    <b>Pesquisa de Enxadristas - </b>
 </font>
-<br />
+
 <font size="2" color="red">
-    (Lista de Rating de julho/2026! V. 1.7)
+    (Ratings, julho/2026,V. 1.9)
 </font>
 <br>
 
 <div
     style="
         max-width:400px;
-        max-height:90%;
+        max-height:88%;
         background-color:#DCE9C8;
         line-height:30px;
         border:3px solid #2266AA;
@@ -572,8 +572,8 @@ echo "</script>";
  					<select
 						name="enxadrista_list"
 						id="enxadrista_list"
-						size="30%"
-						style="max-width: 97%; max-height: 30%;"
+						size="23%"
+						style="max-width: 97%; max-height: 25%;"
 						onchange="Select_Click(this,'clk');"
                         ondblclick="Select_Click(this,'dbl');"
                     >
@@ -614,10 +614,9 @@ echo "</script>";
                     >
                 </td>
             </tr>
+        </table>
 			
             <!-- Ordenação -->
-            <tr>
-                <td colspan="4">
                     Ordenar por:
                     <button
                         type="button"
@@ -635,9 +634,6 @@ echo "</script>";
                     >
                         Registro
                     </button>
-                </td>
-            </tr>
-        </table>
     </form>
 </div>
 </center>
