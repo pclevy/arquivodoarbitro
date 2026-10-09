@@ -142,100 +142,11 @@ echo "</script>";
         inset 2px 2px 3px rgba(0, 0, 0, 0.35);
 
     transform: translateY(1px);
-}
 
-/* ============================================================
-   AJUSTES DE RESPONSIVIDADE — sem alterar a lógica do formulário
-   ============================================================ */
 
-* {
-    box-sizing: border-box;
-}
 
-body {
-    margin: 8px;
-}
 
-.formulario {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 6px;
-    background-color: #DCE9C8;
-    line-height: 1.6;
-    border: 3px solid #2266AA;
-}
 
-.formulario form,
-.formulario table {
-    width: 100%;
-    max-width: 100%;
-}
-
-.formulario table {
-    border-collapse: collapse;
-    table-layout: auto;
-}
-
-.formulario td {
-    padding: 2px;
-    vertical-align: top;
-}
-
-.formulario input[type="text"],
-.formulario select {
-    max-width: 100%;
-}
-
-#clube {
-    width: 6.5em;
-}
-
-#rat_min,
-#rat_max {
-    width: 4.5em;
-}
-
-#enxadrista {
-    width: 100%;
-    min-width: 0;
-}
-
-#enxadrista_list {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 18em;
-}
-
-.botoes-ordenacao {
-    text-align: center;
-    padding: 4px 0;
-}
-
-.botao-ordenacao {
-    min-height: 32px;
-    margin: 2px;
-}
-
-@media (max-width: 420px) {
-    body {
-        margin: 4px;
-    }
-
-    .formulario {
-        padding: 4px;
-    }
-
-    .formulario td {
-        padding: 1px;
-    }
-
-    .botao-ordenacao {
-        padding: 3px 8px;
-    }
-}
 
 </style>
 
@@ -510,7 +421,15 @@ body {
 </font>
 <br>
 
-<div class="formulario">
+<div
+    style="
+        max-width:400px;
+        max-height:88%;
+        background-color:#DCE9C8;
+        line-height:30px;
+        border:3px solid #2266AA;
+    "
+>
 
     <form
         name="reg_rat_pesq"
@@ -537,6 +456,8 @@ body {
                     >
 
                     &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
                     Status:
 
                     <select
@@ -631,8 +552,8 @@ body {
                         id="enxadrista"
                         type="text"
                         value=""
-                        size="37"
-                        maxlength="44"
+                        size="37%"
+                        maxlength="44%"
                         onkeyup="pesq_nome(this.value);"
 					>
                     <input
@@ -651,7 +572,8 @@ body {
  					<select
 						name="enxadrista_list"
 						id="enxadrista_list"
-						size="23"
+						size="23%"
+						style="max-width: 97%; max-height: 25%;"
 						onchange="Select_Click(this,'clk');"
                         ondblclick="Select_Click(this,'dbl');"
                     >
@@ -695,7 +617,6 @@ body {
         </table>
 			
             <!-- Ordenação -->
-            <div class="botoes-ordenacao">
                     Ordenar por:
                     <button
                         type="button"
@@ -714,7 +635,6 @@ body {
                     >
                         Registro
                     </button>
-            </div>
     </form>
 </div>
 </center>
