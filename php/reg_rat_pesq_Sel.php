@@ -1,6 +1,6 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.10.14
+ * Versão: 2026.10.14.02
  * Alterado em 2026/10/14
  */
 
@@ -65,39 +65,30 @@ echo "</script>";
 ?>
 
 <html dir="ltr" lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta
     name="keywords"
     content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"
 >
-
 <link
     rel="icon"
     type="image/png"
     href="../imagens/arquivo_do_arbitro.png"
 >
-
 <title>Consultar Registro e Rating Fexerj!</title>
 
 <?php include "google_analytics.php"; ?>
-
 <script
     type="text/javascript"
     src="../js/jstrim.js">
 </script>
 
-
 <style>
 /* ============================================================
    CONFIGURAÇÃO GERAL E ALTURA DA TELA
    ============================================================ */
-
 * {
     box-sizing: border-box;
 }
@@ -332,11 +323,9 @@ body > center > font {
 
 </style>
 
-
 <script type="text/javascript">
 
     var listaJogadoresMostrada = [];
-
 
     /*
      * Inicializa a lista de jogadores.
@@ -355,8 +344,10 @@ body > center > font {
 
         document.getElementById("btnReg")
             .classList.remove("ativo");
-    }
 
+        document.getElementById("btnClube")
+            .classList.remove("ativo");
+    }
 
     /*
      * Atualiza o SELECT.
@@ -370,12 +361,10 @@ body > center > font {
             return;
         }
 
-
         /*
          * Remove todas as opções.
          */
         lista_loc.innerHTML = "";
-
 
         /*
          * Primeira opção.
@@ -389,7 +378,6 @@ body > center > font {
         primeiraOpcao.style.fontWeight = "bold";
 
         lista_loc.appendChild(primeiraOpcao);
-
 
         /*
          * Insere os jogadores.
@@ -415,7 +403,6 @@ body > center > font {
         );
     }
 
-
     /*
      * Ordenar por Nome.
      */
@@ -436,7 +423,6 @@ body > center > font {
 
         atualizarListaJogadores();
 
-
         /*
          * Nome fica ativo.
          */
@@ -445,8 +431,10 @@ body > center > font {
 
         document.getElementById("btnReg")
             .classList.remove("ativo");
-    }
 
+        document.getElementById("btnClube")
+            .classList.remove("ativo");
+    }
 
     /*
      * Ordenar por Registro.
@@ -462,7 +450,6 @@ body > center > font {
 
         atualizarListaJogadores();
 
-
         /*
          * Registro fica ativo.
          */
@@ -471,8 +458,43 @@ body > center > font {
 
         document.getElementById("btnNome")
             .classList.remove("ativo");
+        
+		document.getElementById("btnClube")
+            .classList.remove("ativo");
     }
 
+    /*
+     * Ordenar por Clube.
+     */
+    function ordenarPorClube() {
+
+        listaJogadoresMostrada.sort(
+            function(a, b) {
+
+                return a.clube.localeCompare(
+                    b.clube,
+                    "pt-BR",
+                    {
+                        sensitivity: "base"
+                    }
+                );
+            }
+        );
+
+        atualizarListaJogadores();
+
+        /*
+         * Clube fica ativo.
+         */
+        document.getElementById("btnClube")
+            .classList.add("ativo");
+
+        document.getElementById("btnReg")
+            .classList.remove("ativo");
+
+        document.getElementById("btnNome")
+            .classList.remove("ativo");
+    }
 
     /*
      * Pesquisa por nome.
@@ -485,7 +507,6 @@ body > center > font {
         document.getElementById(
             "enxadrista_reg"
         ).value = "";
-
 
         if (strPesq === "") {
 
@@ -505,10 +526,8 @@ body > center > font {
                 );
         }
 
-
         atualizarListaJogadores();
     }
-
 
     /*
      * Seleção de jogador.
@@ -520,7 +539,6 @@ body > center > font {
                 elemento.selectedIndex
             ].value;
 
-
         if (indice !== "") {
 
             var jogador =
@@ -528,20 +546,16 @@ body > center > font {
                     Number(indice)
                 ];
 
-
             document.getElementById(
                 "enxadrista_reg"
             ).value = jogador.reg;
-
 
             document.getElementById(
                 "enxadrista"
             ).value = jogador.nome;
 
-
             var isTouch =
                 navigator.maxTouchPoints > 0;
-
 
             if (
                 typeClick === "dbl"
@@ -555,16 +569,13 @@ body > center > font {
         }
     }
 
-
     /*
      * Aguarda o HTML estar disponível.
      */
     document.addEventListener(
         "DOMContentLoaded",
         function() {
-
             inicializarLista();
-
         }
     );
 
@@ -649,7 +660,6 @@ body > center > font {
                 </td>
 
             </tr>
-
 
             <tr>
 
@@ -737,20 +747,10 @@ body > center > font {
 		<table>
             <tr>
                 <td colspan="5">
-				
-				
-				
-
-				
-				
-				
-				
  					<select
 						name="enxadrista_list"
 						id="enxadrista_list"
 						size="30"
-						
-						
 						
 						onchange="Select_Click(this,'clk');"
                         ondblclick="Select_Click(this,'dbl');"
@@ -813,6 +813,15 @@ body > center > font {
                         onclick="ordenarPorReg();"
                     >
                         Registro
+                    <button
+					 style="margin: 0;"
+                        type="button"
+                        id="btnClube"
+                        class="botao-ordenacao"
+                        onclick="ordenarPorClube();"
+                    >
+                        Clube
+                    </button>
                     </button>
             </div>
     </form>
