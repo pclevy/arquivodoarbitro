@@ -672,8 +672,8 @@ body > center > font {
                         id="rat_min"
                         type="text"
                         value="0"
-                        size="2"
                         maxlength="4"
+						style="width: 12%; max-width: 50px; box-sizing: border-box;"
                     >
 
                      a 
@@ -683,12 +683,10 @@ body > center > font {
                         id="rat_max"
                         type="text"
                         value="3000"
-                        size="2"
                         maxlength="4"
+						style="width: 12%; max-width: 50px; box-sizing: border-box;"
                     >
-
                     &nbsp;
-
                     Ritmo:
 
                     <select
