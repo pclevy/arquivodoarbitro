@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.10.08
- * Alterado em 2026/10/08
+ * Versão: 2026.10.13
+ * Alterado em 2026/10/13
  */
 
 ini_set('display_errors', 0);
@@ -94,93 +94,148 @@ echo "</script>";
 
 
 <style>
-
 /* ============================================================
-   BOTÕES DE ORDENAÇÃO
-   ============================================================ */
-
-.botao-ordenacao {
-    padding: 3px 10px;
-    margin-left: 4px;
-
-    border: 2px outset #cccccc;
-    border-radius: 4px;
-
-    background-color: #eeeeee;
-    color: #000000;
-
-    cursor: pointer;
-    font-weight: normal;
-}
-
-
-/* Botão quando o mouse passa sobre ele */
-
-.botao-ordenacao:hover {
-    background-color: #dddddd;
-}
-
-
-/* Botão quando recebe foco pelo teclado */
-
-.botao-ordenacao:focus {
-    outline: 2px solid #2266AA;
-    outline-offset: 2px;
-}
-
-
-/* Botão da ordenação atualmente selecionada */
-
-.botao-ordenacao.ativo {
-    background-color: #cccccc;
-    color: #000000;
-    font-weight: bold;
-
-    border: 2px inset #888888;
-
-    box-shadow:
-        inset 2px 2px 3px rgba(0, 0, 0, 0.35);
-
-    transform: translateY(1px);
-}
-
-/* ============================================================
-   AJUSTES DE RESPONSIVIDADE — sem alterar a lógica do formulário
+   CONFIGURAÇÃO GERAL E ALTURA DA TELA
    ============================================================ */
 
 * {
     box-sizing: border-box;
 }
 
+html,
 body {
-    margin: 8px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.formulario {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 6px;
-    background-color: #DCE9C8;
-    line-height: 1.6;
-    border: 3px solid #2266AA;
+body {
+    background-color: #eeeeff;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.formulario form,
-.formulario table {
+/* Cabeçalho e formulário ocupam a altura visível do navegador. */
+body > center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+/* Os <br> antigos não devem consumir espaço como itens flex. */
+body > center > br {
+    display: none;
+}
+
+body > center > span,
+body > center > font {
+    display: block;
+    flex: 0 0 auto;
     max-width: 100%;
 }
 
-.formulario table {
+/* ============================================================
+   FORMULÁRIO PRINCIPAL
+   ============================================================ */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    min-width: 0;
+
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 4px;
+
+    background-color: #DCE9C8;
+    border: 3px solid #2266AA;
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+}
+
+/* As tabelas dos campos conservam sua altura natural. */
+.formulario form > table {
+    width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     table-layout: auto;
+    flex-shrink: 0;
 }
 
 .formulario td {
     padding: 2px;
     vertical-align: top;
 }
+
+/* ============================================================
+   ÁREA DA LISTA: RECEBE TODO O ESPAÇO VERTICAL RESTANTE
+   ============================================================ */
+
+.formulario form > table:nth-of-type(3) {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+}
+
+.formulario form > table:nth-of-type(3) > tbody {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    min-width: 0;
+}
+
+/* Primeira linha contém a lista; a segunda contém Enviar. */
+.formulario form > table:nth-of-type(3) > tbody > tr:first-child {
+    display: flex;
+    flex: 1 1 0;
+    min-height: 0;
+    min-width: 0;
+}
+
+.formulario form > table:nth-of-type(3) > tbody > tr:first-child > td {
+    display: flex;
+    flex: 1 1 0;
+    min-height: 0;
+    min-width: 0;
+    padding: 2px;
+}
+
+#enxadrista_list {
+    display: block;
+    flex: 1 1 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-width: 100%;
+    max-height: none;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* ============================================================
+   CAMPOS DE PESQUISA
+   ============================================================ */
 
 .formulario input[type="text"],
 .formulario select {
@@ -201,31 +256,63 @@ body {
     min-width: 0;
 }
 
-#enxadrista_list {
-    display: block;
-    width: 100%;
+#status,
+#ritmo {
     max-width: 100%;
-    height: auto;
-    min-height: 18em;
 }
 
+/* ============================================================
+   BOTÕES DE ORDENAÇÃO
+   ============================================================ */
+
 .botoes-ordenacao {
+    flex: 0 0 auto;
     text-align: center;
     padding: 4px 0;
 }
 
 .botao-ordenacao {
     min-height: 32px;
-    margin: 2px;
+    padding: 3px 10px;
+    margin: 2px 0 2px 4px;
+
+    border: 2px outset #cccccc;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    color: #000000;
+    cursor: pointer;
+    font-weight: normal;
 }
 
-@media (max-width: 420px) {
-    body {
-        margin: 4px;
-    }
+.botao-ordenacao:hover {
+    background-color: #dddddd;
+}
 
+.botao-ordenacao:focus {
+    outline: 2px solid #2266AA;
+    outline-offset: 2px;
+}
+
+.botao-ordenacao.ativo {
+    background-color: #cccccc;
+    color: #000000;
+    font-weight: bold;
+    border: 2px inset #888888;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.35);
+    transform: translateY(1px);
+}
+
+/* ============================================================
+   CELULARES
+   ============================================================ */
+
+@media (max-width: 420px) {
     .formulario {
-        padding: 4px;
+        padding: 3px;
+		max-height: 87%;
+        border-width: 3px;
+		border-radius: 16px;
+
     }
 
     .formulario td {
@@ -234,6 +321,12 @@ body {
 
     .botao-ordenacao {
         padding: 3px 8px;
+    }
+}
+
+@media (max-height: 600px) {
+    .botoes-ordenacao {
+        padding: 1px 0;
     }
 }
 
@@ -512,6 +605,9 @@ body {
 
 <div class="formulario">
 
+
+
+
     <form
         name="reg_rat_pesq"
         action="reg_rat_pesq.php"
@@ -648,10 +744,21 @@ body {
 		<table>
             <tr>
                 <td colspan="5">
+				
+				
+				
+
+				
+				
+				
+				
  					<select
 						name="enxadrista_list"
 						id="enxadrista_list"
-						size="23"
+						size="30"
+						
+						
+						
 						onchange="Select_Click(this,'clk');"
                         ondblclick="Select_Click(this,'dbl');"
                     >
