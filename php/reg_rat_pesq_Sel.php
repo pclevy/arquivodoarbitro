@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.10.13
- * Alterado em 2026/10/13
+ * Versão: 2026.10.14
+ * Alterado em 2026/10/14
  */
 
 ini_set('display_errors', 0);
@@ -309,7 +309,7 @@ body > center > font {
 @media (max-width: 420px) {
     .formulario {
         padding: 3px;
-		max-height: 87%;
+		max-height: 89%;
         border-width: 3px;
 		border-radius: 16px;
 
@@ -595,19 +595,12 @@ body > center > font {
 <br>
 
 <font size="2">
-    <b>Pesquisa de Enxadristas - </b>
-</font>
-
-<font size="2" color="red">
-    (Ratings, julho/2026,V. 1.9)
+    <b>Pesquisa de Enxadristas</b>&nbsp;
+    <font color="red">(julho/2026, V. 1.9)</font>
 </font>
 <br>
 
 <div class="formulario">
-
-
-
-
     <form
         name="reg_rat_pesq"
         action="reg_rat_pesq.php"
