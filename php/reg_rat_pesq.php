@@ -1,6 +1,6 @@
 <?php
 	/* php/reg_rat_pesq.php - Versão: 2026.8.11 - Alterado em 2026/08/11, 22:50 */
-	/* php/reg_rat_pesq.php - Versão: 2026.10.29 - Alterado em 2026/10/29, 12:08 */ /*chatGPT*/
+	/* php/reg_rat_pesq.php - Versão: 2026.10.29 - Alterado em 2026/10/29, 12:24 */ /*chatGPT*/
 	
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
