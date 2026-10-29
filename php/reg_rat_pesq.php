@@ -385,7 +385,7 @@
 			$mesref[] = substr($data_base,0,4)."/".substr($data_base,4,2);
 			$ret = pesq_rating($conexao, $data_base, $reg);
 			
-			//echo $ret . " ";
+			//echo $data_base . " - " . $ret . " ";
 			
 			$parts = explode("/", $ret);
 			//echo $parts[1] . " ";
@@ -437,12 +437,14 @@
 			if($vals[$z]>0) {				// ***** 2026/07/31 ***** Sugestão Pedro Nunes *****
 				$param .= "&r1=" . substr("0000".$vals[$z], -4);
 				//$param .= "&m1=" . urlencode($mesref[$z]);
+				//echo $z . " - " . $mesref[$z] . " - " . $vals[$z] . "<br>";		// ************ 2026/20/29 *************
 				$param .= "&m1=" . $mesref[$z];		// ***** 2026/02/06, 16:13 *****
 			}
 			
 		}
 		
 		$param .= "&r1=9999";
+		//echo $param;
 		
 		//exit;
 		
@@ -462,7 +464,7 @@
 		foreach (array_reverse($mesref, true) as $k => $m) {
 			if($vals[$k]>0) {
 				$Resumo .= "$m:<b>{$vals[$k]}</b>; ";
-				//echo $vals[$k];
+				//echo $m . " " . $vals[$k];
 			}		// ****** 2026/07/31 *****
 		}
 		//exit;
@@ -474,7 +476,7 @@
 		$paramJS = addslashes($param);
 		
 		//echo $Resumo;exit;
-		//echo $paramJS;exit;
+		//echo "<br> ***** " . $paramJS . " ***** ";//exit; *********** 2026/10/29 **************
 		//echo $param;exit;
 
 		echo "<div class='enxrow' 
