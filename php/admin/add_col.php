@@ -1,5 +1,5 @@
 <?php
-	// Lendo String de conexão
+	// Lendo String de conexï¿½o
 	$file = "../config/conexao_ca.cfg";
 	$fh = fopen($file, 'r');
 	$conteudo = explode("*", fread($fh, filesize($file)));
@@ -8,14 +8,14 @@
 	fclose($fh);
 	
 	//Conectando com o DB
-	$conexao=pg_connect($strconexao) or die("erro na conexão");
+	$conexao=pg_connect($strconexao) or die("erro na conexï¿½o");
 	
 	$sqltabs=pg_query($conexao,"SELECT nome_tab FROM tabelas_rating ORDER BY nome_tab"); // or die("Sem Resultados!");
 	$resultabs=pg_num_rows($sqltabs);
 	$i = 0;
 	while ($i<$resultabs)
 	{
-		$data_base[$i] = substr(pg_result($sqltabs,$i,'nome_tab'),1,8);
+		$data_base[$i] = substr(pg_fetch_result($sqltabs,$i,'nome_tab'),1,8);
 		$i++;
 	}
 	$ibQ=$resultabs;$ib=0;

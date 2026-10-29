@@ -1,19 +1,19 @@
 <?php
 	/* ***** Arquivo do Árbitro - Leitura de Arquivo SM ***** */
-  /* *** 2026/05/29 * 24/10/2014 * 02/02/2013 * 31/01/2013 *** */
+	/* *** 2026/05/29 * 24/10/2014 * 02/02/2013 * 31/01/2013 *** */
   
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-		
+	
 	echo '<html dir="ltr" lang="pt-BR">';
 	echo '<head>';
 	echo '<meta charset="windows-1252" />';
 	//echo '<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400" rel="stylesheet" type="text/css">';		//Yanone+Kaffeesatz:700,300,400,200
-//	echo '<script language="javascript">
+	//	echo '<script language="javascript">
 	echo '<script type="text/javascript">
-							DivPrincipalLeft=(document.getElementById("DivPrincipal").style.left).replace("px","");
-							DivPrincipalTop=(document.getElementById("DivPrincipal").style.top).replace("px","");
-			  </script>';
+			DivPrincipalLeft=(document.getElementById("DivPrincipal").style.left).replace("px","");
+			DivPrincipalTop=(document.getElementById("DivPrincipal").style.top).replace("px","");
+		  </script>';
 	
 	//echo '<script language="javascript">jogador=new Array();</script>';
 	/* *** Identificar Método ***
@@ -26,19 +26,37 @@ ini_set('display_errors', 1);
 	*/
 	//echo $_SERVER["SERVER_NAME"];
 	
-	$parametros = $_SERVER['QUERY_STRING'];
+	function get_request_param(string $name, string $method = 'get'): string
+	{
+		if ($method === 'post') {
+			$value = filter_input(INPUT_POST, $name, FILTER_UNSAFE_RAW);
+		} else {
+			$value = filter_input(INPUT_GET, $name, FILTER_UNSAFE_RAW);
+		}
+		if ($value === null || $value === false) {
+			return '';
+		}
+		return trim(htmlspecialchars((string) $value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'));
+	}
+
+	function convert_to_utf8(string $text): string
+	{
+		$encoding = mb_detect_encoding($text, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true);
+		return mb_convert_encoding($text, 'UTF-8', $encoding ?: 'Windows-1252');
+	}
+	
+	$parametros = $_SERVER['QUERY_STRING'] ?? '';
 	//echo " -- $parametros --";exit;
 	
 	$tam = strlen($parametros);
 	$ArqTorneio='';$datarec='';$remetente='';$apresentacao='';
-	if($tam>0) 
+	if($tam>0)
 	{
-		$ArqTorneio = trim(htmlspecialchars($_GET['arq']));
-		$datarec = trim(htmlspecialchars($_GET['dtrec']));
-		$remetente = trim(htmlspecialchars($_GET['remetente']));
-		$torneio_reg = trim(htmlspecialchars($_GET['torneio_reg']));
-		//$janela = trim(htmlspecialchars($_GET['janela']));
-		$janela = isset($_GET['janela']) ?$_GET['janela'] :'';
+		$ArqTorneio = get_request_param('arq');
+		$datarec = get_request_param('dtrec');
+		$remetente = get_request_param('remetente');
+		$torneio_reg = get_request_param('torneio_reg');
+		$janela = get_request_param('janela');
 	}
 	
 	//$cookie_params = session_get_cookie_params();
@@ -53,18 +71,29 @@ ini_set('display_errors', 1);
 	
 	// Lendo String de conexão
 	$file = "../config/conexao_ca.cfg";
-	$fh = fopen($file, 'r');
-	$conteudo = explode("*", fread($fh, filesize($file)));
-	$strconexao = trim($conteudo[0]);
-	$codificacao = trim($conteudo[1]);
-	fclose($fh);
+	if (!is_readable($file)) {
+		die("Arquivo de configuração não encontrado: $file");
+	}
+
+	$conteudo_arquivo = file_get_contents($file);
+	if ($conteudo_arquivo === false) {
+		die("Erro ao ler o arquivo de configuração: $file");
+	}
+
+	$conteudo = explode("*", $conteudo_arquivo, 2);
+	$strconexao = trim($conteudo[0] ?? '');
+	$codificacao = trim($conteudo[1] ?? '');
+	if ($strconexao === '') {
+		die("String de conexão inválida no arquivo de configuração: $file");
+	}
+
 	//echo "$strconexao<br><br>";exit;
 	//Conectando com o DB
-	$conexao=pg_connect($strconexao) or die("erro na conexão");
+	$conexao = pg_connect($strconexao) or die("erro na conexão");
 	
 	
-				// ***** 2026/03/10 *****
-				// ***** 2026/05/29 *****
+			// ***** 2026/03/10 *****
+			// ***** 2026/05/29 *****
 			
 			//Selecionando registros de 'ratdiff'
 			$sqlexp="SELECT * FROM ratdiff ORDER BY p";
@@ -98,15 +127,13 @@ ini_set('display_errors', 1);
 				// ***** 2026/03/10 *****
 				// ***** 2026/05/29 *****
 	
-	
-	
 	if($ArqTorneio=='')
 	{
-		$ArqTorneio = trim($_POST['arquivo']);
-		$remetente = trim($_POST['remetente']);
-		$datarec = trim($_POST['datarec']);
-		$torneio_reg = trim($_POST['torneio_reg']);
-		$janela = trim($_POST['janela']);
+		$ArqTorneio = get_request_param('arquivo', 'post');
+		$remetente = get_request_param('remetente', 'post');
+		$datarec = get_request_param('datarec', 'post');
+		$torneio_reg = get_request_param('torneio_reg', 'post');
+		$janela = get_request_param('janela', 'post');
 	}	
 		//$apresentacao = "geral";
 		
@@ -159,11 +186,24 @@ ini_set('display_errors', 1);
 		//echo " ----$file--- ";//exit;
 		
 		clearstatcache();
+		if (!is_readable($file)) {
+			echo "Erro: arquivo de torneio não encontrado ou ilegível: $file";
+			return;
+		}
 		$TamArqTorneio = filesize($file);				// ***** 2019/12/04 *****
 		
 		//echo '<br>' . filesize($file) . '<br>';exit;
 		
+		if ($TamArqTorneio === false || $TamArqTorneio <= 0) {
+			echo "Erro: tamanho inválido do arquivo de torneio: $file";
+			return;
+		}
+		
 		$fh = fopen($file, 'rb');
+		if ($fh === false) {
+			echo "Erro: falha ao abrir arquivo de torneio: $file";
+			return;
+		}
 		//echo  '<br>' . TestarSeqAsc($fh,$TamArqTorneio) . '<br>';exit;
 		//echo  '<br>' . TestarSeqAsc($fh,155) . '<br>';exit;
 		
@@ -217,9 +257,9 @@ ini_set('display_errors', 1);
 		$TitTornPGN = LerCampoStr($fh);//echo "<br>Tit. Torn. PGN: $TitTornPGN <br>";
 		$LocTornPGN = LerCampoStr($fh);//echo "<br>Loc. Torn. PGN: $LocTornPGN <br>";
 		//echo  '<br>' . TestarSeqAsc($fh,17) . '<br>';exit;
-    //echo "<br>Pointer 2: ".ftell($fh)." <br>";
-      //$Nulo=fread($fh, 2); // ***** 2022/02/06 *****
-			//echo  '<br>S: ' . TestarSeqAsc2($fh,104) . '<br>';//exit;
+		//echo "<br>Pointer 2: ".ftell($fh)." <br>";
+		//$Nulo=fread($fh, 2); // ***** 2022/02/06 *****
+		//echo  '<br>S: ' . TestarSeqAsc2($fh,104) . '<br>';//exit;
 		//$ArquivoSMx = LerCampoStr($fh);echo "<br>Arq. Tunx: $ArquivoSMx <br>";
 		//echo  '<br>' . TestarSeqAsc($fh,9) . '<br>';//exit;
     $ArquivoSMx = LerCampoStrLonga($fh); //echo "<br>Arq. Tunx: *****$ArquivoSMx*****<br>";//exit;
@@ -304,7 +344,7 @@ ini_set('display_errors', 1);
 				'UTF-8',
 				mb_detect_encoding($LocalTorneio, ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
 			);
-						
+			
 		}
 	    
 		//$posPonteiro1 = ftell($fh);		
@@ -356,16 +396,17 @@ ini_set('display_errors', 1);
 		
 		$posPonteiro = ftell($fh);
 		//echo "<br><br>Pointer: " . $posPonteiro . "<br><br>";
-    //$dados4 = fread($fh, 184);
+    
+		//$dados4 = fread($fh, 184);
 		$dados4 = fread($fh, 208); // ******* 2022/02/09 *****
 		//echo  '<br>' . TestarSeqAsc($fh,38) . '<br>';//exit;
+
 
     $dadosY = fread($fh, 37); // ***** 2022/03/18 *****
     $QtJogMesaEquip = LerCampoAsc($fh); // ***** 2022/03/18 *****
 		//echo "<br>QtJogMesaEquip: $QtJogMesaEquip <br>";//exit;
 
-		//$posChave=strpos($dados4, $CadChave);echo "? $dados4 ?";exit;
-	
+		//$posChave=strpos($dados4, $CadChave);echo "? $dados4 ?";exit;	
 		$posChave=strpos($dados4, $CadChave);
 		if ($posChave === false) {$posChave=-1;}
 		//echo '<br><br> Erro desconhecido!! Avise a pclevybr@gmail.com --- ' . $dados4 . ' yy- ' . $posChave . '<br><br>';
@@ -656,7 +697,6 @@ ini_set('display_errors', 1);
 
 		$RepetRodadas = LerCampoAsc($fh);
 		
-		
 		if($RepetRodadas<1) {$RepetRodadas=1;}					// ***** 2019/10/22 * 2019/12/04 *****
 		$NumRodadas = $NumRodadas * $RepetRodadas; // ***** 2022/02/14 *****
 		
@@ -834,6 +874,7 @@ ini_set('display_errors', 1);
 		}
 		exit;
 	*/
+	
 	//echo "---" . $NumRodadas . "---";
 		if($NumRodadas>0) {
 			for($i=1;$i<=$NumRodadas;$i++) {
@@ -900,7 +941,11 @@ ini_set('display_errors', 1);
 
 				//echo "Nulo: $Nulo";
 			
+			
+			
+			
 			$RankInicial[0]=0;		// *** talvez seja eliminado ***
+			
 			$SobreNomeJogador[0] = '&nbsp;';
 			$PreNomeJogador[0] = '&nbsp;';
 			$NomeJogador[0] = '&nbsp;';
@@ -961,8 +1006,6 @@ ini_set('display_errors', 1);
 						'UTF-8',
 						mb_detect_encoding($SobreNomeJogador[$z], ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
 					);
-
-
         		}
 				
 				//*y*//if($_COOKIE["OrdNomeSobreNome"]=='NS')
@@ -1011,10 +1054,14 @@ ini_set('display_errors', 1);
 					mb_detect_encoding($Clube[$z], ['UTF-8', 'ISO-8859-1', 'Windows-1252'], true)
 				);
 				$Clube[$z] = htmlspecialchars($Clube[$z], ENT_QUOTES); // Clube/Cidade com aspa ********************				
-
+				
 				$PaisJogador[$z] = trim(LerCampoStr($fh));
 				$Federacao=RetirarNulo($PaisJogador[$z]);
-				if(isset($Federacoes[$Federacao])) {$Federacoes[$Federacao]=+1;} else {$Federacoes[$Federacao]=1;}
+				if (isset($Federacoes[$Federacao])) {
+			$Federacoes[$Federacao]++;
+		} else {
+			$Federacoes[$Federacao] = 1;
+		}
 
 				$Categoria[$z] = trim(LerCampoStr($fh));
 				if($Categoria[$z]=='') {$Categoria[$z] = '&nbsp;';}
@@ -1034,9 +1081,10 @@ ini_set('display_errors', 1);
 				$Fonte[$z] = trim(LerCampoStr($fh));
 				if($Fonte[$z]=='') {$Fonte[$z] = '&nbsp;';}
 				
+				
+				
 				$BlocoD3[$z] = "?" . TestarSeqAsc2($fh,30);
 				//echo '<br>' . TestarSeqAsc($fh, 30) . '<br>';
-
 				//$BlocoD3[$z] = '?';
 				//for($zzz=1;$zzz<=30;$zzz++) {$BlocoD3[$z]=$BlocoD3[$z] . ord(fread($fh,1));}
 				//$BlocoD3[$z]=$BlocoD3[$z]. '?';
@@ -1137,12 +1185,12 @@ ini_set('display_errors', 1);
 			}
 			
       //echo "Testeeeeeeeeeeee<br><br>";
-			/*
+		/*
 			echo "<script language='javascript' type='text/javascript'>";
 			echo " jogador9=new Array();";			
 			echo "alert('Teste 111: ');";
 			echo "</script>";
-      */
+		*/
 			//echo "<script language='javascript' type='text/javascript'>";
 			echo "<script type='text/javascript'>";
 			echo " jogador=new Array();";
@@ -1211,10 +1259,21 @@ ini_set('display_errors', 1);
 				//echo "<br>";echo ftell($fh);echo "<br>";
 				//echo "$NumRodadas";exit;
 			
+				/* ***** 2026/05/30 *****
 				for ($e=1;$e<=$QtEquipes;$e++)
 				{
 				 $PontosEquipe[$e]=0;
 				 for ($Rod=1;$Rod<=$NumRodadas;$Rod++)
+				 {$PontosEquipeRod[$e][$Rod]=0;}
+				 $QtJogadoresEquipe[$e]=0;
+				}
+				 // ***** 2026/05/30 *****
+				 */
+				
+				for ($e=0;$e<=$QtEquipes;$e++)
+				{
+				 $PontosEquipe[$e]=0;
+				 for ($Rod=0;$Rod<=$NumRodadas;$Rod++)
 				 {$PontosEquipeRod[$e][$Rod]=0;}
 				 $QtJogadoresEquipe[$e]=0;
 				}
@@ -1315,7 +1374,7 @@ ini_set('display_errors', 1);
 //								echo $CodJogA . ' ' . $CodJogB . ' ' . $CodRes . '<br>';
 								//$JogB = $NomeJogador($CodJogB) & " (" & $CodJogB & ")"
          // **************************************************
-         if($CodJogB==-2 & $CodRes>0) {$CodRes = $CodRes + 12;} // ***** 2022/02/27 *** ATENÇÃO *****
+         if ($CodJogB == -2 && $CodRes > 0) { $CodRes = $CodRes + 12; } // ***** 2022/02/27 *** ATENÇÃO *****
          // **************************************************
 								//echo "$JogA -  *$CodRes-$Resultados[$CodRes]*  -  $JogB<br>";
 								$RodMesaResult[$r][$MesaTabul][1]=$JogA;
@@ -1348,7 +1407,17 @@ ini_set('display_errors', 1);
 
 									//$RodMesaResult[$r][$MesaTabul][15]=$Equipe[$CodJogB]; // ***** 2022/03/05 *****
 								}
-								$RodMesaResult[$r][$MesaTabul][15]=$Equipe[$CodJogB]; // ***** 2022/03/05 *****
+								
+								// ***** 2026/05/30 ***** $RodMesaResult[$r][$MesaTabul][15]=$Equipe[$CodJogB]; // ***** 2022/03/05 *****
+								if($CodJogB<1) {
+									$RodMesaResult[$r][$MesaTabul][15]=0; // ***** 2022/03/05 *****
+								}
+								else {
+								    $RodMesaResult[$r][$MesaTabul][15]=$Equipe[$CodJogB];
+								} // ***** 2022/03/05 *****
+								// ***** 2026/05/30 ***** 
+
+								//echo "<br> - $r - $MesaTabul - $CodJogB - <br>"; // ***** 2026/05/30 ******				
 								
 								// ***** ATENÇÃO: mudar a estrutura ***** 2016/04/22 ********
 								$RodMesaResult[$r][$MesaTabul][12]=$CodJogA;
@@ -1607,10 +1676,10 @@ ini_set('display_errors', 1);
 											}
 								 }
 								else
-								 {
-										$CrossTable[$CodJogA][$r][1]='-';
-										$CrossTable[$CodJogA][$r][2]='-';
-									}
+								{
+									$CrossTable[$CodJogA][$r][1]='-';
+									$CrossTable[$CodJogA][$r][2]='-';
+								}
 								
 								/*																					
 									bb = ""
@@ -1818,6 +1887,7 @@ ini_set('display_errors', 1);
 			 fclose($fh);
 		
 //-----------------------------------------------------------------------------  
+
 //Publicando HTML
  /* ***bloco de definição de idioma/charset precisa estar nos primeiros 1024bytes - transferido para início do arquivo ***
 	echo '<html dir="ltr" lang="pt-BR">';
@@ -3879,10 +3949,7 @@ echo "</script>";
 			}
 			echo 'document.getElementById("tab_rodadas").innerHTML=ImprimirRodadas();';
 		echo "</script>";
-
-
 // ------------------------------------------------------------------------													
-				
 				
 				if($apresentacao=='geral')
 				{
@@ -4084,7 +4151,7 @@ echo "</script>";
 		
 		//divListaJogadores tab_jogadores divMostrarListaJogadores
 		echo '<div id="divListaJogadores" name="divListaJogadores" style="position:absolute;width:99%;overflow:hidden;visibility:hidden;height:0px;border:1px solid #2266AA;">';
-    echo ' <b>yDados dos Jogadores</b>: (Ordenação: ';
+    echo ' <b>Dados Y dos Jogadores</b>: (Ordenação: ';
     echo '  Clique nos Títulos das colunas ou em <b><a href="#"><span onclick="divOrdenar();">Ordenação Composta</span></a></b>)<br>';
 		echo " <div id='tab_jogadores' name='tab_jogadores' style='width:800px;position:relative;overflow:hidden;visibility:hidden;height:0px;'>";
 		echo "  Tabela de Jogadores";
@@ -4111,8 +4178,6 @@ echo "</script>";
 		
 		echo 'document.getElementById("tab_classif").innerHTML=ImprimirClassif("");';
 		echo 'document.getElementById("tab_classif").style.width=300px'; //document.getElementById("table_Classif").offsetWidth;';
-		
-
 		echo '</script>';
 		
 		// Ficha do Jogador
@@ -4475,7 +4540,6 @@ echo "</script>";
 				//echo "alert('Olá, mundo!');";
 				
 			$Colocacao=0;
-
 			for($itb=1;$itb<=$QtJogadores;$itb++)
 				{
 					$Colocacao++;
@@ -4503,11 +4567,10 @@ echo "</script>";
 								}
 						}
 				}
-			//echo 'document.getElementById("tab_classif").innerHTML=ImprimirClassif("");';
-			echo 'document.getElementById("tab_classif").innerHTML="texto de teste;';
+			echo 'document.getElementById("tab_classif").innerHTML=ImprimirClassif("");';
+			//echo 'document.getElementById("tab_classif").innerHTML="texto de teste;';
 			//echo "alert(\" vvvv \")";
 
-			
 			echo "</script>";
 
 // ------------------------------------------------------------------------													
@@ -4566,7 +4629,6 @@ echo "</script>";
 					
 				  echo "QS_JogClassif[".$Colocacao."]='".$nji."';";
 				  
-
 					echo "QS_jogadorClassif[".$nji."]=new Object();";
 					echo "QS_jogadorClassif[".$nji."].ord_classif='".$Colocacao."';";
 					echo "QS_jogadorClassif[".$nji."].TitFIDE='".$TitFIDE[$nji]."';";
@@ -4638,7 +4700,6 @@ echo "</script>";
 					}					
 					
 									
-									
 									//echo "<script language='javascript' type='text/javascript'>";
 									echo "<script type='text/javascript'>";
 									echo "
@@ -4664,9 +4725,11 @@ echo "</script>";
 											for ($ppt=1;$ppt<=3;$ppt++)
 											{
 												//echo "<script language='javascript' type='text/javascript'>
+												/*
 												echo "<script type='text/javascript'>
 																CrossTable['".$jpt."']['".$rpt."']['".$ppt."']='".$CrossTable[$jpt][$rpt][$ppt]."';
 															</script>";
+												*/
 											}
 										}
 									}
@@ -5573,18 +5636,23 @@ echo "</script>";
 																										}
 																									break;
 																								case "+":
-//																									if($Status[$adver]=='0' && $Status[$adver1]=='0')
+																										//if($Status[$adver]=='0' && $Status[$adver1]=='0')
 																										//{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 0.5 / 2;}
 																										//{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 1 / 2;}
 																										//{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 1;}
 																										{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 0.5;}
 																									break;
 																								case "-":
-//																									if($Status[$adver]=='0' && $Status[$adver1]=='0')
-																									//	//{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 0.5 / 2;}
-																									//	{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 0 / 2;}
+																										//if($Status[$adver]=='0' && $Status[$adver1]=='0')
+																										//{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 0.5 / 2;}
+																										//{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 1 / 2;}
+																										//{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 1;}
 																										{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 0.5;}
 																									break;
+
+
+
+
 																								case "0":														
 																									if($adver1=='-')
 																										{$PontosBH[$i][$j] = $PontosBH[$i][$j] + 0.5;}
@@ -5761,8 +5829,6 @@ echo "</script>";
 																					}
 																			}
 																		break;
-																	
-																	
 																	
 																	case '-':
 																		//if($Status[$j]=='0' && $Status[''.$CrossTable[$j][$r][1]].''=='0')
@@ -5980,6 +6046,9 @@ echo "</script>";
 																		if($Status[$j]=='0' && $Status[$CrossTable[$j][$r][1]]=='0')
 																			{
 																				$adver=$CrossTable[$j][$r][1];
+																				
+																				echo '<script>console.log("j=", ' . $j . ', "r=", ' . $r . ');</script>';
+																				
 																				for($r1=1;$r1<=$NumRodadas;$r1++)
 																					{
 																						$adver1=$CrossTable[$adver][$r1][1];
@@ -6036,11 +6105,10 @@ echo "</script>";
 																										//{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 0.5 / 2;}
 																										{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 1 / 2;}
 																									break;
-																								case "+":
-																									if($Status[$adver]=='0' && $Status[$adver1]=='0')
-																										//{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 0.5 / 2;}
-																										{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 0 / 2;}
-																									
+																								case "-":
+																									//if($Status[$adver]=='0' && $Status[$adver1]=='0')
+																									//	//{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 0.5 / 2;}
+																									//	{$PontosSB[$i][$j] = $PontosSB[$i][$j] + 0 / 2;}
 																									break;
 																								case "0":														
 																									break;

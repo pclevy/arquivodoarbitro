@@ -3,13 +3,9 @@
 	// *** 2015/09/30 *** 2013/11/26 ***
 	// *** atualiza Ratings no Cadastro ***
 	
-	echo '<html lang="pt-BR">';
-	$horaInicial = date('H:i:s');
-	echo "Início: $horaInicial<br><br>";//exit;
+	echo "Inï¿½cio<br><br>";//exit;
 	
-	echo "Início<br><br>";//exit;
-	
-	// Lendo String de conexão
+	// Lendo String de conexï¿½o
 	$file = "../../config/conexao_ca.cfg";
 	$fh = fopen($file, 'r');
 	$conteudo = explode("*", fread($fh, filesize($file)));
@@ -20,7 +16,7 @@
 	echo "Passo 2: $strconexao<br><br>";//exit;
 	
 	//Conectando com o DB
-	$conexao=pg_connect($strconexao); //or die("erro na conexão");
+	$conexao=pg_connect($strconexao); //or die("erro na conexï¿½o");
 	
 	echo "Passo 3: OK<br><br>";//exit;
 	
@@ -28,12 +24,9 @@
 	$sqltabs=pg_query($conexao,"SELECT nome_tab FROM tabelas_rating ORDER BY nome_tab") or die("Sem Tabelas!");
 	$resultabs=pg_num_rows($sqltabs);
 	
-	$inicio=0; // *** teste *** 2026/04/14, 14:50 ***
-	echo "Qt. Tabelas: $resultabs <br><br>";//exit;
-	$inicio=50;$resultabs=52; // *** teste *** 2026/04/14, 14:50 *** // *** teste *** 13:25 ***
-	echo "TabelaInicial: $inicio  -  TabelaFinal: $resultabs <br><br>";//exit;
+	echo "Qt. Tabelas: $resultabs <br><br>"; //exit;
 	
-	for($i=$inicio;$i<$resultabs;$i++)
+	for($i=0;$i<$resultabs;$i++)
 	{
 		$data_base[$i] = substr(pg_fetch_result($sqltabs,$i,'nome_tab'),1,8);
 		
@@ -42,24 +35,18 @@
 
 		//echo "<br><br>$i - "."r"."$data_base[0] <br>";
 
-	$tabini=$inicio;$tabfim=$resultabs-1;
+	$tabini=0;$tabfim=$resultabs-1;
 	for($i=$tabini;$i<=$tabfim;$i++)
 	{
 		atualizar_cadastro($conexao,$data_base[$i]);
 	}
 	
-	echo "Alterações Executadas";
+	echo "Alteraï¿½ï¿½es Executadas";
 	
 	$Erro=pg_last_error($conexao);
 	if($Erro!="")
 		{echo "<br> ... Erro: $Erro ...<br><br>";} 
-	
-	$horaFinal = date('H:i:s');
-	echo "Final: $horaFinal<br><br>";
-
-	echo '</html>';
 	exit;
-	
 	// --------------------------------------------------------------------------------		
 	function atualizar_cadastro($conexaoL,$data_baseL)
 	{
@@ -75,7 +62,7 @@
 		
 		if ($resultado<1)
 		{
-			echo "<font size='4'><br><br><center>Não foram encontrados resultados que satisfaçam a pesquisa!<br><br>";
+			echo "<font size='4'><br><br><center>Nï¿½o foram encontrados resultados que satisfaï¿½am a pesquisa!<br><br>";
 			return;
 		}
 		else
@@ -103,8 +90,6 @@
 				$resultadoC=pg_affected_rows($sqlC);
 				//echo "$resultadoC <br>";
 			}
-			
 		}
 	}
-	
 ?>

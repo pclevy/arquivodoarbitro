@@ -3,9 +3,9 @@
 	// *** 2015/09/30 *** 2013/11/26 ***
 	// *** atualiza Ratings no Cadastro ***
 	
-	//echo "Início<br><br>";exit;
+	//echo "Inï¿½cio<br><br>";exit;
 	
-	// Lendo String de conexão
+	// Lendo String de conexï¿½o
 	$file = "../config/conexao_ca.cfg";
 	$fh = fopen($file, 'r');
 	$conteudo = explode("*", fread($fh, filesize($file)));
@@ -14,7 +14,7 @@
 	fclose($fh);
 	
 	//Conectando com o DB
-	$conexao=pg_connect($strconexao) or die("erro na conexão");
+	$conexao=pg_connect($strconexao) or die("erro na conexï¿½o");
 	
   //Listando tabelas de Rating
 	$sqltabs=pg_query($conexao,"SELECT nome_tab FROM tabelas_rating ORDER BY nome_tab") or die("Sem Tabelas!");
@@ -22,7 +22,7 @@
 	//echo "Qt. Tabelas: $resultabs <br><br>";
 	for($i=0;$i<$resultabs;$i++)
 	{
-		$data_base[$i] = substr(pg_result($sqltabs,$i,'nome_tab'),1,8);
+		$data_base[$i] = substr(pg_fetch_result($sqltabs,$i,'nome_tab'),1,8);
 		//echo "$i - $data_base[$i]";
 	}
 	$tabini=0;$tabfim=$resultabs-1;
@@ -31,7 +31,7 @@
 		atualizar_cadastro($conexao,$data_base[$i]);
 	}
 	
-	echo "Alterações Executadas";
+	echo "Alteraï¿½ï¿½es Executadas";
 	
 	$Erro=pg_last_error($conexao);
 	if($Erro!="")
@@ -49,7 +49,7 @@
 		
 		if ($resultado<1)
 		{
-			echo "<font size='4'><br><br><center>Não foram encontrados resultados que satisfaçam a pesquisa!<br><br>";
+			echo "<font size='4'><br><br><center>Nï¿½o foram encontrados resultados que satisfaï¿½am a pesquisa!<br><br>";
 			return;
 		}
 		else
@@ -59,12 +59,12 @@
 //			while ($i<$resultado)
 			while ($i<1)
 			{
-				$reg = pg_result($sqlR,$i,'reg')*1;
+				$reg = pg_fetch_result($sqlR,$i,'reg')*1;
 				//echo "reg: $reg<br>";
-				$rating = pg_result($sqlR,$i,'rating');
-				if(pg_result($sqlR,$i,'rpd')>0) {$rpd = pg_result($sqlR,$i,'rpd');} else {$rpd = 0;}
-				if(pg_result($sqlR,$i,'blz')>0) {$blz = pg_result($sqlR,$i,'blz');} else {$blz = 0;}
-				$clube = pg_result($sqlR,$i,'clube');
+				$rating = pg_fetch_result($sqlR,$i,'rating');
+				if(pg_fetch_result($sqlR,$i,'rpd')>0) {$rpd = pg_fetch_result($sqlR,$i,'rpd');} else {$rpd = 0;}
+				if(pg_fetch_result($sqlR,$i,'blz')>0) {$blz = pg_fetch_result($sqlR,$i,'blz');} else {$blz = 0;}
+				$clube = pg_fetch_result($sqlR,$i,'clube');
 				//*2015/09/30* $status="A";
 				$i++;
 				
@@ -93,7 +93,7 @@
 				
 				//*2015/09/30* $sqlexprC = "UPDATE cadastro SET rating='$rating',clube='$clube',rapido='$rpd',blitz='$blz',status='$status' WHERE reg='" . $reg . "'";
 				$sqlexprC = "UPDATE cadastro SET rating='$rating',clube='$clube',rapido='$rpd',blitz='$blz' WHERE reg='" . $reg . "'";	//*2015/09/30*
-				//echo "$conexaoL - $sqlexprC - " . pg_result($sqlR,$i,'rpd') . "<br>";
+				//echo "$conexaoL - $sqlexprC - " . pg_fetch_result($sqlR,$i,'rpd') . "<br>";
 				$sqlC=pg_query($conexaoL,$sqlexprC) or die("Sem Cadastros!");
 				$resultadoC=pg_affected_rows($sqlC);
 				//echo "$resultadoC <br>";
