@@ -34,7 +34,7 @@
 	$inicio=0; // *** teste *** 2026/04/14, 14:50 ***
 	echo "Qt. Tabelas: $resultabs <br><br>";//exit;
 	$inicio=0;$resultabs; // *** teste *** 2026/10/29, 09:23 *** // *** teste *** 13:25 ***
-	echo "TabelaInicial: $inicio  -  TabelaFinal: ". $resultabs-1 . "<br><br>";//exit;
+	echo "Tabela Inicial: $inicio  -  Tabela Final: ". $resultabs-1 . "<br><br>";//exit;
 	
 	for($i=$inicio;$i<$resultabs;$i++)
 	{
@@ -106,7 +106,7 @@
 	
 				//*2015/09/30* $sqlexprC = "UPDATE cadastro SET rating='$rating',clube='$clube',rapido='$rpd',blitz='$blz',status='$status' WHERE reg='" . $reg . "'";
 				
-				$sqlexprC = "UPDATE cadastro SET rating='$rating',clube='$clube',rapido='$rpd',blitz='$blz',titulo='$titulo' WHERE reg='" . $reg . "'";	//*2026/10/28*
+			//	$sqlexprC = "UPDATE cadastro SET rating='$rating',clube='$clube',rapido='$rpd',blitz='$blz',titulo='$titulo' WHERE reg='" . $reg . "'";	//*2026/10/28*
 				
 				//echo "$conexaoL - $sqlexprC - " . pg_fetch_result($sqlR,$i,'rpd') . "<br>";
 				
