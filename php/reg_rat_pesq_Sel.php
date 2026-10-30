@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.10.29.01
- * Alterado em 2026/10/29, 12:25
+ * Versão: 2026.10.30.01
+ * Alterado em 2026/10/30, 10:36
  */
 
 ini_set('display_errors', 0);
@@ -612,7 +612,7 @@ body > center > font {
 
 <font size="2">
     <b>Pesquisa de Enxadristas</b>&nbsp;
-    <font color="red">(julho/2026, V. 1.9)</font>
+    <font color="red">(outubro/2026, V. 1.2)</font>
 </font>
 <br>
 
