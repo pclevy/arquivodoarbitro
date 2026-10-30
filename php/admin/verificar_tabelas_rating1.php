@@ -58,6 +58,12 @@
 	
 	$horaFinal = date('H:i:s');
 	echo "Final: $horaFinal<br><br>";
+	
+	$sqltabsY=pg_query($conexao,"SELECT reg, rating FROM r20261022 WHERE reg=2403 ORDER BY reg") or die("Sem Tabelas!");
+	$resultabsY=pg_num_rows($sqltabsY);
+	$teste1=pg_fetch_result($sqltabsY,0,'reg');
+	$teste2=pg_fetch_result($sqltabsY,0,'rating');
+	echo "$teste1 - $teste2";
 
 	echo '</html>';
 	exit;
