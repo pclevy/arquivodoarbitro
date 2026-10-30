@@ -1,6 +1,6 @@
 <?php
 	/* php/reg_rat_pesq.php - Versão: 2026.8.11 - Alterado em 2026/08/11, 22:50 */
-	/* php/reg_rat_pesq.php - Versão: 2026.10.29 - Alterado em 2026/10/29, 12:24 */ /*chatGPT*/
+	/* php/reg_rat_pesq.php - Versão: 2026.10.30.03 - Alterado em 2026/10/30, 20:28 */
 	
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
@@ -84,6 +84,8 @@
 	/* Captura Inputs                                                             */
 	/* ---------------------------------------------------------------------- */
 	
+	$statusJ               = strtoupper(in('enxadrista_status')); //echo "...... status1: $statusJ";
+	
 	$clube               = strtoupper(in('clube'));
 	$titulo              = strtoupper(in('titulo'));
 	$incluir_desfiliados = in('status', 'S');
@@ -95,6 +97,9 @@
 	
 	$enxadrista_nome_Sel = in('enxadrista');
 	$enxadrista_reg      = in('enxadrista_reg');
+	
+	$enxadrista_status      = in('enxadrista_status');
+	//echo "...... reg: $enxadrista_reg  .. status2: $enxadrista_status";
 	
 	$chave1              = in('chave1');
 	$chave2              = in('chave2');
@@ -132,9 +137,12 @@
 	$sqlexp2 = ($incluir_desfiliados === 'N')
 			? "WHERE status='A' AND "
 			: "WHERE status<>'X' AND ";
+			
+	//echo "... <b>$sqlexp2</b> ...";
+	//if ($status !== '')  $parts[] = "trim(status)="  . esc($conexao, $status);
 
 	$parts = [];
-
+	
 	if ($clube !== '')  $parts[] = "trim(clube)="  . esc($conexao, $clube);
 	if ($titulo !== '') $parts[] = "trim(titulo)=" . esc($conexao, $titulo);
 	if ($enxadrista_reg !== '') $parts[] = "reg=" . esc($conexao, $enxadrista_reg);
@@ -336,7 +344,7 @@
 	echo "</div>";
 
 	/*echo "<div id='resumot1'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";*/
-	echo "<div id='resumot1' style='float:left;   width:auto; height:auto; position:absolute; overflow:auto; border:1px solid #2266AA;'><b><font color='blue'>Clique em um enxadrista</font></b></div>";
+	echo "<div id='resumot1' style='float:left;   width:auto; height:auto; position:absolute; overflow:auto; border:1px solid #2266AA;'><b><font color='blue'>Clique em um enxadrista!</font></b></div>";
 	echo "<div id='resumot2' style='float:right;left:10px;width:auto; height:auto; position:absolute; overflow:auto; border:1px solid #0000ff;visibility:hidden;'><b><font color='blue'>Clique em um enxadrista</font></b>";
 	echo "</div>";
 	echo "	<div id='voltapagina' style='position:fixed;left:10px;visibility:hidden;'>
@@ -364,6 +372,8 @@
 		$clb   = trim($row['clube']);
 		$tit   = trim($row['titulo'] . " ");
 		$rat   = intval($row['rating']);
+		
+		//$enxadrista_status   = trim($row['status']);
 
 		$regFoto = substr("000$reg", -4);
 		$foto = PesqFoto($regFoto)
@@ -478,12 +488,30 @@
 		//echo $Resumo;exit;
 		//echo "<br> ***** " . $paramJS . " ***** ";//exit; *********** 2026/10/29 **************
 		//echo $param;exit;
-
+		
+		//echo "ex: *$enxadrista_status*<br>";
+		switch ($enxadrista_status) {
+			case "A":
+				$enxadrista_status_txt=" (Ativo)";
+			break;
+			case "D":
+			case "I":
+				$enxadrista_status_txt=" (Inativo)";
+			break;
+			case "F":
+				$enxadrista_status_txt=" (Falecido)";
+			break;
+			default:
+				$enxadrista_status_txt=" ( ??? )";
+		}
+		
+		
+		
 		echo "<div class='enxrow' 
 				onclick=\"setResumoHtml('$Resumo'); muda_res('$paramJS','Clássico');\">
 				<table width='100%'>
-				<tr><td>Reg: $reg</td><td>Clube: $clb</td><td>Título: $tit</td><td>Rat: $rat</td></tr>
-				<tr><td colspan='4'>Nome: $nome</td></tr>
+				<tr><td>Reg: $reg</td><td>Clube: $clb</td><td>Título: $tit</td><td>Rat: $rat</td><td> $enxadrista_status_txt</td></tr>
+				<tr><td colspan='5'>Nome: $nome</td></tr>
 				</table>
 			  </div>";
 	}

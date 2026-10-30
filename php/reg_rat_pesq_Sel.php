@@ -31,8 +31,9 @@ $sql = pg_query($conexao, "
         END AS clube,
         sexo AS genero,
         dt_nasc,
-        right(trim(dt_nasc), 4) AS ano_nasc
-    FROM cadastro
+   		right(trim(dt_nasc), 4) AS ano_nasc,
+		status
+	FROM cadastro
     ORDER BY nome;
 ");
 
@@ -51,11 +52,17 @@ while ($i < $resultado) {
     $reg = trim(" " . pg_fetch_result($sql, $i, 'reg'));
     $nome = pg_fetch_result($sql, $i, 'nomecompleto');
     $clube = pg_fetch_result($sql, $i, 'clube');
+	
+	$status = pg_fetch_result($sql, $i, 'status');
+
 
     echo "listaJogadores.push({";
     echo "reg:" . json_encode($reg, JSON_UNESCAPED_UNICODE) . ",";
     echo "nome:" . json_encode($nome, JSON_UNESCAPED_UNICODE) . ",";
-    echo "clube:" . json_encode($clube, JSON_UNESCAPED_UNICODE);
+    echo "clube:" . json_encode($clube, JSON_UNESCAPED_UNICODE) . ",";
+	
+	echo "status:" . json_encode($status, JSON_UNESCAPED_UNICODE);
+
     echo "});";
 
     $i++;
@@ -513,6 +520,15 @@ body > center > font {
             "enxadrista_reg"
         ).value = "";
 
+
+
+
+        document.getElementById(
+            "enxadrista_status"
+        ).value = "";
+
+
+
         if (strPesq === "") {
 
             listaJogadoresMostrada =
@@ -559,7 +575,16 @@ body > center > font {
                 "enxadrista"
             ).value = jogador.nome;
 
-            var isTouch =
+            
+			
+			document.getElementById(
+                "enxadrista_status"
+            ).value = jogador.status;
+
+            
+			
+			
+			var isTouch =
                 navigator.maxTouchPoints > 0;
 
             if (
@@ -735,7 +760,9 @@ body > center > font {
                         value=""
                         size="37"
                         maxlength="44"
-                        onkeyup="pesq_nome(this.value);"
+                        onkeyup="pesq_nome(this.value);
+						
+						"
 					>
                     <input
                         name="enxadrista_reg"
@@ -743,6 +770,14 @@ body > center > font {
                         type="hidden"
                         value=""
                     >
+					
+					<input
+                        name="enxadrista_status"
+                        id="enxadrista_status"
+                        type="hidden"
+                        value=""
+                    >
+
                 </td>
             </tr>
         </table>
@@ -803,7 +838,7 @@ body > center > font {
                     <button
                         type="button"
                         id="btnNome"
-                        class="botao-ordenacao ativo"
+                        class="botao-ordenacao"
                         onclick="ordenarPorNome();"
                     >
                         Nome
