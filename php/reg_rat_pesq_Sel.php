@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.10.30.01
- * Alterado em 2026/10/30, 10:36
+ * Versão: 2026.10.30.02
+ * Alterado em 2026/10/30, 21:30
  */
 
 ini_set('display_errors', 0);
@@ -32,6 +32,7 @@ $sql = pg_query($conexao, "
         sexo AS genero,
         dt_nasc,
    		right(trim(dt_nasc), 4) AS ano_nasc,
+		rating,
 		status
 	FROM cadastro
     ORDER BY nome;
@@ -47,25 +48,19 @@ $i = 0;
 echo "<script type='text/javascript'>";
 echo "var listaJogadores = [];";
 
-while ($i < $resultado) {
+while ($jogador = pg_fetch_assoc($sql)) {
 
-    $reg = trim(" " . pg_fetch_result($sql, $i, 'reg'));
-    $nome = pg_fetch_result($sql, $i, 'nomecompleto');
-    $clube = pg_fetch_result($sql, $i, 'clube');
-	
-	$status = pg_fetch_result($sql, $i, 'status');
+    $dados = [
+        'reg'    => trim($jogador['reg']),
+        'nome'   => $jogador['nomecompleto'],
+        'clube'  => $jogador['clube'],
+        'rating' => trim($jogador['rating']),
+        'status' => $jogador['status']
+    ];
 
-
-    echo "listaJogadores.push({";
-    echo "reg:" . json_encode($reg, JSON_UNESCAPED_UNICODE) . ",";
-    echo "nome:" . json_encode($nome, JSON_UNESCAPED_UNICODE) . ",";
-    echo "clube:" . json_encode($clube, JSON_UNESCAPED_UNICODE) . ",";
-	
-	echo "status:" . json_encode($status, JSON_UNESCAPED_UNICODE);
-
-    echo "});";
-
-    $i++;
+    echo "listaJogadores.push("
+        . json_encode($dados, JSON_UNESCAPED_UNICODE)
+        . ");\n";
 }
 
 echo "</script>";
@@ -359,6 +354,9 @@ body > center > font {
 
         document.getElementById("btnClube")
             .classList.remove("ativo");
+
+        document.getElementById("btnRating")
+            .classList.remove("ativo");
     }
 
     /*
@@ -408,6 +406,8 @@ body > center > font {
                     + jogador.nome.substring(0, 49)
                     + " ("
                     + jogador.clube
+                    + ")("
+                    + jogador.rating
                     + ")";
 
                 lista_loc.appendChild(option);
@@ -446,7 +446,10 @@ body > center > font {
 
         document.getElementById("btnClube")
             .classList.remove("ativo");
-    }
+
+        document.getElementById("btnRating")
+            .classList.remove("ativo");
+	}
 
     /*
      * Ordenar por Registro.
@@ -473,7 +476,11 @@ body > center > font {
         
 		document.getElementById("btnClube")
             .classList.remove("ativo");
-    }
+
+        document.getElementById("btnRating")
+            .classList.remove("ativo");
+			
+	}
 
     /*
      * Ordenar por Clube.
@@ -506,6 +513,39 @@ body > center > font {
 
         document.getElementById("btnNome")
             .classList.remove("ativo");
+
+        document.getElementById("btnRating")
+            .classList.remove("ativo");			
+    }
+
+    /*
+     * Ordenar por Rating.
+     */
+    function ordenarPorRating() {
+
+        listaJogadoresMostrada.sort(
+            function(a, b) {
+
+                return Number(b.rating) - Number(a.rating);
+            }
+        );
+
+        atualizarListaJogadores();
+
+        /*
+         * Rating fica ativo.
+         */
+        document.getElementById("btnReg")
+            .classList.remove("ativo");
+
+        document.getElementById("btnNome")
+            .classList.remove("ativo");
+        
+		document.getElementById("btnClube")
+            .classList.remove("ativo");
+			
+        document.getElementById("btnRating")
+            .classList.add("ativo");
     }
 
     /*
@@ -834,34 +874,48 @@ body > center > font {
 			
             <!-- Ordenação -->
             <div class="botoes-ordenacao">
-                    Ordenar por:
-                    <button
-                        type="button"
-                        id="btnNome"
-                        class="botao-ordenacao"
-                        onclick="ordenarPorNome();"
-                    >
-                        Nome
-                    </button>
-                    <button
-					 style="margin: 0;"
-                        type="button"
-                        id="btnReg"
-                        class="botao-ordenacao"
-                        onclick="ordenarPorReg();"
-                    >
-                        Registro
-                    <button
-					 style="margin: 0;"
-                        type="button"
-                        id="btnClube"
-                        class="botao-ordenacao"
-                        onclick="ordenarPorClube();"
-                    >
-                        Clube
-                    </button>
-                    </button>
-            </div>
+				Ordenar por:
+				
+				<button
+					type="button"
+					id="btnNome"
+					class="botao-ordenacao"
+					onclick="ordenarPorNome();"
+				>
+					Nome
+				</button>
+				
+				<button
+					style="margin: 0;"
+					type="button"
+					id="btnReg"
+					class="botao-ordenacao"
+					onclick="ordenarPorReg();"
+				>
+					Registro
+				</button>
+				
+				<button
+					style="margin: 0;"
+					type="button"
+					id="btnClube"
+					class="botao-ordenacao"
+					onclick="ordenarPorClube();"
+				>
+					Clube
+				</button>
+				
+				<button
+					style="margin: 0;"
+					type="button"
+					id="btnRating"
+					class="botao-ordenacao"
+					onclick="ordenarPorRating();"
+				>
+					Rating
+				</button>
+				
+				</div>
     </form>
 </div>
 </center>
