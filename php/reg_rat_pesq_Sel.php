@@ -431,7 +431,27 @@ body > center > font {
         );
     }
 
-    /* Ordenar por Nome. */
+    
+	/* filtrarClubes */
+function filtrarClube(clube) {
+
+    clube = clube.trim().toLocaleUpperCase('pt-BR');
+
+    if (clube === "") {
+        listaJogadoresMostrada = [...listaJogadores];
+    } else {
+        listaJogadoresMostrada = listaJogadores.filter(
+            function(jogador) {
+                return jogador.clube.trim()
+                    .toLocaleUpperCase('pt-BR') === clube;
+            }
+        );
+    }
+
+    atualizarListaJogadores();
+}
+	
+	/* Ordenar por Nome. */
     function ordenarPorNome() {
 
         listaJogadoresMostrada.sort(
@@ -573,9 +593,9 @@ body > center > font {
             "enxadrista_status"
         ).value = "";
 		
-        if (strPesq === "") {
-            listaJogadoresMostrada = listaJogadores.slice();
-        } else {
+        //if (strPesq === "") {
+         //   listaJogadoresMostrada = listaJogadores.slice();
+        //} else {
             listaJogadoresMostrada = listaJogadores.filter(
 				function(jogador) {
 					if (document.getElementById("clube").value!="" )
@@ -590,7 +610,7 @@ body > center > font {
 						
                 }
             );
-        }
+        //}
         atualizarListaJogadores();
     }
 
@@ -715,28 +735,27 @@ function carregarClubes() {
     >
 		<table>
 			<tr>
-<td valign="top" colspan="4">
-    Clube:
-    <input
-        type="text"
-        name="clube"
-        id="clube"
-        list="listaClubes"
-        onchange="filtrarClube(this.value)"
-		oninput="this.value = this.value.toLocaleUpperCase('pt-BR')"
-        autocomplete="on"
-	>
-
-    <datalist id="listaClubes"></datalist>
-
-                    &nbsp; &nbsp;
-                    Status:
-                    <select name="status" id="status">
-                        <option value="N">Ativos</option>
-                        <option value="N">Inativos</option>
-                        <option value="S" selected>Todos</option>
-                    </select>
-                </td>
+				<td valign="top" colspan="4">
+					Clube:
+						<input
+							type="text"
+							name="clube"
+							id="clube"
+							list="listaClubes"
+							oninput="this.value = this.value.toLocaleUpperCase('pt-BR')"
+							onchange="filtrarClube(this.value)"
+							autocomplete="off"
+						>
+						<datalist id="listaClubes"></datalist>
+					
+					&nbsp; &nbsp;
+					Status:
+						<select name="status" id="status">
+							<option value="N">Ativos</option>
+							<option value="N">Inativos</option>
+							<option value="S" selected>Todos</option>
+						</select>
+				</td>
             </tr>
             <tr>
                 <td valign="top" colspan="2">
@@ -782,7 +801,7 @@ function carregarClubes() {
 						value=""
 						size="37"
 						maxlength="44"
-						onkeyup="if ((this.value.length > 2) || (this.value.length < 1)) { pesq_nome(this.value); }"
+						onkeyup="pesq_nome(this.value); "
 					>
 					<input
                         name="enxadrista_reg"
