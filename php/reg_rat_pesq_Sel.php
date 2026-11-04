@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.10.30.03
- * Alterado em 2026/11/04, 00:25
+ * Versão: 2026.11.04.04
+ * Alterado em 2026/11/04, 18:07
  */
 
 ini_set('display_errors', 0);
@@ -382,55 +382,60 @@ body > center > font {
     /*
      * Atualiza o SELECT.
      */
-    function atualizarListaJogadores() {
+function atualizarListaJogadores() {
 
-        var lista_loc = document.getElementById("enxadrista_list");
-        if (!lista_loc) { return;}
+    var lista_loc = document.getElementById("enxadrista_list");
+    if (!lista_loc) { return; }
 
-        /*
-         * Remove todas as opções.
-         */
-        lista_loc.innerHTML = "";
+    // Limites de rating
+    var ratMin = parseInt(document.getElementById("rat_min").value) || 0;
+    var ratMax = parseInt(document.getElementById("rat_max").value) || 3000;
 
-        /*
-         * Primeira opção.
-         */
-        var primeiraOpcao =
-            document.createElement("option");
+    /*
+     * Remove todas as opções.
+     */
+    lista_loc.innerHTML = "";
 
-        primeiraOpcao.value = "";
-        primeiraOpcao.text =
-            "Digite parte do nome ou Selecione abaixo ...";
-        primeiraOpcao.style.fontWeight = "bold";
+    /*
+     * Primeira opção.
+     */
+    var primeiraOpcao = document.createElement("option");
 
-        lista_loc.appendChild(primeiraOpcao);
+    primeiraOpcao.value = "";
+    primeiraOpcao.text = "Digite parte do nome ou Selecione abaixo ...";
+    primeiraOpcao.style.fontWeight = "bold";
 
-        /*
-         * Insere os jogadores.
-         */
-        listaJogadoresMostrada.forEach(
-            function(jogador, index) {
+    lista_loc.appendChild(primeiraOpcao);
 
-                var option =
-                    document.createElement("option");
+    /*
+     * Insere os jogadores considerando os limites de rating.
+     */
+    listaJogadoresMostrada.forEach(function(jogador, index) {
 
-                option.value = index;
+        var rating = parseInt(jogador.rating) || 0;
 
-                option.text =
-                    String(jogador.reg).padStart(4, "0")
-                    + "-"
-                    + jogador.nome.substring(0, 49)
-                    + " ("
-                    + jogador.clube	//*******************************************
-                    + ")("
-                    + jogador.rating
-                    + ")";
+        // Verifica os limites de rating
+        if (rating < ratMin || rating > ratMax) {
+            return;
+        }
 
-                lista_loc.appendChild(option);
-            }
-        );
-    }
+        var option = document.createElement("option");
 
+        option.value = index;
+
+        option.text =
+            String(jogador.reg).padStart(4, "0")
+            + "-"
+            + jogador.nome.substring(0, 49)
+            + " ("
+            + jogador.clube
+            + ")("
+            + jogador.rating
+            + ")";
+
+        lista_loc.appendChild(option);
+    });
+}
     
 	/* filtrarClubes */
 function filtrarClube(clube) {
@@ -761,22 +766,24 @@ function carregarClubes() {
                 <td valign="top" colspan="2">
                     Ratings&nbsp;de:
                     <input
-                        name="rat_min"
-                        id="rat_min"
-                        type="text"
-                        value="0"
-                        maxlength="4"
-						style="width: 12%; max-width: 50px; box-sizing: border-box;"
-                    >
+    name="rat_min"
+    id="rat_min"
+    type="text"
+    value="0"
+    maxlength="4"
+    style="width: 12%; max-width: 50px; box-sizing: border-box;"
+    onchange="atualizarListaJogadores()"
+	>
                      a 
-                    <input
-                        name="rat_max"
-                        id="rat_max"
-                        type="text"
-                        value="3000"
-                        maxlength="4"
-						style="width: 12%; max-width: 50px; box-sizing: border-box;"
-                    >
+ <input
+    name="rat_max"
+    id="rat_max"
+    type="text"
+    value="3000"
+    maxlength="4"
+    style="width: 12%; max-width: 50px; box-sizing: border-box;"
+    onchange="atualizarListaJogadores()"
+>
                     &nbsp;
                     Ritmo:
                     <select name="ritmo" id="ritmo">
