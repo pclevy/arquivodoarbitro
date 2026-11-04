@@ -489,7 +489,7 @@
 		//echo "<br> ***** " . $paramJS . " ***** ";//exit; *********** 2026/10/29 **************
 		//echo $param;exit;
 		
-		//echo "ex: *$enxadrista_status*<br>";
+		echo "ex: *$enxadrista_status*<br>";
 		switch ($enxadrista_status) {
 			case "A":
 				$enxadrista_status_txt=" (Ativo)";

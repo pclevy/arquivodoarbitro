@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.10.30.02
- * Alterado em 2026/10/30, 21:30
+ * Versão: 2026.10.30.03
+ * Alterado em 2026/11/04, 00:25
  */
 
 ini_set('display_errors', 0);
@@ -47,6 +47,10 @@ $i = 0;
 
 echo "<script type='text/javascript'>";
 echo "var listaJogadores = [];";
+echo "var listaClubes = [];";
+
+// ***** 2026/11/04 *****
+$listaClubes = [];
 
 while ($jogador = pg_fetch_assoc($sql)) {
 
@@ -60,6 +64,20 @@ while ($jogador = pg_fetch_assoc($sql)) {
 
     echo "listaJogadores.push("
         . json_encode($dados, JSON_UNESCAPED_UNICODE)
+        . ");\n";
+
+    // Armazena os clubes
+    $listaClubes[] = trim($jogador['clube']);
+}
+
+// Elimina clubes repetidos
+$listaClubes = array_unique($listaClubes);
+
+// Gera a lista JavaScript
+foreach ($listaClubes as $clube) {
+
+    echo "listaClubes.push("
+        . json_encode(['clube' => $clube], JSON_UNESCAPED_UNICODE)
         . ");\n";
 }
 
@@ -340,7 +358,9 @@ body > center > font {
     function inicializarLista() {
 
         listaJogadoresMostrada = listaJogadores.slice();
-
+		
+		    carregarClubes();
+			
         atualizarListaJogadores();
 
         /*
@@ -364,12 +384,8 @@ body > center > font {
      */
     function atualizarListaJogadores() {
 
-        var lista_loc =
-            document.getElementById("enxadrista_list");
-
-        if (!lista_loc) {
-            return;
-        }
+        var lista_loc = document.getElementById("enxadrista_list");
+        if (!lista_loc) { return;}
 
         /*
          * Remove todas as opções.
@@ -405,7 +421,7 @@ body > center > font {
                     + "-"
                     + jogador.nome.substring(0, 49)
                     + " ("
-                    + jogador.clube
+                    + jogador.clube	//*******************************************
                     + ")("
                     + jogador.rating
                     + ")";
@@ -415,9 +431,7 @@ body > center > font {
         );
     }
 
-    /*
-     * Ordenar por Nome.
-     */
+    /* Ordenar por Nome. */
     function ordenarPorNome() {
 
         listaJogadoresMostrada.sort(
@@ -435,9 +449,7 @@ body > center > font {
 
         atualizarListaJogadores();
 
-        /*
-         * Nome fica ativo.
-         */
+        /* Nome fica ativo */
         document.getElementById("btnNome")
             .classList.add("ativo");
 
@@ -548,45 +560,37 @@ body > center > font {
             .classList.add("ativo");
     }
 
-    /*
-     * Pesquisa por nome.
-     */
+    /*** Pesquisa por nome ***/
     function pesq_nome(strDigitada) {
 
-        var strPesq =
-            trim(strDigitada).toUpperCase();
+        var strPesq = trim(strDigitada).toUpperCase();
 
         document.getElementById(
             "enxadrista_reg"
         ).value = "";
-
-
-
-
+		
         document.getElementById(
             "enxadrista_status"
         ).value = "";
-
-
-
+		
         if (strPesq === "") {
-
-            listaJogadoresMostrada =
-                listaJogadores.slice();
-
+            listaJogadoresMostrada = listaJogadores.slice();
         } else {
-
-            listaJogadoresMostrada =
-                listaJogadores.filter(
-                    function(jogador) {
-
-                        return jogador.nome
-                            .toUpperCase()
-                            .indexOf(strPesq) >= 0;
-                    }
-                );
+            listaJogadoresMostrada = listaJogadores.filter(
+				function(jogador) {
+					if (document.getElementById("clube").value!="" )
+						{
+							if (jogador.clube===document.getElementById("clube").value)
+								{return jogador.nome.toUpperCase().indexOf(strPesq) >= 0;}
+						}
+					else 
+						{
+								{return jogador.nome.toUpperCase().indexOf(strPesq) >= 0;}
+						}
+						
+                }
+            );
         }
-
         atualizarListaJogadores();
     }
 
@@ -649,6 +653,27 @@ body > center > font {
         }
     );
 
+function carregarClubes() {
+
+    var datalist = document.getElementById("listaClubes");
+
+    // Limpa as opções anteriores
+    datalist.innerHTML = "";
+
+    // Obtém clubes únicos e ordenados
+    var clubes = [...new Set(
+        listaClubes.map(j => j.clube.trim()).filter(clube => clube !== "")
+    )].sort((a, b) => a.localeCompare(b, "pt-BR"));
+
+    clubes.forEach(function(clube) {
+
+        var option = document.createElement("option");
+
+        option.value = clube;
+
+        datalist.appendChild(option);
+    });
+}
 </script>
 
 </head>
@@ -688,55 +713,34 @@ body > center > font {
         method="post"
         autocomplete="off"
     >
+		<table>
+			<tr>
+<td valign="top" colspan="4">
+    Clube:
+    <input
+        type="text"
+        name="clube"
+        id="clube"
+        list="listaClubes"
+        onchange="filtrarClube(this.value)"
+		oninput="this.value = this.value.toLocaleUpperCase('pt-BR')"
+        autocomplete="on"
+	>
 
-        <table>
-
-            <tr>
-
-                <td valign="top" colspan="4">
-
-                    Clube:
-
-                    <input
-                        name="clube"
-                        id="clube"
-                        type="text"
-                        value=""
-                        size="10"
-                        maxlength="10"
-                    >
+    <datalist id="listaClubes"></datalist>
 
                     &nbsp; &nbsp;
                     Status:
-
-                    <select
-                        name="status"
-                        id="status"
-                    >
-
-                        <option value="N">
-                            Filiados
-                        </option>
-
-                        <option
-                            value="S"
-                            selected
-                        >
-                            Todos
-                        </option>
-
+                    <select name="status" id="status">
+                        <option value="N">Ativos</option>
+                        <option value="N">Inativos</option>
+                        <option value="S" selected>Todos</option>
                     </select>
-
                 </td>
-
             </tr>
-
             <tr>
-
                 <td valign="top" colspan="2">
-
                     Ratings&nbsp;de:
-
                     <input
                         name="rat_min"
                         id="rat_min"
@@ -745,9 +749,7 @@ body > center > font {
                         maxlength="4"
 						style="width: 12%; max-width: 50px; box-sizing: border-box;"
                     >
-
                      a 
-
                     <input
                         name="rat_max"
                         id="rat_max"
@@ -758,33 +760,13 @@ body > center > font {
                     >
                     &nbsp;
                     Ritmo:
-
-                    <select
-                        name="ritmo"
-                        id="ritmo"
-                    >
-
-                        <option
-                            value="S"
-                            selected
-                        >
-                            Clássico
-                        </option>
-
-                        <option value="Q">
-                            Rápido
-                        </option>
-
-                        <option value="B">
-                            Relâmpago
-                        </option>
-
+                    <select name="ritmo" id="ritmo">
+                        <option value="S" selected>Clássico</option>
+                        <option value="Q">Rápido</option>
+                        <option value="B">Relâmpago</option>
                     </select>
-
                 </td>
-
             </tr>
-
         </table>
 		
 		<table>
@@ -793,31 +775,27 @@ body > center > font {
                     Nome:
                 </td>
                 <td>
-                    <input
-                        name="enxadrista"
-                        id="enxadrista"
-                        type="text"
-                        value=""
-                        size="37"
-                        maxlength="44"
-                        onkeyup="pesq_nome(this.value);
-						
-						"
+					<input
+						name="enxadrista"
+						id="enxadrista"
+						type="text"
+						value=""
+						size="37"
+						maxlength="44"
+						onkeyup="if ((this.value.length > 2) || (this.value.length < 1)) { pesq_nome(this.value); }"
 					>
-                    <input
+					<input
                         name="enxadrista_reg"
                         id="enxadrista_reg"
                         type="hidden"
                         value=""
                     >
-					
 					<input
                         name="enxadrista_status"
                         id="enxadrista_status"
                         type="hidden"
                         value=""
                     >
-
                 </td>
             </tr>
         </table>
