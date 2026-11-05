@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.04.04
- * Alterado em 2026/11/04, 18:07
+ * Versão: 2026.11.05.05
+ * Alterado em 2026/11/05, 12:58
  */
 
 ini_set('display_errors', 0);
@@ -415,11 +415,12 @@ function atualizarListaJogadores() {
      */
     listaJogadoresMostrada.forEach(function(jogador, index) {
 		
-console.log(
-    "Total de I:",
-    listaJogadores.filter(j => j.status === "I").length
-);
-
+/*
+	console.log(
+		"Total de I:",
+		listaJogadores.filter(j => j.status === "I").length
+	);
+*/
 
 		// Verifica o status
 		if (status !== "todos" && jogador.status !== status) {
@@ -603,7 +604,9 @@ function filtrarClube(clube) {
     function pesq_nome(strDigitada) {
 
         var strPesq = trim(strDigitada).toUpperCase();
-
+		
+		var status = document.getElementById("status").value;
+		
         document.getElementById(
             "enxadrista_reg"
         ).value = "";
