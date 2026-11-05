@@ -390,6 +390,9 @@ function atualizarListaJogadores() {
     // Limites de rating
     var ratMin = parseInt(document.getElementById("rat_min").value) || 0;
     var ratMax = parseInt(document.getElementById("rat_max").value) || 3000;
+	
+	// Status selecionado
+	var status = document.getElementById("status").value;	
 
     /*
      * Remove todas as opções.
@@ -411,6 +414,17 @@ function atualizarListaJogadores() {
      * Insere os jogadores considerando os limites de rating.
      */
     listaJogadoresMostrada.forEach(function(jogador, index) {
+		
+console.log(
+    "Total de I:",
+    listaJogadores.filter(j => j.status === "I").length
+);
+
+
+		// Verifica o status
+		if (status !== "todos" && jogador.status !== status) {
+			return;
+		}		
 
         var rating = parseInt(jogador.rating) || 0;
 
@@ -601,19 +615,25 @@ function filtrarClube(clube) {
         //if (strPesq === "") {
          //   listaJogadoresMostrada = listaJogadores.slice();
         //} else {
-            listaJogadoresMostrada = listaJogadores.filter(
+			 listaJogadoresMostrada = listaJogadores.filter(
 				function(jogador) {
-					if (document.getElementById("clube").value!="" )
-						{
-							if (jogador.clube===document.getElementById("clube").value)
-								{return jogador.nome.toUpperCase().indexOf(strPesq) >= 0;}
+					
+					// Status
+					if (status !== "todos" && jogador.status !== status) {
+						return false;
+					}
+
+					// Clube e Nome
+					if (document.getElementById("clube").value != "") {
+						if (jogador.clube === document.getElementById("clube").value) {
+							return jogador.nome.toUpperCase().indexOf(strPesq) >= 0;
 						}
-					else 
-						{
-								{return jogador.nome.toUpperCase().indexOf(strPesq) >= 0;}
-						}
-						
-                }
+					}
+					else {
+						return jogador.nome.toUpperCase().indexOf(strPesq) >= 0;
+					}
+
+				}
             );
         //}
         atualizarListaJogadores();
@@ -755,11 +775,12 @@ function carregarClubes() {
 					
 					&nbsp; &nbsp;
 					Status:
-						<select name="status" id="status">
-							<option value="N">Ativos</option>
-							<option value="N">Inativos</option>
-							<option value="S" selected>Todos</option>
-						</select>
+					<select name="status" id="status" onchange="atualizarListaJogadores()">
+						<option value="todos">Todos</option>
+						<option value="A">Ativos</option>
+						<option value="I">Inativos</option>
+						<option value="F">Falecidos</option>
+					</select>												
 				</td>
             </tr>
             <tr>
