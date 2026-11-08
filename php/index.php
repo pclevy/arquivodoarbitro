@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="pt-BR">
-	<!-- php/index.php - Versão: 2026/10/02, 23:14 -->
+	<!-- php/index.php - Versão: 2026/11/08, 16:20 -->
 
 	<?php require_once "../config/ambiente.php"; ?>
 
@@ -57,20 +57,22 @@
 		
 		document.body.appendChild(divCampanha);
  
-        divCampanha.textContent = "Outubro Rosa é uma campanha de conscientização que tem como objetivo principal alertar as mulheres e a sociedade sobre a importância da prevenção e do diagnóstico precoce do câncer de mama e mais recentemente sobre o câncer de colo do útero.";
-
-        const rect = x.getBoundingClientRect();
+        //divCampanha.textContent = "Outubro Rosa é uma campanha de conscientização que tem como objetivo principal alertar as mulheres e a sociedade sobre a importância da prevenção e do diagnóstico precoce do câncer de mama e mais recentemente sobre o câncer de colo do útero.";
+		divCampanha.textContent = "O Novembro Azul é uma campanha de conscientização realizada por diversas entidades no mês de novembro dirigida à sociedade e, em especial, aos homens, para conscientização a respeito de doenças masculinas, com ênfase na prevenção e no diagnóstico precoce do câncer de próstata.";
+        
+		const rect = x.getBoundingClientRect();
 
         divCampanha.style.position = "fixed";
         divCampanha.style.left = (rect.right + 5) + "px";
         divCampanha.style.top = rect.top + "px";
 		
 		divCampanha.style.fontFamily = "Arial Narrow";
-		divCampanha.style.color = "#006600";
-		divCampanha.style.fontSize = "11px";
-		//divCampanha.style.fontWeight = "bold";
+		divCampanha.style.color = "#0000ff";
+		divCampanha.style.fontSize = "14px";
+		divCampanha.style.fontWeight = "bold";
 		divCampanha.style.padding = "5px";
-		divCampanha.style.backgroundColor = "#fffafa";
+		//divCampanha.style.backgroundColor = "#fffafa";
+		divCampanha.style.backgroundColor = "#ffffff";
 		divCampanha.style.border = "1px solid #ff1493";
        
         divCampanha.style.width = (rect.width + 450) + "px";
@@ -328,13 +330,13 @@
 			-->
 			
 			
-					<div class="transbox90" id="OutubroRosa" style="
+					<div class="transbox90" id="novembroAzul" style="
 						z-index:1;
 						visibility:visible;
 						position:absolute;width:auto;
 						height:auto;left:1px;top:0px;
 						font-size:16px;
-						font-family:Arial Narrow,Liberation Sans Narrow;
+						font-family:Arial Narrow,
 						font-weight:bold;
 						padding:2px;
 						//background-color: #EEFFEE;
@@ -343,10 +345,9 @@
 						<img
 							onmouseover="overCampanha(this)"
 							onmouseout="outCampanha()"
-							src="../imagens/outubroRosa.png"
+							src="../imagens/novembroAzul.png"							
 							height=39
 						><br>
-	
 					</div>
 			
 			<!-- O mês de outubro é conhecido mundialmente como o mês da conscientização do câncer de mama – o Outubro Rosa. -->
@@ -358,6 +359,7 @@
 			     ÁREA PRINCIPAL
 			     ===================================================== -->
 
+			
 			<div
 				id="DivPrincipal"
 				name="DivPrincipal"
