@@ -1,6 +1,6 @@
 <?php
 	/* php/reg_rat_pesq.php - Versão: 2026.8.11 - Alterado em 2026/08/11, 22:50 */
-	/* php/reg_rat_pesq.php - Versão: 2026.10.30.03 - Alterado em 2026/10/30, 20:28 */
+	/* php/reg_rat_pesq.php - Versão: 2026.11.08.01 - Alterado em 2026/11/08, 07:04 */
 	
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
@@ -84,7 +84,7 @@
 	/* Captura Inputs                                                             */
 	/* ---------------------------------------------------------------------- */
 	
-	$statusJ               = strtoupper(in('enxadrista_status')); //echo "...... status1: $statusJ";
+	//$statusJ               = strtoupper(in('enxadrista_status')); echo "...... status1: $statusJ";
 	
 	$clube               = strtoupper(in('clube'));
 	$titulo              = strtoupper(in('titulo'));
@@ -345,15 +345,16 @@
 
 	/*echo "<div id='resumot1'><br><b><font color='blue'>Clique em um enxadrista</font></b></div>";*/
 	echo "<div id='resumot1' style='float:left;   width:auto; height:auto; position:absolute; overflow:auto; border:1px solid #2266AA;'><b><font color='blue'>Clique em um enxadrista!</font></b></div>";
-	echo "<div id='resumot2' style='float:right;left:10px;width:auto; height:auto; position:absolute; overflow:auto; border:1px solid #0000ff;visibility:hidden;'><b><font color='blue'>Clique em um enxadrista</font></b>";
+	echo "<div id='resumot2' style='float:right;left:10px;width:auto; height:auto; position:absolute; overflow:auto; border:1px solid #0000ff;visibility:hidden;'>";
 	echo "</div>";
+	
 	echo "	<div id='voltapagina' style='position:fixed;left:10px;visibility:hidden;'>
 					<span onclick=\"document.getElementById('resumot2').style.visibility = 'hidden';\">
 						<img src='../imagens/retarrow.gif' alt='Voltar para a Lista'>
 						Voltar para a Lista
 					</span>
 				</div>";
-
+	
 	/*echo "<div style='position:absolute; width:480px; top:80px; height:449px; overflow:auto; border:1px solid #2266AA;'>";*/
 	/*echo "<div  id='atletas' style='float:left; display:flex; top:80px; height:449px; overflow: auto; border:1px solid #00ff00;'>";*/
 	echo "<div  id='atletas' style='position:absolute; top:120px; width:auto;height:auto; overflow: auto;'>";
@@ -489,7 +490,7 @@
 		//echo "<br> ***** " . $paramJS . " ***** ";//exit; *********** 2026/10/29 **************
 		//echo $param;exit;
 		
-		echo "ex: *$enxadrista_status*<br>";
+		//echo "ex: *$enxadrista_status*<br>";
 		switch ($enxadrista_status) {
 			case "A":
 				$enxadrista_status_txt=" (Ativo)";
@@ -505,13 +506,22 @@
 				$enxadrista_status_txt=" ( ??? )";
 		}
 		
-		
+		$tit = trim($tit ?? "");
+		if ($tit == "") {
+			$titJ = "";
+		} else {
+			$titJ = "<td>Título:<b>$tit</b></td>";
+		}
 		
 		echo "<div class='enxrow' 
 				onclick=\"setResumoHtml('$Resumo'); muda_res('$paramJS','Clássico');\">
 				<table width='100%'>
-				<tr><td>Reg: $reg</td><td>Clube: $clb</td><td>Título: $tit</td><td>Rat: $rat</td><td> $enxadrista_status_txt</td></tr>
-				<tr><td colspan='5'>Nome: $nome</td></tr>
+				<tr>
+					<td>Reg:<b>$reg</b></td><td>Clube:<b>$clb</b></td>
+					$titJ
+					<td>Rat:<b>$rat</b></td><td> <b>$enxadrista_status_txt</b></td>
+				</tr>
+				<tr><td colspan='5'>Nome:<b>$nome</b></td></tr>
 				</table>
 			  </div>";
 	}

@@ -31,7 +31,6 @@ $sql = pg_query($conexao, "
         END AS clube,
         sexo AS genero,
         dt_nasc,
-   		right(trim(dt_nasc), 4) AS ano_nasc,
 		rating,
 		status
 	FROM cadastro
