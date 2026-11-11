@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.05.05
- * Alterado em 2026/11/05, 12:58
+ * Versão: 2026.11.11.01
+ * Alterado em 2026/11/11, 00:14
  */
 
 ini_set('display_errors', 0);
@@ -16,7 +16,7 @@ $strconexao = trim($conteudo[0]);
 $codificacao = trim($conteudo[1]);
 fclose($fh);
 
-//echo "$strconexao";
+//Secho "$strconexao";
 $conexao = pg_connect($strconexao) or die("erro na conexão");
 
 $sql = pg_query($conexao, "
@@ -58,6 +58,7 @@ while ($jogador = pg_fetch_assoc($sql)) {
         'reg'    => trim($jogador['reg']),
         'nome'   => $jogador['nomecompleto'],
         'clube'  => $jogador['clube'],
+        'genero'  => $jogador['genero'],
         'rating' => trim($jogador['rating']),
         'status' => $jogador['status']
     ];
@@ -391,6 +392,9 @@ function atualizarListaJogadores() {
     var ratMin = parseInt(document.getElementById("rat_min").value) || 0;
     var ratMax = parseInt(document.getElementById("rat_max").value) || 3000;
 	
+	// Gênero selecionado
+	var genero = document.getElementById("genero").value;	
+
 	// Status selecionado
 	var status = document.getElementById("status").value;	
 
@@ -422,6 +426,11 @@ function atualizarListaJogadores() {
 	);
 */
 
+		// Verifica o gênero
+		if (genero !== "todos" && jogador.genero !== genero) {
+			return;
+		}		
+
 		// Verifica o status
 		if (status !== "todos" && jogador.status !== status) {
 			return;
@@ -443,6 +452,8 @@ function atualizarListaJogadores() {
             + "-"
             + jogador.nome.substring(0, 49)
             + " ("
+            + jogador.genero
+            + ")("
             + jogador.clube
             + ")("
             + jogador.rating
@@ -452,7 +463,7 @@ function atualizarListaJogadores() {
     });
 }
     
-	/* filtrarClubes */
+/* filtrarClubes */
 function filtrarClube(clube) {
 
     clube = clube.trim().toLocaleUpperCase('pt-BR');
@@ -464,6 +475,25 @@ function filtrarClube(clube) {
             function(jogador) {
                 return jogador.clube.trim()
                     .toLocaleUpperCase('pt-BR') === clube;
+            }
+        );
+    }
+
+    atualizarListaJogadores();
+}
+    
+/* filtrarGenero */
+function filtrarGenero(genero) {
+
+    //clube = clube.trim().toLocaleUpperCase('pt-BR');
+
+    if (genero === "") {
+        listaJogadoresMostrada = [...listaJogadores];
+    } else {
+        listaJogadoresMostrada = listaJogadores.filter(
+            function(jogador) {
+                return jogador.genero.trim()
+                    .toLocaleUpperCase('pt-BR') === genero;
             }
         );
     }
@@ -605,6 +635,8 @@ function filtrarClube(clube) {
 
         var strPesq = trim(strDigitada).toUpperCase();
 		
+		var genero = document.getElementById("genero").value;
+		
 		var status = document.getElementById("status").value;
 		
         document.getElementById(
@@ -620,6 +652,11 @@ function filtrarClube(clube) {
         //} else {
 			 listaJogadoresMostrada = listaJogadores.filter(
 				function(jogador) {
+					
+					// Genero
+					if (genero !== "todos" && jogador.genero !== genero) {
+						return false;
+					}
 					
 					// Status
 					if (status !== "todos" && jogador.status !== status) {
@@ -763,9 +800,8 @@ function carregarClubes() {
     >
 		<table>
 			<tr>
-				<td valign="top" colspan="4">
-					Clube:
-						<input
+				<td valign="top" colspan="5">
+					clube:<input
 							type="text"
 							name="clube"
 							id="clube"
@@ -776,14 +812,22 @@ function carregarClubes() {
 						>
 						<datalist id="listaClubes"></datalist>
 					
-					&nbsp; &nbsp;
-					Status:
-					<select name="status" id="status" onchange="atualizarListaJogadores()">
+					<!-- ****** 2026/11/10 ***** --> 
+					gên:<select name="genero" id="genero" onchange="atualizarListaJogadores()">
+						<option value="todos">Todos</option>
+						<option value="M">Masc</option>
+						<option value="F">Fem</option>
+					</select>
+					<!-- *****          *****-->
+					
+					
+					status:<select name="status" id="status" onchange="atualizarListaJogadores()">
 						<option value="todos">Todos</option>
 						<option value="A">Ativos</option>
 						<option value="I">Inativos</option>
-						<option value="F">Falecidos</option>
+						<option value="F">Finados</option>
 					</select>												
+					
 				</td>
             </tr>
             <tr>
@@ -813,7 +857,7 @@ function carregarClubes() {
                     <select name="ritmo" id="ritmo">
                         <option value="S" selected>Clássico</option>
                         <option value="Q">Rápido</option>
-                        <option value="B">Relâmpago</option>
+                        <option value="B">Blitz</option>
                     </select>
                 </td>
             </tr>
@@ -901,19 +945,14 @@ function carregarClubes() {
         </table>
 			
             <!-- Ordenação -->
-            <div class="botoes-ordenacao">
-				Ordenar por:
-				
-				<button
+            <div class="botoes-ordenacao">Ordenar por:<button
 					type="button"
 					id="btnNome"
 					class="botao-ordenacao"
 					onclick="ordenarPorNome();"
 				>
 					Nome
-				</button>
-				
-				<button
+				</button><button
 					style="margin: 0;"
 					type="button"
 					id="btnReg"
