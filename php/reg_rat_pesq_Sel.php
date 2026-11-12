@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.12 V.01
- * Alterado em 2026/11/12, 05:28
+ * Versão: 2026.11.12 V.1.2
+ * Alterado em 2026/11/12, 19:23
  */
 
 ini_set('display_errors', 0);
@@ -198,7 +198,7 @@ body > center > font {
 
 .formulario td {
     padding: 2px;
-    vertical-align: top;
+    vertical-align: bottom;
 }
 
 /* ============================================================
@@ -264,7 +264,7 @@ body > center > font {
 }
 
 #genero {
-    width: 5em;
+    width: 3.2em;
 }
 
 #rat_min,
@@ -426,6 +426,7 @@ function atualizarListaJogadores() {
     /*
      * Insere os jogadores considerando os limites de rating.
      */
+	 var total = 0;
     listaJogadoresMostrada.forEach(function(jogador, index) {
 		
 /*
@@ -469,7 +470,13 @@ function atualizarListaJogadores() {
             + ")";
 
         lista_loc.appendChild(option);
-    });
+		
+		total++;
+    }
+	);
+	
+	document.getElementById("total").textContent = total;
+	
 }
     
 /* filtrarClubes */
@@ -809,7 +816,7 @@ function carregarClubes() {
     >
 		<table>
 			<tr>
-				<td valign="top" colspan="5">clube:<input
+				<td valign="bottom">clube:<input
 							type="text"
 							name="clube"
 							id="clube"
@@ -821,26 +828,35 @@ function carregarClubes() {
 							style="font: 10px 'Arial Narrow', sans-serif;box-sizing: border-box;"
 						>
 						<datalist id="listaClubes"></datalist>
-					</td><td>
+				</td>
+				<td>
 					status:<select name="status" id="status" onchange="atualizarListaJogadores()" style="font: 10px Arial Narrow">
 						<option value="todos">Todos</option>
 						<option value="A">Ativo</option>
 						<option value="I">Inativo</option>
 						<option value="F">Finado</option>
 					</select>												
-					</td><td>
-                    
+				</td>
+				
+				<td valign="bottom">
+					gêne.:<select name="genero" id="genero" onchange="atualizarListaJogadores()"
+					style="font: 10px 'Arial Narrow';box-sizing: border-box;">
+						<option value="todos"> </option>
+						<option value="M">M</option>
+						<option value="F">F</option>
+					</select>
+                </td>
+				
+				<td>
                     ritmo:<select name="ritmo" id="ritmo"  style="font: 10px Arial Narrow">
                         <option value="S" selected>cláss</option>
                         <option value="Q">ráp</option>
                         <option value="B">blitz</option>
                     </select>
-                    
 				</td>
             </tr>
-			
-            <tr>
-                <td valign="top" colspan="3">
+			<tr width="100%">
+                <td valign="bottom">
                     ratings:
                     <input
 						name="rat_min"
@@ -862,10 +878,10 @@ function carregarClubes() {
 						onchange="atualizarListaJogadores()"
 					>
                     &nbsp; 
-</td>
-<td valign="top" colspan="3">
+				</td>
+				<td valign="bottom" colspan="3">
                     idade:
-                    <input  disabled
+                    <input disabled
 						name="idade_min"
 						id="idade_min"
 						type="text"
@@ -875,32 +891,34 @@ function carregarClubes() {
 						onchange="atualizarListaJogadores()"
 					>
                     a 
-					<input  disabled
+					<input disabled
 						name="idade_max"
 						id="idade_max"
 						type="text"
-						value="120"
+						value="122"
 						maxlength="3"
 						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>	
                     &nbsp;
-</td>
-<td valign="top" colspan="3">
-					gênero:<select name="genero" id="genero" onchange="atualizarListaJogadores()"
-					style="font: 10px 'Arial Narrow';box-sizing: border-box;">
-						<option value="todos">Todos</option>
-						<option value="M">Masc</option>
-						<option value="F">Fem</option>
-					</select>
-                </td>
+					SM:
+					<input disabled
+						name="SM_Categorias"
+						id="SM_Categorias"
+						type="text"
+						value=""
+						style="box-sizing: border-box; font: 10px Arial Narrow"
+						onchange="atualizarListaJogadores()"
+					>
+                    &nbsp;
+				</td>
 				
             </tr>
         </table>
 		
 		<table>
             <tr>
-				<td valign="top" align="left" style="width:9px">
+				<td valign="bottom" align="left" style="width:9px">
                     Nome:
                 </td>
                 <td>
@@ -936,13 +954,9 @@ function carregarClubes() {
 						name="enxadrista_list"
 						id="enxadrista_list"
 						size="30"
-						
 						onchange="Select_Click(this,'clk');"
                         ondblclick="Select_Click(this,'dbl');"
-						
 						style="font: 14px Arial Narrow"
-						
-						
                     >
                         <option
                             style="font-weight:bold"
@@ -980,6 +994,10 @@ function carregarClubes() {
                         value="Enviar"
                     >
                 </td>
+                <td></td>
+				<td align='right'>
+					&nbsp; &nbsp; &nbsp; Total de atletas encontrados: <span id="total">0</span>
+				</td>
             </tr>
         </table>
 			
