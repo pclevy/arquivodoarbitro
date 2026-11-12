@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.12 V.1.2
- * Alterado em 2026/11/12, 19:23
+ * Versão: 2026.11.12 V.1.03
+ * Alterado em 2026/11/12, 20:42
  */
 
 ini_set('display_errors', 0);
@@ -32,6 +32,14 @@ $sql = pg_query($conexao, "
         END AS clube,
         sexo AS genero,
         dt_nasc,
+				
+		EXTRACT(
+			YEAR FROM AGE(
+				MAKE_DATE(EXTRACT(YEAR FROM CURRENT_DATE)::integer, 1, 1),
+				dt_nasc
+			)
+		)::integer AS idade,		
+				
 		rating,
 		status
 	FROM cadastro
@@ -60,6 +68,7 @@ while ($jogador = pg_fetch_assoc($sql)) {
         'clube'  => $jogador['clube'],
         'genero'  => $jogador['genero'],
         'rating' => trim($jogador['rating']),
+        'idade' => trim($jogador['idade']),
         'status' => $jogador['status']
     ];
 
@@ -69,6 +78,7 @@ while ($jogador = pg_fetch_assoc($sql)) {
 
     // Armazena os clubes
     $listaClubes[] = trim($jogador['clube']);
+
 }
 
 // Elimina clubes repetidos
@@ -426,59 +436,80 @@ function atualizarListaJogadores() {
     /*
      * Insere os jogadores considerando os limites de rating.
      */
-	 var total = 0;
-    listaJogadoresMostrada.forEach(function(jogador, index) {
-		
+
+var menorIdade = Infinity;
+var maiorIdade = 0;
+var total = 0;
+
+listaJogadoresMostrada.forEach(function(jogador, index) {
+
 /*
-	console.log(
-		"Total de I:",
-		listaJogadores.filter(j => j.status === "I").length
-	);
+    console.log(
+        "Total de I:",
+        listaJogadores.filter(j => j.status === "I").length
+    );
 */
 
-		// Verifica o gênero
-		if (genero !== "todos" && jogador.genero !== genero) {
-			return;
-		}		
-
-		// Verifica o status
-		if (status !== "todos" && jogador.status !== status) {
-			return;
-		}		
-
-        var rating = parseInt(jogador.rating) || 0;
-
-        // Verifica os limites de rating
-        if (rating < ratMin || rating > ratMax) {
-            return;
-        }
-
-        var option = document.createElement("option");
-
-        option.value = index;
-
-        option.text =
-            String(jogador.reg).padStart(4, "0")
-            + "-"
-            + jogador.nome.substring(0, 49)
-            + " ("
-            + jogador.genero
-            + ")("
-            + jogador.clube
-            + ")("
-            + jogador.rating
-            + ")";
-
-        lista_loc.appendChild(option);
-		
-		total++;
+    // Verifica o gênero
+    if (genero !== "todos" && jogador.genero !== genero) {
+        return;
     }
-	);
-	
-	document.getElementById("total").textContent = total;
-	
+
+    // Verifica o status
+    if (status !== "todos" && jogador.status !== status) {
+        return;
+    }
+
+    var rating = parseInt(jogador.rating) || 0;
+
+    // Verifica os limites de rating
+    if (rating < ratMin || rating > ratMax) {
+        return;
+    }
+
+    // Calcula a maior idade entre os filtrados
+    var idade = parseInt(jogador.idade) || 0;
+
+    if (idade < menorIdade) {
+    menorIdade = idade;
 }
-    
+	if (idade > maiorIdade) {
+        maiorIdade = idade;
+    }
+
+    // Cria a opção
+    var option = document.createElement("option");
+
+    option.value = index;
+
+    option.text =
+        String(jogador.reg).padStart(4, "0")
+        + "-"
+        + jogador.nome.substring(0, 49)
+        + " ("
+        + jogador.genero
+        + ")("
+        + jogador.clube
+        + ")("
+        + jogador.rating
+        + ")";
+
+    lista_loc.appendChild(option);
+
+    total++;
+});
+
+// Atualiza a menor idade
+document.getElementById("idade_min").value =
+    menorIdade === Infinity ? 0 : menorIdade;
+
+// Atualiza a maior idade
+document.getElementById("idade_max").value = maiorIdade;
+
+// Atualiza o total de jogadores
+document.getElementById("total").textContent = total;
+
+}    
 /* filtrarClubes */
 function filtrarClube(clube) {
 
@@ -885,7 +916,7 @@ function carregarClubes() {
 						name="idade_min"
 						id="idade_min"
 						type="text"
-						value="0"
+						value=0
 						maxlength="4"
 						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
 						onchange="atualizarListaJogadores()"
@@ -895,7 +926,7 @@ function carregarClubes() {
 						name="idade_max"
 						id="idade_max"
 						type="text"
-						value="122"
+						value=""
 						maxlength="3"
 						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
 						onchange="atualizarListaJogadores()"
