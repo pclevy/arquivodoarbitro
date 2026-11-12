@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.11.01
- * Alterado em 2026/11/11, 00:14
+ * Versão: 2026.11.12 V.01
+ * Alterado em 2026/11/12, 05:28
  */
 
 ini_set('display_errors', 0);
@@ -263,9 +263,18 @@ body > center > font {
     width: 6.5em;
 }
 
+#genero {
+    width: 5em;
+}
+
 #rat_min,
 #rat_max {
-    width: 4.5em;
+    width: 3em;
+}
+
+#idade_min,
+#idade_max {
+    width: 2.5em;
 }
 
 #enxadrista {
@@ -791,7 +800,7 @@ function carregarClubes() {
 </font>
 <br>
 
-<div class="formulario">
+<div class="formulario"  style="font: 10px Arial Narrow">
     <form
         name="reg_rat_pesq"
         action="reg_rat_pesq.php"
@@ -800,8 +809,7 @@ function carregarClubes() {
     >
 		<table>
 			<tr>
-				<td valign="top" colspan="5">
-					clube:<input
+				<td valign="top" colspan="5">clube:<input
 							type="text"
 							name="clube"
 							id="clube"
@@ -809,57 +817,84 @@ function carregarClubes() {
 							oninput="this.value = this.value.toLocaleUpperCase('pt-BR')"
 							onchange="filtrarClube(this.value)"
 							autocomplete="off"
+							maxlength="8"
+							style="font: 10px 'Arial Narrow', sans-serif;box-sizing: border-box;"
 						>
 						<datalist id="listaClubes"></datalist>
-					
-					<!-- ****** 2026/11/10 ***** --> 
-					gên:<select name="genero" id="genero" onchange="atualizarListaJogadores()">
+					</td><td>
+					status:<select name="status" id="status" onchange="atualizarListaJogadores()" style="font: 10px Arial Narrow">
+						<option value="todos">Todos</option>
+						<option value="A">Ativo</option>
+						<option value="I">Inativo</option>
+						<option value="F">Finado</option>
+					</select>												
+					</td><td>
+                    
+                    ritmo:<select name="ritmo" id="ritmo"  style="font: 10px Arial Narrow">
+                        <option value="S" selected>cláss</option>
+                        <option value="Q">ráp</option>
+                        <option value="B">blitz</option>
+                    </select>
+                    
+				</td>
+            </tr>
+			
+            <tr>
+                <td valign="top" colspan="3">
+                    ratings:
+                    <input
+						name="rat_min"
+						id="rat_min"
+						type="text"
+						value="0"
+						maxlength="4"
+						style="ax-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
+						onchange="atualizarListaJogadores()"
+					>
+                    a 
+					<input
+						name="rat_max"
+						id="rat_max"
+						type="text"
+						value="3000"
+						maxlength="4"
+						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
+						onchange="atualizarListaJogadores()"
+					>
+                    &nbsp; 
+</td>
+<td valign="top" colspan="3">
+                    idade:
+                    <input
+						name="idade_min"
+						id="idade_min"
+						type="text"
+						value="0"
+						maxlength="4"
+						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
+						onchange="atualizarListaJogadores()"
+					>
+                    a 
+					<input
+						name="idade_max"
+						id="idade_max"
+						type="text"
+						value="120"
+						maxlength="3"
+						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
+						onchange="atualizarListaJogadores()"
+					>	
+                    &nbsp;
+</td>
+<td valign="top" colspan="3">
+					gênero:<select name="genero" id="genero" onchange="atualizarListaJogadores()"
+					style="font: 10px 'Arial Narrow';box-sizing: border-box;">
 						<option value="todos">Todos</option>
 						<option value="M">Masc</option>
 						<option value="F">Fem</option>
 					</select>
-					<!-- *****          *****-->
-					
-					
-					status:<select name="status" id="status" onchange="atualizarListaJogadores()">
-						<option value="todos">Todos</option>
-						<option value="A">Ativos</option>
-						<option value="I">Inativos</option>
-						<option value="F">Finados</option>
-					</select>												
-					
-				</td>
-            </tr>
-            <tr>
-                <td valign="top" colspan="2">
-                    Ratings&nbsp;de:
-                    <input
-    name="rat_min"
-    id="rat_min"
-    type="text"
-    value="0"
-    maxlength="4"
-    style="width: 12%; max-width: 50px; box-sizing: border-box;"
-    onchange="atualizarListaJogadores()"
-	>
-                     a 
- <input
-    name="rat_max"
-    id="rat_max"
-    type="text"
-    value="3000"
-    maxlength="4"
-    style="width: 12%; max-width: 50px; box-sizing: border-box;"
-    onchange="atualizarListaJogadores()"
->
-                    &nbsp;
-                    Ritmo:
-                    <select name="ritmo" id="ritmo">
-                        <option value="S" selected>Clássico</option>
-                        <option value="Q">Rápido</option>
-                        <option value="B">Blitz</option>
-                    </select>
                 </td>
+				
             </tr>
         </table>
 		
@@ -904,6 +939,10 @@ function carregarClubes() {
 						
 						onchange="Select_Click(this,'clk');"
                         ondblclick="Select_Click(this,'dbl');"
+						
+						style="font: 14px Arial Narrow"
+						
+						
                     >
                         <option
                             style="font-weight:bold"
@@ -986,5 +1025,13 @@ function carregarClubes() {
     </form>
 </div>
 </center>
+		<!--
+			SELECT nome,sobrenome,dt_nasc,EXTRACT(YEAR FROM CURRENT_DATE)::integer-EXTRACT(YEAR FROM dt_nasc)::integer AS idade,status
+			FROM cadastro
+			WHERE status = 'A' ORDER BY nome;
+		-->
+		
+		<!-- para 'sub14', em 2026, Digite 2026U14; para 'S60', em 2026, Digite 2026S60; -->
+		
 </body>
 </html>
