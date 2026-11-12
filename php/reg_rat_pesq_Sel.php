@@ -865,7 +865,7 @@ function carregarClubes() {
 </td>
 <td valign="top" colspan="3">
                     idade:
-                    <input
+                    <input  disabled
 						name="idade_min"
 						id="idade_min"
 						type="text"
@@ -875,7 +875,7 @@ function carregarClubes() {
 						onchange="atualizarListaJogadores()"
 					>
                     a 
-					<input
+					<input  disabled
 						name="idade_max"
 						id="idade_max"
 						type="text"
