@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.12 V.1.03
- * Alterado em 2026/11/12, 23:50
+ * Versão: 2026.11.13 V1.0
+ * Alterado em 2026/11/13, 17:46
  */
 
 ini_set('display_errors', 0);
@@ -215,52 +215,20 @@ body > center > font {
    ÁREA DA LISTA: RECEBE TODO O ESPAÇO VERTICAL RESTANTE
    ============================================================ */
 
-.formulario form > table:nth-of-type(3) {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 0;
-    min-height: 0;
-    min-width: 0;
-    width: 100%;
-}
-
-.formulario form > table:nth-of-type(3) > tbody {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 0;
-    min-height: 0;
-    min-width: 0;
-}
-
-/* Primeira linha contém a lista; a segunda contém Enviar. */
-.formulario form > table:nth-of-type(3) > tbody > tr:first-child {
-    display: flex;
-    flex: 1 1 0;
-    min-height: 0;
-    min-width: 0;
-}
-
-.formulario form > table:nth-of-type(3) > tbody > tr:first-child > td {
-    display: flex;
-    flex: 1 1 0;
-    min-height: 0;
-    min-width: 0;
-    padding: 2px;
-}
 
 #enxadrista_list {
     display: block;
     flex: 1 1 0;
     width: 100%;
-    height: 100%;
+    height: 64vh;
     min-height: 0;
     max-width: 100%;
-    max-height: none;
+    max-height: 64dvh;
     box-sizing: border-box;
     overflow-y: auto;
 }
 
-/* ============================================================
+/* ==========================================================
    CAMPOS DE PESQUISA
    ============================================================ */
 
@@ -364,6 +332,11 @@ body > center > font {
     .botao-ordenacao {
         padding: 3px 8px;
     }
+
+	#enxadrista_list {
+		height: 72vh;
+		max-height: 72dvh;
+	}
 }
 
 @media (max-height: 600px) {
@@ -892,10 +865,9 @@ function carregarClubes() {
                     </select>
 				</td>
             </tr>
-			<!--
 			</table>
+			
 			<table>
-			-->
 			<tr width="100%">
                 <td valign="bottom">
                     rating:<input
@@ -989,7 +961,8 @@ function carregarClubes() {
  					<select
 						name="enxadrista_list"
 						id="enxadrista_list"
-						size="30"
+						size="34"
+						maxlength="40"
 						onchange="Select_Click(this,'clk');"
                         ondblclick="Select_Click(this,'dbl');"
 						style="font: 14px Arial Narrow"
