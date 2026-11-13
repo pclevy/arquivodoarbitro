@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
  * Versão: 2026.11.13 V1.0
- * Alterado em 2026/11/13, 17:46
+ * Alterado em 2026/11/13, 20:10
  */
 
 ini_set('display_errors', 0);
@@ -242,15 +242,15 @@ body > center > font {
 }
 
 #status {
-    width: 3.5em;
+    width: 4.4em;
 }
 
 #genero {
-    width: 3.2em;
+    width: 3.3em;
 }
 
 #ritmo {
-    width: 3.4em;
+    width: 3.9em;
 }
 
 #rat_min,
@@ -487,6 +487,10 @@ document.getElementById("idade_max").value = maiorIdade;
 
 // Atualiza o total de jogadores
 document.getElementById("total").textContent = total;
+
+// Atualiza Status selecionado
+document.getElementById("status_sel").innerHTML =
+    "<b>" + document.getElementById("status").selectedOptions[0].text + "</b>";
 
 }    
 /* filtrarClubes */
@@ -843,7 +847,7 @@ function carregarClubes() {
 					status:<select name="status" id="status" onchange="atualizarListaJogadores()"
 					style="font: 11px 'Arial Narrow';box-sizing: border-box;">
 						<option value="todos">Todos</option>
-						<option value="A">Ativo</option>
+						<option value="A" selected>Ativo</option>
 						<option value="I">Inativo</option>
 						<option value="F">Finado</option>
 					</select>												
@@ -1003,9 +1007,11 @@ function carregarClubes() {
                         value="Enviar"
                     >
                 </td>
-                <td></td>
+				<td align='center'>
+					Atletas/Status: <span id="status_sel"></span>. &nbsp;
+				</td>
 				<td align='right'>
-					&nbsp; &nbsp; &nbsp; Total de atletas encontrados: <span id="total">0</span>
+					Total de atletas: <span id="total">0</span>. &nbsp;
 				</td>
             </tr>
         </table>
