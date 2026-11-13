@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
  * Versão: 2026.11.12 V.1.03
- * Alterado em 2026/11/12, 20:42
+ * Alterado em 2026/11/12, 21:00
  */
 
 ini_set('display_errors', 0);
@@ -937,7 +937,7 @@ function carregarClubes() {
 						name="SM_Categorias"
 						id="SM_Categorias"
 						type="text"
-						value=""
+						value="EX. 'U14,U18,S60,S70'"
 						style="box-sizing: border-box; font: 10px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
