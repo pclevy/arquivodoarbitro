@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
  * Versão: 2026.11.12 V.1.03
- * Alterado em 2026/11/12, 21:25
+ * Alterado em 2026/11/12, 23:50
  */
 
 ini_set('display_errors', 0);
@@ -120,7 +120,8 @@ echo "</script>";
 /* ============================================================
    CONFIGURAÇÃO GERAL E ALTURA DA TELA
    ============================================================ */
-* {
+*
+{
     box-sizing: border-box;
 }
 
@@ -172,15 +173,15 @@ body > center > font {
     min-width: 0;
 
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     margin: 0 auto;
-    padding: 4px;
+    padding: 2px;
 
     background-color: #DCE9C8;
     overflow: hidden;
     line-height: 1.6;
 	
-    border: 3px solid #2266AA;
+    border: 2px solid #2266AA;
 	border-radius: 16px;
 
 	margin-bottom: 5px;
@@ -206,7 +207,7 @@ body > center > font {
 }
 
 .formulario td {
-    padding: 2px;
+    padding: 1px;
     vertical-align: bottom;
 }
 
@@ -269,11 +270,19 @@ body > center > font {
 }
 
 #clube {
-    width: 6.5em;
+    width: 3.5em;
+}
+
+#status {
+    width: 3.5em;
 }
 
 #genero {
     width: 3.2em;
+}
+
+#ritmo {
+    width: 3.4em;
 }
 
 #rat_min,
@@ -293,11 +302,6 @@ body > center > font {
 #enxadrista {
     width: 100%;
     min-width: 0;
-}
-
-#status,
-#ritmo {
-    max-width: 100%;
 }
 
 /* ============================================================
@@ -347,11 +351,10 @@ body > center > font {
 
 @media (max-width: 420px) {
     .formulario {
-        padding: 3px;
+        padding: 2px;
 		max-height: 89%;
-        border-width: 3px;
+        border-width: 1px;
 		border-radius: 16px;
-
     }
 
     .formulario td {
@@ -841,7 +844,7 @@ function carregarClubes() {
 </font>
 <br>
 
-<div class="formulario"  style="font: 12px Arial Narrow">
+<div class="formulario"  style="font: 11px Arial Narrow">
     <form
         name="reg_rat_pesq"
         action="reg_rat_pesq.php"
@@ -849,7 +852,7 @@ function carregarClubes() {
         autocomplete="off"
     >
 		<table>
-			<tr>
+			<tr width="100%">
 				<td valign="bottom">clube:<input
 							type="text"
 							name="clube"
@@ -859,36 +862,40 @@ function carregarClubes() {
 							onchange="filtrarClube(this.value)"
 							autocomplete="off"
 							maxlength="8"
-							style="font: 12px 'Arial Narrow', sans-serif;box-sizing: border-box;"
+							style="font: 11px 'Arial Narrow', sans-serif;box-sizing: border-box;"
 						>
 						<datalist id="listaClubes"></datalist>
 				</td>
 				<td>
-					status:<select name="status" id="status" onchange="atualizarListaJogadores()" style="font: 12px Arial Narrow">
+					status:<select name="status" id="status" onchange="atualizarListaJogadores()"
+					style="font: 11px 'Arial Narrow';box-sizing: border-box;">
 						<option value="todos">Todos</option>
 						<option value="A">Ativo</option>
 						<option value="I">Inativo</option>
 						<option value="F">Finado</option>
 					</select>												
 				</td>
-				
 				<td valign="bottom">
-					gêne.:<select name="genero" id="genero" onchange="atualizarListaJogadores()"
-					style="font: 12px 'Arial Narrow';box-sizing: border-box;">
+					gên:<select name="genero" id="genero" onchange="atualizarListaJogadores()"
+					style="box-sizing: border-box;font: 11px Arial Narrow">
 						<option value="todos"> </option>
 						<option value="M">M</option>
 						<option value="F">F</option>
 					</select>
                 </td>
-				
 				<td>
-                    ritmo:<select name="ritmo" id="ritmo"  style="font: 12px Arial Narrow">
+					ritmo:<select name="ritmo" id="ritmo"
+							style="box-sizing: border-box;font: 11px Arial Narrow">
                         <option value="S" selected>cláss</option>
                         <option value="Q">ráp</option>
                         <option value="B">blitz</option>
                     </select>
 				</td>
             </tr>
+			<!--
+			</table>
+			<table>
+			-->
 			<tr width="100%">
                 <td valign="bottom">
                     rating:<input
@@ -897,7 +904,7 @@ function carregarClubes() {
 						type="text"
 						value="0"
 						maxlength="4"
-						style="max-width: 50px; box-sizing: border-box;font: 12px Arial Narrow"
+						style="box-sizing: border-box;font: 11px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
                     a<input
@@ -906,19 +913,19 @@ function carregarClubes() {
 						type="text"
 						value="3000"
 						maxlength="4"
-						style="max-width: 50px; box-sizing: border-box;font: 12px Arial Narrow"
+						style="box-sizing: border-box;font: 11px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
                     &nbsp; 
 				</td>
-				<td valign="bottom" colspan="3">
+				<td valign="bottom">
                     idade:<input disabled
 						name="idade_min"
 						id="idade_min"
 						type="text"
 						value=""
 						maxlength="3"
-						style="max-width: 50px; box-sizing: border-box;font: 12px Arial Narrow"
+						style="box-sizing: border-box;font: 11px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
                     a<input disabled
@@ -927,21 +934,21 @@ function carregarClubes() {
 						type="text"
 						value=""
 						maxlength="3"
-						style="max-width: 50px; box-sizing: border-box;font: 12px Arial Narrow"
+						style="box-sizing: border-box;font: 11px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>	
                     &nbsp;
+				</td>
+				<td valign="bottom">
 					SM:<input disabled
 						name="SM_Categorias"
 						id="SM_Categorias"
 						type="text"
-						value="ex.'U14,U18,S60,S70'"
-						style="box-sizing: border-box; font: 12px Arial Narrow"
+						value=ex.'U14,U18,S60"
+						style="box-sizing: border-box; font: 11px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
-                    &nbsp;
 				</td>
-				
             </tr>
         </table>
 		
