@@ -287,7 +287,7 @@ body > center > font {
 }
 
 #SM_Categorias {
-    width: 5em;
+    width: 6em;
 }
 
 #enxadrista {
@@ -841,7 +841,7 @@ function carregarClubes() {
 </font>
 <br>
 
-<div class="formulario"  style="font: 10px Arial Narrow">
+<div class="formulario"  style="font: 12px Arial Narrow">
     <form
         name="reg_rat_pesq"
         action="reg_rat_pesq.php"
@@ -859,12 +859,12 @@ function carregarClubes() {
 							onchange="filtrarClube(this.value)"
 							autocomplete="off"
 							maxlength="8"
-							style="font: 10px 'Arial Narrow', sans-serif;box-sizing: border-box;"
+							style="font: 12px 'Arial Narrow', sans-serif;box-sizing: border-box;"
 						>
 						<datalist id="listaClubes"></datalist>
 				</td>
 				<td>
-					status:<select name="status" id="status" onchange="atualizarListaJogadores()" style="font: 10px Arial Narrow">
+					status:<select name="status" id="status" onchange="atualizarListaJogadores()" style="font: 12px Arial Narrow">
 						<option value="todos">Todos</option>
 						<option value="A">Ativo</option>
 						<option value="I">Inativo</option>
@@ -874,7 +874,7 @@ function carregarClubes() {
 				
 				<td valign="bottom">
 					gêne.:<select name="genero" id="genero" onchange="atualizarListaJogadores()"
-					style="font: 10px 'Arial Narrow';box-sizing: border-box;">
+					style="font: 12px 'Arial Narrow';box-sizing: border-box;">
 						<option value="todos"> </option>
 						<option value="M">M</option>
 						<option value="F">F</option>
@@ -882,7 +882,7 @@ function carregarClubes() {
                 </td>
 				
 				<td>
-                    ritmo:<select name="ritmo" id="ritmo"  style="font: 10px Arial Narrow">
+                    ritmo:<select name="ritmo" id="ritmo"  style="font: 12px Arial Narrow">
                         <option value="S" selected>cláss</option>
                         <option value="Q">ráp</option>
                         <option value="B">blitz</option>
@@ -897,7 +897,7 @@ function carregarClubes() {
 						type="text"
 						value="0"
 						maxlength="4"
-						style="ax-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
+						style="max-width: 50px; box-sizing: border-box;font: 12px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
                     a<input
@@ -906,7 +906,7 @@ function carregarClubes() {
 						type="text"
 						value="3000"
 						maxlength="4"
-						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
+						style="max-width: 50px; box-sizing: border-box;font: 12px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
                     &nbsp; 
@@ -918,7 +918,7 @@ function carregarClubes() {
 						type="text"
 						value=""
 						maxlength="3"
-						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
+						style="max-width: 50px; box-sizing: border-box;font: 12px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
                     a<input disabled
@@ -927,16 +927,16 @@ function carregarClubes() {
 						type="text"
 						value=""
 						maxlength="3"
-						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
+						style="max-width: 50px; box-sizing: border-box;font: 12px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>	
-                    
+                    &nbsp;
 					SM:<input disabled
 						name="SM_Categorias"
 						id="SM_Categorias"
 						type="text"
 						value="ex.'U14,U18,S60,S70'"
-						style="box-sizing: border-box; font: 10px Arial Narrow"
+						style="box-sizing: border-box; font: 12px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
                     &nbsp;
