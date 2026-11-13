@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
  * Versão: 2026.11.12 V.1.03
- * Alterado em 2026/11/12, 21:00
+ * Alterado em 2026/11/12, 21:25
  */
 
 ini_set('display_errors', 0);
@@ -184,7 +184,6 @@ body > center > font {
 	border-radius: 16px;
 
 	margin-bottom: 5px;
-	
 }
 
 .formulario form {
@@ -279,12 +278,16 @@ body > center > font {
 
 #rat_min,
 #rat_max {
-    width: 3em;
+    width: 2.6em;
 }
 
 #idade_min,
 #idade_max {
-    width: 2.5em;
+    width: 2em;
+}
+
+#SM_Categorias {
+    width: 5em;
 }
 
 #enxadrista {
@@ -888,8 +891,7 @@ function carregarClubes() {
             </tr>
 			<tr width="100%">
                 <td valign="bottom">
-                    ratings:
-                    <input
+                    rating:<input
 						name="rat_min"
 						id="rat_min"
 						type="text"
@@ -898,8 +900,7 @@ function carregarClubes() {
 						style="ax-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
-                    a 
-					<input
+                    a<input
 						name="rat_max"
 						id="rat_max"
 						type="text"
@@ -911,18 +912,16 @@ function carregarClubes() {
                     &nbsp; 
 				</td>
 				<td valign="bottom" colspan="3">
-                    idade:
-                    <input disabled
+                    idade:<input disabled
 						name="idade_min"
 						id="idade_min"
 						type="text"
-						value=0
-						maxlength="4"
+						value=""
+						maxlength="3"
 						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
-                    a 
-					<input disabled
+                    a<input disabled
 						name="idade_max"
 						id="idade_max"
 						type="text"
@@ -931,13 +930,12 @@ function carregarClubes() {
 						style="max-width: 50px; box-sizing: border-box;font: 10px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>	
-                    &nbsp;
-					SM:
-					<input disabled
+                    
+					SM:<input disabled
 						name="SM_Categorias"
 						id="SM_Categorias"
 						type="text"
-						value="EX. 'U14,U18,S60,S70'"
+						value="ex.'U14,U18,S60,S70'"
 						style="box-sizing: border-box; font: 10px Arial Narrow"
 						onchange="atualizarListaJogadores()"
 					>
