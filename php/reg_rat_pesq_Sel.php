@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.13 V1.0
- * Alterado em 2026/11/13, 20:10
+ * Versão: 2026.11.15 V1.0
+ * Alterado em 2026/11/15, 18:55
  */
 
 ini_set('display_errors', 0);
@@ -486,7 +486,7 @@ document.getElementById("idade_min").value =
 document.getElementById("idade_max").value = maiorIdade;
 
 // Atualiza o total de jogadores
-document.getElementById("total").textContent = total;
+document.getElementById("total").innerHTML = "<b>" + total + "</b>";
 
 // Atualiza Status selecionado
 document.getElementById("status_sel").innerHTML =
@@ -1011,7 +1011,7 @@ function carregarClubes() {
 					Atletas/Status: <span id="status_sel"></span>. &nbsp;
 				</td>
 				<td align='right'>
-					Total de atletas: <span id="total">0</span>. &nbsp;
+					Total de atletas: <span id="total"><b>0</b></span> &nbsp;
 				</td>
             </tr>
         </table>
