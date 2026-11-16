@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.15 V1.0
- * Alterado em 2026/11/15, 18:55
+ * Versão: 2026.11.15 V1.1
+ * Alterado em 2026/11/15, 23:38
  */
 
 ini_set('display_errors', 0);
@@ -135,7 +135,7 @@ body {
 
 body {
     background-color: #eeeeff;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial Narrow, Arial, Helvetica, sans-serif;
 }
 
 /* Cabeçalho e formulário ocupam a altura visível do navegador. */
@@ -237,39 +237,64 @@ body > center > font {
     max-width: 100%;
 }
 
+.formulario  input[type="text"] {
+    font-family: "Arial Narrow", sans-serif !important;
+    font-size: 14px !important;
+	padding:0px;
+}
+
+.formulario input#clube {
+    font-size: 13px !important;
+}
+
+.formulario select {
+    font-family: "Arial Narrow", sans-serif !important;
+    font-size: 14px !important;
+	padding:0px;
+}
+
 #clube {
-    width: 3.5em;
+    width: 5.5em;
+	padding:0px;
+	font-size: 13px;
 }
 
 #status {
-    width: 4.4em;
+    width: 4.1em;
+	padding:0px;
 }
 
 #genero {
-    width: 3.3em;
+    width: 2.47em;
+	padding:0px;
 }
 
 #ritmo {
-    width: 3.9em;
+    width: 3.5em;
+	padding:0px;
 }
 
 #rat_min,
 #rat_max {
-    width: 2.6em;
+    width: 2.5em;
+	padding:1px;
 }
 
 #idade_min,
 #idade_max {
-    width: 2em;
+    width: 1.7em;
+	padding:1px;
 }
 
 #SM_Categorias {
-    width: 6em;
+    width: 5em;
+	padding:1px;
 }
 
 #enxadrista {
     width: 100%;
     min-width: 0;
+	padding:1px;
 }
 
 /* ============================================================
@@ -385,10 +410,14 @@ function atualizarListaJogadores() {
 
     var lista_loc = document.getElementById("enxadrista_list");
     if (!lista_loc) { return; }
-
+	
     // Limites de rating
     var ratMin = parseInt(document.getElementById("rat_min").value) || 0;
     var ratMax = parseInt(document.getElementById("rat_max").value) || 3000;
+	
+    // Faixa de Idade
+    var idadeMin = parseInt(document.getElementById("idade_min").value) || 0;
+    var idadeMax = parseInt(document.getElementById("idade_max").value) || 3000;
 	
 	// Gênero selecionado
 	var genero = document.getElementById("genero").value;	
@@ -438,24 +467,28 @@ listaJogadoresMostrada.forEach(function(jogador, index) {
     if (status !== "todos" && jogador.status !== status) {
         return;
     }
-
+	
     var rating = parseInt(jogador.rating) || 0;
-
     // Verifica os limites de rating
     if (rating < ratMin || rating > ratMax) {
         return;
     }
-
-    // Calcula a maior idade entre os filtrados
+	
     var idade = parseInt(jogador.idade) || 0;
+    // Verifica os limites de idade
+    if (idade < idadeMin || idade > idadeMax) {
+        return;
+    }
+	
 
-    if (idade < menorIdade) {
-    menorIdade = idade;
-}
+	if (idade < menorIdade) {
+		menorIdade = idade;
+	}
 	if (idade > maiorIdade) {
         maiorIdade = idade;
     }
-
+	
+	
     // Cria a opção
     var option = document.createElement("option");
 
@@ -479,13 +512,12 @@ listaJogadoresMostrada.forEach(function(jogador, index) {
 });
 
 // Atualiza a menor idade
-document.getElementById("idade_min").value =
-    menorIdade === Infinity ? 0 : menorIdade;
+document.getElementById("idade_min").value = menorIdade === Infinity ? 0 : menorIdade;
 
 // Atualiza a maior idade
 document.getElementById("idade_max").value = maiorIdade;
 
-// Atualiza o total de jogadores
+// Atualiza o total de jogadores selecionados
 document.getElementById("total").innerHTML = "<b>" + total + "</b>";
 
 // Atualiza Status selecionado
@@ -821,7 +853,7 @@ function carregarClubes() {
 </font>
 <br>
 
-<div class="formulario"  style="font: 11px Arial Narrow">
+<div class="formulario" >
     <form
         name="reg_rat_pesq"
         action="reg_rat_pesq.php"
@@ -839,22 +871,22 @@ function carregarClubes() {
 							onchange="filtrarClube(this.value)"
 							autocomplete="off"
 							maxlength="8"
-							style="font: 11px 'Arial Narrow', sans-serif;box-sizing: border-box;"
+							style="box-sizing: border-box; font: inherit;"
 						>
 						<datalist id="listaClubes"></datalist>
 				</td>
 				<td>
 					status:<select name="status" id="status" onchange="atualizarListaJogadores()"
-					style="font: 11px 'Arial Narrow';box-sizing: border-box;">
-						<option value="todos">Todos</option>
-						<option value="A" selected>Ativo</option>
-						<option value="I">Inativo</option>
-						<option value="F">Finado</option>
+					style="box-sizing: border-box; font: inherit;">
+						<option value="todos">todos</option>
+						<option value="A" selected>ativo</option>
+						<option value="I">inativo</option>
+						<option value="F">finado</option>
 					</select>												
 				</td>
 				<td valign="bottom">
 					gên:<select name="genero" id="genero" onchange="atualizarListaJogadores()"
-					style="box-sizing: border-box;font: 11px Arial Narrow">
+					style="box-sizing: border-box; font: inherit;">
 						<option value="todos"> </option>
 						<option value="M">M</option>
 						<option value="F">F</option>
@@ -862,7 +894,7 @@ function carregarClubes() {
                 </td>
 				<td>
 					ritmo:<select name="ritmo" id="ritmo"
-							style="box-sizing: border-box;font: 11px Arial Narrow">
+							style="box-sizing: border-box; font: inherit;">
                         <option value="S" selected>cláss</option>
                         <option value="Q">ráp</option>
                         <option value="B">blitz</option>
@@ -880,7 +912,7 @@ function carregarClubes() {
 						type="text"
 						value="0"
 						maxlength="4"
-						style="box-sizing: border-box;font: 11px Arial Narrow"
+						style="box-sizing: border-box; font: inherit;"
 						onchange="atualizarListaJogadores()"
 					>
                     a<input
@@ -889,39 +921,39 @@ function carregarClubes() {
 						type="text"
 						value="3000"
 						maxlength="4"
-						style="box-sizing: border-box;font: 11px Arial Narrow"
+						style="box-sizing: border-box; font: inherit;"
 						onchange="atualizarListaJogadores()"
 					>
-                    &nbsp; 
+                    
 				</td>
 				<td valign="bottom">
-                    idade:<input disabled
+                    idade:<input 
 						name="idade_min"
 						id="idade_min"
 						type="text"
 						value=""
 						maxlength="3"
-						style="box-sizing: border-box;font: 11px Arial Narrow"
+						style="box-sizing: border-box; font: inherit;"
 						onchange="atualizarListaJogadores()"
 					>
-                    a<input disabled
+                    a<input 
 						name="idade_max"
 						id="idade_max"
 						type="text"
 						value=""
 						maxlength="3"
-						style="box-sizing: border-box;font: 11px Arial Narrow"
+						style="box-sizing: border-box; font: inherit;"
 						onchange="atualizarListaJogadores()"
 					>	
-                    &nbsp;
+                    
 				</td>
 				<td valign="bottom">
 					SM:<input disabled
 						name="SM_Categorias"
 						id="SM_Categorias"
 						type="text"
-						value=ex.'U14,U18,S60"
-						style="box-sizing: border-box; font: 11px Arial Narrow"
+						value="ex.U14,S60"
+						style="box-sizing: border-box; font: inherit; "
 						onchange="atualizarListaJogadores()"
 					>
 				</td>
