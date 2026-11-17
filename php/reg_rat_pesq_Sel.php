@@ -66,7 +66,7 @@ while ($jogador = pg_fetch_assoc($sql)) {
     $dados = [
         'reg'     => trim($jogador['reg']),
         'nome'    => $jogador['nomecompleto'],
-        'clube'   => trim($jogador['clube']),
+        'clube'   => trim(" ".$jogador['clube']),
         'genero'  => $jogador['genero'],
         'rating'  => trim($jogador['rating']),
         'idade'   => trim($jogador['idade']),
@@ -78,7 +78,7 @@ while ($jogador = pg_fetch_assoc($sql)) {
         . ");\n";
 
     // Armazena clubes não vazios
-    $clube = trim($jogador['clube']);
+    $clube = trim(" ".$jogador['clube']);
 
     if ($clube !== '') {
         $listaClubes[] = $clube;
@@ -305,7 +305,7 @@ body > center > font {
 }
 
 #SM_Categorias {
-    width: 5em;
+    width: 7.6em;
 	padding:1px;
 }
 
@@ -838,7 +838,7 @@ function carregarClubes() {
         datalist.appendChild(option);
     });
 
-    document.getElementById("clube").value = "Todos";
+    //document.getElementById("clube").value = "Todos";
 }
 </script>
 
@@ -881,7 +881,7 @@ function carregarClubes() {
     >
 		<table>
 			<tr width="100%">
-				<td valign="bottom" style="padding: 0px;">clube:<input
+				<td valign="bottom" style="padding: 0px;">clube<input
 							type="text"
 							name="clube"
 							id="clube"
@@ -897,7 +897,7 @@ function carregarClubes() {
 				</td>
 				
 				<td style="padding: 0px;">
-					status:<select name="status" id="status" onchange="atualizarListaJogadores()"
+					status<select name="status" id="status" onchange="atualizarListaJogadores()"
 					style="box-sizing: border-box; font: inherit;">
 						<option value="todos">todos</option>
 						<option value="A" selected>ativo</option>
@@ -906,7 +906,7 @@ function carregarClubes() {
 					</select>												
 				</td>
 				<td valign="bottom" style="padding: 0px;">
-					gên:<select name="genero" id="genero" onchange="atualizarListaJogadores()"
+					gên<select name="genero" id="genero" onchange="atualizarListaJogadores()"
 					style="box-sizing: border-box; font: inherit;">
 						<option value="todos">T</option>
 						<option value="M">M</option>
@@ -914,7 +914,7 @@ function carregarClubes() {
 					</select>
                 </td>
 				<td style="padding: 0px;">
-					ritmo:<select name="ritmo" id="ritmo"
+					ritmo<select name="ritmo" id="ritmo"
 							style="box-sizing: border-box; font: inherit;">
                         <option value="S" selected>cláss</option>
                         <option value="Q">ráp</option>
@@ -927,7 +927,7 @@ function carregarClubes() {
 			<table>
 			<tr width="100%">
                 <td valign="bottom">
-                    rating:<input
+                    rating<input
 						name="rat_min"
 						id="rat_min"
 						type="text"
@@ -935,8 +935,7 @@ function carregarClubes() {
 						maxlength="4"
 						style="box-sizing: border-box; font: inherit;"
 						onchange="atualizarListaJogadores()"
-					>
-                    a<input
+					>a<input
 						name="rat_max"
 						id="rat_max"
 						type="text"
@@ -948,7 +947,7 @@ function carregarClubes() {
                     
 				</td>
 				<td valign="bottom">
-                    idade:<input 
+                    idade<input 
 						name="idade_min"
 						id="idade_min"
 						type="text"
@@ -956,8 +955,7 @@ function carregarClubes() {
 						maxlength="3"
 						style="box-sizing: border-box; font: inherit;"
 						onchange="atualizarListaJogadores()"
-					>
-                    a<input 
+					>a<input 
 						name="idade_max"
 						id="idade_max"
 						type="text"
@@ -969,11 +967,11 @@ function carregarClubes() {
                     
 				</td>
 				<td valign="bottom">
-					SM:<input disabled
+					SM<input disabled
 						name="SM_Categorias"
 						id="SM_Categorias"
 						type="text"
-						value="ex.U14,S60"
+						value="ex: U12,U14,S60,S70"
 						style="box-sizing: border-box; font: inherit; "
 						onchange="atualizarListaJogadores()"
 					>
