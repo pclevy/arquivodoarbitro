@@ -1,6 +1,6 @@
 <?php
 	/* php/reg_rat_pesq.php - Versão: 2026.8.11 - Alterado em 2026/08/11, 22:50 */
-	/* php/reg_rat_pesq.php - Versão: 2026.11.08.01 - Alterado em 2026/11/08, 07:04 */
+	/* php/reg_rat_pesq.php - Versão: 2026.11.17.01 - Alterado em 2026/11/17, 13:04 */
 	
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
@@ -57,7 +57,7 @@
 	/* ***  pesq_rating: retorna "clube/rating/rpd/blz" *** */
 	function pesq_rating($conexaoL, $data_baseL, $reg) {
 		$sqlhist = "
-			SELECT clube, rating, rpd, blz
+			SELECT clube, sexo, rating, rpd, blz
 			FROM r" . pg_escape_string($conexaoL, $data_baseL) . "
 			WHERE reg=" . pg_escape_literal($conexaoL, $reg);
 
@@ -94,6 +94,8 @@
 	$rat_max             = in('rat_max');
 	
 	$ritmo               = in('ritmo', 'S');
+	
+	//$genero = in('genero');
 	
 	$enxadrista_nome_Sel = in('enxadrista');
 	$enxadrista_reg      = in('enxadrista_reg');
@@ -132,7 +134,7 @@
 	/* Montagem da Query                                                    */
 	/* ---------------------------------------------------------------------- */
 	
-	$sqlexp1 = "SELECT reg, sobrenome, nome, clube, titulo, rating, status FROM cadastro ";
+	$sqlexp1 = "SELECT reg, sobrenome, nome, clube, sexo AS genero, titulo, rating, status FROM cadastro ";
 
 	$sqlexp2 = ($incluir_desfiliados === 'N')
 			? "WHERE status='A' AND "
@@ -145,6 +147,11 @@
 	
 	if ($clube !== '')  $parts[] = "trim(clube)="  . esc($conexao, $clube);
 	if ($titulo !== '') $parts[] = "trim(titulo)=" . esc($conexao, $titulo);
+	
+	//if ($sexo !== '') $parts[] = "trim(sexo)=" . esc($conexao, $sexo);
+	//if ($genero !== '') $parts[] = "trim(genero)=" . esc($conexao, $genero);
+//	if ($genero !== '') $parts[] = "trim(sexo)=" . esc($conexao, $genero);
+	
 	if ($enxadrista_reg !== '') $parts[] = "reg=" . esc($conexao, $enxadrista_reg);
 
 	$rat_min = ($rat_min === '') ? 0 : intval($rat_min);
@@ -371,6 +378,9 @@
 		$reg   = $row['reg'];
 		$nome  = trim($row['nome']) . " " . trim($row['sobrenome']);
 		$clb   = trim($row['clube']);
+
+		$genero   = trim($row['genero'] . " ");
+
 		$tit   = trim($row['titulo'] . " ");
 		$rat   = intval($row['rating']);
 		
@@ -510,18 +520,22 @@
 		if ($tit == "") {
 			$titJ = "";
 		} else {
-			$titJ = "<td>Título:<b>$tit</b></td>";
+			$titJ = "<td>Tít:<b>$tit</b></td>";
 		}
+		
+		//$regJ = str_pad($reg, 4, ' ', STR_PAD_LEFT);
 		
 		echo "<div class='enxrow' 
 				onclick=\"setResumoHtml('$Resumo'); muda_res('$paramJS','Clássico');\">
 				<table width='100%'>
+				
+				<tr><td colspan='5'>Reg: <b>$reg</b> Nome: <b>$nome</b></td></tr>				
+				
 				<tr>
-					<td>Reg:<b>$reg</b></td><td>Clube:<b>$clb</b></td>
+					<td>Clube:<b>$clb</b></td><td>Gên:<b>$genero</b></td>
 					$titJ
 					<td>Rat:<b>$rat</b></td><td> <b>$enxadrista_status_txt</b></td>
 				</tr>
-				<tr><td colspan='5'>Nome:<b>$nome</b></td></tr>
 				</table>
 			  </div>";
 	}
