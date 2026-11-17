@@ -1,6 +1,6 @@
 <?php
 	/* php/reg_rat_pesq.php - Versão: 2026.8.11 - Alterado em 2026/08/11, 22:50 */
-	/* php/reg_rat_pesq.php - Versão: 2026.11.17.01 - Alterado em 2026/11/17, 13:04 */
+	/* php/reg_rat_pesq.php - Versão: 2026.11.08.01 - Alterado em 2026/11/17, 13:35 */
 	
 	ini_set('display_errors', 0);
 	ini_set('display_startup_errors', 0);
@@ -57,7 +57,7 @@
 	/* ***  pesq_rating: retorna "clube/rating/rpd/blz" *** */
 	function pesq_rating($conexaoL, $data_baseL, $reg) {
 		$sqlhist = "
-			SELECT clube, sexo, rating, rpd, blz
+			SELECT clube, rating, rpd, blz
 			FROM r" . pg_escape_string($conexaoL, $data_baseL) . "
 			WHERE reg=" . pg_escape_literal($conexaoL, $reg);
 
@@ -134,7 +134,7 @@
 	/* Montagem da Query                                                    */
 	/* ---------------------------------------------------------------------- */
 	
-	$sqlexp1 = "SELECT reg, sobrenome, nome, clube, sexo AS genero, titulo, rating, status FROM cadastro ";
+	$sqlexp1 = "SELECT reg, nome, sobrenome, clube, sexo AS genero, titulo, rating, status FROM cadastro ";
 
 	$sqlexp2 = ($incluir_desfiliados === 'N')
 			? "WHERE status='A' AND "
@@ -150,7 +150,7 @@
 	
 	//if ($sexo !== '') $parts[] = "trim(sexo)=" . esc($conexao, $sexo);
 	//if ($genero !== '') $parts[] = "trim(genero)=" . esc($conexao, $genero);
-//	if ($genero !== '') $parts[] = "trim(sexo)=" . esc($conexao, $genero);
+	//if ($genero !== '') $parts[] = "trim(sexo)=" . esc($conexao, $genero);
 	
 	if ($enxadrista_reg !== '') $parts[] = "reg=" . esc($conexao, $enxadrista_reg);
 
