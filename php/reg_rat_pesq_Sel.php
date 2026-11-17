@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.15 V1.1
- * Alterado em 2026/11/15, 23:38
+ * Versão: 2026.11.17 V1.0
+ * Alterado em 2026/11/17, 02:56
  */
 
 ini_set('display_errors', 0);
@@ -57,36 +57,51 @@ echo "<script type='text/javascript'>";
 echo "var listaJogadores = [];";
 echo "var listaClubes = [];";
 
-// ***** 2026/11/04 *****
+// ***** 2026/11/17 *****
+
 $listaClubes = [];
 
 while ($jogador = pg_fetch_assoc($sql)) {
 
     $dados = [
-        'reg'    => trim($jogador['reg']),
-        'nome'   => $jogador['nomecompleto'],
-        'clube'  => $jogador['clube'],
+        'reg'     => trim($jogador['reg']),
+        'nome'    => $jogador['nomecompleto'],
+        'clube'   => trim($jogador['clube']),
         'genero'  => $jogador['genero'],
-        'rating' => trim($jogador['rating']),
-        'idade' => trim($jogador['idade']),
-        'status' => $jogador['status']
+        'rating'  => trim($jogador['rating']),
+        'idade'   => trim($jogador['idade']),
+        'status'  => $jogador['status']
     ];
 
     echo "listaJogadores.push("
         . json_encode($dados, JSON_UNESCAPED_UNICODE)
         . ");\n";
 
-    // Armazena os clubes
-    $listaClubes[] = trim($jogador['clube']);
+    // Armazena clubes não vazios
+    $clube = trim($jogador['clube']);
 
+    if ($clube !== '') {
+        $listaClubes[] = $clube;
+    }
 }
 
-// Elimina clubes repetidos
+// Elimina clubes vazios e repetidos
+$listaClubes = array_filter($listaClubes, function($clube) {
+    return $clube !== '';
+});
+
 $listaClubes = array_unique($listaClubes);
 
-// Gera a lista JavaScript
-foreach ($listaClubes as $clube) {
+// Ordena alfabeticamente
+natcasesort($listaClubes);
 
+// Reinicia os índices
+$listaClubes = array_values($listaClubes);
+
+// Gera a lista JavaScript
+echo "listaClubes.push({clube: 'Todos'});\n";
+
+foreach ($listaClubes as $clube) {
     echo "listaClubes.push("
         . json_encode(['clube' => $clube], JSON_UNESCAPED_UNICODE)
         . ");\n";
@@ -530,7 +545,7 @@ function filtrarClube(clube) {
 
     clube = clube.trim().toLocaleUpperCase('pt-BR');
 
-    if (clube === "") {
+    if (clube === ""  || clube === "TODOS") {
         listaJogadoresMostrada = [...listaJogadores];
     } else {
         listaJogadoresMostrada = listaJogadores.filter(
@@ -804,22 +819,23 @@ function carregarClubes() {
 
     var datalist = document.getElementById("listaClubes");
 
-    // Limpa as opções anteriores
     datalist.innerHTML = "";
 
-    // Obtém clubes únicos e ordenados
     var clubes = [...new Set(
-        listaClubes.map(j => j.clube.trim()).filter(clube => clube !== "")
+        listaClubes
+            .map(j => j.clube.trim())
+            .filter(clube => clube !== "" && clube !== "Todos")
     )].sort((a, b) => a.localeCompare(b, "pt-BR"));
 
+    clubes.unshift("Todos");
+
     clubes.forEach(function(clube) {
-
         var option = document.createElement("option");
-
         option.value = clube;
-
         datalist.appendChild(option);
     });
+
+    document.getElementById("clube").value = "Todos";
 }
 </script>
 
@@ -867,6 +883,7 @@ function carregarClubes() {
 							name="clube"
 							id="clube"
 							list="listaClubes"
+							onfocus="this.value=''"
 							oninput="this.value = this.value.toLocaleUpperCase('pt-BR')"
 							onchange="filtrarClube(this.value)"
 							autocomplete="off"
@@ -875,6 +892,7 @@ function carregarClubes() {
 						>
 						<datalist id="listaClubes"></datalist>
 				</td>
+				
 				<td>
 					status:<select name="status" id="status" onchange="atualizarListaJogadores()"
 					style="box-sizing: border-box; font: inherit;">
@@ -887,7 +905,7 @@ function carregarClubes() {
 				<td valign="bottom">
 					gên:<select name="genero" id="genero" onchange="atualizarListaJogadores()"
 					style="box-sizing: border-box; font: inherit;">
-						<option value="todos"> </option>
+						<option value="todos">T</option>
 						<option value="M">M</option>
 						<option value="F">F</option>
 					</select>
