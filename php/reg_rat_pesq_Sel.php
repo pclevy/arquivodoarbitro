@@ -254,22 +254,23 @@ body > center > font {
 
 .formulario  input[type="text"] {
     font-family: "Arial Narrow", sans-serif !important;
-    font-size: 14px !important;
+    font-size: 15px !important;
 	padding:0px;
 }
 
 .formulario input#clube {
     font-size: 13px !important;
+	font-family: "Arial Narrow";
 }
 
 .formulario select {
     font-family: "Arial Narrow", sans-serif !important;
-    font-size: 14px !important;
+    font-size: 15px !important;
 	padding:0px;
 }
 
 #clube {
-    width: 5.5em;
+    width: 5.3em;
 	padding:0px;
 	font-size: 13px;
 }
@@ -280,13 +281,15 @@ body > center > font {
 }
 
 #genero {
-    width: 2.47em;
+    width: 2.1em;
 	padding:0px;
+	font-size: 14px;
 }
 
 #ritmo {
     width: 3.5em;
 	padding:0px;
+	font-size: 14px;
 }
 
 #rat_min,
@@ -878,7 +881,7 @@ function carregarClubes() {
     >
 		<table>
 			<tr width="100%">
-				<td valign="bottom">clube:<input
+				<td valign="bottom" style="padding: 0px;">clube:<input
 							type="text"
 							name="clube"
 							id="clube"
@@ -893,7 +896,7 @@ function carregarClubes() {
 						<datalist id="listaClubes"></datalist>
 				</td>
 				
-				<td>
+				<td style="padding: 0px;">
 					status:<select name="status" id="status" onchange="atualizarListaJogadores()"
 					style="box-sizing: border-box; font: inherit;">
 						<option value="todos">todos</option>
@@ -902,7 +905,7 @@ function carregarClubes() {
 						<option value="F">finado</option>
 					</select>												
 				</td>
-				<td valign="bottom">
+				<td valign="bottom" style="padding: 0px;">
 					gên:<select name="genero" id="genero" onchange="atualizarListaJogadores()"
 					style="box-sizing: border-box; font: inherit;">
 						<option value="todos">T</option>
@@ -910,7 +913,7 @@ function carregarClubes() {
 						<option value="F">F</option>
 					</select>
                 </td>
-				<td>
+				<td style="padding: 0px;">
 					ritmo:<select name="ritmo" id="ritmo"
 							style="box-sizing: border-box; font: inherit;">
                         <option value="S" selected>cláss</option>
