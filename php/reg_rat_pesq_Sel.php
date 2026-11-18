@@ -1,7 +1,7 @@
 <?php
 	/* php/reg_rat_pesq_Sel.php
-	 * Versão: 2026.11.18 V1.2
-	 * Alterado em 2026/11/18, 13:04
+	 * Versão: 2026.11.18 V1.3
+	 * Alterado em 2026/11/18, 13:24
 	*/
 	
 ini_set('display_errors', 0);
@@ -835,7 +835,7 @@ function carregarClubes() {
         datalist.appendChild(option);
     });
 
-    //document.getElementById("clube").value = "Todos";
+    document.getElementById("clube").value = "TODOS";
 }
 </script>
 
