@@ -1,9 +1,9 @@
 <?php
-/* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.18 V1.0
- * Alterado em 2026/11/18, 00:22
- */
-
+	/* php/reg_rat_pesq_Sel.php
+	 * Versão: 2026.11.18 V1.2
+	 * Alterado em 2026/11/18, 13:04
+	*/
+	
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 error_reporting(E_ALL);
@@ -548,7 +548,7 @@ function filtrarClube(clube) {
 
     clube = clube.trim().toLocaleUpperCase('pt-BR');
 
-    if (clube === ""  || clube === "TODOS") {
+    if (clube === "" || clube === "TODOS") {
         listaJogadoresMostrada = [...listaJogadores];
     } else {
         listaJogadoresMostrada = listaJogadores.filter(
@@ -564,9 +564,7 @@ function filtrarClube(clube) {
     
 /* filtrarGenero */
 function filtrarGenero(genero) {
-
-    //clube = clube.trim().toLocaleUpperCase('pt-BR');
-
+	
     if (genero === "") {
         listaJogadoresMostrada = [...listaJogadores];
     } else {
@@ -717,6 +715,8 @@ function filtrarGenero(genero) {
 		
 		var genero = document.getElementById("genero").value;
 		
+		var clube = document.getElementById("clube").value;
+		
 		var status = document.getElementById("status").value;
 		
         document.getElementById(
@@ -738,20 +738,17 @@ function filtrarGenero(genero) {
 						return false;
 					}
 					
+					// Clube
+					if (clube !== "TODOS" && clube !== "" && jogador.clube !== clube) {
+						return false;
+					}
+					
 					// Status
 					if (status !== "todos" && jogador.status !== status) {
 						return false;
 					}
 
-					// Clube e Nome
-					if (document.getElementById("clube").value != "" || document.getElementById("clube").value != "TODOS") {
-						if (jogador.clube === document.getElementById("clube").value) {
-							return jogador.nome.toUpperCase().indexOf(strPesq) >= 0;
-						}
-					}
-					else {
 						return jogador.nome.toUpperCase().indexOf(strPesq) >= 0;
-					}
 
 				}
             );
@@ -827,10 +824,10 @@ function carregarClubes() {
     var clubes = [...new Set(
         listaClubes
             .map(j => j.clube.trim())
-            .filter(clube => clube !== "" && clube !== "Todos")
+            .filter(clube => clube !== "" && clube !== "TODOS   ")
     )].sort((a, b) => a.localeCompare(b, "pt-BR"));
 
-    clubes.unshift("Todos");
+    clubes.unshift("TODOS");
 
     clubes.forEach(function(clube) {
         var option = document.createElement("option");
@@ -838,7 +835,7 @@ function carregarClubes() {
         datalist.appendChild(option);
     });
 
-    document.getElementById("clube").value = "Todos";
+    //document.getElementById("clube").value = "Todos";
 }
 </script>
 
@@ -1059,9 +1056,9 @@ function carregarClubes() {
                     >
                 </td>
 				<td align='center'>
-					Atletas/Status: <span id="status_sel"></span>
+					Atletas/Status: <span id="status_sel"></span>. &nbsp;
 				</td>
-				<td align='right'>
+				<td align='right' style="padding-right: 5px;">
 					Total de atletas: <span id="total"><b>0</b></span>
 				</td>
             </tr>
