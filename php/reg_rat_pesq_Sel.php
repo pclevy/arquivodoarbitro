@@ -914,8 +914,8 @@ function carregarClubes() {
 					ritmo<select name="ritmo" id="ritmo"
 							style="box-sizing: border-box; font: inherit;">
                         <option value="S" selected>cláss</option>
-                        <option value="Q">ráp</option>
-                        <option value="B">blitz</option>
+                        <option value="Q" disabled>ráp</option>
+                        <option value="B" disabled>blitz</option>
                     </select>
 				</td>
             </tr>
