@@ -1,7 +1,7 @@
 <?php
 /* php/reg_rat_pesq_Sel.php
- * Versão: 2026.11.17 V1.0
- * Alterado em 2026/11/17, 02:56
+ * Versão: 2026.11.18 V1.0
+ * Alterado em 2026/11/18, 00:22
  */
 
 ini_set('display_errors', 0);
@@ -300,7 +300,7 @@ body > center > font {
 
 #idade_min,
 #idade_max {
-    width: 1.7em;
+    width: 1.9em;
 	padding:1px;
 }
 
@@ -435,7 +435,7 @@ function atualizarListaJogadores() {
 	
     // Faixa de Idade
     var idadeMin = parseInt(document.getElementById("idade_min").value) || 0;
-    var idadeMax = parseInt(document.getElementById("idade_max").value) || 3000;
+    var idadeMax = parseInt(document.getElementById("idade_max").value) || 120;
 	
 	// Gênero selecionado
 	var genero = document.getElementById("genero").value;	
@@ -744,7 +744,7 @@ function filtrarGenero(genero) {
 					}
 
 					// Clube e Nome
-					if (document.getElementById("clube").value != "") {
+					if (document.getElementById("clube").value != "" || document.getElementById("clube").value != "TODOS") {
 						if (jogador.clube === document.getElementById("clube").value) {
 							return jogador.nome.toUpperCase().indexOf(strPesq) >= 0;
 						}
@@ -838,7 +838,7 @@ function carregarClubes() {
         datalist.appendChild(option);
     });
 
-    //document.getElementById("clube").value = "Todos";
+    document.getElementById("clube").value = "Todos";
 }
 </script>
 
@@ -933,7 +933,7 @@ function carregarClubes() {
 						type="text"
 						value="0"
 						maxlength="4"
-						style="box-sizing: border-box; font: inherit;"
+						style="padding:0;text-align:center;box-sizing: border-box; font: inherit;"
 						onchange="atualizarListaJogadores()"
 					>a<input
 						name="rat_max"
@@ -941,7 +941,7 @@ function carregarClubes() {
 						type="text"
 						value="3000"
 						maxlength="4"
-						style="box-sizing: border-box; font: inherit;"
+						style="padding:0;text-align:center;box-sizing: border-box; font: inherit;"
 						onchange="atualizarListaJogadores()"
 					>
                     
@@ -953,7 +953,7 @@ function carregarClubes() {
 						type="text"
 						value=""
 						maxlength="3"
-						style="box-sizing: border-box; font: inherit;"
+						style="padding:0;text-align:center;box-sizing: border-box; font: inherit;"
 						onchange="atualizarListaJogadores()"
 					>a<input 
 						name="idade_max"
@@ -961,7 +961,7 @@ function carregarClubes() {
 						type="text"
 						value=""
 						maxlength="3"
-						style="box-sizing: border-box; font: inherit;"
+						style="padding:0;text-align:center;box-sizing: border-box; font: inherit;"
 						onchange="atualizarListaJogadores()"
 					>	
                     
@@ -1059,10 +1059,10 @@ function carregarClubes() {
                     >
                 </td>
 				<td align='center'>
-					Atletas/Status: <span id="status_sel"></span>. &nbsp;
+					Atletas/Status: <span id="status_sel"></span>
 				</td>
 				<td align='right'>
-					Total de atletas: <span id="total"><b>0</b></span> &nbsp;
+					Total de atletas: <span id="total"><b>0</b></span>
 				</td>
             </tr>
         </table>
