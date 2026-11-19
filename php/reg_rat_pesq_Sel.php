@@ -25,21 +25,21 @@ $sql = pg_query($conexao, "
         nome,
         sobrenome,
         trim(nome) || ' ' || trim(sobrenome) AS nomecompleto,
-        CASE
+		CASE
             WHEN clube IS NULL OR trim(clube) = ''
             THEN trim(municipio)
             ELSE trim(clube)
         END AS clube,
-        sexo AS genero,
-        dt_nasc,
-				
-		EXTRACT(
-			YEAR FROM AGE(
-				MAKE_DATE(EXTRACT(YEAR FROM CURRENT_DATE)::integer, 1, 1),
-				dt_nasc
-			)
-		)::integer AS idade,		
-				
+		sexo AS genero,
+		CASE
+			WHEN dt_nasc IS NULL THEN 0
+			ELSE EXTRACT(
+				YEAR FROM AGE(
+					MAKE_DATE(EXTRACT(YEAR FROM CURRENT_DATE)::integer, 1, 1),
+					dt_nasc
+				)
+			)::integer
+		END AS idade,				
 		rating,
 		status
 	FROM cadastro
@@ -494,7 +494,7 @@ listaJogadoresMostrada.forEach(function(jogador, index) {
 	
     var idade = parseInt(jogador.idade) || 0;
     // Verifica os limites de idade
-    if (idade < idadeMin || idade > idadeMax) {
+    if (idade < idadeMin || idade > idadeMax && idade != 0) {
         return;
     }
 	
@@ -835,7 +835,7 @@ function carregarClubes() {
         datalist.appendChild(option);
     });
 
-    document.getElementById("clube").value = "TODOS";
+    //document.getElementById("clube").value = "TODOS";
 }
 </script>
 
@@ -910,7 +910,7 @@ function carregarClubes() {
 						<option value="F">F</option>
 					</select>
                 </td>
-				<td style="padding: 0px;">
+				<td style="padding: 1px 0px;">
 					ritmo<select name="ritmo" id="ritmo"
 							style="box-sizing: border-box; font: inherit;">
                         <option value="S" selected>cláss</option>
@@ -1013,7 +1013,7 @@ function carregarClubes() {
  					<select
 						name="enxadrista_list"
 						id="enxadrista_list"
-						size="34"
+						size="30"
 						maxlength="40"
 						onchange="Select_Click(this,'clk');"
                         ondblclick="Select_Click(this,'dbl');"
