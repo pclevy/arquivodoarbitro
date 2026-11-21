@@ -424,160 +424,150 @@ body > center > font {
     /*
      * Atualiza o SELECT.
      */
-function atualizarListaJogadores() {
+	function atualizarListaJogadores() {
 
-    var lista_loc = document.getElementById("enxadrista_list");
-    if (!lista_loc) { return; }
-	
-    // Limites de rating
-    var ratMin = parseInt(document.getElementById("rat_min").value) || 0;
-    var ratMax = parseInt(document.getElementById("rat_max").value) || 3000;
-	
-    // Faixa de Idade
-    var idadeMin = parseInt(document.getElementById("idade_min").value) || 0;
-    var idadeMax = parseInt(document.getElementById("idade_max").value) || 120;
-	
-	// Gênero selecionado
-	var genero = document.getElementById("genero").value;	
+		var lista_loc = document.getElementById("enxadrista_list");
+		if (!lista_loc) { return; }
+		
+		// Limites de rating
+		var ratMin = parseInt(document.getElementById("rat_min").value) || 0;
+		var ratMax = parseInt(document.getElementById("rat_max").value) || 3000;
+		
+		// Faixa de Idade
+		var idadeMin = parseInt(document.getElementById("idade_min").value) || 0;
+		var idadeMax = parseInt(document.getElementById("idade_max").value) || 120;
+		
+		// Gênero selecionado
+		var genero = document.getElementById("genero").value;	
 
-	// Status selecionado
-	var status = document.getElementById("status").value;	
+		// Status selecionado
+		var status = document.getElementById("status").value;	
 
-    /*
-     * Remove todas as opções.
-     */
-    lista_loc.innerHTML = "";
+		/*
+		 * Remove todas as opções.
+		 */
+		lista_loc.innerHTML = "";
 
-    /*
-     * Primeira opção.
-     */
-    var primeiraOpcao = document.createElement("option");
+		/*
+		 * Primeira opção.
+		 */
+		var primeiraOpcao = document.createElement("option");
 
-    primeiraOpcao.value = "";
-    primeiraOpcao.text = "Digite parte do nome ou Selecione abaixo ...";
-    primeiraOpcao.style.fontWeight = "bold";
+		primeiraOpcao.value = "";
+		primeiraOpcao.text = "Digite parte do nome ou Selecione abaixo ...";
+		primeiraOpcao.style.fontWeight = "bold";
 
-    lista_loc.appendChild(primeiraOpcao);
+		lista_loc.appendChild(primeiraOpcao);
 
-    /*
-     * Insere os jogadores considerando os limites de rating.
-     */
+		/*
+		 * Insere os jogadores considerando os limites de rating.
+		 */
+		
+		var menorIdade = Infinity;
+		var maiorIdade = 0;
+		var total = 0;
+		
+		listaJogadoresMostrada.forEach(function(jogador, index) {
+			
+			// Verifica o gênero
+			if (genero !== "todos" && jogador.genero !== genero) {
+				return;
+			}
 
-var menorIdade = Infinity;
-var maiorIdade = 0;
-var total = 0;
+			// Verifica o status
+			if (status !== "todos" && jogador.status !== status) {
+				return;
+			}
+			
+			var rating = parseInt(jogador.rating) || 0;
+			// Verifica os limites de rating
+			if (rating < ratMin || rating > ratMax) {
+				return;
+			}
+			
+			var idade = parseInt(jogador.idade) || 0;
+			// Verifica os limites de idade
+			if (idade < idadeMin || idade > idadeMax && idade != 0) {
+				return;
+			}
+			if (idade < menorIdade) {
+				menorIdade = idade;
+			}
+			if (idade > maiorIdade) {
+				maiorIdade = idade;
+			}
+			
+			// Cria a opção
+			var option = document.createElement("option");
 
-listaJogadoresMostrada.forEach(function(jogador, index) {
+			option.value = index;
 
-/*
-    console.log(
-        "Total de I:",
-        listaJogadores.filter(j => j.status === "I").length
-    );
-*/
+			option.text =
+				String(jogador.reg).padStart(4, "0")
+				+ "-"
+				+ jogador.nome.substring(0, 49)
+				+ " ("
+				+ jogador.genero
+				+ ")("
+				+ jogador.clube
+				+ ")("
+				+ jogador.rating
+				+ ")";
 
-    // Verifica o gênero
-    if (genero !== "todos" && jogador.genero !== genero) {
-        return;
-    }
+			lista_loc.appendChild(option);
 
-    // Verifica o status
-    if (status !== "todos" && jogador.status !== status) {
-        return;
-    }
-	
-    var rating = parseInt(jogador.rating) || 0;
-    // Verifica os limites de rating
-    if (rating < ratMin || rating > ratMax) {
-        return;
-    }
-	
-    var idade = parseInt(jogador.idade) || 0;
-    // Verifica os limites de idade
-    if (idade < idadeMin || idade > idadeMax && idade != 0) {
-        return;
-    }
-	
+			total++;
+		});
 
-	if (idade < menorIdade) {
-		menorIdade = idade;
+		// Atualiza a menor idade
+		document.getElementById("idade_min").value = menorIdade === Infinity ? 0 : menorIdade;
+
+		// Atualiza a maior idade
+		document.getElementById("idade_max").value = maiorIdade;
+
+		// Atualiza o total de jogadores selecionados
+		document.getElementById("total").innerHTML = "<b>" + total + "</b>";
+
+		// Atualiza Status selecionado
+		document.getElementById("status_sel").innerHTML =
+			"<b>" + document.getElementById("status").selectedOptions[0].text + "</b>";
 	}
-	if (idade > maiorIdade) {
-        maiorIdade = idade;
-    }
-	
-	
-    // Cria a opção
-    var option = document.createElement("option");
-
-    option.value = index;
-
-    option.text =
-        String(jogador.reg).padStart(4, "0")
-        + "-"
-        + jogador.nome.substring(0, 49)
-        + " ("
-        + jogador.genero
-        + ")("
-        + jogador.clube
-        + ")("
-        + jogador.rating
-        + ")";
-
-    lista_loc.appendChild(option);
-
-    total++;
-});
-
-// Atualiza a menor idade
-document.getElementById("idade_min").value = menorIdade === Infinity ? 0 : menorIdade;
-
-// Atualiza a maior idade
-document.getElementById("idade_max").value = maiorIdade;
-
-// Atualiza o total de jogadores selecionados
-document.getElementById("total").innerHTML = "<b>" + total + "</b>";
-
-// Atualiza Status selecionado
-document.getElementById("status_sel").innerHTML =
-    "<b>" + document.getElementById("status").selectedOptions[0].text + "</b>";
-
-}    
-/* filtrarClubes */
-function filtrarClube(clube) {
-
-    clube = clube.trim().toLocaleUpperCase('pt-BR');
-
-    if (clube === "" || clube === "TODOS") {
-        listaJogadoresMostrada = [...listaJogadores];
-    } else {
-        listaJogadoresMostrada = listaJogadores.filter(
-            function(jogador) {
-                return jogador.clube.trim()
-                    .toLocaleUpperCase('pt-BR') === clube;
-            }
-        );
-    }
-
-    atualizarListaJogadores();
-}
     
-/* filtrarGenero */
-function filtrarGenero(genero) {
-	
-    if (genero === "") {
-        listaJogadoresMostrada = [...listaJogadores];
-    } else {
-        listaJogadoresMostrada = listaJogadores.filter(
-            function(jogador) {
-                return jogador.genero.trim()
-                    .toLocaleUpperCase('pt-BR') === genero;
-            }
-        );
-    }
+	/* filtrarClubes */
+	function filtrarClube(clube) {
 
-    atualizarListaJogadores();
-}
+		clube = clube.trim().toLocaleUpperCase('pt-BR');
+
+		if (clube === "" || clube === "TODOS") {
+			listaJogadoresMostrada = [...listaJogadores];
+		} else {
+			listaJogadoresMostrada = listaJogadores.filter(
+				function(jogador) {
+					return jogador.clube.trim()
+						.toLocaleUpperCase('pt-BR') === clube;
+				}
+			);
+		}
+
+		atualizarListaJogadores();
+	}
+		
+	/* filtrarGenero */
+	function filtrarGenero(genero) {
+		
+		if (genero === "") {
+			listaJogadoresMostrada = [...listaJogadores];
+		} else {
+			listaJogadoresMostrada = listaJogadores.filter(
+				function(jogador) {
+					return jogador.genero.trim()
+						.toLocaleUpperCase('pt-BR') === genero;
+				}
+			);
+		}
+
+		atualizarListaJogadores();
+	}
 	
 	/* Ordenar por Nome. */
     function ordenarPorNome() {
@@ -606,7 +596,7 @@ function filtrarGenero(genero) {
 
         document.getElementById("btnClube")
             .classList.remove("ativo");
-
+	
         document.getElementById("btnRating")
             .classList.remove("ativo");
 	}
@@ -815,28 +805,28 @@ function filtrarGenero(genero) {
         }
     );
 
-function carregarClubes() {
+	function carregarClubes() {
 
-    var datalist = document.getElementById("listaClubes");
+		var datalist = document.getElementById("listaClubes");
 
-    datalist.innerHTML = "";
+		datalist.innerHTML = "";
 
-    var clubes = [...new Set(
-        listaClubes
-            .map(j => j.clube.trim())
-            .filter(clube => clube !== "" && clube !== "TODOS   ")
-    )].sort((a, b) => a.localeCompare(b, "pt-BR"));
+		var clubes = [...new Set(
+			listaClubes
+				.map(j => j.clube.trim())
+				.filter(clube => clube !== "" && clube !== "TODOS   ")
+		)].sort((a, b) => a.localeCompare(b, "pt-BR"));
 
-    clubes.unshift("TODOS");
+		clubes.unshift("TODOS");
 
-    clubes.forEach(function(clube) {
-        var option = document.createElement("option");
-        option.value = clube;
-        datalist.appendChild(option);
-    });
+		clubes.forEach(function(clube) {
+			var option = document.createElement("option");
+			option.value = clube;
+			datalist.appendChild(option);
+		});
 
-    //document.getElementById("clube").value = "TODOS";
-}
+		//document.getElementById("clube").value = "TODOS";
+	}
 </script>
 
 </head>

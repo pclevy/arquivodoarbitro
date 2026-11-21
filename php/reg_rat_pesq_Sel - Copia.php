@@ -1,272 +1,1118 @@
 <?php
-/* php/reg_rat_pesq_Sel.php - Versão: 2026.09.01 - Alterado em 2026/09/01, 02:03 */
-
-	ini_set('display_errors', 0);
-	ini_set('display_startup_errors', 0);
-	error_reporting(E_ALL);
-
-	$file = "../config/conexao_ca.cfg";
-	$fh = fopen($file, 'r');
-	$conteudo = explode("*", fread($fh, filesize($file)));
-	$strconexao = trim($conteudo[0]);
-	$codificacao = trim($conteudo[1]);
-	fclose($fh);
+	/* php/reg_rat_pesq_Sel.php
+	 * Versão: 2026.11.18 V1.3
+	 * Alterado em 2026/11/18, 13:24
+	*/
 	
-	//echo "<br>$strconexao <br>";exit;
-	
-	$conexao = pg_connect($strconexao) or die("erro na conexão");
-	//$sql = pg_query($conexao,"SELECT reg, sobrenome, nome, municipio AS clube, sexo AS genero, dt_nasc FROM cadastro ORDER BY nome"); 
-	$sql = pg_query($conexao,"
-		SELECT
-			reg,
-			nome,
-			sobrenome,
-			trim(nome) || ' ' || trim(sobrenome) AS nomecompleto,
-			CASE
-				WHEN clube IS NULL OR trim(clube) = ''
-				THEN trim(municipio)
-				ELSE trim(clube)
-			END AS clube,
-			sexo AS genero,
-			dt_nasc,
-			right(trim(dt_nasc), 4) AS ano_nasc
-		FROM cadastro
-		ORDER BY nome;");
-	  
-	$resultado = pg_num_rows($sql);
-	$i=0;
-	
-	echo "<script language='JavaScript' type='text/javascript'>";
-	echo "var listaJogadores = [];";
-	while ($i<$resultado) {
-		
-		$reg = trim(" ".pg_fetch_result($sql,$i,'reg'));
-		
-		//$prenome = trim(" ".pg_fetch_result($sql,$i,'nome'));
-		//$sobrenome = trim(" ".pg_fetch_result($sql,$i,'sobrenome'));
-		//$nome=trim($prenome . ' ' . $sobrenome);
-		$nome = pg_fetch_result($sql,$i,'nomecompleto');
-		
-		//$clube = trim(" ".pg_fetch_result($sql,$i,'clube'));
-		$clube = pg_fetch_result($sql,$i,'clube');
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(E_ALL);
 
-		echo "listaJogadores.push({reg:" . json_encode($reg) . ", nome:" . json_encode($nome) . ", clube:" . json_encode($clube) . "});";
-		
-		//echo "$reg";
-		//echo "console.log('$reg - $nome - $clube');";
-		
-		//echo "console.log(" . json_encode("$reg - $nome - $clube") . ");";		
-		
-		$i++;
-	}
-	//echo "console.log('lista jogadores', listaJogadores);";
-	echo "</script>";
+$file = "../config/conexao_ca.cfg";
 
-	echo "
-	<script language='JavaScript' type='text/javascript'>
-		window.addEventListener('load', function() {
-			listaJogadoresMostrada = listaJogadores;
-			
-			/*
-				listaJogadoresMostrada.sort((a, b) => a.reg - b.reg);
-			*/
-			
-			var selectElement = document.getElementById('enxadrista_list');
-			listaJogadoresMostrada.forEach(function(jogador, index) {
-				var option = document.createElement('option');
-				option.value = index;
-				
-				/*option.text = jogador.nome; */
-				option.text = ('000' + jogador.reg).substr(-4) + ' - ' + jogador.nome;
-				
-				selectElement.appendChild(option);
-			});
-		});
-	</script>
-	";
+$fh = fopen($file, 'r');
+$conteudo = explode("*", fread($fh, filesize($file)));
+$strconexao = trim($conteudo[0]);
+$codificacao = trim($conteudo[1]);
+fclose($fh);
+
+//Secho "$strconexao";
+$conexao = pg_connect($strconexao) or die("erro na conexão");
+
+$sql = pg_query($conexao, "
+    SELECT
+        reg,
+        nome,
+        sobrenome,
+        trim(nome) || ' ' || trim(sobrenome) AS nomecompleto,
+		CASE
+            WHEN clube IS NULL OR trim(clube) = ''
+            THEN trim(municipio)
+            ELSE trim(clube)
+        END AS clube,
+		sexo AS genero,
+		CASE
+			WHEN dt_nasc IS NULL THEN 0
+			ELSE EXTRACT(
+				YEAR FROM AGE(
+					MAKE_DATE(EXTRACT(YEAR FROM CURRENT_DATE)::integer, 1, 1),
+					dt_nasc
+				)
+			)::integer
+		END AS idade,				
+		rating,
+		status
+	FROM cadastro
+    ORDER BY nome;
+");
+
+if (!$sql) {
+    die("Erro na consulta ao banco de dados.");
+}
+
+$resultado = pg_num_rows($sql);
+$i = 0;
+
+echo "<script type='text/javascript'>";
+echo "var listaJogadores = [];";
+echo "var listaClubes = [];";
+
+// ***** 2026/11/17 *****
+
+$listaClubes = [];
+
+while ($jogador = pg_fetch_assoc($sql)) {
+
+    $dados = [
+        'reg'     => trim($jogador['reg']),
+        'nome'    => $jogador['nomecompleto'],
+        'clube'   => trim(" ".$jogador['clube']),
+        'genero'  => $jogador['genero'],
+        'rating'  => trim($jogador['rating']),
+        'idade'   => trim($jogador['idade']),
+        'status'  => $jogador['status']
+    ];
+
+    echo "listaJogadores.push("
+        . json_encode($dados, JSON_UNESCAPED_UNICODE)
+        . ");\n";
+
+    // Armazena clubes não vazios
+    $clube = trim(" ".$jogador['clube']);
+
+    if ($clube !== '') {
+        $listaClubes[] = $clube;
+    }
+}
+
+// Elimina clubes vazios e repetidos
+$listaClubes = array_filter($listaClubes, function($clube) {
+    return $clube !== '';
+});
+
+$listaClubes = array_unique($listaClubes);
+
+// Ordena alfabeticamente
+natcasesort($listaClubes);
+
+// Reinicia os índices
+$listaClubes = array_values($listaClubes);
+
+// Gera a lista JavaScript
+echo "listaClubes.push({clube: 'Todos'});\n";
+
+foreach ($listaClubes as $clube) {
+    echo "listaClubes.push("
+        . json_encode(['clube' => $clube], JSON_UNESCAPED_UNICODE)
+        . ");\n";
+}
+
+echo "</script>";
 ?>
 
 <html dir="ltr" lang="pt-BR">
-	<head>
-		<!meta charset="windows-1252">
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"/>
-		<link rel="icon" type="image/png" href="../imagens/arquivo_do_arbitro.png" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="keywords"
+    content="xadrez, DV, cego, inclusão,xadrezdeolhonofuturo,esfinge"
+>
+<link
+    rel="icon"
+    type="image/png"
+    href="../imagens/arquivo_do_arbitro.png"
+>
+<title>Consultar Registro e Rating Fexerj!</title>
 
-		<title>Consultar Registro e Rating!</title>
-		
-		<?php include "google_analytics.php"; ?>
-		
-		<script LANGUAGE="JavaScript" SRC="../js/jstrim.js"></script>
+<?php include "google_analytics.php"; ?>
+<script
+    type="text/javascript"
+    src="../js/jstrim.js">
+</script>
 
-		<script language="JavaScript" type="text/javascript">
-		var listaJogadoresMostrada = [];
-		
-		var specialChars =
-			[
-				{val:"a",let:"áàãâä"},
-				{val:"e",let:"éèêë"},
-				{val:"i",let:"íìîï"},
-				{val:"o",let:"óòõôö"},
-				{val:"u",let:"úùûü"},
-				{val:"c",let:"ç"},
-				{val:"A",let:"ÁÀÃÂÄ"},
-				{val:"E",let:"ÉÈÊË"},
-				{val:"I",let:"ÍÌÎÏ"},
-				{val:"O",let:"ÓÒÕÔÖ"},
-				{val:"U",let:"ÚÙÛÜ"},
-				{val:"C",let:"Ç"},
-				{val:"",let:"?!()"}
-			];
-			
-			function replaceSpecialChars(str) {
-				var regex;
-				var returnString = str;
+<style>
+/* ============================================================
+   CONFIGURAÇÃO GERAL E ALTURA DA TELA
+   ============================================================ */
+*
+{
+    box-sizing: border-box;
+}
 
-				return returnString;
-			};
-			
-			function criar_opcoes(id_select9) {
-				for (i=0;i<listaJogadoresMostrada.length;i++) {
-					try {
-						id_select9.add(new Option(listaJogadoresMostrada[i].nome, i), id_select9.options[0]);
-					} catch(e) {
-						id_select9.add(new Option(listaJogadoresMostrada[i].nome, i), 0);
-					}
-				}
-			}
-			
-			function pesq_nome(strDigitada)
-			{
-				strPesq=replaceSpecialChars(trim(strDigitada)).toUpperCase();
-				document.getElementById("enxadrista_reg").value='';
-				
-			if(strPesq === "") {
-				listaJogadoresMostrada = listaJogadores;
-			} else {
-				listaJogadoresMostrada = listaJogadores.filter(function(jogador) {
-					return replaceSpecialChars(jogador.nome).toUpperCase().indexOf(strPesq) >= 0;
-				});
-			}
-			
-			var lista_loc = document.getElementById("enxadrista_list");
-			tamlista = lista_loc.length;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
-			for(i=0; i<tamlista; i++){
-				lista_loc.remove(0);
-			}
-			
-			listaJogadoresMostrada.forEach(function(jogador, index) {
-				try {
-					/*	lista_loc.add(new Option(jogador.reg + jogador.nome, index), null); */
-					lista_loc.add(new Option(('000' + jogador.reg).substr(-4) + ' - ' + jogador.nome, index), null);
-				} catch(e) {
-					lista_loc.add(new Option(jogador.nome, index));
-				}
-			});
-		}
-		/*
-		function Select_Click(elemento,typeClick) {
-			indice=elemento.options[elemento.selectedIndex].value;
-			if(indice!='') {
-				var jogador = listaJogadoresMostrada[indice];
-				document.getElementById('enxadrista_reg').value=jogador.reg;
-				document.getElementById('enxadrista').value=jogador.nome;('000' + jogador.reg).substr(-4) + ' - ' + 
-				if(typeClick=='dbl') {
-					document.getElementById('SubmitButton').click();
-				}
-			}
-		}
-		*/
-		
-		function Select_Click(elemento, typeClick) {
-			const indice = elemento.options[elemento.selectedIndex].value;
+body {
+    background-color: #eeeeff;
+    font-family: Arial Narrow, Arial, Helvetica, sans-serif;
+}
 
-			if (indice != '') {
-				const jogador = listaJogadoresMostrada[indice];
+/* Cabeçalho e formulário ocupam a altura visível do navegador. */
+body > center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
 
-				document.getElementById('enxadrista_reg').value = jogador.reg;
-				document.getElementById('enxadrista').value = jogador.nome;
+/* Os <br> antigos não devem consumir espaço como itens flex. */
+body > center > br {
+    display: none;
+}
 
-				const isTouch = navigator.maxTouchPoints > 0;
+body > center > span,
+body > center > font {
+    display: block;
+    flex: 0 0 auto;
+    max-width: 100%;
+}
 
-				if (typeClick == 'dbl' || isTouch) {
-					document.getElementById('SubmitButton').click();
-				}
-			}
-		}
+/* ============================================================
+   FORMULÁRIO PRINCIPAL
+   ============================================================ */
 
-		</script>
-	</head>
+.formulario {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    min-width: 0;
+
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 2px;
+
+    background-color: #DCE9C8;
+    overflow: hidden;
+    line-height: 1.6;
 	
-	<body bgcolor="eeeeff">
-		<!-- Título: <input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'> -->
+    border: 2px solid #2266AA;
+	border-radius: 16px;
+
+	margin-bottom: 5px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+}
+
+/* As tabelas dos campos conservam sua altura natural. */
+.formulario form > table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    flex-shrink: 0;
+}
+
+.formulario td {
+    padding: 1px;
+    vertical-align: bottom;
+}
+
+/* ============================================================
+   ÁREA DA LISTA: RECEBE TODO O ESPAÇO VERTICAL RESTANTE
+   ============================================================ */
+
+
+#enxadrista_list {
+    display: block;
+    flex: 1 1 0;
+    width: 100%;
+    height: 64vh;
+    min-height: 0;
+    max-width: 100%;
+    max-height: 64dvh;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* ==========================================================
+   CAMPOS DE PESQUISA
+   ============================================================ */
+
+.formulario input[type="text"],
+.formulario select {
+    max-width: 100%;
+}
+
+.formulario  input[type="text"] {
+    font-family: "Arial Narrow", sans-serif !important;
+    font-size: 15px !important;
+	padding:0px;
+}
+
+.formulario input#clube {
+    font-size: 13px !important;
+	font-family: "Arial Narrow";
+}
+
+.formulario select {
+    font-family: "Arial Narrow", sans-serif !important;
+    font-size: 15px !important;
+	padding:0px;
+}
+
+#clube {
+    width: 5.3em;
+	padding:0px;
+	font-size: 13px;
+}
+
+#status {
+    width: 4.1em;
+	padding:0px;
+}
+
+#genero {
+    width: 2.1em;
+	padding:0px;
+	font-size: 14px;
+}
+
+#ritmo {
+    width: 3.5em;
+	padding:0px;
+	font-size: 14px;
+}
+
+#rat_min,
+#rat_max {
+    width: 2.5em;
+	padding:1px;
+}
+
+#idade_min,
+#idade_max {
+    width: 1.9em;
+	padding:1px;
+}
+
+#SM_Categorias {
+    width: 7.6em;
+	padding:1px;
+}
+
+#enxadrista {
+    width: 100%;
+    min-width: 0;
+	padding:1px;
+}
+
+/* ============================================================
+   BOTÕES DE ORDENAÇÃO
+   ============================================================ */
+
+.botoes-ordenacao {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 4px 0;
+}
+
+.botao-ordenacao {
+    min-height: 32px;
+    padding: 3px 10px;
+    margin: 2px 0 2px 4px;
+
+    border: 2px outset #cccccc;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    color: #000000;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.botao-ordenacao:hover {
+    background-color: #dddddd;
+}
+
+.botao-ordenacao:focus {
+    outline: 2px solid #2266AA;
+    outline-offset: 2px;
+}
+
+.botao-ordenacao.ativo {
+    background-color: #cccccc;
+    color: #000000;
+    font-weight: bold;
+    border: 2px inset #888888;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.35);
+    transform: translateY(1px);
+}
+
+/* ============================================================
+   CELULARES
+   ============================================================ */
+
+@media (max-width: 420px) {
+    .formulario {
+        padding: 2px;
+		max-height: 89%;
+        border-width: 1px;
+		border-radius: 16px;
+    }
+
+    .formulario td {
+        padding: 1px;
+    }
+
+    .botao-ordenacao {
+        padding: 3px 8px;
+    }
+
+	#enxadrista_list {
+		height: 72vh;
+		max-height: 72dvh;
+	}
+}
+
+@media (max-height: 600px) {
+    .botoes-ordenacao {
+        padding: 1px 0;
+    }
+}
+
+</style>
+
+<script type="text/javascript">
+
+    var listaJogadoresMostrada = [];
+
+    /*
+     * Inicializa a lista de jogadores.
+     */
+    function inicializarLista() {
+
+        listaJogadoresMostrada = listaJogadores.slice();
 		
+		    carregarClubes();
+			
+        atualizarListaJogadores();
+
+        /*
+         * A ordenação inicial é por Nome.
+         */
+        document.getElementById("btnNome")
+            .classList.add("ativo");
+
+        document.getElementById("btnReg")
+            .classList.remove("ativo");
+
+        document.getElementById("btnClube")
+            .classList.remove("ativo");
+
+        document.getElementById("btnRating")
+            .classList.remove("ativo");
+    }
+
+    /*
+     * Atualiza o SELECT.
+     */
+function atualizarListaJogadores() {
+
+    var lista_loc = document.getElementById("enxadrista_list");
+    if (!lista_loc) { return; }
+	
+    // Limites de rating
+    var ratMin = parseInt(document.getElementById("rat_min").value) || 0;
+    var ratMax = parseInt(document.getElementById("rat_max").value) || 3000;
+	
+    // Faixa de Idade
+    var idadeMin = parseInt(document.getElementById("idade_min").value) || 0;
+    var idadeMax = parseInt(document.getElementById("idade_max").value) || 120;
+	
+	// Gênero selecionado
+	var genero = document.getElementById("genero").value;	
+
+	// Status selecionado
+	var status = document.getElementById("status").value;	
+
+    /*
+     * Remove todas as opções.
+     */
+    lista_loc.innerHTML = "";
+
+    /*
+     * Primeira opção.
+     */
+    var primeiraOpcao = document.createElement("option");
+
+    primeiraOpcao.value = "";
+    primeiraOpcao.text = "Digite parte do nome ou Selecione abaixo ...";
+    primeiraOpcao.style.fontWeight = "bold";
+
+    lista_loc.appendChild(primeiraOpcao);
+
+    /*
+     * Insere os jogadores considerando os limites de rating.
+     */
+
+var menorIdade = Infinity;
+var maiorIdade = 0;
+var total = 0;
+
+listaJogadoresMostrada.forEach(function(jogador, index) {
+
+/*
+    console.log(
+        "Total de I:",
+        listaJogadores.filter(j => j.status === "I").length
+    );
+*/
+
+    // Verifica o gênero
+    if (genero !== "todos" && jogador.genero !== genero) {
+        return;
+    }
+
+    // Verifica o status
+    if (status !== "todos" && jogador.status !== status) {
+        return;
+    }
+	
+    var rating = parseInt(jogador.rating) || 0;
+    // Verifica os limites de rating
+    if (rating < ratMin || rating > ratMax) {
+        return;
+    }
+	
+    var idade = parseInt(jogador.idade) || 0;
+    // Verifica os limites de idade
+    if (idade < idadeMin || idade > idadeMax && idade != 0) {
+        return;
+    }
+	
+
+	if (idade < menorIdade) {
+		menorIdade = idade;
+	}
+	if (idade > maiorIdade) {
+        maiorIdade = idade;
+    }
+	
+	
+    // Cria a opção
+    var option = document.createElement("option");
+
+    option.value = index;
+
+    option.text =
+        String(jogador.reg).padStart(4, "0")
+        + "-"
+        + jogador.nome.substring(0, 49)
+        + " ("
+        + jogador.genero
+        + ")("
+        + jogador.clube
+        + ")("
+        + jogador.rating
+        + ")";
+
+    lista_loc.appendChild(option);
+
+    total++;
+});
+
+// Atualiza a menor idade
+document.getElementById("idade_min").value = menorIdade === Infinity ? 0 : menorIdade;
+
+// Atualiza a maior idade
+document.getElementById("idade_max").value = maiorIdade;
+
+// Atualiza o total de jogadores selecionados
+document.getElementById("total").innerHTML = "<b>" + total + "</b>";
+
+// Atualiza Status selecionado
+document.getElementById("status_sel").innerHTML =
+    "<b>" + document.getElementById("status").selectedOptions[0].text + "</b>";
+
+}    
+/* filtrarClubes */
+function filtrarClube(clube) {
+
+    clube = clube.trim().toLocaleUpperCase('pt-BR');
+
+    if (clube === "" || clube === "TODOS") {
+        listaJogadoresMostrada = [...listaJogadores];
+    } else {
+        listaJogadoresMostrada = listaJogadores.filter(
+            function(jogador) {
+                return jogador.clube.trim()
+                    .toLocaleUpperCase('pt-BR') === clube;
+            }
+        );
+    }
+
+    atualizarListaJogadores();
+}
+    
+/* filtrarGenero */
+function filtrarGenero(genero) {
+	
+    if (genero === "") {
+        listaJogadoresMostrada = [...listaJogadores];
+    } else {
+        listaJogadoresMostrada = listaJogadores.filter(
+            function(jogador) {
+                return jogador.genero.trim()
+                    .toLocaleUpperCase('pt-BR') === genero;
+            }
+        );
+    }
+
+    atualizarListaJogadores();
+}
+	
+	/* Ordenar por Nome. */
+    function ordenarPorNome() {
+
+        listaJogadoresMostrada.sort(
+            function(a, b) {
+
+                return a.nome.localeCompare(
+                    b.nome,
+                    "pt-BR",
+                    {
+                        sensitivity: "base"
+                    }
+                );
+            }
+        );
+
+        atualizarListaJogadores();
+
+        /* Nome fica ativo */
+        document.getElementById("btnNome")
+            .classList.add("ativo");
+
+        document.getElementById("btnReg")
+            .classList.remove("ativo");
+
+        document.getElementById("btnClube")
+            .classList.remove("ativo");
+
+        document.getElementById("btnRating")
+            .classList.remove("ativo");
+	}
+
+    /*
+     * Ordenar por Registro.
+     */
+    function ordenarPorReg() {
+
+        listaJogadoresMostrada.sort(
+            function(a, b) {
+
+                return Number(a.reg) - Number(b.reg);
+            }
+        );
+
+        atualizarListaJogadores();
+
+        /*
+         * Registro fica ativo.
+         */
+        document.getElementById("btnReg")
+            .classList.add("ativo");
+
+        document.getElementById("btnNome")
+            .classList.remove("ativo");
+        
+		document.getElementById("btnClube")
+            .classList.remove("ativo");
+
+        document.getElementById("btnRating")
+            .classList.remove("ativo");
+			
+	}
+
+    /*
+     * Ordenar por Clube.
+     */
+    function ordenarPorClube() {
+
+        listaJogadoresMostrada.sort(
+            function(a, b) {
+
+                return a.clube.localeCompare(
+                    b.clube,
+                    "pt-BR",
+                    {
+                        sensitivity: "base"
+                    }
+                );
+            }
+        );
+
+        atualizarListaJogadores();
+
+        /*
+         * Clube fica ativo.
+         */
+        document.getElementById("btnClube")
+            .classList.add("ativo");
+
+        document.getElementById("btnReg")
+            .classList.remove("ativo");
+
+        document.getElementById("btnNome")
+            .classList.remove("ativo");
+
+        document.getElementById("btnRating")
+            .classList.remove("ativo");			
+    }
+
+    /*
+     * Ordenar por Rating.
+     */
+    function ordenarPorRating() {
+
+        listaJogadoresMostrada.sort(
+            function(a, b) {
+
+                return Number(b.rating) - Number(a.rating);
+            }
+        );
+
+        atualizarListaJogadores();
+
+        /*
+         * Rating fica ativo.
+         */
+        document.getElementById("btnReg")
+            .classList.remove("ativo");
+
+        document.getElementById("btnNome")
+            .classList.remove("ativo");
+        
+		document.getElementById("btnClube")
+            .classList.remove("ativo");
+			
+        document.getElementById("btnRating")
+            .classList.add("ativo");
+    }
+
+    /*** Pesquisa por nome ***/
+    function pesq_nome(strDigitada) {
+
+        var strPesq = trim(strDigitada).toUpperCase();
+		
+		var genero = document.getElementById("genero").value;
+		
+		var clube = document.getElementById("clube").value;
+		
+		var status = document.getElementById("status").value;
+		
+        document.getElementById(
+            "enxadrista_reg"
+        ).value = "";
+		
+        document.getElementById(
+            "enxadrista_status"
+        ).value = "";
+		
+        //if (strPesq === "") {
+         //   listaJogadoresMostrada = listaJogadores.slice();
+        //} else {
+			 listaJogadoresMostrada = listaJogadores.filter(
+				function(jogador) {
+					
+					// Genero
+					if (genero !== "todos" && jogador.genero !== genero) {
+						return false;
+					}
+					
+					// Clube
+					if (clube !== "TODOS" && clube !== "" && jogador.clube !== clube) {
+						return false;
+					}
+					
+					// Status
+					if (status !== "todos" && jogador.status !== status) {
+						return false;
+					}
+
+						return jogador.nome.toUpperCase().indexOf(strPesq) >= 0;
+
+				}
+            );
+        //}
+        atualizarListaJogadores();
+    }
+
+    /*
+     * Seleção de jogador.
+     */
+    function Select_Click(elemento, typeClick) {
+
+        var indice =
+            elemento.options[
+                elemento.selectedIndex
+            ].value;
+
+        if (indice !== "") {
+
+            var jogador =
+                listaJogadoresMostrada[
+                    Number(indice)
+                ];
+
+            document.getElementById(
+                "enxadrista_reg"
+            ).value = jogador.reg;
+
+            document.getElementById(
+                "enxadrista"
+            ).value = jogador.nome;
+
+            
+			
+			document.getElementById(
+                "enxadrista_status"
+            ).value = jogador.status;
+
+            
+			
+			
+			var isTouch =
+                navigator.maxTouchPoints > 0;
+
+            if (
+                typeClick === "dbl"
+                || isTouch
+            ) {
+
+                document.getElementById(
+                    "SubmitButton"
+                ).click();
+            }
+        }
+    }
+
+    /*
+     * Aguarda o HTML estar disponível.
+     */
+    document.addEventListener(
+        "DOMContentLoaded",
+        function() {
+            inicializarLista();
+        }
+    );
+
+function carregarClubes() {
+
+    var datalist = document.getElementById("listaClubes");
+
+    datalist.innerHTML = "";
+
+    var clubes = [...new Set(
+        listaClubes
+            .map(j => j.clube.trim())
+            .filter(clube => clube !== "" && clube !== "TODOS   ")
+    )].sort((a, b) => a.localeCompare(b, "pt-BR"));
+
+    clubes.unshift("TODOS");
+
+    clubes.forEach(function(clube) {
+        var option = document.createElement("option");
+        option.value = clube;
+        datalist.appendChild(option);
+    });
+
+    document.getElementById("clube").value = "TODOS";
+}
+</script>
+
+</head>
+
+<body bgcolor="eeeeff">
+
+<center>
+
+<span style="font-size: 1.3em; line-height: 0.7;">
+    <b>Projeto &nbsp; Esfinge</b><br>
+</span>
+
+<span style="font-size: 1.5em; line-height: 1.0;">
+    <b>Xadrez de Olho no Futuro</b><br>
+</span>
+
+<span style="font-size: 0.6em; line-height: 0.4;">
+    (Antigo<b> Xadrez UERJ</b>)
+</span>
+<br>
+
+<font size="4">
+    Arquivo do Árbitro
+</font>
+<br>
+
+<font size="2">
+    <b>Pesquisa de Enxadristas</b>&nbsp;
+    <font color="red">(outubro/2026, V. 1.2)</font>
+</font>
+<br>
+
+<div class="formulario" >
+    <form
+        name="reg_rat_pesq"
+        action="reg_rat_pesq.php"
+        method="post"
+        autocomplete="off"
+    >
+		<table>
+			<tr width="100%">
+				<td valign="bottom" style="padding: 0px;">clube<input
+							type="text"
+							name="clube"
+							id="clube"
+							list="listaClubes"
+							onfocus="this.value=''"
+							oninput="this.value = this.value.toLocaleUpperCase('pt-BR')"
+							onchange="filtrarClube(this.value)"
+							autocomplete="off"
+							maxlength="8"
+							style="box-sizing: border-box; font: inherit;"
+						>
+						<datalist id="listaClubes"></datalist>
+				</td>
+				
+				<td style="padding: 0px;">
+					status<select name="status" id="status" onchange="atualizarListaJogadores()"
+					style="box-sizing: border-box; font: inherit;">
+						<option value="todos">todos</option>
+						<option value="A" selected>ativo</option>
+						<option value="I">inativo</option>
+						<option value="F">finado</option>
+					</select>												
+				</td>
+				<td valign="bottom" style="padding: 0px;">
+					gên<select name="genero" id="genero" onchange="atualizarListaJogadores()"
+					style="box-sizing: border-box; font: inherit;">
+						<option value="todos">T</option>
+						<option value="M">M</option>
+						<option value="F">F</option>
+					</select>
+                </td>
+				<td style="padding: 1px 0px;">
+					ritmo<select name="ritmo" id="ritmo"
+							style="box-sizing: border-box; font: inherit;">
+                        <option value="S" selected>cláss</option>
+                        <option value="Q" disabled>ráp</option>
+                        <option value="B" disabled>blitz</option>
+                    </select>
+				</td>
+            </tr>
+			</table>
+			
+			<table>
+			<tr width="100%">
+                <td valign="bottom">
+                    rating<input
+						name="rat_min"
+						id="rat_min"
+						type="text"
+						value="0"
+						maxlength="4"
+						style="padding:0;text-align:center;box-sizing: border-box; font: inherit;"
+						onchange="atualizarListaJogadores()"
+					>a<input
+						name="rat_max"
+						id="rat_max"
+						type="text"
+						value="3000"
+						maxlength="4"
+						style="padding:0;text-align:center;box-sizing: border-box; font: inherit;"
+						onchange="atualizarListaJogadores()"
+					>
+                    
+				</td>
+				<td valign="bottom">
+                    idade<input 
+						name="idade_min"
+						id="idade_min"
+						type="text"
+						value=""
+						maxlength="3"
+						style="padding:0;text-align:center;box-sizing: border-box; font: inherit;"
+						onchange="atualizarListaJogadores()"
+					>a<input 
+						name="idade_max"
+						id="idade_max"
+						type="text"
+						value=""
+						maxlength="3"
+						style="padding:0;text-align:center;box-sizing: border-box; font: inherit;"
+						onchange="atualizarListaJogadores()"
+					>	
+                    
+				</td>
+				<td valign="bottom">
+					SM<input disabled
+						name="SM_Categorias"
+						id="SM_Categorias"
+						type="text"
+						value="ex: U12,U14,S60,S70"
+						style="box-sizing: border-box; font: inherit; "
+						onchange="atualizarListaJogadores()"
+					>
+				</td>
+            </tr>
+        </table>
+		
+		<table>
+            <tr>
+				<td valign="bottom" align="left" style="width:9px">
+                    Nome:
+                </td>
+                <td>
+					<input
+						name="enxadrista"
+						id="enxadrista"
+						type="text"
+						value=""
+						size="37"
+						maxlength="44"
+						onkeyup="pesq_nome(this.value); "
+					>
+					<input
+                        name="enxadrista_reg"
+                        id="enxadrista_reg"
+                        type="hidden"
+                        value=""
+                    >
+					<input
+                        name="enxadrista_status"
+                        id="enxadrista_status"
+                        type="hidden"
+                        value=""
+                    >
+                </td>
+            </tr>
+        </table>
+		
+		<table>
+            <tr>
+                <td colspan="5">
+ 					<select
+						name="enxadrista_list"
+						id="enxadrista_list"
+						size="30"
+						maxlength="40"
+						onchange="Select_Click(this,'clk');"
+                        ondblclick="Select_Click(this,'dbl');"
+						style="font: 14px Arial Narrow"
+                    >
+                        <option
+                            style="font-weight:bold"
+                            value=""
+                        >
+                            Carregando lista...
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input
+                        id="SubmitButton"
+                        type="submit"
+                        onclick="
+                            if(
+                                enxadrista_reg.value < 1
+                                &&
+                                clube.value == ''
+                                &&
+                                rat_min.value == ''
+                                &&
+                                rat_max.value == ''
+                            ){
+                                alert(
+                                    'Clique em um nome da Lista e/ou escolha um outro critério!!'
+                                );
+                                enxadrista_list.focus();
+                                return false;
+                            }
+                        "
+                        name="Enviar"
+                        value="Enviar"
+                    >
+                </td>
+				<td align='center'>
+					Atletas/Status: <span id="status_sel"></span>. &nbsp;
+				</td>
+				<td align='right' style="padding-right: 5px;">
+					Total de atletas: <span id="total"><b>0</b></span>
+				</td>
+            </tr>
+        </table>
+			
+            <!-- Ordenação -->
+            <div class="botoes-ordenacao">Ordenar por:<button
+					type="button"
+					id="btnNome"
+					class="botao-ordenacao"
+					onclick="ordenarPorNome();"
+				>
+					Nome
+				</button><button
+					style="margin: 0;"
+					type="button"
+					id="btnReg"
+					class="botao-ordenacao"
+					onclick="ordenarPorReg();"
+				>
+					Registro
+				</button>
+				
+				<button
+					style="margin: 0;"
+					type="button"
+					id="btnClube"
+					class="botao-ordenacao"
+					onclick="ordenarPorClube();"
+				>
+					Clube
+				</button>
+				
+				<button
+					style="margin: 0;"
+					type="button"
+					id="btnRating"
+					class="botao-ordenacao"
+					onclick="ordenarPorRating();"
+				>
+					Rating
+				</button>
+				
+				</div>
+    </form>
+</div>
+</center>
 		<!--
-		<font size="3"><b>Xadrez UERJ</b></font><br>
-		<font size="6">Arquivo do Árbitro</font><br>
+			SELECT nome,sobrenome,dt_nasc,EXTRACT(YEAR FROM CURRENT_DATE)::integer-EXTRACT(YEAR FROM dt_nasc)::integer AS idade,status
+			FROM cadastro
+			WHERE status = 'A' ORDER BY nome;
 		-->
-		<!-- <font size="1"><br /></font> -->
-		<center>
-			<font size="5"><b>Projeto &nbsp; &nbsp; &nbsp; &nbsp; Esfinge</b></font><br>
-			<font size="6"><b>Xadrez de Olho no Futuro</b></font><br>
-			<font size="2">(Antigo<b> Xadrez UERJ</b>)</font><br>
-			<font size="6">Arquivo do Árbitro</font><br>
-			
-			<font size="3"><b>Pesquisa de Enxadristas - por nome</b></font> <font size='2' color='red'>(Lista de Rating de julho/2026!)</font><br>
-			<font size='2' color='red'> <!-- <b>Em construção</b>: os dados aqui apresentados ainda são experimentais, podendo haver imprecisões!!</font> --> <br>
-			
-			<div style="max-width:460px;background-color:#EDFAD6;line-height:30px; border:1px solid #2266AA;">
-				<!-- <input name='titulo' id='titulo' type='text' value='' size='6' maxlenght='6'> -->
-				<form name='reg_rat_pesq' action='reg_rat_pesq.php' method='post' autocomplete='off'>
-					<table width='100%'>
-						<tr>
-							<td valign='top' colspan='4'>
-								Clube: <input name='clube' id='clube' type='text' value='' size='10' maxlenght='10'>
-								&nbsp; &nbsp; 
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-								Status: 
-								<select name='status' id='status'>
-									<option value='N'>Filiados</option>
-									<option value='S' selected='true'>Todos</option>
-								</select>
-							</td>
-						</tr>
-						
-						<tr>
-							<td valign='top' colspan='4'>Faixa de Rating.&nbsp;De: 
-								<input name='rat_min' id='rat_min' type='text' value='0' size='2' maxlenght='4'>&nbsp;A&nbsp;
-								<input name='rat_max' id='rat_max' type='text' value='3000' size='2' maxlenght='4'>
-								&nbsp; &nbsp; &nbsp; 
-								Ritmo: 
-								<select name='ritmo' id='ritmo'>
-									<option value='S' selected='true'>Clássico</option>
-									<option value='Q'>Rápido</option>
-									<option value='B'>Relâmpago</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td valign='top'>Nome:</td>
-							<td colspan='4'>
-								<input name='enxadrista' id='enxadrista' type='text' value='' size='49' maxlenght='60' onkeyup='TamNomPesq=trim(this.value).length;pesq_nome(this.value);' />
-								<input name='enxadrista_reg' id='enxadrista_reg' type='hidden' value='' size='6' />
-								
-								<select name='enxadrista_list' id='enxadrista_list' size='15' style="width:340px" onchange='Select_Click(this,"clk");' ondblclick='Select_Click(this,"dbl");'>
-								
-									<option style="font-weight:bold" value="">Digite parte do nome ou Selecione abaixo ...</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-							<td><input id='SubmitButton' type='submit' onClick="if(enxadrista_reg.value<1 && clube.value=='' && titulo.value=='' && rat_min.value=='' && rat_max.value==''){alert('Clique em um nome da Lista e/ou escolha um outro critério!!');enxadrista_list.focus(); return false;}" name='Enviar' value='Enviar'></td>
-							<!-- <td>Ordenar por:	teste1	teste2</td> -->
-						</tr>
-					</table>
-				</form>
-			</div>
-		</center>
-	</body>
+		
+		<!-- para 'sub14', em 2026, Digite 2026U14; para 'S60', em 2026, Digite 2026S60; -->
+		
+</body>
 </html>
